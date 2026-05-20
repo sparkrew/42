@@ -13,7 +13,7 @@ This document defines a set of metrics for selecting a diverse subset of GitHub 
 
 ---
 
-## 1. Structural Complexity
+## 1. Structural Complexity [1]
 
 Metrics that capture the size, shape, and composition of a workflow.
 
@@ -61,7 +61,7 @@ Metrics that capture the size, shape, and composition of a workflow.
 
 ---
 
-## 2. Trigger Configuration
+## 2. Trigger Configuration [2]
 
 The trigger type directly determines who can activate a workflow and what data they can control, making it a primary factor in the attack surface.
 
@@ -99,7 +99,7 @@ The trigger type directly determines who can activate a workflow and what data t
 
 ---
 
-## 3. Action Usage Patterns
+## 3. Action Usage Patterns [3, 4]
 
 How a workflow references third-party and first-party actions determines its supply-chain risk profile.
 
@@ -140,7 +140,7 @@ How a workflow references third-party and first-party actions determines its sup
 
 ---
 
-## 4. Security-Relevant Features
+## 4. Security-Relevant Features [5]
 
 Features that directly indicate or correlate with known vulnerability patterns.
 
@@ -213,7 +213,7 @@ Features that directly indicate or correlate with known vulnerability patterns.
 
 ---
 
-## 5. Ecosystem and Context
+## 5. Ecosystem and Context [1, 2, 6]
 
 Metrics about the surrounding project and the workflow's purpose.
 
@@ -326,11 +326,18 @@ For each combination of primary axes (3 x 3 x 3 x 3 = 81 cells), sample N workfl
 
 ## References
 
-- Muralee et al. "ARGUS: A Framework for Staged Static Taint Analysis of GitHub Workflows and Actions." USENIX Security 2023.
-- Koishybayev et al. "Characterizing the Security of GitHub CI Workflows." USENIX Security 2022.
-- Abrokwah & Ghaleb. "How Compliant Are GitHub Actions Workflows?" EASE 2026.
-- Chaiwut & Nikiforakis. "Time for Actions: A Longitudinal Study of the GitHub Actions Marketplace." IEEE SecDev 2025.
-- Khatami et al. "Beyond the YAML File: Understanding Real-World GitHub Actions Workflow Adoption." EASE 2026.
-- Rostami Mazrae et al. "An Empirical Study of the Evolution of GitHub Actions Workflows." 2026.
-- Moriconi et al. "GHALogs: Large-Scale Dataset of GitHub Actions Runs." IEEE MSR 2025.
-- Beller et al. "TravisTorrent: Synthesizing Travis CI and GitHub for Full-Stack Research on Continuous Integration." IEEE MSR 2017.
+[1] Rostami Mazrae et al. "An Empirical Study of the Evolution of GitHub Actions Workflows." 2026.
+
+[2] Khatami et al. "Beyond the YAML File: Understanding Real-World GitHub Actions Workflow Adoption." EASE 2026.
+
+[3] Abrokwah & Ghaleb. "How Compliant Are GitHub Actions Workflows?" EASE 2026.
+
+[4] Chaiwut & Nikiforakis. "Time for Actions: A Longitudinal Study of the GitHub Actions Marketplace." IEEE SecDev 2025.
+
+[5] Muralee et al. "ARGUS: A Framework for Staged Static Taint Analysis of GitHub Workflows and Actions." USENIX Security 2023.
+
+[6] Moriconi et al. "GHALogs: Large-Scale Dataset of GitHub Actions Runs." IEEE MSR 2025.
+
+[7] Koishybayev et al. "Characterizing the Security of GitHub CI Workflows." USENIX Security 2022.
+
+[8] Beller et al. "TravisTorrent: Synthesizing Travis CI and GitHub for Full-Stack Research on Continuous Integration." IEEE MSR 2017.
