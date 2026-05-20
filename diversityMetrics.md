@@ -287,6 +287,43 @@ For each combination of primary axes (3 x 3 x 3 x 3 = 81 cells), sample N workfl
 
 ---
 
+---
+
+## Metrics Summary
+
+| Metric | Already in Metadata | Status |
+|---|---|---|
+| Number of Jobs |  | ⬜ |
+| Total Number of Steps |  | ⬜ |
+| Has Matrix Strategy |  | ⬜ |
+| Has Job Dependencies |  | ⬜ |
+| Uses Reusable Workflows |  | ⬜ |
+| Workflow File Size |  | ⬜ |
+| Trigger Types Present |  | ⬜ |
+| Trigger Diversity Count |  | ⬜ |
+| Trigger Risk Level |  | ⬜ |
+| Has Workflow Dispatch Inputs |  | ⬜ |
+| Number of Third-Party Action References |  | ⬜ |
+| Number of Unique Action Owners |  | ⬜ |
+| SHA Pinning Ratio |  | ⬜ |
+| Action-to-Run Ratio |  | ⬜ |
+| Uses Unverified or Obscure Actions |  | ⬜ |
+| Expressions in Run Blocks |  | ⬜ |
+| Taint Source Count |  | ⬜ |
+| Has Permissions Block |  | ⬜ |
+| Permission Scope |  | ⬜ |
+| Secrets Usage Count |  | ⬜ |
+| GITHUB_TOKEN Usage |  | ⬜ |
+| Environment Variables with Expressions |  | ⬜ |
+| Has Conditional Expressions |  | ⬜ |
+| Repository Primary Language |  | ⬜ |
+| Repository Popularity |  | ⬜ |
+| Workflow Purpose |  | ⬜ |
+| Runner Operating System |  | ⬜ |
+| Has Self-Hosted Runner |  | ⬜ |
+| Uses Container or Services |  | ⬜ |
+
+
 ## References
 
 - Muralee et al. "ARGUS: A Framework for Staged Static Taint Analysis of GitHub Workflows and Actions." USENIX Security 2023.
