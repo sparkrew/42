@@ -297,7 +297,7 @@ For each combination of primary axes (3 x 3 x 3 x 3 = 81 cells), sample N workfl
 | Total Number of Steps | ✅ | ⬜ |
 | Has Matrix Strategy | ✅ | ⬜ |
 | Has Job Dependencies | ✅ | ⬜ |
-| Uses Reusable Workflows |  | ⬜ |
+| Uses Reusable Workflows | ❌ | ⬜ |
 | Workflow File Size | ❌ | ⬜ |
 | Trigger Types Present | ✅ | ⬜ |
 | Trigger Diversity Count | ✅ | ⬜ |
@@ -309,19 +309,19 @@ For each combination of primary axes (3 x 3 x 3 x 3 = 81 cells), sample N workfl
 | Action-to-Run Ratio | ✅ | ⬜ |
 | Uses Unverified or Obscure Actions | ❌ | ⬜ |
 | Expressions in Run Blocks | ❌ | ⬜ |
-| Taint Source Count |  | ⬜ |
+| Taint Source Count | ❌ | ⬜ |
 | Has Permissions Block | ✅ | ⬜ |
 | Permission Scope | ✅ | ⬜ |
 | Secrets Usage Count | ✅ | ⬜ |
 | GITHUB_TOKEN Usage | ❌ | ⬜ |
 | Environment Variables with Expressions | ❌ | ⬜ |
 | Has Conditional Expressions | ✅ | ⬜ |
-| Repository Primary Language |  | ⬜ |
-| Repository Popularity |  | ⬜ |
-| Workflow Purpose |  | ⬜ |
-| Runner Operating System |  | ⬜ |
-| Has Self-Hosted Runner |  | ⬜ |
-| Uses Container or Services |  | ⬜ |
+| Repository Primary Language | ✅ (join with repo_manifest_revisions tabble) | ⬜ |
+| Repository Popularity | ✅ (join with repo_manifest_revisions tabble) | ⬜ |
+| Workflow Purpose | ✅ | ⬜ |
+| Runner Operating System | ✅ | ⬜ |
+| Has Self-Hosted Runner | ✅ | ⬜ |
+| Uses Container or Services | ✅ | ⬜ |
 
 
 ## References
