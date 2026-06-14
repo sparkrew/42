@@ -83,9 +83,9 @@ The trigger type directly determines who can activate a workflow and what data t
 - **Field:** Derived from trigger types
 - **Values:** Categorical — `low` / `medium` / `high`
 - **Classification:**
-  - **High:** `pull_request_target`, `issue_comment`, `issues` (types: opened/edited), `discussion_comment`, `workflow_dispatch` (with user inputs)
+  - **High:** `pull_request_target`, `issue_comment`, `issues` (types: opened/edited), `discussion_comment`
   - **Medium:** `pull_request`, `workflow_run`
-  - **Low:** `push`, `schedule`, `release`, `create`, `delete`
+  - **Low:** `push`, `schedule`, `release`, `create`, `delete`, `workflow_dispatch` (with user inputs)
 - **Rationale:** High-risk triggers allow user-controlled data to flow into the workflow while retaining elevated permissions or secrets access.
 - **Status:** ⬜
 - **Notes:**
@@ -155,16 +155,54 @@ Features that directly indicate or correlate with known vulnerability patterns.
 - **Field:** Count of known user-controllable GitHub context references in the entire YAML text
 - **Values:** Integer
 - **Known taint sources (from ARGUS):**
-  - `github.event.issue.title`, `github.event.issue.body`
-  - `github.event.pull_request.title`, `github.event.pull_request.body`
-  - `github.event.comment.body`, `github.event.review.body`
-  - `github.event.discussion.title`, `github.event.discussion.body`
-  - `github.event.head_commit.message`
-  - `github.head_ref`, `github.event.pull_request.head.ref`
-  - `github.event.workflow_run.head_branch`
-  - `github.event.head_commit.author.email`, `github.event.head_commit.author.name`
-  - `github.event.commits.*.message`, `github.event.commits.*.author.email`
-  - `github.event.pull_request.head.label`
+  ```
+  predicate isAttackerControlled(string ref) {
+  ref =
+    [
+      "github.event.issue.body", "github.event.pull_request.body",
+      "github.event.comment.body", "github.event.review.body",
+      "github.event.review_comment.body", "github.event.head_commit.message",
+      "github.event.discussion.body", "github.event.discussion_comment.body",
+      "github.event.discussion.title", "github.event.changes.body.from",
+      "github.event.workflow_run.head_commit.message",
+      "github.event.check_run.output.text", "github.event.check_run.output.summary",
+      "github.event.check_suite.head_commit.message",
+      "github.event.issue.title", "github.event.pull_request.title",
+      "github.event.pull_request.head.ref", "github.event.pull_request.head.label",
+      "github.event.pull_request.head.repo.default_branch",
+      "github.event.pull_request.head.repo.description",
+      "github.event.pull_request.head.repo.homepage",
+      "github.event.changes.title.from",
+      "github.event.workflow.path", "github.event.workflow.name",
+      "github.event.workflow_run.path", "github.event.workflow_run.head_branch",
+      "github.event.workflow_run.head_repository.description",
+      "github.event.workflow_run.display_title",
+      "github.event.check_run.output.title",
+      "github.event.check_run.check_suite.head_branch",
+      "github.event.check_suite.head_branch",
+      "github.event.deployment.environment",
+      "github.event.deployment.original_environment",
+      "github.event.deployment_status.environment",
+      "github.event.deployment_status.environment_url",
+      "github.head_ref"
+    ]
+  or
+  ref.matches("github.event.commits%.message") or
+  ref.matches("github.event.commits%.author.%") or
+  ref.matches("github.event.commits%.committer.%") or
+  ref.matches("github.event.client_payload%") or
+  ref.matches("github.event.head_commit.author.%") or
+  ref.matches("github.event.head_commit.committer.%") or
+  ref.matches("github.event.workflow_run.head_commit.author.%") or
+  ref.matches("github.event.workflow_run.head_commit.committer.%") or
+  ref.matches("github.event.check_run.pull_requests%.head.ref") or
+  ref.matches("github.event.check_suite.pull_requests%.head.ref") or
+  ref.matches("github.event.check_suite.head_commit.author.%") or
+  ref.matches("github.event.check_suite.head_commit.committer.%") or
+  ref.matches("github.event.pages%.page_name") or
+  ref.matches("github.event.pages%.title")
+}
+
 - **Rationale:** More taint sources in a workflow means more potential entry points for attacker-controlled data.
 - **Status:** ⬜
 - **Notes:**
@@ -293,35 +331,35 @@ For each combination of primary axes (3 x 3 x 3 x 3 = 81 cells), sample N workfl
 
 | Metric | Already in Metadata | Status |
 |---|---|---|
-| Number of Jobs | ✅ | ⬜ |
-| Total Number of Steps | ✅ | ⬜ |
-| Has Matrix Strategy | ✅ | ⬜ |
-| Has Job Dependencies | ✅ | ⬜ |
-| Uses Reusable Workflows | ❌ | ⬜ |
-| Workflow File Size | ❌ | ⬜ |
-| Trigger Types Present | ✅ | ⬜ |
-| Trigger Diversity Count | ✅ | ⬜ |
-| Trigger Risk Level | ❌ | ⬜ |
-| Has Workflow Dispatch Inputs | ✅ | ⬜ |
-| Number of Third-Party Action References | ❌ | ⬜ |
-| Number of Unique Action Owners | ❌ | ⬜ |
-| SHA Pinning Ratio | ❌ | ⬜ |
-| Action-to-Run Ratio | ✅ | ⬜ |
-| Uses Unverified or Obscure Actions | ❌ | ⬜ |
-| Expressions in Run Blocks | ❌ | ⬜ |
-| Taint Source Count | ❌ | ⬜ |
-| Has Permissions Block | ✅ | ⬜ |
-| Permission Scope | ✅ | ⬜ |
-| Secrets Usage Count | ✅ | ⬜ |
-| GITHUB_TOKEN Usage | ❌ | ⬜ |
-| Environment Variables with Expressions | ❌ | ⬜ |
-| Has Conditional Expressions | ✅ | ⬜ |
-| Repository Primary Language | ✅ (join with repo_manifest_revisions tabble) | ⬜ |
-| Repository Popularity | ✅ (join with repo_manifest_revisions tabble) | ⬜ |
-| Workflow Purpose | ✅ | ⬜ |
-| Runner Operating System | ✅ | ⬜ |
-| Has Self-Hosted Runner | ✅ | ⬜ |
-| Uses Container or Services | ✅ | ⬜ |
+| Number of Jobs | ✅ | ✅ |
+| Total Number of Steps | ✅ | ✅ |
+| Has Matrix Strategy | ✅ | ✅ |
+| Has Job Dependencies | ✅ | ✅ |
+| Uses Reusable Workflows | ❌ | ✅ |
+| Workflow File Size | ❌ | ❌ |
+| Trigger Types Present | ✅ | ✅ |
+| Trigger Diversity Count | ✅ | ✅ |
+| Trigger Risk Level | ❌ | ✅ |
+| Has Workflow Dispatch Inputs | ✅ | ✅ |
+| Number of Third-Party Action References | ❌ | ✅ |
+| Number of Unique Action Owners | ❌ | ❌ |
+| SHA Pinning Ratio | ❌ | ✅ |
+| Action-to-Run Ratio | ✅ | ✅ |
+| Uses Unverified or Obscure Actions | ❌ | ✅ |
+| Expressions in Run Blocks | ❌ | ✅ |
+| Taint Source Count | ❌ | ✅ |
+| Has Permissions Block | ✅ | ✅ |
+| Permission Scope | ✅ | ✅ |
+| Secrets Usage Count | ✅ | ✅ |
+| GITHUB_TOKEN Usage | ❌ | ❌ |
+| Environment Variables with Expressions | ❌ | ✅ |
+| Has Conditional Expressions | ✅ | ✅ |
+| Repository Primary Language | ✅ (join with repo_manifest_revisions tabble) | ✅ |
+| Repository Popularity | ✅ (join with repo_manifest_revisions tabble) | ✅ |
+| Workflow Purpose | ✅ | ✅ |
+| Runner Operating System | ✅ | ✅ |
+| Has Self-Hosted Runner | ✅ | ✅ |
+| Uses Container or Services | ✅ | ✅ |
 
 
 ## References
