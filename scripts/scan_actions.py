@@ -38,27 +38,105 @@ OFFICIAL_OWNERS = {"actions", "github"}
 # ---------------------------------------------------------------------------
 
 # Category A: Input injection sinks
+
+# JavaScript actions: direct source-to-sink patterns.
+# Workflow expression syntax such as ${{ github.event.* }} is not used here,
+# because that syntax belongs to workflow/composite YAML rather than normal
+# JavaScript action source code.
 JS_INJECTION_PATTERNS = [
-    (r'exec(?:Sync)?\s*\([^)]*getInput', "exec/execSync with getInput"),
-    (r'eval\s*\([^)]*getInput', "eval with getInput"),
-    (r'Function\s*\([^)]*getInput', "Function constructor with getInput"),
-    (r'exec(?:Sync)?\s*\([^)]*context\.payload', "exec/execSync with context.payload"),
-    (r'exec(?:Sync)?\s*\([^)]*github\.event', "exec/execSync with github.event"),
-    (r'exec(?:Sync)?\s*\(\s*[`"\'].*\$\{.*getInput', "exec with template literal input"),
-    (r'child_process.*exec.*getInput', "child_process exec with getInput"),
-    (r'execCommand.*getInput', "execCommand with getInput"),
+    (
+        r'\bexec(?:Sync)?\s*\([^;\n]*\b(?:core\.)?getInput\s*\(',
+        "exec/execSync with getInput",
+    ),
+    (
+        r'\beval\s*\([^;\n]*\b(?:core\.)?getInput\s*\(',
+        "eval with getInput",
+    ),
+    (
+        r'\b(?:new\s+)?Function\s*\([^;\n]*\b(?:core\.)?getInput\s*\(',
+        "Function constructor with getInput",
+    ),
+    (
+        r'\bexec(?:Sync)?\s*\([^;\n]*\b(?:github\.)?context\.payload\b',
+        "exec/execSync with context.payload",
+    ),
+    (
+        r'\bexec(?:Sync)?\s*\(\s*[`"\'][^;\n]*\$\{[^}\n]*'
+        r'(?:getInput\s*\(|(?:github\.)?context\.payload)',
+        "exec with template literal containing untrusted input",
+    ),
+    (
+        r'\b(?:child_process|childProcess)\s*\.\s*exec(?:Sync)?\s*'
+        r'\([^;\n]*\b(?:core\.)?getInput\s*\(',
+        "child_process exec/execSync with getInput",
+    ),
+    (
+        r'\bexecCommand(?:Sync)?\s*\([^;\n]*\b(?:core\.)?getInput\s*\(',
+        "execCommand with getInput",
+    ),
+    (
+        r'\bshelljs\s*\.\s*exec\s*\([^;\n]*\b(?:core\.)?getInput\s*\(',
+        "shelljs exec with getInput",
+    ),
+    (
+        r'\bexecaCommand(?:Sync)?\s*\([^;\n]*\b(?:core\.)?getInput\s*\(',
+        "execaCommand with getInput",
+    ),
+    (
+        r'\bspawn(?:Sync)?\s*\([^;\n]*\b(?:core\.)?getInput\s*\(',
+        "spawn/spawnSync with getInput",
+    ),
 ]
 
+# Company-provided regex for attacker-controllable GitHub context expressions.
+# This is applied only to complete `run` commands in composite actions.
+UNTRUSTED_GITHUB_CONTEXT_PATTERN = (
+    r'\$\{\{\s*(github\.(head_ref|event\.(workflow\.(path|name)|'
+    r'workflow_run\.(path|head_branch|head_repository\.description|'
+    r'head_commit\.((author|committer)\.(email|name)|message)|display_title)|'
+    r'issue\.(title|body)|pull_request\.(title|body|head\.(ref|label|'
+    r'repo\.(default_branch|description|homepage)))|comment\.body|'
+    r'review\.body|pages[^}]+?\.(page_name|title)|client_payload[^}]+?|'
+    r'changes\.(body|title)\.from|discussion\.(body|title)|old_answer\.body|'
+    r'answer\.body|check_run\.(output\.(text|summary|title)|'
+    r'pull_requests[^}]+?\.head\.ref|check_suite\.(head_branch|'
+    r'pull_requests[^}]+?\.head\.ref))|check_suite\.(head_branch|'
+    r'head_commit\.((author|committer)\.(email|name)|message)|'
+    r'pull_requests[^}]+?\.head\.ref)|deployment\.(environment|'
+    r'original_environment)|deployment_status\.(environment|'
+    r'environment_url))))\s*\}\}'
+)
+
 COMPOSITE_INJECTION_PATTERNS = [
-    (r'^\s*run:\s*[|>]?\s*.*\$\{\{\s*inputs\.', "run block with ${{ inputs.* }} interpolation"),
-    (r'^\s*run:\s*[|>]?\s*.*\$\{\{\s*github\.event\.', "run block with ${{ github.event.* }} interpolation"),
-    (r'^\s*run:\s*[|>]?\s*.*\$\{\{\s*github\.head_ref', "run block with ${{ github.head_ref }} interpolation"),
+    (
+        r'\$\{\{\s*inputs\.[^}]+\}\}',
+        "run command with ${{ inputs.* }} interpolation",
+    ),
+    (
+        UNTRUSTED_GITHUB_CONTEXT_PATTERN,
+        "run command with untrusted GitHub context interpolation",
+    ),
 ]
 
 DOCKER_INJECTION_PATTERNS = [
-    (r'(?:eval|exec)\s+.*\$(?:INPUT_|GITHUB_)', "eval/exec with unquoted INPUT_/GITHUB_ vars"),
-    (r'\$INPUT_\w+\s', "unquoted $INPUT_ variable in shell"),
-    (r'echo\s+\$INPUT_', "echo of unquoted INPUT_ variable"),
+    (
+        r'\b(?:eval|exec)\s+[^#\n]*(?:\$(?:INPUT_|GITHUB_)\w+|'
+        r'\$\{(?:INPUT_|GITHUB_)\w+\})',
+        "eval/exec with INPUT_ or GITHUB_ variable",
+    ),
+    (
+        r'\b(?:bash|sh|zsh|dash)\s+-c\s+[^#\n]*(?:\$(?:INPUT_|GITHUB_)\w+|'
+        r'\$\{(?:INPUT_|GITHUB_)\w+\})',
+        "shell -c with INPUT_ or GITHUB_ variable",
+    ),
+    (
+        r'(?<!["\'])\$(?:INPUT_|GITHUB_)\w+',
+        "potentially unquoted INPUT_ or GITHUB_ variable",
+    ),
+    (
+        r'(?<!["\'])\$\{(?:INPUT_|GITHUB_)\w+\}',
+        "potentially unquoted braced INPUT_ or GITHUB_ variable",
+    ),
 ]
 
 # Category B: Suspicious network activity
@@ -96,9 +174,9 @@ SCAN_PROFILES = {
         },
     },
     "composite": {
-        "patterns": COMPOSITE_INJECTION_PATTERNS + INSECURE_DOWNLOAD_PATTERNS + UNSAFE_CRED_PATTERNS,
+        # Injection patterns are evaluated only inside parsed `run` commands.
+        "patterns": INSECURE_DOWNLOAD_PATTERNS + UNSAFE_CRED_PATTERNS,
         "categories": {
-            **{p[1]: "input_injection" for p in COMPOSITE_INJECTION_PATTERNS},
             **{p[1]: "insecure_download" for p in INSECURE_DOWNLOAD_PATTERNS},
             **{p[1]: "unsafe_cred_handling" for p in UNSAFE_CRED_PATTERNS},
         },
@@ -271,36 +349,83 @@ def scan_content(content: str, patterns: list[tuple[str, str]], file_path: str) 
     return findings
 
 
-def scan_composite_multiline(content: str, file_path: str) -> list[dict]:
-    """Detect ${{ inputs/github.event }} in multi-line run: blocks of composite actions."""
-    findings = []
-    run_block_re = re.compile(r'^(\s*)run:\s*[|>]', re.MULTILINE)
-    injection_re = re.compile(r'\$\{\{\s*(?:inputs\.|github\.event\.|github\.head_ref)')
+def scan_composite_run_blocks(content: str, file_path: str) -> list[dict]:
+    """Scan complete inline and multiline `run` commands in a composite action.
 
-    for m in run_block_re.finditer(content):
-        indent = len(m.group(1))
-        start_pos = m.end()
-        block_lines = []
-        for line in content[start_pos:].split("\n")[1:]:
-            stripped = line.lstrip()
-            line_indent = len(line) - len(stripped)
-            if stripped and line_indent <= indent:
-                break
-            block_lines.append(line)
+    The company-provided GitHub-context regex and the inputs.* regex are applied
+    only to shell command text, not to unrelated YAML fields such as `env:` or
+    `with:`. This reduces false positives and handles both:
 
-        block_text = "\n".join(block_lines)
-        line_num = content[:m.start()].count("\n") + 1
+        run: echo "${{ inputs.name }}"
 
-        for i, bline in enumerate(block_lines):
-            if injection_re.search(bline):
+    and:
+
+        run: |
+          echo "${{ github.event.issue.title }}"
+    """
+    findings: list[dict] = []
+    lines = content.splitlines()
+
+    compiled_patterns = [
+        (re.compile(regex, re.IGNORECASE | re.MULTILINE | re.DOTALL), label)
+        for regex, label in COMPOSITE_INJECTION_PATTERNS
+    ]
+
+    run_line_re = re.compile(
+        r'^(?P<indent>\s*)(?:-\s*)?run:\s*(?P<value>.*)$',
+        re.IGNORECASE,
+    )
+
+    i = 0
+    while i < len(lines):
+        match = run_line_re.match(lines[i])
+        if not match:
+            i += 1
+            continue
+
+        base_indent = len(match.group("indent"))
+        value = match.group("value")
+        command_start_line = i + 1
+
+        # Block scalar: run: |, run: >, run: |-, run: >+, etc.
+        if re.match(r'^[|>][+-]?\s*(?:#.*)?$', value.strip()):
+            command_lines: list[str] = []
+            j = i + 1
+
+            while j < len(lines):
+                current = lines[j]
+                stripped = current.lstrip()
+                current_indent = len(current) - len(stripped)
+
+                if stripped and current_indent <= base_indent:
+                    break
+
+                command_lines.append(current)
+                j += 1
+
+            command = "\n".join(command_lines)
+            command_start_line = i + 2
+            next_index = j
+        else:
+            # Inline run command.
+            command = value
+            next_index = i + 1
+
+        for compiled, label in compiled_patterns:
+            for injection_match in compiled.finditer(command):
+                relative_line = command[:injection_match.start()].count("\n")
+                evidence_line = command.splitlines()[relative_line].strip()
                 findings.append({
-                    "pattern_matched": "run block (multiline) with untrusted input interpolation",
+                    "pattern_matched": label,
                     "file_path": file_path,
-                    "evidence_snippet": bline.strip()[:200],
-                    "line_number": line_num + 1 + i,
+                    "evidence_snippet": evidence_line[:200],
+                    "line_number": command_start_line + relative_line,
                     "vulnerability_category": "input_injection",
-                    "severity": "high",
+                    "severity": SEVERITY_MAP["input_injection"],
                 })
+
+        i = next_index
+
     return findings
 
 
@@ -633,8 +758,11 @@ def scan_action_at_ref(
             f.update({**base_fields, "cve_id": ""})
             findings.append(f)
 
-        ml_findings = scan_composite_multiline(action_yml_content, action_yml_path)
-        for f in ml_findings:
+        injection_findings = scan_composite_run_blocks(
+            action_yml_content,
+            action_yml_path,
+        )
+        for f in injection_findings:
             f.update({**base_fields, "cve_id": ""})
             findings.append(f)
 
