@@ -1,63 +1,63 @@
-action,kvcw_reason,via_vulnerable_action,categories,max_severity,finding_count,versions_with_findings,notes
-adafruit/workflows-circuitpython-libs/build,direct,,input_injection; unsafe_cred_handling,high,6,main,Has scanner findings. Label KVCW if workflow uses this action.
-adafruit/workflows-circuitpython-libs/release-gh,direct,,input_injection; unsafe_cred_handling,high,6,main,Has scanner findings. Label KVCW if workflow uses this action.
-atlassian/gajira-create,direct,,deprecated_runtime; known_cve,high,2,master,Has scanner findings. Label KVCW if workflow uses this action.
-bcgov/action-diff-triggers,direct,,input_injection,high,4,0d193029efd26c76aeacaa84aba3328de8198370,Has scanner findings. Label KVCW if workflow uses this action.
-chainguard-dev/actions/kind-diag,direct,,input_injection; insecure_download,high,13,29fb6e979a0b3efc79748a17e8cec08d0594cbfd,Has scanner findings. Label KVCW if workflow uses this action.
-chainguard-dev/actions/setup-kind,direct,,input_injection; unsafe_cred_handling,high,16,29fb6e979a0b3efc79748a17e8cec08d0594cbfd,Has scanner findings. Label KVCW if workflow uses this action.
-codacy/git-version,direct,,input_injection,high,12,2.7.1,Has scanner findings. Label KVCW if workflow uses this action.
-codecov/codecov-action,direct,,input_injection,high,4,v5,Has scanner findings. Label KVCW if workflow uses this action.
-it-at-m/lhm_actions/action-templates/actions/action-maven-build,direct,,input_injection,high,1,9767179088fd2e344d1a24c17404ab809a60f1b6,Has scanner findings. Label KVCW if workflow uses this action.
-it-at-m/lhm_actions/action-templates/actions/action-npm-build,direct,,input_injection,high,4,9767179088fd2e344d1a24c17404ab809a60f1b6,Has scanner findings. Label KVCW if workflow uses this action.
-ko-build/setup-ko,direct,,input_injection,high,2,d982fec422852203cfb2053a8ec6ad302280d04d,Has scanner findings. Label KVCW if workflow uses this action.
-leodido/rn2md,direct,,input_injection; unsafe_cred_handling,high,7,9c351d81278644c0e17b1ca68edbdba305276c73,Has scanner findings. Label KVCW if workflow uses this action.
-luchihoratiu/notify-via-slack,direct,,input_injection,high,5,main,Has scanner findings. Label KVCW if workflow uses this action.
-nextcloud-releases/nextcloud-appstore-push-action,direct,,input_injection,high,8,a011fe619bcf6e77ddebc96f9908e1af4071b9c1,Has scanner findings. Label KVCW if workflow uses this action.
-nosborn/github-action-markdown-cli,direct,,input_injection,high,4,v3.3.0,Has scanner findings. Label KVCW if workflow uses this action.
-ocicl/ocicl-action,direct,,input_injection,high,1,main,Has scanner findings. Label KVCW if workflow uses this action.
-ocicl/ocicl-action/update-check,direct,,input_injection,high,3,main,Has scanner findings. Label KVCW if workflow uses this action.
-ory/ci/licenses/write,direct,,input_injection,high,2,master,Has scanner findings. Label KVCW if workflow uses this action.
-pre-commit/action,direct,,input_injection,high,2,2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd; v3.0.1,Has scanner findings. Label KVCW if workflow uses this action.
-re-actors/alls-green,direct,,input_injection,high,3,release/v1,Has scanner findings. Label KVCW if workflow uses this action.
-rossjrw/pr-preview-action,direct,,input_injection,high,11,v1,Has scanner findings. Label KVCW if workflow uses this action.
-securego/gosec,direct,,input_injection,high,1,master,Has scanner findings. Label KVCW if workflow uses this action.
-tj-actions/changed-files,direct,,known_cve,high,2,,Has scanner findings. Label KVCW if workflow uses this action.
-LouisBrunner/checks-action,direct,,deprecated_runtime; network_exfil,medium,2,v1.6.0,Has scanner findings. Label KVCW if workflow uses this action.
-cla-assistant/github-action,direct,,deprecated_runtime; network_exfil,medium,2,v2.1.2-beta,Has scanner findings. Label KVCW if workflow uses this action.
-crazy-max/ghaction-github-status,direct,,network_exfil,medium,2,v4,Has scanner findings. Label KVCW if workflow uses this action.
-docker/build-push-action,direct,,deprecated_runtime; network_exfil,medium,2,ac9327eae2b366085ac7f6a2d02df8aa8ead720a; v6,Has scanner findings. Label KVCW if workflow uses this action.
-redhat-actions/openshift-tools-installer,direct,,network_exfil; unsafe_cred_handling,medium,2,v1,Has scanner findings. Label KVCW if workflow uses this action.
-shivammathur/setup-php,direct,,known_cve; network_exfil,medium,3,c541c155eee45413f5b09a52248675b1a2575231,Has scanner findings. Label KVCW if workflow uses this action.
-softprops/action-gh-release,direct,,network_exfil,medium,2,c95fe1489396fe8a9eb87c0abf8aa5b2ef267fda,Has scanner findings. Label KVCW if workflow uses this action.
-step-security/harden-runner,direct,,known_cve,medium,5,,Has scanner findings. Label KVCW if workflow uses this action.
-1password/load-secrets-action,direct,,deprecated_runtime,low,1,6d1c2654be9ad019ca5c3839a61e91f6f1c10635,Has scanner findings. Label KVCW if workflow uses this action.
-actions-ecosystem/action-remove-labels,direct,,deprecated_runtime,low,1,2ce5d41b4b6aa8503e285553f75ed56e0a40bae0,Has scanner findings. Label KVCW if workflow uses this action.
-adafruit/circuitpython-action-library-ci-failed,direct,,deprecated_runtime,low,1,v1,Has scanner findings. Label KVCW if workflow uses this action.
-amannn/action-semantic-pull-request,direct,,deprecated_runtime,low,2,v4; v5.0.2,Has scanner findings. Label KVCW if workflow uses this action.
-atlassian/gajira-login,direct,,deprecated_runtime,low,1,master,Has scanner findings. Label KVCW if workflow uses this action.
-aws-actions/configure-aws-credentials,direct,,deprecated_runtime,low,1,v1,Has scanner findings. Label KVCW if workflow uses this action.
-azure/login,direct,,deprecated_runtime,low,1,v1,Has scanner findings. Label KVCW if workflow uses this action.
-bytecodealliance/label-messager-action,direct,,deprecated_runtime,low,1,v1,Has scanner findings. Label KVCW if workflow uses this action.
-bytecodealliance/labeler,direct,,deprecated_runtime,low,1,schedule-fork,Has scanner findings. Label KVCW if workflow uses this action.
-bytecodealliance/subscribe-to-label-action,direct,,deprecated_runtime,low,1,v1,Has scanner findings. Label KVCW if workflow uses this action.
-conda-incubator/setup-miniconda,direct,,deprecated_runtime,low,1,v2.1.1,Has scanner findings. Label KVCW if workflow uses this action.
-databricks/run-notebook,direct,,deprecated_runtime,low,1,v0,Has scanner findings. Label KVCW if workflow uses this action.
-dependabot/fetch-metadata,direct,,deprecated_runtime,low,1,v1,Has scanner findings. Label KVCW if workflow uses this action.
-docker/login-action,direct,,deprecated_runtime,low,1,28218f9b04b4f3f62068d7b6ce6ca5b26e35336c,Has scanner findings. Label KVCW if workflow uses this action.
-docker/metadata-action,direct,,deprecated_runtime,low,1,98669ae865ea3cffbcbaa878cf57c20bbf1c6c38,Has scanner findings. Label KVCW if workflow uses this action.
-dorny/paths-filter,direct,,deprecated_runtime,low,1,v2,Has scanner findings. Label KVCW if workflow uses this action.
-engineerd/setup-kind,direct,,deprecated_runtime,low,1,v0.5.0,Has scanner findings. Label KVCW if workflow uses this action.
-gradle/wrapper-validation-action,direct,,deprecated_runtime,low,1,v1,Has scanner findings. Label KVCW if workflow uses this action.
-mshick/add-pr-comment,direct,,deprecated_runtime,low,1,v1,Has scanner findings. Label KVCW if workflow uses this action.
-ory/ci/conventional_commit_config,direct,,deprecated_runtime,low,1,master,Has scanner findings. Label KVCW if workflow uses this action.
-peter-evans/create-or-update-comment,direct,,deprecated_runtime,low,1,v3,Has scanner findings. Label KVCW if workflow uses this action.
-peter-evans/find-comment,direct,,deprecated_runtime,low,1,v2,Has scanner findings. Label KVCW if workflow uses this action.
-pozil/auto-assign-issue,direct,,deprecated_runtime,low,1,v1.3.0,Has scanner findings. Label KVCW if workflow uses this action.
-pypa/gh-action-pypi-publish,direct,,known_cve,low,2,,Has scanner findings. Label KVCW if workflow uses this action.
-skjnldsv/xpath-action,direct,,deprecated_runtime,low,1,7e6a7c379d0e9abc8acaef43df403ab4fc4f770c,Has scanner findings. Label KVCW if workflow uses this action.
-superbrothers/close-pull-request,direct,,deprecated_runtime,low,1,v3,Has scanner findings. Label KVCW if workflow uses this action.
-test-room-7/action-update-file,direct,,deprecated_runtime,low,1,v1,Has scanner findings. Label KVCW if workflow uses this action.
-astral-sh/ruff-action,both,tj-actions/changed-files,input_injection; known_cve,high,4,v1,Has own findings AND nests vulnerable action(s). Label KVCW if workflow uses this action.
-bcgov/action-builder-ghcr,both,bcgov/action-diff-triggers; docker/build-push-action,input_injection; insecure_download; network_exfil; unsafe_cred_handling,high,13,1a3767a04ade69edf7e4857c44269d1100282581,Has own findings AND nests vulnerable action(s). Label KVCW if workflow uses this action.
-cisagov/action-job-preamble,transitive,crazy-max/ghaction-github-status,network_exfil,medium,2,,No own scanner findings; nests vulnerable action(s). Label KVCW if workflow uses this action.
-aio-libs/create-release,transitive,pypa/gh-action-pypi-publish,known_cve,low,1,,No own scanner findings; nests vulnerable action(s). Label KVCW if workflow uses this action.
+action,kvcw_reason,via_vulnerable_action,categories,max_severity,finding_count,versions_with_findings,cve_ids,vulnerable_version_ranges,first_patched_versions,version_matches,notes
+adafruit/workflows-circuitpython-libs/build,direct,,input_injection; unsafe_cred_handling,high,6,main,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+adafruit/workflows-circuitpython-libs/release-gh,direct,,input_injection; unsafe_cred_handling,high,6,main,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+atlassian/gajira-create,direct,,deprecated_runtime; known_cve,high,2,master,CVE-2020-14188,< 2.0.1,,master:unknown,Has scanner findings. Label KVCW if workflow uses this action. CVE ranges: < 2.0.1.
+bcgov/action-diff-triggers,direct,,input_injection,high,4,0d193029efd26c76aeacaa84aba3328de8198370,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+chainguard-dev/actions/kind-diag,direct,,input_injection; insecure_download,high,13,29fb6e979a0b3efc79748a17e8cec08d0594cbfd,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+chainguard-dev/actions/setup-kind,direct,,input_injection; unsafe_cred_handling,high,16,29fb6e979a0b3efc79748a17e8cec08d0594cbfd,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+codacy/git-version,direct,,input_injection,high,12,2.7.1,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+codecov/codecov-action,direct,,input_injection,high,4,v5,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+it-at-m/lhm_actions/action-templates/actions/action-maven-build,direct,,input_injection,high,1,9767179088fd2e344d1a24c17404ab809a60f1b6,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+it-at-m/lhm_actions/action-templates/actions/action-npm-build,direct,,input_injection,high,4,9767179088fd2e344d1a24c17404ab809a60f1b6,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+ko-build/setup-ko,direct,,input_injection,high,2,d982fec422852203cfb2053a8ec6ad302280d04d,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+leodido/rn2md,direct,,input_injection; unsafe_cred_handling,high,7,9c351d81278644c0e17b1ca68edbdba305276c73,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+luchihoratiu/notify-via-slack,direct,,input_injection,high,5,main,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+nextcloud-releases/nextcloud-appstore-push-action,direct,,input_injection,high,8,a011fe619bcf6e77ddebc96f9908e1af4071b9c1,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+nosborn/github-action-markdown-cli,direct,,input_injection,high,4,v3.3.0,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+ocicl/ocicl-action,direct,,input_injection,high,1,main,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+ocicl/ocicl-action/update-check,direct,,input_injection,high,3,main,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+ory/ci/licenses/write,direct,,input_injection,high,2,master,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+pre-commit/action,direct,,input_injection,high,2,2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd; v3.0.1,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+re-actors/alls-green,direct,,input_injection,high,3,release/v1,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+rossjrw/pr-preview-action,direct,,input_injection,high,11,v1,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+securego/gosec,direct,,input_injection,high,1,master,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+tj-actions/changed-files,direct,,known_cve,high,1,v45,CVE-2025-30066,<= 45.0.7,,v45:yes,Has scanner findings. Label KVCW if workflow uses this action. CVE ranges: <= 45.0.7.
+LouisBrunner/checks-action,direct,,deprecated_runtime; network_exfil,medium,2,v1.6.0,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+cla-assistant/github-action,direct,,deprecated_runtime; network_exfil,medium,2,v2.1.2-beta,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+crazy-max/ghaction-github-status,direct,,network_exfil,medium,2,v4,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+docker/build-push-action,direct,,deprecated_runtime; network_exfil,medium,2,ac9327eae2b366085ac7f6a2d02df8aa8ead720a; v6,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+redhat-actions/openshift-tools-installer,direct,,network_exfil; unsafe_cred_handling,medium,2,v1,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+shivammathur/setup-php,direct,,known_cve; network_exfil,medium,3,c541c155eee45413f5b09a52248675b1a2575231,CVE-2026-46420,">= 2.25.0, < 2.37.1; < 2.37.1",,c541c155eee45413f5b09a52248675b1a2575231:unknown,"Has scanner findings. Label KVCW if workflow uses this action. CVE ranges: >= 2.25.0, < 2.37.1; < 2.37.1."
+softprops/action-gh-release,direct,,network_exfil,medium,2,c95fe1489396fe8a9eb87c0abf8aa5b2ef267fda,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+step-security/harden-runner,direct,,known_cve,medium,10,cb605e52c26070c328afc4562f0b4ada7618a84e; v2,CVE-2026-32947; CVE-2026-25598; CVE-2026-32946; CVE-2025-32955; CVE-2024-52587,2.15.1; < v2.14.2; > 0.12.0; < v2.10.2,,v2:unknown; v2:yes; cb605e52c26070c328afc4562f0b4ada7618a84e:unknown,Has scanner findings. Label KVCW if workflow uses this action. CVE ranges: 2.15.1; < v2.14.2; > 0.12.0; < v2.10.2.
+1password/load-secrets-action,direct,,deprecated_runtime,low,1,6d1c2654be9ad019ca5c3839a61e91f6f1c10635,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+actions-ecosystem/action-remove-labels,direct,,deprecated_runtime,low,1,2ce5d41b4b6aa8503e285553f75ed56e0a40bae0,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+adafruit/circuitpython-action-library-ci-failed,direct,,deprecated_runtime,low,1,v1,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+amannn/action-semantic-pull-request,direct,,deprecated_runtime,low,2,v4; v5.0.2,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+atlassian/gajira-login,direct,,deprecated_runtime,low,1,master,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+aws-actions/configure-aws-credentials,direct,,deprecated_runtime,low,1,v1,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+azure/login,direct,,deprecated_runtime,low,1,v1,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+bytecodealliance/label-messager-action,direct,,deprecated_runtime,low,1,v1,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+bytecodealliance/labeler,direct,,deprecated_runtime,low,1,schedule-fork,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+bytecodealliance/subscribe-to-label-action,direct,,deprecated_runtime,low,1,v1,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+conda-incubator/setup-miniconda,direct,,deprecated_runtime,low,1,v2.1.1,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+databricks/run-notebook,direct,,deprecated_runtime,low,1,v0,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+dependabot/fetch-metadata,direct,,deprecated_runtime,low,1,v1,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+docker/login-action,direct,,deprecated_runtime,low,1,28218f9b04b4f3f62068d7b6ce6ca5b26e35336c,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+docker/metadata-action,direct,,deprecated_runtime,low,1,98669ae865ea3cffbcbaa878cf57c20bbf1c6c38,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+dorny/paths-filter,direct,,deprecated_runtime,low,1,v2,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+engineerd/setup-kind,direct,,deprecated_runtime,low,1,v0.5.0,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+gradle/wrapper-validation-action,direct,,deprecated_runtime,low,1,v1,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+mshick/add-pr-comment,direct,,deprecated_runtime,low,1,v1,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+ory/ci/conventional_commit_config,direct,,deprecated_runtime,low,1,master,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+peter-evans/create-or-update-comment,direct,,deprecated_runtime,low,1,v3,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+peter-evans/find-comment,direct,,deprecated_runtime,low,1,v2,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+pozil/auto-assign-issue,direct,,deprecated_runtime,low,1,v1.3.0,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+pypa/gh-action-pypi-publish,direct,,known_cve,low,2,v1.4.2; v1.5.0,,<= v1.12.4,,v1.5.0:yes; v1.4.2:yes,Has scanner findings. Label KVCW if workflow uses this action. CVE ranges: <= v1.12.4.
+skjnldsv/xpath-action,direct,,deprecated_runtime,low,1,7e6a7c379d0e9abc8acaef43df403ab4fc4f770c,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+superbrothers/close-pull-request,direct,,deprecated_runtime,low,1,v3,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+test-room-7/action-update-file,direct,,deprecated_runtime,low,1,v1,,,,,Has scanner findings. Label KVCW if workflow uses this action.
+astral-sh/ruff-action,both,tj-actions/changed-files,input_injection; known_cve,high,4,v1,CVE-2025-30066,<= 45.0.7,,v45:yes,Has own findings AND nests vulnerable action(s). Label KVCW if workflow uses this action. CVE ranges: <= 45.0.7.
+bcgov/action-builder-ghcr,both,bcgov/action-diff-triggers; docker/build-push-action,input_injection; insecure_download; network_exfil; unsafe_cred_handling,high,13,1a3767a04ade69edf7e4857c44269d1100282581,,,,,Has own findings AND nests vulnerable action(s). Label KVCW if workflow uses this action.
+cisagov/action-job-preamble,transitive,crazy-max/ghaction-github-status,network_exfil,medium,2,,,,,,No own scanner findings; nests vulnerable action(s). Label KVCW if workflow uses this action.
+aio-libs/create-release,transitive,pypa/gh-action-pypi-publish,known_cve,low,1,,,<= v1.12.4,,v1.5.0:yes,No own scanner findings; nests vulnerable action(s). Label KVCW if workflow uses this action. CVE ranges: <= v1.12.4.

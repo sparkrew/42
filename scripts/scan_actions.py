@@ -9,6 +9,10 @@ dangerous patterns, checks for known CVEs, and outputs vulnerable_actions.csv.
 For composite actions, also discovers nested `uses:` references and recursively
 scans those transitive actions (unlimited depth, cycle detection). Official
 owners are recorded as deps but not scanned.
+
+CVE/advisory findings include vulnerable_version_range and first_patched_version
+from GitHub Advisories, and are emitted per used ref with version_match
+(yes/no/unknown). Clearly unaffected refs (version_match=no) are omitted.
 """
 
 import base64
@@ -290,38 +294,152 @@ def fetch_file_try_names(
 
 
 # ---------------------------------------------------------------------------
-# CVE / Advisory lookup
+# CVE / Advisory lookup (version-aware)
 # ---------------------------------------------------------------------------
 
+SHA_FULL_RE = re.compile(r"^[0-9a-f]{40}$", re.I)
+NON_VERSION_REFS = {
+    "main", "master", "develop", "dev", "head", "trunk", "latest", "default",
+}
+
+
+def _advisory_version_fields(adv: dict, owner: str, repo: str) -> tuple[str, str]:
+    """Extract vulnerable_version_range and first_patched_version for this package."""
+    target = f"{owner}/{repo}".lower()
+    ranges: list[str] = []
+    patched: list[str] = []
+
+    for vuln in adv.get("vulnerabilities") or []:
+        if not isinstance(vuln, dict):
+            continue
+        pkg = vuln.get("package") or {}
+        name = str(pkg.get("name") or "").lower()
+        eco = str(pkg.get("ecosystem") or "").lower()
+        if name and name != target:
+            # Keep close matches (e.g. same repo name); skip unrelated packages
+            if eco == "actions" and target not in name and not name.endswith("/" + repo.lower()):
+                continue
+            if eco not in ("actions", ""):
+                continue
+
+        vr = str(vuln.get("vulnerable_version_range") or "").strip()
+        fp = str(vuln.get("first_patched_version") or "").strip()
+        if vr and vr not in ranges:
+            ranges.append(vr)
+        if fp and fp not in patched:
+            patched.append(fp)
+
+    return "; ".join(ranges), "; ".join(patched)
+
+
+def github_range_to_specifier(range_str: str):
+    """Convert a GitHub advisory range (e.g. '<= 45.0.7') to a SpecifierSet."""
+    from packaging.specifiers import SpecifierSet
+
+    parts = []
+    for part in range_str.split(","):
+        part = part.strip()
+        if not part:
+            continue
+        part = re.sub(r"^(>=|<=|>|<|==|!=)\s+", r"\1", part)
+        parts.append(part)
+    if not parts:
+        return None
+    try:
+        return SpecifierSet(",".join(parts))
+    except Exception:
+        return None
+
+
+def normalize_ref_to_version(ref: str) -> str | None:
+    """Return a parseable semver-like string from a git ref, or None if not comparable."""
+    from packaging.version import Version
+
+    if not ref:
+        return None
+    ref = str(ref).strip()
+    if not ref or SHA_FULL_RE.match(ref):
+        return None
+    if ref.lower() in NON_VERSION_REFS or "/" in ref:
+        return None
+
+    candidate = ref[1:] if ref[:1] in ("v", "V") else ref
+    try:
+        Version(candidate)
+        return candidate
+    except Exception:
+        return None
+
+
+def ref_matches_advisory_range(ref: str, range_str: str) -> str:
+    """Return 'yes', 'no', or 'unknown' for whether ref falls in vulnerable ranges."""
+    from packaging.version import Version
+
+    if not range_str or not str(range_str).strip():
+        return "unknown"
+
+    ver = normalize_ref_to_version(ref)
+    if ver is None:
+        return "unknown"
+
+    version = Version(ver)
+    saw_parseable = False
+    for rng in str(range_str).split(";"):
+        rng = rng.strip()
+        if not rng:
+            continue
+        spec = github_range_to_specifier(rng)
+        if spec is None:
+            continue
+        saw_parseable = True
+        try:
+            if version in spec:
+                return "yes"
+        except Exception:
+            return "unknown"
+
+    if not saw_parseable:
+        return "unknown"
+    return "no"
+
+
 def check_advisories(owner: str, repo: str) -> list[dict]:
-    """Check GitHub Advisory Database for known vulnerabilities."""
+    """Check GitHub Advisory Database for known vulnerabilities (with version ranges)."""
     advisories_found = []
+    seen_keys: set[str] = set()
+
+    def _add(adv: dict, default_state: str = "") -> None:
+        cve_id = adv.get("cve_id", "") or ""
+        ghsa = adv.get("ghsa_id", "") or ""
+        key = cve_id or ghsa or adv.get("html_url", "") or adv.get("summary", "")
+        if not key or key in seen_keys:
+            return
+        seen_keys.add(key)
+
+        vuln_range, first_patched = _advisory_version_fields(adv, owner, repo)
+        advisories_found.append({
+            "cve_id": cve_id,
+            "summary": adv.get("summary", ""),
+            "severity": adv.get("severity", ""),
+            "state": adv.get("state", default_state),
+            "html_url": adv.get("html_url", ""),
+            "vulnerable_version_range": vuln_range,
+            "first_patched_version": first_patched,
+        })
 
     # Repository-level advisories
     data = gh_api(f"/repos/{owner}/{repo}/security-advisories")
     if isinstance(data, list):
         for adv in data:
-            advisories_found.append({
-                "cve_id": adv.get("cve_id", ""),
-                "summary": adv.get("summary", ""),
-                "severity": adv.get("severity", ""),
-                "state": adv.get("state", ""),
-                "html_url": adv.get("html_url", ""),
-            })
+            if isinstance(adv, dict):
+                _add(adv)
 
     # Global advisory search
     data = gh_api(f"/advisories?affects={owner}/{repo}&type=reviewed&per_page=10")
     if isinstance(data, list):
         for adv in data:
-            cve_id = adv.get("cve_id", "")
-            if cve_id and not any(a["cve_id"] == cve_id for a in advisories_found):
-                advisories_found.append({
-                    "cve_id": cve_id,
-                    "summary": adv.get("summary", ""),
-                    "severity": adv.get("severity", ""),
-                    "state": adv.get("state", "published"),
-                    "html_url": adv.get("html_url", ""),
-                })
+            if isinstance(adv, dict):
+                _add(adv, default_state="published")
 
     time.sleep(0.4)
     return advisories_found
@@ -597,10 +715,17 @@ def finding_base(row: dict, ref: str, parent_action: str = "", depth: int = 0) -
 def advisory_findings(
     row: dict,
     advisory_cache: dict,
+    ref: str = "",
     parent_action: str = "",
     depth: int = 0,
 ) -> list[dict]:
-    """Look up and return known CVE/advisory findings for this action's repo."""
+    """Return known CVE/advisory findings for this action at a specific ref.
+
+    Uses GitHub advisory vulnerable_version_range when available:
+    - version_match=yes  → emit (ref in range)
+    - version_match=no   → skip (ref clearly outside range)
+    - version_match=unknown → emit (SHA/branch/unparseable, or missing range)
+    """
     owner = clean_field(row.get("owner", ""))
     repo = clean_field(row.get("repo", ""))
     if not owner or not repo:
@@ -612,16 +737,34 @@ def advisory_findings(
 
     findings: list[dict] = []
     for adv in advisory_cache[repo_key]:
-        if adv.get("state") in ("published", "reviewed", None, ""):
-            findings.append({
-                **finding_base(row, "", parent_action, depth),
-                "vulnerability_category": "known_cve",
-                "pattern_matched": adv.get("summary", "Advisory found")[:200],
-                "file_path": adv.get("html_url", ""),
-                "evidence_snippet": adv.get("summary", "")[:200],
-                "severity": adv.get("severity", "high"),
-                "cve_id": adv.get("cve_id", ""),
-            })
+        if adv.get("state") not in ("published", "reviewed", None, ""):
+            continue
+
+        vuln_range = adv.get("vulnerable_version_range", "") or ""
+        first_patched = adv.get("first_patched_version", "") or ""
+        match = ref_matches_advisory_range(ref, vuln_range)
+        if match == "no":
+            continue
+
+        range_note = vuln_range or "(no range in advisory)"
+        patched_note = first_patched or "?"
+        evidence = (
+            f"{adv.get('summary', '')[:120]} | affected: {range_note} | "
+            f"patched: {patched_note} | ref@{ref or 'default'}: {match}"
+        )[:200]
+
+        findings.append({
+            **finding_base(row, ref, parent_action, depth),
+            "vulnerability_category": "known_cve",
+            "pattern_matched": adv.get("summary", "Advisory found")[:200],
+            "file_path": adv.get("html_url", ""),
+            "evidence_snippet": evidence,
+            "severity": adv.get("severity", "high"),
+            "cve_id": adv.get("cve_id", ""),
+            "vulnerable_version_range": vuln_range,
+            "first_patched_version": first_patched,
+            "version_match": match,
+        })
     return findings
 
 
@@ -675,6 +818,17 @@ def scan_action_at_ref(
     if depth > 0:
         via = f" via {parent_action}" if parent_action else ""
         print(f"{indent}[depth={depth}{via}] {action_label}@{ref or 'default'}")
+
+    # Version-aware CVE / advisory check for this exact ref
+    findings.extend(
+        advisory_findings(
+            row,
+            advisory_cache,
+            ref=ref,
+            parent_action=parent_action,
+            depth=depth,
+        )
+    )
 
     # Fetch action.yml / action.yaml at this ref
     action_yml_content, action_yml_path = fetch_file_try_names(
@@ -803,11 +957,6 @@ def scan_action_at_ref(
             )
             findings.extend(child_findings)
 
-            # CVE / advisory check for transitive child (once per first visit)
-            findings.extend(
-                advisory_findings(child_row, advisory_cache, action_label, depth + 1)
-            )
-
     return findings
 
 
@@ -871,15 +1020,15 @@ def main():
         print(f"[{idx+1}/{len(df)}] {action}")
         print(f"  versions to scan ({len(refs) or 1}): {refs_label}")
 
-        # Scan source code at each used ref (and transitive composite deps)
+        # Scan source code + version-aware CVEs at each used ref (and transitive deps)
         action_findings = scan_action(row_dict, scanned_keys, advisory_cache)
         all_findings.extend(action_findings)
 
-        # CVE / advisory check for root action (repo-wide, not version-specific)
-        all_findings.extend(advisory_findings(row_dict, advisory_cache))
-
         pattern_findings = [
             f for f in action_findings if f.get("vulnerability_category") != "known_cve"
+        ]
+        cve_findings = [
+            f for f in action_findings if f.get("vulnerability_category") == "known_cve"
         ]
         if pattern_findings:
             versions_with_findings = sorted(set(f["version"] for f in pattern_findings))
@@ -889,13 +1038,24 @@ def main():
                 f"across {len(versions_with_findings)} version(s)"
                 + (f" ({transitive_count} transitive)" if transitive_count else "")
             )
+        if cve_findings:
+            print(
+                f"  => {len(cve_findings)} CVE/advisory finding(s) "
+                f"(version_match: "
+                + ", ".join(
+                    f"{f.get('version') or 'default'}={f.get('version_match')}"
+                    for f in cve_findings
+                )
+                + ")"
+            )
         print()
 
     # Write output
     fieldnames = [
         "action", "owner", "repo", "version", "github_url", "vulnerability_category",
         "pattern_matched", "file_path", "evidence_snippet", "severity",
-        "cve_id", "usage_count", "workflow_count",
+        "cve_id", "vulnerable_version_range", "first_patched_version", "version_match",
+        "usage_count", "workflow_count",
         "parent_action", "depth", "is_transitive",
     ]
 
