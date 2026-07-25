@@ -28,6 +28,8 @@ DEPRECATED_MAJOR = {
     ("actions/download-artifact", "v3"),
     ("actions/github-script", "v5"),
     ("actions/github-script", "v6"),
+    ("actions/setup-python", "v4"),
+
 }
 
 
