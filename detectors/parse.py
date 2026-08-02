@@ -154,7 +154,10 @@ def extract_run_blocks(text: str) -> list[tuple[int, str]]:
     blocks: list[tuple[int, str]] = []
     i = 0
     while i < len(lines):
-        m = re.match(r"^(\s*)run:\s*(.*)$", lines[i])
+        # A step may consist solely of ``- run: ...``.  In that form the YAML
+        # sequence marker is on the run line itself rather than on a preceding
+        # ``- name:`` line.
+        m = re.match(r"^(\s*)(?:-\s*)?run:\s*(.*)$", lines[i])
         if not m:
             i += 1
             continue

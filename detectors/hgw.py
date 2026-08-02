@@ -15,6 +15,43 @@ from detectors.parse import (
     walk_jobs,
 )
 
+SCRIPTED_CI = re.compile(
+    r"(?:^|\s)(?:\./|bash\s+|sh\s+)[\w./-]*(?:build|test|compile|generate|gen-)[\w.-]*\.sh\b",
+    re.I | re.M,
+)
+
+
+def _without_yaml_comments(text: str) -> str:
+    """Remove YAML comments without treating scanner names in comments as steps."""
+    cleaned: list[str] = []
+    for line in text.splitlines():
+        quote: str | None = None
+        escaped = False
+        cut = len(line)
+        for i, char in enumerate(line):
+            if escaped:
+                escaped = False
+                continue
+            if char == "\\" and quote == '"':
+                escaped = True
+                continue
+            if char in {"'", '"'}:
+                quote = None if quote == char else (char if quote is None else quote)
+            elif char == "#" and quote is None:
+                cut = i
+                break
+        cleaned.append(line[:cut])
+    return "\n".join(cleaned)
+
+
+def _delegated_security_scan(ctx: WorkflowContext) -> bool:
+    """Recognize scanning explicitly named by a reusable workflow/action call."""
+    for _, job in walk_jobs(ctx.data):
+        uses = str(job.get("uses") or "")
+        if uses and text_has_security_scan(uses):
+            return True
+    return False
+
 
 def _is_delegated_deploy_orchestrator(ctx: WorkflowContext) -> bool:
     """PR/environment deploy workflows that do not build or test sources locally.
@@ -53,15 +90,19 @@ def _is_delegated_deploy_orchestrator(ctx: WorkflowContext) -> bool:
 
 
 def detect(ctx: WorkflowContext) -> list[Label]:
+    # Resolve evidence visible in the caller first. If the corpus does not
+    # include a reusable callee, do not turn that absence into an HGW finding.
+    # Explicit scanner names in a delegated call are still recognized below.
     if solely_reusable_orchestrator(ctx.data):
         return []
     if effectively_reusable_orchestrator(ctx.data):
         return []
     if _is_delegated_deploy_orchestrator(ctx):
         return []
-    if not looks_like_ci(ctx.text, ctx.purpose, ctx.data):
+    uncommented = _without_yaml_comments(ctx.text)
+    if not looks_like_ci(uncommented, ctx.purpose, ctx.data) and not SCRIPTED_CI.search(uncommented):
         return []
-    if text_has_security_scan(ctx.text):
+    if text_has_security_scan(uncommented) or _delegated_security_scan(ctx):
         return []
 
     return [

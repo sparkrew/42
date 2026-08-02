@@ -89,15 +89,22 @@ def _workflow_permissions_empty(perm: Any) -> bool:
     return isinstance(perm, dict) and not perm
 
 
+def _has_write_candidate(perm: Any) -> bool:
+    """Recall-first signal for manual review of every explicit write grant."""
+    return perm == "write-all" or bool(permissions_write_scopes(perm))
+
+
 def detect(ctx: WorkflowContext) -> list[Label]:
     data = ctx.data
     jobs = walk_jobs(data)
     wf_has = "permissions" in data
     labels: list[Label] = []
 
-    # Missing permissions entirely (neither workflow nor every job declares them)
+    # Missing permissions entirely (neither workflow nor every job declares
+    # them). Do not return early: explicit job-level write grants must also be
+    # emitted as separate manual-review candidates at their exact lines.
     if not wf_has:
-        if not jobs:
+        if not jobs or not all("permissions" in j for _, j in jobs):
             labels.append(
                 Label(
                     workflow_blob_url=ctx.url,
@@ -105,28 +112,14 @@ def detect(ctx: WorkflowContext) -> list[Label]:
                     weakness_type=EPW,
                     evidence="missing permissions: block",
                     explanation=(
-                        "No permissions: block at workflow or all job levels; GITHUB_TOKEN "
-                        "defaults to broad permissions that a compromised step could abuse."
+                        "No permissions: block at workflow or all job levels. Effective "
+                        "GITHUB_TOKEN access depends on repository/organization defaults, "
+                        "so least privilege cannot be verified from this workflow."
                     ),
                 )
             )
-            return labels
-        if not all("permissions" in j for _, j in jobs):
-            labels.append(
-                Label(
-                    workflow_blob_url=ctx.url,
-                    line_number=1,
-                    weakness_type=EPW,
-                    evidence="missing permissions: block",
-                    explanation=(
-                        "No permissions: block at workflow or all job levels; GITHUB_TOKEN "
-                        "defaults to broad permissions that a compromised step could abuse."
-                    ),
-                )
-            )
-            return labels
         for jname, job in jobs:
-            if _block_excessive(job.get("permissions"), jname, job, ctx.text):
+            if "permissions" in job and _has_write_candidate(job.get("permissions")):
                 pline = _perm_line_for_job(ctx, jname) or 1
                 labels.append(
                     Label(
@@ -135,8 +128,8 @@ def detect(ctx: WorkflowContext) -> list[Label]:
                         weakness_type=EPW,
                         evidence=_perm_evidence(ctx, pline),
                         explanation=(
-                            "Permissions grant write scopes broader than needed; "
-                            "a compromised step could abuse the GITHUB_TOKEN."
+                            "Explicit job-level write permission requires manual review "
+                            "to confirm that the scope is necessary and actually used."
                         ),
                     )
                 )
@@ -145,7 +138,7 @@ def detect(ctx: WorkflowContext) -> list[Label]:
     # Workflow-level permissions present.
     # permissions: {} is intentional least privilege — not missing, not excessive.
     if not _workflow_permissions_empty(data.get("permissions")):
-        if _block_excessive(data.get("permissions"), "", {}, ctx.text):
+        if _has_write_candidate(data.get("permissions")):
             pline = find_key_line(ctx.text, "permissions") or 1
             labels.append(
                 Label(
@@ -154,8 +147,8 @@ def detect(ctx: WorkflowContext) -> list[Label]:
                     weakness_type=EPW,
                     evidence=_perm_evidence(ctx, pline),
                     explanation=(
-                        "Permissions grant write scopes broader than needed (or write-all); "
-                        "a compromised step could abuse the GITHUB_TOKEN."
+                        "Explicit workflow-level write permission requires manual review "
+                        "to confirm that every granted scope is necessary."
                     ),
                 )
             )
@@ -164,7 +157,7 @@ def detect(ctx: WorkflowContext) -> list[Label]:
     for jname, job in jobs:
         if "permissions" not in job:
             continue
-        if _block_excessive(job.get("permissions"), jname, job, ctx.text):
+        if _has_write_candidate(job.get("permissions")):
             pline = _perm_line_for_job(ctx, jname) or find_key_line(ctx.text, "permissions") or 1
             labels.append(
                 Label(
@@ -173,8 +166,8 @@ def detect(ctx: WorkflowContext) -> list[Label]:
                     weakness_type=EPW,
                     evidence=_perm_evidence(ctx, pline),
                     explanation=(
-                        "Job-level permissions grant write scopes broader than needed; "
-                        "a compromised step could abuse the GITHUB_TOKEN."
+                        "Explicit job-level write permission requires manual review to "
+                        "confirm that the scope is necessary and actually used."
                     ),
                 )
             )
