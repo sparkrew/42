@@ -1,14 +1,14 @@
 """
 Scan standalone GitHub Actions for vulnerabilities.
 
-Reads actions_used.csv, filters to non-official standalone actions (excluding
-actions/*, github/*, and reusable workflows), fetches source code at each
+Reads actions_used.csv, filters to standalone actions (including official
+actions/* and github/* owners by default, but excluding reusable workflows), fetches source code at each
 used ref (from tag_versions and sha_versions) via the GitHub API, scans for
 dangerous patterns, checks for known CVEs, and outputs vulnerable_actions.csv.
 
 For composite actions, also discovers nested `uses:` references and recursively
 scans those transitive actions (unlimited depth, cycle detection). Official
-owners are recorded as deps but not scanned.
+owners are scanned like other dependencies.
 
 CVE/advisory findings include vulnerable_version_range and first_patched_version
 from GitHub Advisories, and are emitted per used ref with version_match
@@ -16,9 +16,11 @@ from GitHub Advisories, and are emitted per used ref with version_match
 """
 
 import base64
+import argparse
 import csv
 import json
 import os
+import posixpath
 import re
 import subprocess
 import sys
@@ -568,7 +570,7 @@ def detect_action_type(action_yml_content: str) -> tuple[str, str]:
     using = str(runs.get("using", "")).lower()
 
     if using.startswith("node"):
-        main_file = runs.get("main", "").lstrip("./")
+        main_file = str(runs.get("main", ""))
         return "javascript", main_file
     elif using == "docker":
         image = runs.get("image", "")
@@ -696,7 +698,13 @@ def extract_nested_uses(action_yml_content: str) -> list[tuple[str, str]]:
     return results
 
 
-def finding_base(row: dict, ref: str, parent_action: str = "", depth: int = 0) -> dict:
+def finding_base(
+    row: dict,
+    ref: str,
+    parent_action: str = "",
+    depth: int = 0,
+    parent_version: str = "",
+) -> dict:
     """Common fields for every finding row."""
     return {
         "action": clean_field(row.get("action", "")),
@@ -707,6 +715,7 @@ def finding_base(row: dict, ref: str, parent_action: str = "", depth: int = 0) -
         "usage_count": row.get("usage_count", 0),
         "workflow_count": row.get("workflow_count", 0),
         "parent_action": parent_action,
+        "parent_version": parent_version if depth > 0 else "",
         "depth": depth,
         "is_transitive": depth > 0,
     }
@@ -718,6 +727,7 @@ def advisory_findings(
     ref: str = "",
     parent_action: str = "",
     depth: int = 0,
+    parent_version: str = "",
 ) -> list[dict]:
     """Return known CVE/advisory findings for this action at a specific ref.
 
@@ -754,7 +764,7 @@ def advisory_findings(
         )[:200]
 
         findings.append({
-            **finding_base(row, ref, parent_action, depth),
+            **finding_base(row, ref, parent_action, depth, parent_version),
             "vulnerability_category": "known_cve",
             "pattern_matched": adv.get("summary", "Advisory found")[:200],
             "file_path": adv.get("html_url", ""),
@@ -801,11 +811,13 @@ def scan_action_at_ref(
     scanned_keys: set[str],
     advisory_cache: dict,
     parent_action: str = "",
+    parent_version: str = "",
     depth: int = 0,
+    scan_official: bool = True,
 ) -> list[dict]:
     """Scan a single action at a specific ref. Returns list of finding dicts.
 
-    For composite actions, recursively scans nested non-official uses: deps.
+    For composite actions, recursively scans nested ``uses:`` dependencies.
     """
     owner = row["owner"]
     repo = row["repo"]
@@ -816,7 +828,7 @@ def scan_action_at_ref(
     action_label = clean_field(row.get("action", ""))
 
     if depth > 0:
-        via = f" via {parent_action}" if parent_action else ""
+        via = f" via {parent_action}@{parent_version or 'default'}" if parent_action else ""
         print(f"{indent}[depth={depth}{via}] {action_label}@{ref or 'default'}")
 
     # Version-aware CVE / advisory check for this exact ref
@@ -826,6 +838,7 @@ def scan_action_at_ref(
             advisory_cache,
             ref=ref,
             parent_action=parent_action,
+            parent_version=parent_version,
             depth=depth,
         )
     )
@@ -839,7 +852,7 @@ def scan_action_at_ref(
         print(f"{indent}[SKIP] Could not fetch action.yml for {action_label}@{ref or 'default'}")
         return findings
 
-    base_fields = finding_base(row, ref, parent_action, depth)
+    base_fields = finding_base(row, ref, parent_action, depth, parent_version)
 
     # Check deprecated runtime
     deprecated = check_deprecated_runtime(action_yml_content)
@@ -860,7 +873,7 @@ def scan_action_at_ref(
     if action_type == "javascript":
         profile = SCAN_PROFILES["javascript"]
         if main_file:
-            js_path = f"{base}/{main_file}".strip("/") if base else main_file
+            js_path = posixpath.normpath(posixpath.join(base, main_file)).lstrip("/")
             js_content = fetch_file(owner, repo, js_path, ref)
             if js_content:
                 scan_text = js_content[:500_000]
@@ -934,7 +947,7 @@ def scan_action_at_ref(
                 continue
             scanned_keys.add(child_key)
 
-            if child_owner in OFFICIAL_OWNERS:
+            if child_owner in OFFICIAL_OWNERS and not scan_official:
                 print(f"{indent}  [official] record-only {child_path}@{child_ref or 'default'}")
                 continue
 
@@ -953,7 +966,9 @@ def scan_action_at_ref(
                 scanned_keys=scanned_keys,
                 advisory_cache=advisory_cache,
                 parent_action=action_label,
+                parent_version=ref,
                 depth=depth + 1,
+                scan_official=scan_official,
             )
             findings.extend(child_findings)
 
@@ -964,6 +979,7 @@ def scan_action(
     row: dict,
     scanned_keys: set[str],
     advisory_cache: dict,
+    scan_official: bool = True,
 ) -> list[dict]:
     """Scan all used refs for a single root action."""
     refs = parse_used_refs(row)
@@ -988,7 +1004,9 @@ def scan_action(
                 scanned_keys=scanned_keys,
                 advisory_cache=advisory_cache,
                 parent_action="",
+                parent_version="",
                 depth=0,
+                scan_official=scan_official,
             )
         )
     return findings
@@ -997,31 +1015,71 @@ def scan_action(
 def main():
     import pandas as pd
 
+    parser = argparse.ArgumentParser(description=__doc__)
+    owner_group = parser.add_mutually_exclusive_group()
+    owner_group.add_argument(
+        "--exclude-official",
+        action="store_true",
+        help="Restore the old behavior: skip actions/* and github/* owners.",
+    )
+    owner_group.add_argument(
+        "--official-only",
+        action="store_true",
+        help="Scan only actions/* and github/* roots (useful for an incremental run).",
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=OUTPUT_CSV,
+        help=f"Output CSV (default: {OUTPUT_CSV.name}).",
+    )
+    parser.add_argument(
+        "--action",
+        action="append",
+        dest="actions",
+        help="Scan only this exact action path; may be supplied more than once.",
+    )
+    args = parser.parse_args()
+
     df = pd.read_csv(ACTIONS_CSV)
 
-    # Filter: exclude official owners
-    df = df[~df["owner"].isin(OFFICIAL_OWNERS)]
+    if args.exclude_official:
+        df = df[~df["owner"].isin(OFFICIAL_OWNERS)]
+        scope = "non-official"
+    elif args.official_only:
+        df = df[df["owner"].isin(OFFICIAL_OWNERS)]
+        scope = "official"
+    else:
+        scope = "official and non-official"
+
+    if args.actions:
+        df = df[df["action"].isin(args.actions)]
 
     # Filter: exclude reusable workflows (sub_path contains .github/workflows/)
     df["sub_path"] = df["sub_path"].fillna("")
     df = df[~df["sub_path"].str.contains(r"\.github/workflows/", na=False)]
 
-    print(f"Scanning {len(df)} standalone non-official actions...\n")
+    print(f"Scanning {len(df)} standalone {scope} actions...\n")
 
     all_findings = []
     advisory_cache: dict = {}
     scanned_keys: set[str] = set()
 
-    for idx, row in df.iterrows():
+    for position, (_, row) in enumerate(df.iterrows(), 1):
         action = row["action"]
         row_dict = row.to_dict()
         refs = parse_used_refs(row_dict)
         refs_label = ", ".join(refs) if refs else "default branch"
-        print(f"[{idx+1}/{len(df)}] {action}")
+        print(f"[{position}/{len(df)}] {action}")
         print(f"  versions to scan ({len(refs) or 1}): {refs_label}")
 
         # Scan source code + version-aware CVEs at each used ref (and transitive deps)
-        action_findings = scan_action(row_dict, scanned_keys, advisory_cache)
+        action_findings = scan_action(
+            row_dict,
+            scanned_keys,
+            advisory_cache,
+            scan_official=not args.exclude_official,
+        )
         all_findings.extend(action_findings)
 
         pattern_findings = [
@@ -1056,10 +1114,11 @@ def main():
         "pattern_matched", "file_path", "evidence_snippet", "severity",
         "cve_id", "vulnerable_version_range", "first_patched_version", "version_match",
         "usage_count", "workflow_count",
-        "parent_action", "depth", "is_transitive",
+        "parent_action", "parent_version", "depth", "is_transitive",
     ]
 
-    with open(OUTPUT_CSV, "w", newline="", encoding="utf-8") as f:
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    with open(args.output, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
         for finding in all_findings:
@@ -1072,7 +1131,7 @@ def main():
     transitive_findings = [f for f in all_findings if f.get("is_transitive")]
     print(f"Transitive findings: {len(transitive_findings)}")
     print(f"Unique actions scanned (keys): {len(scanned_keys)}")
-    print(f"Output: {OUTPUT_CSV}")
+    print(f"Output: {args.output}")
 
     # Summary by category
     from collections import Counter
