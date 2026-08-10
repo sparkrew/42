@@ -1,0 +1,72 @@
+gha-workflow-vuln/
+├── README.md
+├── DATASET_CARD.md
+├── CITATION.cff
+├── CHANGELOG.md
+├── LICENSE
+├── THIRD_PARTY_LICENSES.md
+├── MANIFEST.sha256
+│
+├── schema/
+│   ├── workflow-vulnerability-record.schema.json
+│   ├── benchmark-prediction.schema.json
+│   └── README.md
+│
+├── taxonomy/
+│   ├── gha-weaknesses-2026.1.json
+│   └── scanner-rule-mappings.json
+│
+├── data/
+│   ├── records.jsonl
+│   ├── files.csv
+│   ├── annotations.csv
+│   └── splits/
+│       ├── train.txt
+│       ├── validation.txt
+│       ├── test.txt
+│       └── benchmark-only.txt
+│
+├── source/
+│   └── <content-sha256>.yml
+│
+├── provenance/
+│   ├── annotation-guidelines.md
+│   ├── adjudication-guidelines.md
+│   └── annotators.json
+│
+├── exports/
+│   └── ground-truth.sarif
+│
+├── scripts/
+│   ├── collect.py
+│   ├── validate.py
+│   ├── validate_locations.py
+│   ├── detect_duplicates.py
+│   ├── scan_secrets.py
+│   ├── audit_licenses.py
+│   ├── generate_splits.py
+│   ├── export_csv.py
+│   └── export_sarif.py
+│
+├── baselines/
+│   ├── actionlint/
+│   ├── poutine/
+│   ├── frizbee/
+│   ├── semgrep/
+│   ├── zizmor/
+│   └── ...
+│
+├── benchmark/
+│   ├── normalize.py
+│   ├── match.py
+│   ├── metrics.py
+│   └── run_all.py
+│
+└── tests/
+    ├── test_schema.py
+    ├── test_spans.py
+    ├── test_hashes.py
+    ├── test_taxonomy.py
+    ├── test_splits.py
+    ├── test_secret_filter.py
+    └── test_sarif_export.py
