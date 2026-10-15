@@ -1,0 +1,93 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/bcgov-nr-rec-signage-pr-open.yml
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+ [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/bcgov-nr-rec-signage-pr-open.yml:9:3
+  [1m[94m|[0m
+[1m[94m9 |[0m   id-token: write # This is required for requesting the JWT
+  [1m[94m|[0m   [1m[91m^^^^^^^^^^^^^^^[0m [1m[91mid-token: write is overly broad at the workflow level[0m
+  [1m[94m|[0m
+  [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/bcgov-nr-rec-signage-pr-open.yml:10:3
+   [1m[94m|[0m
+[1m[94m10 |[0m   contents: write # This is required for actions/checkout
+   [1m[94m|[0m   [1m[91m^^^^^^^^^^^^^^^[0m [1m[91mcontents: write is overly broad at the workflow level[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/bcgov-nr-rec-signage-pr-open.yml:11:3
+   [1m[94m|[0m
+[1m[94m11 |[0m   packages: write
+   [1m[94m|[0m   [1m[91m^^^^^^^^^^^^^^^[0m [1m[91mpackages: write is overly broad at the workflow level[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/bcgov-nr-rec-signage-pr-open.yml:12:3
+   [1m[94m|[0m
+[1m[94m12 |[0m   pull-requests: write
+   [1m[94m|[0m   [1m[91m^^^^^^^^^^^^^^^^^^^^[0m [1m[91mpull-requests: write is overly broad at the workflow level[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/bcgov-nr-rec-signage-pr-open.yml:13:3
+   [1m[94m|[0m
+[1m[94m13 |[0m   security-events: write
+   [1m[94m|[0m   [1m[33m----------------------[0m [1m[33msecurity-events: write is overly broad at the workflow level[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/bcgov-nr-rec-signage-pr-open.yml:14:3
+   [1m[94m|[0m
+[1m[94m14 |[0m   attestations: write # This is required for uploading attestations to the Security tab
+   [1m[94m|[0m   [1m[91m^^^^^^^^^^^^^^^^^^^[0m [1m[91mattestations: write is overly broad at the workflow level[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/bcgov-nr-rec-signage-pr-open.yml:35:5
+   [1m[94m|[0m
+[1m[94m35 |[0m     uses: ./.github/workflows/.deploy_stack.yml
+   [1m[94m|[0m     [1m[33m-------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m36 |[0m     with:
+[1m[94m...[0m
+[1m[94m40 |[0m       app_env: ${{ github.event.number || 'latest' }} # ephermal, prefixed for easy clean up of PR resources in s3 and dynamodb gene[1m[94m...[0m
+[1m[94m41 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/bcgov-nr-rec-signage-pr-open.yml:61:5
+   [1m[94m|[0m
+[1m[94m61 |[0m     uses: ./.github/workflows/resume-resources.yml
+   [1m[94m|[0m     [1m[33m----------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m62 |[0m     with:
+[1m[94m63 |[0m       app_env: dev
+[1m[94m64 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/bcgov-nr-rec-signage-pr-open.yml:73:5
+   [1m[94m|[0m
+[1m[94m73 |[0m     uses: ./.github/workflows/.deploy_stack.yml
+   [1m[94m|[0m     [1m[33m-------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m74 |[0m     with:
+[1m[94m...[0m
+[1m[94m78 |[0m       app_env: dev
+[1m[94m79 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m9[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m4[39m medium, [31m5[39m high

@@ -1,0 +1,21 @@
+{
+  "workflow": "pulumi-pulumi-digitalocean-test.yml",
+  "tool": "zizmor",
+  "summary": {
+    "total_findings": 1,
+    "by_rule": {
+      "artipacked": 1
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "artipacked",
+      "level": "warning",
+      "message": "credential persistence through GitHub Actions artifacts",
+      "workflow": "pulumi-pulumi-digitalocean-test.yml",
+      "line": 47,
+      "column": 7,
+      "note": "audit confidence \u2192 Low"
+    }
+  ]
+}

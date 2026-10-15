@@ -1,0 +1,74 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/nextcloud-event_update_notification-appstore-build-publish.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nextcloud-event_update_notification-appstore-build-publish.yml:34:9
+   [1m[94m|[0m
+[1m[94m34 |[0m         - name: Checkout
+   [1m[94m|[0m  [1m[33m_________-[0m
+[1m[94m35 |[0m [1m[33m|[0m         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+[1m[94m36 |[0m [1m[33m|[0m         with:
+[1m[94m37 |[0m [1m[33m|[0m           path: ${{ env.APP_NAME }}
+   [1m[94m|[0m [1m[33m|___________________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nextcloud-event_update_notification-appstore-build-publish.yml:136:9
+    [1m[94m|[0m
+[1m[94m136 |[0m         - name: Checkout server master fallback
+    [1m[94m|[0m  [1m[33m_________-[0m
+[1m[94m137 |[0m [1m[33m|[0m         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m141 |[0m [1m[33m|[0m           repository: nextcloud/server
+[1m[94m142 |[0m [1m[33m|[0m           path: nextcloud
+    [1m[94m|[0m [1m[33m|_________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nextcloud-event_update_notification-appstore-build-publish.yml:16:3
+    [1m[94m|[0m
+[1m[94m 16 |[0m [1m[33m/[0m   build_and_publish:
+[1m[94m 17 |[0m [1m[33m|[0m     runs-on: ubuntu-latest
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m174 |[0m [1m[33m|[0m           download_url: ${{ steps.attach_to_release.outputs.browser_download_url }}
+[1m[94m175 |[0m [1m[33m|[0m           app_private_key: ${{ secrets.APP_PRIVATE_KEY }}
+    [1m[94m|[0m [1m[33m|[0m                                                          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________________________________________________________|[0m
+    [1m[94m|[0m                                                            [1m[33mthis job[0m
+    [1m[94m|[0m                                                            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nextcloud-event_update_notification-appstore-build-publish.yml:63:9
+   [1m[94m|[0m
+[1m[94m63 |[0m       - name: Set up npm ${{ steps.versions.outputs.npmVersion }}
+   [1m[94m|[0m         [1m[94m---------------------------------------------------------[0m [1m[94minfo: this step[0m
+[1m[94m64 |[0m         # Skip if no package.json
+[1m[94m65 |[0m         if: ${{ steps.versions.outputs.npmVersion }}
+[1m[94m66 |[0m         run: npm i -g 'npm@${{ steps.versions.outputs.npmVersion }}'
+   [1m[94m|[0m         [1m[94m------------------------------------------------------------[0m [1m[94minfo: steps.versions.outputs.npmVersion may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nextcloud-event_update_notification-appstore-build-publish.yml:128:9
+    [1m[94m|[0m
+[1m[94m128 |[0m         - name: Checkout server ${{ fromJSON(steps.appinfo.outputs.result).nextcloud.min-version }}
+    [1m[94m|[0m           [1m[94m-----------------------------------------------------------------------------------------[0m [1m[94minfo: this step[0m
+[1m[94m129 |[0m           continue-on-error: true
+[1m[94m130 |[0m           id: server-checkout
+[1m[94m131 |[0m [1m[94m/[0m         run: |
+[1m[94m132 |[0m [1m[94m|[0m           NCVERSION='${{ fromJSON(steps.appinfo.outputs.result).nextcloud.min-version }}'
+[1m[94m133 |[0m [1m[94m|[0m           wget --quiet https://download.nextcloud.com/server/releases/latest-$NCVERSION.zip
+[1m[94m134 |[0m [1m[94m|[0m           unzip latest-$NCVERSION.zip
+    [1m[94m|[0m [1m[94m|_____________________________________-[0m [1m[94minfo: fromJSON(steps.appinfo.outputs.result).nextcloud.min-version may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[32m25[39m findings ([1m[93m20[39m suppressed[0m): 0 unknown, [35m2[39m informational, [36m0[39m low, [33m3[39m medium, [31m0[39m high

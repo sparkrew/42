@@ -1,0 +1,26 @@
+{
+  "workflow": "Azure-terraform-azurerm-avm-ptn-commercial-marketplace-pr-check.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "Azure-terraform-azurerm-avm-ptn-commercial-marketplace-pr-check.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "secrets-inherit": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "Azure-terraform-azurerm-avm-ptn-commercial-marketplace-pr-check.yml",
+          "line": 24,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        }
+      ]
+    }
+  }
+}

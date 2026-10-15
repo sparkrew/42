@@ -1,0 +1,185 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-build-cross-compile.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-build-cross-compile.yml:96:9
+   [1m[94m|[0m
+[1m[94m96 |[0m         - name: 'Checkout the JDK source'
+   [1m[94m|[0m  [1m[33m_________-[0m
+[1m[94m97 |[0m [1m[33m|[0m         uses: actions/checkout@v4
+   [1m[94m|[0m [1m[33m|_________________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-build-cross-compile.yml:110:9
+    [1m[94m|[0m
+[1m[94m110 |[0m   [1m[94m...[0m - name: 'Install toolchain and dependencies'
+    [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m111 |[0m [1m[91m/[0m [1m[94m...[0m   run: |
+[1m[94m112 |[0m [1m[91m|[0m [1m[94m...[0m     # Install dependencies using apt-get
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m120 |[0m [1m[91m|[0m [1m[94m...[0m         libxrandr-dev libxtst-dev libcups2-dev libasound2-dev
+[1m[94m121 |[0m [1m[91m|[0m [1m[94m...[0m     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-${{ inputs.gcc-major-version }} 100 --slave /usr/bin/g++ g++ /usr/bin/g++-${{ inputs.gcc-major-version }}
+    [1m[94m|[0m [1m[91m|__________________________________________________________________________________________________________________________________________________________________________________^[0m [1m[91minputs.gcc-major-version may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-build-cross-compile.yml:110:9
+    [1m[94m|[0m
+[1m[94m110 |[0m   [1m[94m...[0m - name: 'Install toolchain and dependencies'
+    [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m111 |[0m [1m[91m/[0m [1m[94m...[0m   run: |
+[1m[94m112 |[0m [1m[91m|[0m [1m[94m...[0m     # Install dependencies using apt-get
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m120 |[0m [1m[91m|[0m [1m[94m...[0m         libxrandr-dev libxtst-dev libcups2-dev libasound2-dev
+[1m[94m121 |[0m [1m[91m|[0m [1m[94m...[0m     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-${{ inputs.gcc-major-version }} 100 --slave /usr/bin/g++ g++ /usr/bin/g++-${{ inputs.gcc-major-version }}
+    [1m[94m|[0m [1m[91m|__________________________________________________________________________________________________________________________________________________________________________________^[0m [1m[91minputs.gcc-major-version may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-build-cross-compile.yml:110:9
+    [1m[94m|[0m
+[1m[94m110 |[0m   [1m[94m...[0m - name: 'Install toolchain and dependencies'
+    [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m111 |[0m [1m[91m/[0m [1m[94m...[0m   run: |
+[1m[94m112 |[0m [1m[91m|[0m [1m[94m...[0m     # Install dependencies using apt-get
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m120 |[0m [1m[91m|[0m [1m[94m...[0m         libxrandr-dev libxtst-dev libcups2-dev libasound2-dev
+[1m[94m121 |[0m [1m[91m|[0m [1m[94m...[0m     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-${{ inputs.gcc-major-version }} 100 --slave /usr/bin/g++ g++ /usr/bin/g++-${{ inputs.gcc-major-version }}
+    [1m[94m|[0m [1m[91m|__________________________________________________________________________________________________________________________________________________________________________________^[0m [1m[91minputs.gcc-major-version may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-build-cross-compile.yml:110:9
+    [1m[94m|[0m
+[1m[94m110 |[0m   [1m[94m...[0m - name: 'Install toolchain and dependencies'
+    [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m111 |[0m [1m[91m/[0m [1m[94m...[0m   run: |
+[1m[94m112 |[0m [1m[91m|[0m [1m[94m...[0m     # Install dependencies using apt-get
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m120 |[0m [1m[91m|[0m [1m[94m...[0m         libxrandr-dev libxtst-dev libcups2-dev libasound2-dev
+[1m[94m121 |[0m [1m[91m|[0m [1m[94m...[0m     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-${{ inputs.gcc-major-version }} 100 --slave /usr/bin/g++ g++ /usr/bin/g++-${{ inputs.gcc-major-version }}
+    [1m[94m|[0m [1m[91m|__________________________________________________________________________________________________________________________________________________________________________________^[0m [1m[91minputs.gcc-major-version may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-build-cross-compile.yml:110:9
+    [1m[94m|[0m
+[1m[94m110 |[0m   [1m[94m...[0m - name: 'Install toolchain and dependencies'
+    [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m111 |[0m [1m[91m/[0m [1m[94m...[0m   run: |
+[1m[94m112 |[0m [1m[91m|[0m [1m[94m...[0m     # Install dependencies using apt-get
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m120 |[0m [1m[91m|[0m [1m[94m...[0m         libxrandr-dev libxtst-dev libcups2-dev libasound2-dev
+[1m[94m121 |[0m [1m[91m|[0m [1m[94m...[0m     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-${{ inputs.gcc-major-version }} 100 --slave /usr/bin/g++ g++ /usr/bin/g++-${{ inputs.gcc-major-version }}
+    [1m[94m|[0m [1m[91m|__________________________________________________________________________________________________________________________________________________________________________________^[0m [1m[91minputs.gcc-major-version may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-build-cross-compile.yml:110:9
+    [1m[94m|[0m
+[1m[94m110 |[0m   [1m[94m...[0m - name: 'Install toolchain and dependencies'
+    [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m111 |[0m [1m[91m/[0m [1m[94m...[0m   run: |
+[1m[94m112 |[0m [1m[91m|[0m [1m[94m...[0m     # Install dependencies using apt-get
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m120 |[0m [1m[91m|[0m [1m[94m...[0m         libxrandr-dev libxtst-dev libcups2-dev libasound2-dev
+[1m[94m121 |[0m [1m[91m|[0m [1m[94m...[0m     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-${{ inputs.gcc-major-version }} 100 --slave /usr/bin/g++ g++ /usr/bin/g++-${{ inputs.gcc-major-version }}
+    [1m[94m|[0m [1m[91m|__________________________________________________________________________________________________________________________________________________________________________________^[0m [1m[91minputs.gcc-major-version may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-build-cross-compile.yml:169:9
+    [1m[94m|[0m
+[1m[94m169 |[0m         - name: 'Configure'
+    [1m[94m|[0m           [1m[94m-----------------[0m [1m[94minfo: this step[0m
+[1m[94m170 |[0m [1m[94m/[0m         run: >
+[1m[94m171 |[0m [1m[94m|[0m           bash configure
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m186 |[0m [1m[94m|[0m           cat config.log &&
+[1m[94m187 |[0m [1m[94m|[0m           exit 1)
+    [1m[94m|[0m [1m[94m|_________________-[0m [1m[94minfo: steps.bootjdk.outputs.path may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-build-cross-compile.yml:169:9
+    [1m[94m|[0m
+[1m[94m169 |[0m         - name: 'Configure'
+    [1m[94m|[0m           [1m[94m-----------------[0m [1m[94minfo: this step[0m
+[1m[94m170 |[0m [1m[94m/[0m         run: >
+[1m[94m171 |[0m [1m[94m|[0m           bash configure
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m186 |[0m [1m[94m|[0m           cat config.log &&
+[1m[94m187 |[0m [1m[94m|[0m           exit 1)
+    [1m[94m|[0m [1m[94m|_________________-[0m [1m[94minfo: steps.gtest.outputs.path may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-build-cross-compile.yml:169:9
+    [1m[94m|[0m
+[1m[94m169 |[0m         - name: 'Configure'
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m170 |[0m [1m[91m/[0m         run: >
+[1m[94m171 |[0m [1m[91m|[0m           bash configure
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m186 |[0m [1m[91m|[0m           cat config.log &&
+[1m[94m187 |[0m [1m[91m|[0m           exit 1)
+    [1m[94m|[0m [1m[91m|_________________^[0m [1m[91minputs.gcc-major-version may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-build-cross-compile.yml:169:9
+    [1m[94m|[0m
+[1m[94m169 |[0m         - name: 'Configure'
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m170 |[0m [1m[91m/[0m         run: >
+[1m[94m171 |[0m [1m[91m|[0m           bash configure
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m186 |[0m [1m[91m|[0m           cat config.log &&
+[1m[94m187 |[0m [1m[91m|[0m           exit 1)
+    [1m[94m|[0m [1m[91m|_________________^[0m [1m[91minputs.gcc-major-version may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-build-cross-compile.yml:169:9
+    [1m[94m|[0m
+[1m[94m169 |[0m         - name: 'Configure'
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m170 |[0m [1m[91m/[0m         run: >
+[1m[94m171 |[0m [1m[91m|[0m           bash configure
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m186 |[0m [1m[91m|[0m           cat config.log &&
+[1m[94m187 |[0m [1m[91m|[0m           exit 1)
+    [1m[94m|[0m [1m[91m|_________________^[0m [1m[91minputs.extra-conf-options may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-build-cross-compile.yml:169:9
+    [1m[94m|[0m
+[1m[94m169 |[0m         - name: 'Configure'
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m170 |[0m [1m[91m/[0m         run: >
+[1m[94m171 |[0m [1m[91m|[0m           bash configure
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m186 |[0m [1m[91m|[0m           cat config.log &&
+[1m[94m187 |[0m [1m[91m|[0m           exit 1)
+    [1m[94m|[0m [1m[91m|_________________^[0m [1m[91minputs.configure-arguments may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[32m41[39m findings ([1m[93m28[39m suppressed[0m): 0 unknown, [35m2[39m informational, [36m0[39m low, [33m1[39m medium, [31m10[39m high

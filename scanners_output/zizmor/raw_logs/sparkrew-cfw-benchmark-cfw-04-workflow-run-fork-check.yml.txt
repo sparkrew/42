@@ -1,0 +1,19 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/sparkrew-cfw-benchmark-cfw-04-workflow-run-fork-check.yml
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#dangerous-triggers\dangerous-triggers]8;;\][0m: [1muse of fundamentally insecure workflow trigger[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/sparkrew-cfw-benchmark-cfw-04-workflow-run-fork-check.yml:10:1
+   [1m[94m|[0m
+[1m[94m10 |[0m [1m[91m/[0m on:
+[1m[94m11 |[0m [1m[91m|[0m   workflow_run:
+[1m[94m12 |[0m [1m[91m|[0m     workflows: ["PR Build"]
+[1m[94m13 |[0m [1m[91m|[0m     types:
+[1m[94m14 |[0m [1m[91m|[0m       - completed
+   [1m[94m|[0m [1m[91m|_________________^[0m [1m[91mworkflow_run is almost always used insecurely[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m1[39m finding: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m0[39m medium, [31m1[39m high

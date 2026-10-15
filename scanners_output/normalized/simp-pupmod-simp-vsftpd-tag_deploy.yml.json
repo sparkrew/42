@@ -1,0 +1,140 @@
+{
+  "workflow": "simp-pupmod-simp-vsftpd-tag_deploy.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "simp-pupmod-simp-vsftpd-tag_deploy.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 12,
+        "by_rule": {
+          "artipacked": 3,
+          "excessive-permissions": 5,
+          "unpinned-uses": 2,
+          "cache-poisoning": 2
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "simp-pupmod-simp-vsftpd-tag_deploy.yml",
+          "line": 52,
+          "column": 9,
+          "note": "audit confidence \u2192 Low",
+          "capability": "artifact-integrity-weakness"
+        },
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "simp-pupmod-simp-vsftpd-tag_deploy.yml",
+          "line": 77,
+          "column": 9,
+          "note": "audit confidence \u2192 Low",
+          "capability": "artifact-integrity-weakness"
+        },
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "simp-pupmod-simp-vsftpd-tag_deploy.yml",
+          "line": 176,
+          "column": 9,
+          "note": "audit confidence \u2192 Low",
+          "capability": "artifact-integrity-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "simp-pupmod-simp-vsftpd-tag_deploy.yml",
+          "line": 1,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "simp-pupmod-simp-vsftpd-tag_deploy.yml",
+          "line": 45,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "simp-pupmod-simp-vsftpd-tag_deploy.yml",
+          "line": 68,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "simp-pupmod-simp-vsftpd-tag_deploy.yml",
+          "line": 128,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "simp-pupmod-simp-vsftpd-tag_deploy.yml",
+          "line": 166,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "simp-pupmod-simp-vsftpd-tag_deploy.yml",
+          "line": 56,
+          "column": 9,
+          "note": "audit confidence \u2192 High",
+          "capability": "unpinned-dependency-weakness"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "simp-pupmod-simp-vsftpd-tag_deploy.yml",
+          "line": 181,
+          "column": 9,
+          "note": "audit confidence \u2192 High",
+          "capability": "unpinned-dependency-weakness"
+        },
+        {
+          "rule_id": "cache-poisoning",
+          "level": "error",
+          "message": "runtime artifacts potentially vulnerable to a cache poisoning attack",
+          "workflow": "simp-pupmod-simp-vsftpd-tag_deploy.yml",
+          "line": 33,
+          "column": 1,
+          "note": "audit confidence \u2192 Low",
+          "capability": "artifact-integrity-weakness"
+        },
+        {
+          "rule_id": "cache-poisoning",
+          "level": "error",
+          "message": "runtime artifacts potentially vulnerable to a cache poisoning attack",
+          "workflow": "simp-pupmod-simp-vsftpd-tag_deploy.yml",
+          "line": 33,
+          "column": 1,
+          "note": "audit confidence \u2192 Low",
+          "capability": "artifact-integrity-weakness"
+        }
+      ]
+    }
+  }
+}

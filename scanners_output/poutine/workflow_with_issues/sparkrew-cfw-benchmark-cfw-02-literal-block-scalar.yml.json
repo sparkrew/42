@@ -1,0 +1,35 @@
+{
+  "workflow": "sparkrew-cfw-benchmark-cfw-02-literal-block-scalar.yml",
+  "tool": "poutine",
+  "summary": {
+    "total_findings": 2,
+    "by_rule": {
+      "if_always_true": 1,
+      "default_permissions_on_risky_events": 1
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "if_always_true",
+      "line": 25,
+      "column": "",
+      "job": "publish-package",
+      "step": "",
+      "details": "",
+      "event_triggers": [
+        "pull_request_target"
+      ]
+    },
+    {
+      "rule_id": "default_permissions_on_risky_events",
+      "line": "",
+      "column": "",
+      "job": "",
+      "step": "",
+      "details": "",
+      "event_triggers": [
+        "pull_request_target"
+      ]
+    }
+  ]
+}

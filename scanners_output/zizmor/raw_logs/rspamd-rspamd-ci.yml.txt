@@ -1,0 +1,136 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/rspamd-rspamd-ci.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rspamd-rspamd-ci.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name: ci
+[1m[94m 2 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m57 |[0m [1m[33m|[0m       image: ghcr.io/rspamd/rspamd-build-docker:ubuntu-ci
+[1m[94m58 |[0m [1m[33m|[0m       name: ubuntu-ci-amd64
+   [1m[94m|[0m [1m[33m|____________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rspamd-rspamd-ci.yml:12:3
+   [1m[94m|[0m
+[1m[94m12 |[0m [1m[33m/[0m   linters:
+[1m[94m13 |[0m [1m[33m|[0m     uses: ./.github/workflows/ci_linters.yml
+   [1m[94m|[0m [1m[33m|[0m                                            [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________________________________|[0m
+   [1m[94m|[0m                                              [1m[33mthis job[0m
+   [1m[94m|[0m                                              [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rspamd-rspamd-ci.yml:15:3
+   [1m[94m|[0m
+[1m[94m15 |[0m [1m[33m/[0m   fedora:
+[1m[94m16 |[0m [1m[33m|[0m     uses: ./.github/workflows/ci_rspamd.yml
+[1m[94m17 |[0m [1m[33m|[0m     with:
+[1m[94m18 |[0m [1m[33m|[0m       image: ghcr.io/rspamd/rspamd-build-docker:fedora-ci
+[1m[94m19 |[0m [1m[33m|[0m       name: fedora-ci
+   [1m[94m|[0m [1m[33m|[0m                     [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________|[0m
+   [1m[94m|[0m                       [1m[33mthis job[0m
+   [1m[94m|[0m                       [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rspamd-rspamd-ci.yml:21:3
+   [1m[94m|[0m
+[1m[94m21 |[0m [1m[33m/[0m   ubuntu_amd64:
+[1m[94m22 |[0m [1m[33m|[0m     uses: ./.github/workflows/ci_rspamd.yml
+[1m[94m23 |[0m [1m[33m|[0m     with:
+[1m[94m24 |[0m [1m[33m|[0m       image: ghcr.io/rspamd/rspamd-build-docker:ubuntu-ci
+[1m[94m25 |[0m [1m[33m|[0m       name: ubuntu-ci-amd64
+   [1m[94m|[0m [1m[33m|[0m                           [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________________|[0m
+   [1m[94m|[0m                             [1m[33mthis job[0m
+   [1m[94m|[0m                             [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rspamd-rspamd-ci.yml:27:3
+   [1m[94m|[0m
+[1m[94m27 |[0m [1m[33m/[0m   ubuntu_arm64:
+[1m[94m28 |[0m [1m[33m|[0m     if: ${{ !vars.NO_ARM }}
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m32 |[0m [1m[33m|[0m       name: ubuntu-ci-arm64
+[1m[94m33 |[0m [1m[33m|[0m       runner: ${{ vars.ARM_RUNNER || 'ubuntu-24.04-arm' }}
+   [1m[94m|[0m [1m[33m|[0m                                                          [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________________________________________________________|[0m
+   [1m[94m|[0m                                                            [1m[33mthis job[0m
+   [1m[94m|[0m                                                            [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rspamd-rspamd-ci.yml:35:3
+   [1m[94m|[0m
+[1m[94m35 |[0m [1m[33m/[0m   ubuntu-focal:
+[1m[94m36 |[0m [1m[33m|[0m     uses: ./.github/workflows/ci_rspamd_build.yml
+[1m[94m37 |[0m [1m[33m|[0m     with:
+[1m[94m38 |[0m [1m[33m|[0m       image: ghcr.io/rspamd/rspamd-build-docker:ubuntu-focal
+[1m[94m39 |[0m [1m[33m|[0m       name: ubuntu-focal
+   [1m[94m|[0m [1m[33m|[0m                        [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________|[0m
+   [1m[94m|[0m                          [1m[33mthis job[0m
+   [1m[94m|[0m                          [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rspamd-rspamd-ci.yml:41:3
+   [1m[94m|[0m
+[1m[94m41 |[0m [1m[33m/[0m   centos-8:
+[1m[94m42 |[0m [1m[33m|[0m     uses: ./.github/workflows/ci_rspamd_build.yml
+[1m[94m43 |[0m [1m[33m|[0m     with:
+[1m[94m44 |[0m [1m[33m|[0m       image: ghcr.io/rspamd/rspamd-build-docker:centos-8
+[1m[94m45 |[0m [1m[33m|[0m       name: centos-8
+   [1m[94m|[0m [1m[33m|[0m                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________|[0m
+   [1m[94m|[0m                      [1m[33mthis job[0m
+   [1m[94m|[0m                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rspamd-rspamd-ci.yml:47:3
+   [1m[94m|[0m
+[1m[94m47 |[0m [1m[33m/[0m   centos-9:
+[1m[94m48 |[0m [1m[33m|[0m     uses: ./.github/workflows/ci_rspamd_build.yml
+[1m[94m49 |[0m [1m[33m|[0m     with:
+[1m[94m50 |[0m [1m[33m|[0m       image: ghcr.io/rspamd/rspamd-build-docker:centos-9
+[1m[94m51 |[0m [1m[33m|[0m       name: centos-9
+   [1m[94m|[0m [1m[33m|[0m                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________|[0m
+   [1m[94m|[0m                      [1m[33mthis job[0m
+   [1m[94m|[0m                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rspamd-rspamd-ci.yml:53:3
+   [1m[94m|[0m
+[1m[94m53 |[0m [1m[33m/[0m   webui-e2e-playwright:
+[1m[94m54 |[0m [1m[33m|[0m     needs: ubuntu_amd64
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m57 |[0m [1m[33m|[0m       image: ghcr.io/rspamd/rspamd-build-docker:ubuntu-ci
+[1m[94m58 |[0m [1m[33m|[0m       name: ubuntu-ci-amd64
+   [1m[94m|[0m [1m[33m|[0m                            [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________________|[0m
+   [1m[94m|[0m                              [1m[33mthis job[0m
+   [1m[94m|[0m                              [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m9[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m9[39m medium, [31m0[39m high

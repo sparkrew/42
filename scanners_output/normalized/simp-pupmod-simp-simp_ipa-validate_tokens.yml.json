@@ -1,0 +1,47 @@
+{
+  "workflow": "simp-pupmod-simp-simp_ipa-validate_tokens.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "simp-pupmod-simp-simp_ipa-validate_tokens.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 3,
+        "by_rule": {
+          "excessive-permissions": 3
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "simp-pupmod-simp-simp_ipa-validate_tokens.yml",
+          "line": 1,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "simp-pupmod-simp-simp_ipa-validate_tokens.yml",
+          "line": 28,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "simp-pupmod-simp-simp_ipa-validate_tokens.yml",
+          "line": 41,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        }
+      ]
+    }
+  }
+}

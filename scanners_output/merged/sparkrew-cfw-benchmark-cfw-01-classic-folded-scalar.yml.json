@@ -1,0 +1,59 @@
+{
+  "workflow": "sparkrew-cfw-benchmark-cfw-01-classic-folded-scalar.yml",
+  "tools": {
+    "poutine": {
+      "workflow": "sparkrew-cfw-benchmark-cfw-01-classic-folded-scalar.yml",
+      "tool": "poutine",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "if_always_true": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "if_always_true",
+          "line": 41,
+          "column": "",
+          "job": "deploy-to-prod",
+          "step": "",
+          "details": "",
+          "event_triggers": [
+            "workflow_run"
+          ]
+        }
+      ]
+    },
+    "zizmor": {
+      "workflow": "sparkrew-cfw-benchmark-cfw-01-classic-folded-scalar.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 2,
+        "by_rule": {
+          "excessive-permissions": 1,
+          "dangerous-triggers": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "sparkrew-cfw-benchmark-cfw-01-classic-folded-scalar.yml",
+          "line": 32,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "dangerous-triggers",
+          "level": "error",
+          "message": "use of fundamentally insecure workflow trigger",
+          "workflow": "sparkrew-cfw-benchmark-cfw-01-classic-folded-scalar.yml",
+          "line": 25,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium"
+        }
+      ]
+    }
+  }
+}

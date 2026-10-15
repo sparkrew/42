@@ -1,0 +1,122 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-dstoolkit-mlops-databricks-onRelease.yaml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-dstoolkit-mlops-databricks-onRelease.yaml:3:1
+   [1m[94m|[0m
+[1m[94m 3 |[0m [1m[33m/[0m name: onRelease Databricks
+[1m[94m 4 |[0m [1m[33m|[0m on: 
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m97 |[0m [1m[33m|[0m
+[1m[94m98 |[0m [1m[33m|[0m       
+   [1m[94m|[0m [1m[33m|_______-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-dstoolkit-mlops-databricks-onRelease.yaml:17:3
+   [1m[94m|[0m
+[1m[94m17 |[0m [1m[33m/[0m   pr_CI_Development:
+[1m[94m18 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m29 |[0m [1m[33m|[0m
+[1m[94m30 |[0m [1m[33m|[0m           #python -m pytest -v
+   [1m[94m|[0m [1m[33m|[0m                              [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|______________________________|[0m
+   [1m[94m|[0m                                [1m[33mthis job[0m
+   [1m[94m|[0m                                [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-dstoolkit-mlops-databricks-onRelease.yaml:32:3
+   [1m[94m|[0m
+[1m[94m32 |[0m [1m[33m/[0m   prApproved_CD_Development:
+[1m[94m33 |[0m [1m[33m|[0m     if:                         github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.[1m[94m...[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m43 |[0m [1m[33m|[0m       ARM_TENANT_ID:            ${{ secrets.ARM_TENANT_ID }}
+[1m[94m44 |[0m [1m[33m|[0m       PAT_GITHUB:               ${{ secrets.PAT_GITHUB }}
+   [1m[94m|[0m [1m[33m|[0m                                                         [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________________|[0m
+   [1m[94m|[0m                                                           [1m[33mthis job[0m
+   [1m[94m|[0m                                                           [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-dstoolkit-mlops-databricks-onRelease.yaml:46:3
+   [1m[94m|[0m
+[1m[94m46 |[0m [1m[33m/[0m   pr_CI_UAT:
+[1m[94m47 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m55 |[0m [1m[33m|[0m           echo "${{ github.head_ref }}"
+[1m[94m56 |[0m [1m[33m|[0m           echo "${{ github.base_ref }}"
+   [1m[94m|[0m [1m[33m|[0m                                       [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________________________________|[0m
+   [1m[94m|[0m                                         [1m[33mthis job[0m
+   [1m[94m|[0m                                         [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-dstoolkit-mlops-databricks-onRelease.yaml:58:3
+   [1m[94m|[0m
+[1m[94m58 |[0m [1m[33m/[0m   prApproved_CD_UAT:
+[1m[94m59 |[0m [1m[33m|[0m     if:                         github.event_name == 'pull_request' && github.event.action == 'closed' && github.head_ref == 'main' [1m[94m...[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m76 |[0m [1m[33m|[0m # git tag -d v1.0.1
+[1m[94m77 |[0m [1m[33m|[0m # ( Create Security Rule That Only Allow Release Branch to be Tagged). 
+   [1m[94m|[0m [1m[33m|[0m                                                                       [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________________________________________________________________|[0m
+   [1m[94m|[0m                                                                         [1m[33mthis job[0m
+   [1m[94m|[0m                                                                         [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-dstoolkit-mlops-databricks-onRelease.yaml:79:3
+   [1m[94m|[0m
+[1m[94m79 |[0m [1m[33m/[0m   prApproved_CD_Production:
+[1m[94m80 |[0m [1m[33m|[0m     if:                         ${{ startsWith(github.ref, 'refs/tags/v') }}
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m97 |[0m [1m[33m|[0m
+[1m[94m98 |[0m [1m[33m|[0m       
+   [1m[94m|[0m [1m[33m|[0m       [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______|[0m
+   [1m[94m|[0m         [1m[33mthis job[0m
+   [1m[94m|[0m         [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-dstoolkit-mlops-databricks-onRelease.yaml:54:9
+   [1m[94m|[0m
+[1m[94m54 |[0m         - run: |
+   [1m[94m|[0m  [1m[91m_________^[0m
+[1m[94m55 |[0m [1m[91m|[0m           echo "${{ github.head_ref }}"
+[1m[94m56 |[0m [1m[91m|[0m           echo "${{ github.base_ref }}"
+   [1m[94m|[0m [1m[91m|[0m                                       [1m[91m^[0m
+   [1m[94m|[0m [1m[91m|_______________________________________|[0m
+   [1m[94m|[0m                                         [1m[91mthis step[0m
+   [1m[94m|[0m                                         [1m[91mgithub.head_ref may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-dstoolkit-mlops-databricks-onRelease.yaml:54:9
+   [1m[94m|[0m
+[1m[94m54 |[0m         - run: |
+   [1m[94m|[0m  [1m[91m_________^[0m
+[1m[94m55 |[0m [1m[91m|[0m           echo "${{ github.head_ref }}"
+[1m[94m56 |[0m [1m[91m|[0m           echo "${{ github.base_ref }}"
+   [1m[94m|[0m [1m[91m|[0m                                       [1m[91m^[0m
+   [1m[94m|[0m [1m[91m|_______________________________________|[0m
+   [1m[94m|[0m                                         [1m[91mthis step[0m
+   [1m[94m|[0m                                         [1m[91mgithub.base_ref may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m10[39m findings ([1m[93m2[39m suppressed[0m): 0 unknown, [35m0[39m informational, [36m0[39m low, [33m6[39m medium, [31m2[39m high

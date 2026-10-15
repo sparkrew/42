@@ -1,0 +1,57 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/rocket-pool-lighthouse-publish-crate.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rocket-pool-lighthouse-publish-crate.yml:33:15
+   [1m[94m|[0m
+[1m[94m33 |[0m             - uses: actions/checkout@v2
+   [1m[94m|[0m               [1m[33m-------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rocket-pool-lighthouse-publish-crate.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name:   Publish Crate
+[1m[94m 2 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m65 |[0m [1m[33m|[0m               run: |
+[1m[94m66 |[0m [1m[33m|[0m                 ./scripts/ci/publish.sh consensus/serde_utils eth2_serde_utils "$TAG"
+   [1m[94m|[0m [1m[33m|______________________________________________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rocket-pool-lighthouse-publish-crate.yml:18:5
+   [1m[94m|[0m
+[1m[94m18 |[0m [1m[33m/[0m     extract-tag:
+[1m[94m19 |[0m [1m[33m|[0m         runs-on: ubuntu-latest
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m24 |[0m [1m[33m|[0m         outputs:
+[1m[94m25 |[0m [1m[33m|[0m             TAG: ${{ steps.extract_tag.outputs.TAG }}
+   [1m[94m|[0m [1m[33m|[0m                                                     [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________________________________________|[0m
+   [1m[94m|[0m                                                       [1m[33mthis job[0m
+   [1m[94m|[0m                                                       [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rocket-pool-lighthouse-publish-crate.yml:27:5
+   [1m[94m|[0m
+[1m[94m27 |[0m [1m[33m/[0m     publish-crate:
+[1m[94m28 |[0m [1m[33m|[0m         runs-on: ubuntu-latest
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m65 |[0m [1m[33m|[0m               run: |
+[1m[94m66 |[0m [1m[33m|[0m                 ./scripts/ci/publish.sh consensus/serde_utils eth2_serde_utils "$TAG"
+   [1m[94m|[0m [1m[33m|[0m                                                                                      [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|______________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                        [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                        [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m4[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m4[39m medium, [31m0[39m high

@@ -1,0 +1,86 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/ministryofjustice-hmpps-external-movements-api-pipeline.yml
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ministryofjustice-hmpps-external-movements-api-pipeline.yml:21:3
+   [1m[94m|[0m
+[1m[94m21 |[0m   contents: write
+   [1m[94m|[0m   [1m[91m^^^^^^^^^^^^^^^[0m [1m[91mcontents: write is overly broad at the workflow level[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ministryofjustice-hmpps-external-movements-api-pipeline.yml:22:3
+   [1m[94m|[0m
+[1m[94m22 |[0m   packages: write
+   [1m[94m|[0m   [1m[91m^^^^^^^^^^^^^^^[0m [1m[91mpackages: write is overly broad at the workflow level[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ministryofjustice-hmpps-external-movements-api-pipeline.yml:30:5
+   [1m[94m|[0m
+[1m[94m30 |[0m     uses: ministryofjustice/hmpps-github-actions/.github/workflows/test_helm_lint.yml@v2 # WORKFLOW_VERSION
+   [1m[94m|[0m     [1m[33m------------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m31 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ministryofjustice-hmpps-external-movements-api-pipeline.yml:36:5
+   [1m[94m|[0m
+[1m[94m36 |[0m     uses: ministryofjustice/hmpps-github-actions/.github/workflows/gradle_verify.yml@v2 # WORKFLOW_VERSION
+   [1m[94m|[0m     [1m[33m-----------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m37 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ministryofjustice-hmpps-external-movements-api-pipeline.yml:51:5
+   [1m[94m|[0m
+[1m[94m51 |[0m     uses: ./.github/workflows/schema-spy.yml
+   [1m[94m|[0m     [1m[33m----------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m52 |[0m     if: github.ref == 'refs/heads/main'
+[1m[94m...[0m
+[1m[94m58 |[0m       database_password: 'movements'
+[1m[94m59 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ministryofjustice-hmpps-external-movements-api-pipeline.yml:67:5
+   [1m[94m|[0m
+[1m[94m67 |[0m     uses: ministryofjustice/hmpps-github-actions/.github/workflows/deploy_env.yml@v2 # WORKFLOW_VERSION
+   [1m[94m|[0m     [1m[33m--------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m68 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ministryofjustice-hmpps-external-movements-api-pipeline.yml:79:4
+   [1m[94m|[0m
+[1m[94m79 |[0m    uses: ministryofjustice/hmpps-github-actions/.github/workflows/deploy_env.yml@v2 # WORKFLOW_VERSION
+   [1m[94m|[0m    [1m[33m--------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m80 |[0m    secrets: inherit
+   [1m[94m|[0m    [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ministryofjustice-hmpps-external-movements-api-pipeline.yml:92:4
+   [1m[94m|[0m
+[1m[94m92 |[0m    uses: ministryofjustice/hmpps-github-actions/.github/workflows/deploy_env.yml@v2 # WORKFLOW_VERSION
+   [1m[94m|[0m    [1m[33m--------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m93 |[0m    secrets: inherit
+   [1m[94m|[0m    [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m8[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m6[39m medium, [31m2[39m high

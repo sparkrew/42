@@ -1,0 +1,112 @@
+{
+  "workflow": "Geonovum-geooptijd-publish.yml",
+  "tool": "zizmor",
+  "summary": {
+    "total_findings": 11,
+    "by_rule": {
+      "artipacked": 2,
+      "template-injection": 9
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "artipacked",
+      "level": "warning",
+      "message": "credential persistence through GitHub Actions artifacts",
+      "workflow": "Geonovum-geooptijd-publish.yml",
+      "line": 20,
+      "column": 9,
+      "note": "audit confidence \u2192 Low"
+    },
+    {
+      "rule_id": "artipacked",
+      "level": "warning",
+      "message": "credential persistence through GitHub Actions artifacts",
+      "workflow": "Geonovum-geooptijd-publish.yml",
+      "line": 156,
+      "column": 9,
+      "note": "audit confidence \u2192 Low"
+    },
+    {
+      "rule_id": "template-injection",
+      "level": "error",
+      "message": "code injection via template expansion",
+      "workflow": "Geonovum-geooptijd-publish.yml",
+      "line": 163,
+      "column": 9,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "template-injection",
+      "level": "error",
+      "message": "code injection via template expansion",
+      "workflow": "Geonovum-geooptijd-publish.yml",
+      "line": 163,
+      "column": 9,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "template-injection",
+      "level": "error",
+      "message": "code injection via template expansion",
+      "workflow": "Geonovum-geooptijd-publish.yml",
+      "line": 163,
+      "column": 9,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "template-injection",
+      "level": "info",
+      "message": "code injection via template expansion",
+      "workflow": "Geonovum-geooptijd-publish.yml",
+      "line": 172,
+      "column": 9,
+      "note": "audit confidence \u2192 Low"
+    },
+    {
+      "rule_id": "template-injection",
+      "level": "info",
+      "message": "code injection via template expansion",
+      "workflow": "Geonovum-geooptijd-publish.yml",
+      "line": 172,
+      "column": 9,
+      "note": "audit confidence \u2192 Low"
+    },
+    {
+      "rule_id": "template-injection",
+      "level": "info",
+      "message": "code injection via template expansion",
+      "workflow": "Geonovum-geooptijd-publish.yml",
+      "line": 172,
+      "column": 9,
+      "note": "audit confidence \u2192 Low"
+    },
+    {
+      "rule_id": "template-injection",
+      "level": "info",
+      "message": "code injection via template expansion",
+      "workflow": "Geonovum-geooptijd-publish.yml",
+      "line": 178,
+      "column": 9,
+      "note": "audit confidence \u2192 Low"
+    },
+    {
+      "rule_id": "template-injection",
+      "level": "info",
+      "message": "code injection via template expansion",
+      "workflow": "Geonovum-geooptijd-publish.yml",
+      "line": 178,
+      "column": 9,
+      "note": "audit confidence \u2192 Low"
+    },
+    {
+      "rule_id": "template-injection",
+      "level": "error",
+      "message": "code injection via template expansion",
+      "workflow": "Geonovum-geooptijd-publish.yml",
+      "line": 210,
+      "column": 9,
+      "note": "audit confidence \u2192 High"
+    }
+  ]
+}

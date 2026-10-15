@@ -1,0 +1,58 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/ory-defcon-30-ctf-conventional_commits.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ory-defcon-30-ctf-conventional_commits.yml:27:9
+   [1m[94m|[0m
+[1m[94m27 |[0m       - uses: actions/checkout@v3
+   [1m[94m|[0m         [1m[33m-------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ory-defcon-30-ctf-conventional_commits.yml:23:3
+   [1m[94m|[0m
+[1m[94m23 |[0m [1m[33m/[0m   main:
+[1m[94m24 |[0m [1m[33m|[0m     name: Validate PR title
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m58 |[0m [1m[33m|[0m             The subject should start with a lowercase letter, yours is uppercase:
+[1m[94m59 |[0m [1m[33m|[0m             "{subject}"
+   [1m[94m|[0m [1m[33m|[0m                        [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________|[0m
+   [1m[94m|[0m                          [1m[33mthis job[0m
+   [1m[94m|[0m                          [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#dangerous-triggers\dangerous-triggers]8;;\][0m: [1muse of fundamentally insecure workflow trigger[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ory-defcon-30-ctf-conventional_commits.yml:13:1
+   [1m[94m|[0m
+[1m[94m13 |[0m [1m[91m/[0m on:
+[1m[94m14 |[0m [1m[91m|[0m   pull_request_target:
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m19 |[0m [1m[91m|[0m       - reopened
+[1m[94m20 |[0m [1m[91m|[0m   # pull_request: # for debugging, uses config in local branch but supports only Pull Requests from this repo
+   [1m[94m|[0m [1m[91m|_____________________________________________________________________________________________________________^[0m [1m[91mpull_request_target is almost always used insecurely[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ory-defcon-30-ctf-conventional_commits.yml:29:9
+   [1m[94m|[0m
+[1m[94m29 |[0m         uses: ory/ci/conventional_commit_config@master
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ory-defcon-30-ctf-conventional_commits.yml:49:9
+   [1m[94m|[0m
+[1m[94m49 |[0m       - uses: amannn/action-semantic-pull-request@v4
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m6[39m findings ([1m[93m1[39m suppressed[0m): 0 unknown, [35m0[39m informational, [36m0[39m low, [33m2[39m medium, [31m3[39m high

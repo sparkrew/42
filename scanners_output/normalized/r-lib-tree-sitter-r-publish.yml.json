@@ -1,0 +1,47 @@
+{
+  "workflow": "r-lib-tree-sitter-r-publish.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "r-lib-tree-sitter-r-publish.yaml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 3,
+        "by_rule": {
+          "excessive-permissions": 3
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "error",
+          "message": "overly broad permissions",
+          "workflow": "r-lib-tree-sitter-r-publish.yaml",
+          "line": 8,
+          "column": 3,
+          "note": "audit confidence \u2192 High",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "error",
+          "message": "overly broad permissions",
+          "workflow": "r-lib-tree-sitter-r-publish.yaml",
+          "line": 9,
+          "column": 3,
+          "note": "audit confidence \u2192 High",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "error",
+          "message": "overly broad permissions",
+          "workflow": "r-lib-tree-sitter-r-publish.yaml",
+          "line": 10,
+          "column": 3,
+          "note": "audit confidence \u2192 High",
+          "capability": "excessive-permission-weakness"
+        }
+      ]
+    }
+  }
+}

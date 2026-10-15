@@ -1,0 +1,96 @@
+{
+  "workflow": "oracle-devrel-terraform-oci-cloudbricks-bastionservice-sessions-banned_file_changes_pr.yml",
+  "tool": "zizmor",
+  "summary": {
+    "total_findings": 9,
+    "by_rule": {
+      "artipacked": 1,
+      "excessive-permissions": 1,
+      "dangerous-triggers": 1,
+      "unpinned-uses": 6
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "artipacked",
+      "level": "warning",
+      "message": "credential persistence through GitHub Actions artifacts",
+      "workflow": "oracle-devrel-terraform-oci-cloudbricks-bastionservice-sessions-banned_file_changes_pr.yml",
+      "line": 17,
+      "column": 9,
+      "note": "audit confidence \u2192 Low"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "oracle-devrel-terraform-oci-cloudbricks-bastionservice-sessions-banned_file_changes_pr.yml",
+      "line": 8,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "dangerous-triggers",
+      "level": "error",
+      "message": "use of fundamentally insecure workflow trigger",
+      "workflow": "oracle-devrel-terraform-oci-cloudbricks-bastionservice-sessions-banned_file_changes_pr.yml",
+      "line": 2,
+      "column": 1,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "unpinned-uses",
+      "level": "error",
+      "message": "unpinned action reference",
+      "workflow": "oracle-devrel-terraform-oci-cloudbricks-bastionservice-sessions-banned_file_changes_pr.yml",
+      "line": 13,
+      "column": 9,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "unpinned-uses",
+      "level": "error",
+      "message": "unpinned action reference",
+      "workflow": "oracle-devrel-terraform-oci-cloudbricks-bastionservice-sessions-banned_file_changes_pr.yml",
+      "line": 24,
+      "column": 9,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "unpinned-uses",
+      "level": "error",
+      "message": "unpinned action reference",
+      "workflow": "oracle-devrel-terraform-oci-cloudbricks-bastionservice-sessions-banned_file_changes_pr.yml",
+      "line": 34,
+      "column": 9,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "unpinned-uses",
+      "level": "error",
+      "message": "unpinned action reference",
+      "workflow": "oracle-devrel-terraform-oci-cloudbricks-bastionservice-sessions-banned_file_changes_pr.yml",
+      "line": 46,
+      "column": 9,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "unpinned-uses",
+      "level": "error",
+      "message": "unpinned action reference",
+      "workflow": "oracle-devrel-terraform-oci-cloudbricks-bastionservice-sessions-banned_file_changes_pr.yml",
+      "line": 54,
+      "column": 9,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "unpinned-uses",
+      "level": "error",
+      "message": "unpinned action reference",
+      "workflow": "oracle-devrel-terraform-oci-cloudbricks-bastionservice-sessions-banned_file_changes_pr.yml",
+      "line": 66,
+      "column": 9,
+      "note": "audit confidence \u2192 High"
+    }
+  ]
+}

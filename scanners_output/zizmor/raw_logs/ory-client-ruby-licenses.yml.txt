@@ -1,0 +1,46 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/ory-client-ruby-licenses.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ory-client-ruby-licenses.yml:15:3
+   [1m[94m|[0m
+[1m[94m15 |[0m [1m[33m/[0m   licenses:
+[1m[94m16 |[0m [1m[33m|[0m     name: License compliance
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m34 |[0m [1m[33m|[0m             format('{0}@users.noreply.github.com', github.actor) }}
+[1m[94m35 |[0m [1m[33m|[0m           author-name: ${{ secrets.ORY_BOT_PAT && 'ory-bot' || github.actor }}
+   [1m[94m|[0m [1m[33m|[0m                                                                               [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                 [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                 [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ory-client-ruby-licenses.yml:20:9
+   [1m[94m|[0m
+[1m[94m20 |[0m         uses: ory/ci/licenses/setup@master
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ory-client-ruby-licenses.yml:24:9
+   [1m[94m|[0m
+[1m[94m24 |[0m         uses: ory/ci/licenses/check@master
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ory-client-ruby-licenses.yml:26:9
+   [1m[94m|[0m
+[1m[94m26 |[0m         uses: ory/ci/licenses/write@master
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m5[39m findings ([1m[93m1[39m suppressed[0m): 0 unknown, [35m0[39m informational, [36m0[39m low, [33m1[39m medium, [31m3[39m high

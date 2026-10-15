@@ -1,0 +1,62 @@
+{
+  "workflow": "scroll-tech-helm-common-lib-pr-validate.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "scroll-tech-helm-common-lib-pr-validate.yaml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 5,
+        "by_rule": {
+          "excessive-permissions": 5
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "scroll-tech-helm-common-lib-pr-validate.yaml",
+          "line": 1,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "scroll-tech-helm-common-lib-pr-validate.yaml",
+          "line": 17,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "scroll-tech-helm-common-lib-pr-validate.yaml",
+          "line": 20,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "scroll-tech-helm-common-lib-pr-validate.yaml",
+          "line": 27,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "scroll-tech-helm-common-lib-pr-validate.yaml",
+          "line": 36,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        }
+      ]
+    }
+  }
+}

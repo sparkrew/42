@@ -1,0 +1,26 @@
+{
+  "workflow": "minder-load-tests-demo-go-979-build-binary-signed-ghat-malicious.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "minder-load-tests-demo-go-979-build-binary-signed-ghat-malicious.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "artipacked": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "minder-load-tests-demo-go-979-build-binary-signed-ghat-malicious.yml",
+          "line": 16,
+          "column": 9,
+          "note": "audit confidence \u2192 Low"
+        }
+      ]
+    }
+  }
+}

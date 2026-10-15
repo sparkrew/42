@@ -1,0 +1,120 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/AudioReach-audioreach-graphservices-pre_merge_build.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/AudioReach-audioreach-graphservices-pre_merge_build.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m ---
+[1m[94m 2 |[0m [1m[33m|[0m name: pre_merge_build
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m43 |[0m [1m[33m|[0m     uses: Audioreach/audioreach-workflows/.github/workflows/test.yml@master
+[1m[94m44 |[0m [1m[33m|[0m     secrets: inherit
+   [1m[94m|[0m [1m[33m|_____________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/AudioReach-audioreach-graphservices-pre_merge_build.yml:15:3
+   [1m[94m|[0m
+[1m[94m15 |[0m [1m[33m/[0m   load_parameters:
+[1m[94m16 |[0m [1m[33m|[0m     uses: Audioreach/audioreach-workflows/.github/workflows/loading.yml@master
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m19 |[0m [1m[33m|[0m       pr_ref: ${{ github.event.pull_request.head.ref }}
+[1m[94m20 |[0m [1m[33m|[0m       pr_repo: ${{ github.event.pull_request.head.repo.full_name }}
+   [1m[94m|[0m [1m[33m|[0m                                                                   [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________________________________________________________|[0m
+   [1m[94m|[0m                                                                     [1m[33mthis job[0m
+   [1m[94m|[0m                                                                     [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/AudioReach-audioreach-graphservices-pre_merge_build.yml:22:3
+   [1m[94m|[0m
+[1m[94m22 |[0m [1m[33m/[0m   build:
+[1m[94m23 |[0m [1m[33m|[0m     needs: load_parameters
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m29 |[0m [1m[33m|[0m       pr_ref: ${{ github.event.pull_request.head.ref }}
+[1m[94m30 |[0m [1m[33m|[0m       pr_repo: ${{ github.event.pull_request.head.repo.full_name }}
+   [1m[94m|[0m [1m[33m|[0m                                                                   [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________________________________________________________|[0m
+   [1m[94m|[0m                                                                     [1m[33mthis job[0m
+   [1m[94m|[0m                                                                     [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/AudioReach-audioreach-graphservices-pre_merge_build.yml:32:3
+   [1m[94m|[0m
+[1m[94m32 |[0m [1m[33m/[0m   process_image:
+[1m[94m33 |[0m [1m[33m|[0m     needs: [ load_parameters, build ]
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m38 |[0m [1m[33m|[0m       pr_ref: ${{ github.event.pull_request.head.ref }}
+[1m[94m39 |[0m [1m[33m|[0m       pr_repo: ${{ github.event.pull_request.head.repo.full_name }}
+   [1m[94m|[0m [1m[33m|[0m                                                                   [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________________________________________________________|[0m
+   [1m[94m|[0m                                                                     [1m[33mthis job[0m
+   [1m[94m|[0m                                                                     [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/AudioReach-audioreach-graphservices-pre_merge_build.yml:41:3
+   [1m[94m|[0m
+[1m[94m41 |[0m [1m[33m/[0m   trigger_lava:
+[1m[94m42 |[0m [1m[33m|[0m     needs: [ load_parameters, build, process_image ]
+[1m[94m43 |[0m [1m[33m|[0m     uses: Audioreach/audioreach-workflows/.github/workflows/test.yml@master
+[1m[94m44 |[0m [1m[33m|[0m     secrets: inherit
+   [1m[94m|[0m [1m[33m|[0m                     [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________|[0m
+   [1m[94m|[0m                       [1m[33mthis job[0m
+   [1m[94m|[0m                       [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#dangerous-triggers\dangerous-triggers]8;;\][0m: [1muse of fundamentally insecure workflow trigger[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/AudioReach-audioreach-graphservices-pre_merge_build.yml:5:1
+   [1m[94m|[0m
+[1m[94m 5 |[0m [1m[91m/[0m on:
+[1m[94m 6 |[0m [1m[91m|[0m   workflow_dispatch:
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m11 |[0m [1m[91m|[0m     paths-ignore:
+[1m[94m12 |[0m [1m[91m|[0m       - '.github/**'
+   [1m[94m|[0m [1m[91m|____________________^[0m [1m[91mpull_request_target is almost always used insecurely[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/AudioReach-audioreach-graphservices-pre_merge_build.yml:24:5
+   [1m[94m|[0m
+[1m[94m24 |[0m     uses: Audioreach/audioreach-workflows/.github/workflows/build.yml@master
+   [1m[94m|[0m     [1m[33m------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m25 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/AudioReach-audioreach-graphservices-pre_merge_build.yml:34:5
+   [1m[94m|[0m
+[1m[94m34 |[0m     uses: Audioreach/audioreach-workflows/.github/workflows/process_image.yml@master
+   [1m[94m|[0m     [1m[33m--------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m35 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/AudioReach-audioreach-graphservices-pre_merge_build.yml:43:5
+   [1m[94m|[0m
+[1m[94m43 |[0m     uses: Audioreach/audioreach-workflows/.github/workflows/test.yml@master
+   [1m[94m|[0m     [1m[33m-----------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m44 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m9[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m8[39m medium, [31m1[39m high

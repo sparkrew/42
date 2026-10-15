@@ -1,0 +1,27 @@
+{
+  "workflow": "cloudposse-terraform-aws-nlb-chatops.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "cloudposse-terraform-aws-nlb-chatops.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "secrets-inherit": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "cloudposse-terraform-aws-nlb-chatops.yml",
+          "line": 15,
+          "column": 5,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        }
+      ]
+    }
+  }
+}

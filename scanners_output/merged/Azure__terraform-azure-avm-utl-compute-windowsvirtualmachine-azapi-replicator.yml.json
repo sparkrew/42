@@ -1,0 +1,26 @@
+{
+  "workflow": "Azure__terraform-azure-avm-utl-compute-windowsvirtualmachine-azapi-replicator.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "Azure__terraform-azure-avm-utl-compute-windowsvirtualmachine-azapi-replicator.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "secrets-inherit": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "Azure__terraform-azure-avm-utl-compute-windowsvirtualmachine-azapi-replicator.yml",
+          "line": 24,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        }
+      ]
+    }
+  }
+}

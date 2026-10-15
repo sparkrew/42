@@ -1,0 +1,114 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/carbon-design-system-ibm-products-triage-labeled-issues.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/carbon-design-system-ibm-products-triage-labeled-issues.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name: Triages labeled issues by adding them to a specific project field
+[1m[94m 2 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m53 |[0m [1m[33m|[0m     secrets:
+[1m[94m54 |[0m [1m[33m|[0m       token: ${{ needs.gen-token.outputs.token }}
+   [1m[94m|[0m [1m[33m|__________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/carbon-design-system-ibm-products-triage-labeled-issues.yml:8:3
+   [1m[94m|[0m
+[1m[94m 8 |[0m [1m[33m/[0m   gen-token:
+[1m[94m 9 |[0m [1m[33m|[0m     runs-on: ubuntu-latest
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m20 |[0m [1m[33m|[0m         run: |
+[1m[94m21 |[0m [1m[33m|[0m           echo "token=${{ steps.generate_token.outputs.token }}" >> $GITHUB_OUTPUT
+   [1m[94m|[0m [1m[33m|[0m                                                                                  [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                    [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                    [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/carbon-design-system-ibm-products-triage-labeled-issues.yml:23:3
+   [1m[94m|[0m
+[1m[94m23 |[0m [1m[33m/[0m   move-ts-issues:
+[1m[94m24 |[0m [1m[33m|[0m     needs: gen-token
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m32 |[0m [1m[33m|[0m     secrets:
+[1m[94m33 |[0m [1m[33m|[0m       token: ${{ needs.gen-token.outputs.token }}
+   [1m[94m|[0m [1m[33m|[0m                                                 [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________|[0m
+   [1m[94m|[0m                                                   [1m[33mthis job[0m
+   [1m[94m|[0m                                                   [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/carbon-design-system-ibm-products-triage-labeled-issues.yml:34:3
+   [1m[94m|[0m
+[1m[94m34 |[0m [1m[33m/[0m   move-migration-issues:
+[1m[94m35 |[0m [1m[33m|[0m     needs: gen-token
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m43 |[0m [1m[33m|[0m     secrets:
+[1m[94m44 |[0m [1m[33m|[0m       token: ${{ needs.gen-token.outputs.token }}
+   [1m[94m|[0m [1m[33m|[0m                                                 [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________|[0m
+   [1m[94m|[0m                                                   [1m[33mthis job[0m
+   [1m[94m|[0m                                                   [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/carbon-design-system-ibm-products-triage-labeled-issues.yml:45:3
+   [1m[94m|[0m
+[1m[94m45 |[0m [1m[33m/[0m   move-a11y-issues:
+[1m[94m46 |[0m [1m[33m|[0m     needs: gen-token
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m53 |[0m [1m[33m|[0m     secrets:
+[1m[94m54 |[0m [1m[33m|[0m       token: ${{ needs.gen-token.outputs.token }}
+   [1m[94m|[0m [1m[33m|[0m                                                  [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________________________________________________|[0m
+   [1m[94m|[0m                                                    [1m[33mthis job[0m
+   [1m[94m|[0m                                                    [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/carbon-design-system-ibm-products-triage-labeled-issues.yml:19:9
+   [1m[94m|[0m
+[1m[94m19 |[0m         - name: Save token
+   [1m[94m|[0m           [1m[94m----------------[0m [1m[94minfo: this step[0m
+[1m[94m20 |[0m [1m[94m/[0m         run: |
+[1m[94m21 |[0m [1m[94m|[0m           echo "token=${{ steps.generate_token.outputs.token }}" >> $GITHUB_OUTPUT
+   [1m[94m|[0m [1m[94m|__________________________________________________________________________________-[0m [1m[94minfo: steps.generate_token.outputs.token may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[96mhelp[]8;;https://docs.zizmor.sh/audits/#obfuscation\obfuscation]8;;\][0m: [1mobfuscated usage of GitHub Actions features[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/carbon-design-system-ibm-products-triage-labeled-issues.yml:26:7
+   [1m[94m|[0m
+[1m[94m26 |[0m       ${{contains(github.event.label.name, format('area{0} typescript', ':'))}}
+   [1m[94m|[0m       [1m[96m-------------------------------------------------------------------------[0m [1m[96mhelp: expression contains constant-reducible subexpression[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[96mhelp[]8;;https://docs.zizmor.sh/audits/#obfuscation\obfuscation]8;;\][0m: [1mobfuscated usage of GitHub Actions features[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/carbon-design-system-ibm-products-triage-labeled-issues.yml:37:7
+   [1m[94m|[0m
+[1m[94m37 |[0m       ${{contains(github.event.label.name, format('area{0} migration ➡️',':'))}}
+   [1m[94m|[0m       [1m[96m-------------------------------------------------------------------------[0m [1m[96mhelp: expression contains constant-reducible subexpression[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[96mhelp[]8;;https://docs.zizmor.sh/audits/#obfuscation\obfuscation]8;;\][0m: [1mobfuscated usage of GitHub Actions features[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/carbon-design-system-ibm-products-triage-labeled-issues.yml:47:9
+   [1m[94m|[0m
+[1m[94m47 |[0m     if: ${{contains(github.event.label.name, format('type{0} a11y ♿', ':'))}}
+   [1m[94m|[0m         [1m[96m----------------------------------------------------------------------[0m [1m[96mhelp: expression contains constant-reducible subexpression[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m10[39m findings ([1m[93m1[39m suppressed[0m): 0 unknown, [35m1[39m informational, [36m3[39m low, [33m5[39m medium, [31m0[39m high

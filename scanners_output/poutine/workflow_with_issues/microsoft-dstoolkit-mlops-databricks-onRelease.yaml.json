@@ -1,0 +1,23 @@
+{
+  "workflow": "microsoft-dstoolkit-mlops-databricks-onRelease.yaml",
+  "tool": "poutine",
+  "summary": {
+    "total_findings": 1,
+    "by_rule": {
+      "injection": 1
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "injection",
+      "line": 54,
+      "column": "",
+      "job": "pr_CI_UAT",
+      "step": "1",
+      "details": "Sources: github.head_ref",
+      "event_triggers": [
+        "pull_request"
+      ]
+    }
+  ]
+}

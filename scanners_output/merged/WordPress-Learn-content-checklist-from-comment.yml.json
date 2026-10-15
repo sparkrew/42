@@ -1,0 +1,94 @@
+{
+  "workflow": "WordPress-Learn-content-checklist-from-comment.yml",
+  "tools": {
+    "poutine": {
+      "workflow": "WordPress-Learn-content-checklist-from-comment.yml",
+      "tool": "poutine",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "default_permissions_on_risky_events": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "default_permissions_on_risky_events",
+          "line": "",
+          "column": "",
+          "job": "",
+          "step": "",
+          "details": "",
+          "event_triggers": [
+            "issue_comment"
+          ]
+        }
+      ]
+    },
+    "zizmor": {
+      "workflow": "WordPress-Learn-content-checklist-from-comment.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 6,
+        "by_rule": {
+          "excessive-permissions": 6
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "WordPress-Learn-content-checklist-from-comment.yml",
+          "line": 1,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "WordPress-Learn-content-checklist-from-comment.yml",
+          "line": 10,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "WordPress-Learn-content-checklist-from-comment.yml",
+          "line": 16,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "WordPress-Learn-content-checklist-from-comment.yml",
+          "line": 22,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "WordPress-Learn-content-checklist-from-comment.yml",
+          "line": 28,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "WordPress-Learn-content-checklist-from-comment.yml",
+          "line": 34,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        }
+      ]
+    }
+  }
+}

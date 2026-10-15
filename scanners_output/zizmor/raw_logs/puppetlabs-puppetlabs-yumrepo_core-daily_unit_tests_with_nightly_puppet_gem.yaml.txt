@@ -1,0 +1,54 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/puppetlabs-puppetlabs-yumrepo_core-daily_unit_tests_with_nightly_puppet_gem.yaml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/puppetlabs-puppetlabs-yumrepo_core-daily_unit_tests_with_nightly_puppet_gem.yaml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m ---
+[1m[94m 2 |[0m [1m[33m|[0m name: '[Daily] Unit Tests with nightly Puppet gem'
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m21 |[0m [1m[33m|[0m           SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
+[1m[94m22 |[0m [1m[33m|[0m           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+   [1m[94m|[0m [1m[33m|______________________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/puppetlabs-puppetlabs-yumrepo_core-daily_unit_tests_with_nightly_puppet_gem.yaml:10:3
+   [1m[94m|[0m
+[1m[94m10 |[0m [1m[33m/[0m   daily_unit_tests_with_nightly_puppet_gem:
+[1m[94m11 |[0m [1m[33m|[0m     uses: "puppetlabs/phoenix-github-actions/.github/workflows/unit_tests_with_nightly_puppet_gem.yaml@main"
+   [1m[94m|[0m [1m[33m|[0m                                                                                                            [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________________________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                                              [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                                              [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/puppetlabs-puppetlabs-yumrepo_core-daily_unit_tests_with_nightly_puppet_gem.yaml:13:3
+   [1m[94m|[0m
+[1m[94m13 |[0m [1m[33m/[0m   notify-via-slack:
+[1m[94m14 |[0m [1m[33m|[0m     name: Notify workflow conclusion via Slack
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m21 |[0m [1m[33m|[0m           SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
+[1m[94m22 |[0m [1m[33m|[0m           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+   [1m[94m|[0m [1m[33m|[0m                                                              [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|______________________________________________________________|[0m
+   [1m[94m|[0m                                                                [1m[33mthis job[0m
+   [1m[94m|[0m                                                                [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/puppetlabs-puppetlabs-yumrepo_core-daily_unit_tests_with_nightly_puppet_gem.yaml:19:9
+   [1m[94m|[0m
+[1m[94m19 |[0m       - uses: luchihoratiu/notify-via-slack@main
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m4[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m3[39m medium, [31m1[39m high

@@ -1,0 +1,79 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/huggingface-accelerate-run_merge_tests.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/huggingface-accelerate-run_merge_tests.yml:1:1
+    [1m[94m|[0m
+[1m[94m  1 |[0m [1m[33m/[0m name: Self-hosted runner tests (push to "main")
+[1m[94m  2 |[0m [1m[33m|[0m
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m187 |[0m [1m[33m|[0m           pip install tabulate;
+[1m[94m188 |[0m [1m[33m|[0m           python utils/log_reports.py >> $GITHUB_STEP_SUMMARY
+    [1m[94m|[0m [1m[33m|______________________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/huggingface-accelerate-run_merge_tests.yml:12:3
+   [1m[94m|[0m
+[1m[94m12 |[0m [1m[33m/[0m   run_core_tests_single_gpu:
+[1m[94m13 |[0m [1m[33m|[0m     runs-on:
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m62 |[0m [1m[33m|[0m           pip install tabulate;
+[1m[94m63 |[0m [1m[33m|[0m           python utils/log_reports.py >> $GITHUB_STEP_SUMMARY
+   [1m[94m|[0m [1m[33m|[0m                                                             [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________________________________________________|[0m
+   [1m[94m|[0m                                                               [1m[33mthis job[0m
+   [1m[94m|[0m                                                               [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/huggingface-accelerate-run_merge_tests.yml:65:3
+    [1m[94m|[0m
+[1m[94m 65 |[0m [1m[33m/[0m   run_deepspeed_tests_single_gpu:
+[1m[94m 66 |[0m [1m[33m|[0m     runs-on:
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m102 |[0m [1m[33m|[0m           pip install tabulate;
+[1m[94m103 |[0m [1m[33m|[0m           python utils/log_reports.py >> $GITHUB_STEP_SUMMARY
+    [1m[94m|[0m [1m[33m|[0m                                                             [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|_____________________________________________________________|[0m
+    [1m[94m|[0m                                                               [1m[33mthis job[0m
+    [1m[94m|[0m                                                               [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/huggingface-accelerate-run_merge_tests.yml:105:3
+    [1m[94m|[0m
+[1m[94m105 |[0m [1m[33m/[0m   run_core_tests_multi_gpu:
+[1m[94m106 |[0m [1m[33m|[0m     runs-on:
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m149 |[0m [1m[33m|[0m           source activate accelerate;
+[1m[94m150 |[0m [1m[33m|[0m           python utils/log_reports.py >> $GITHUB_STEP_SUMMARY
+    [1m[94m|[0m [1m[33m|[0m                                                             [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|_____________________________________________________________|[0m
+    [1m[94m|[0m                                                               [1m[33mthis job[0m
+    [1m[94m|[0m                                                               [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/huggingface-accelerate-run_merge_tests.yml:152:3
+    [1m[94m|[0m
+[1m[94m152 |[0m [1m[33m/[0m   run_deepspeed_tests_multi_gpu:
+[1m[94m153 |[0m [1m[33m|[0m     runs-on:
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m187 |[0m [1m[33m|[0m           pip install tabulate;
+[1m[94m188 |[0m [1m[33m|[0m           python utils/log_reports.py >> $GITHUB_STEP_SUMMARY
+    [1m[94m|[0m [1m[33m|[0m                                                              [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|______________________________________________________________|[0m
+    [1m[94m|[0m                                                                [1m[33mthis job[0m
+    [1m[94m|[0m                                                                [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m17[39m findings ([1m[93m12[39m suppressed[0m): 0 unknown, [35m0[39m informational, [36m0[39m low, [33m5[39m medium, [31m0[39m high

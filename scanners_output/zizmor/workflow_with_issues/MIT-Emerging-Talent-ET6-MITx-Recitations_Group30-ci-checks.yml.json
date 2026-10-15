@@ -1,0 +1,149 @@
+{
+  "workflow": "MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml",
+  "tool": "zizmor",
+  "summary": {
+    "total_findings": 15,
+    "by_rule": {
+      "artipacked": 5,
+      "excessive-permissions": 6,
+      "unpinned-uses": 4
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "artipacked",
+      "level": "warning",
+      "message": "credential persistence through GitHub Actions artifacts",
+      "workflow": "MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml",
+      "line": 9,
+      "column": 11,
+      "note": "audit confidence \u2192 Low"
+    },
+    {
+      "rule_id": "artipacked",
+      "level": "warning",
+      "message": "credential persistence through GitHub Actions artifacts",
+      "workflow": "MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml",
+      "line": 15,
+      "column": 7,
+      "note": "audit confidence \u2192 Low"
+    },
+    {
+      "rule_id": "artipacked",
+      "level": "warning",
+      "message": "credential persistence through GitHub Actions artifacts",
+      "workflow": "MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml",
+      "line": 24,
+      "column": 9,
+      "note": "audit confidence \u2192 Low"
+    },
+    {
+      "rule_id": "artipacked",
+      "level": "warning",
+      "message": "credential persistence through GitHub Actions artifacts",
+      "workflow": "MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml",
+      "line": 33,
+      "column": 9,
+      "note": "audit confidence \u2192 Low"
+    },
+    {
+      "rule_id": "artipacked",
+      "level": "warning",
+      "message": "credential persistence through GitHub Actions artifacts",
+      "workflow": "MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml",
+      "line": 57,
+      "column": 9,
+      "note": "audit confidence \u2192 Low"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml",
+      "line": 1,
+      "column": 1,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml",
+      "line": 6,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml",
+      "line": 12,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml",
+      "line": 21,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml",
+      "line": 30,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml",
+      "line": 54,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "unpinned-uses",
+      "level": "error",
+      "message": "unpinned action reference",
+      "workflow": "MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml",
+      "line": 10,
+      "column": 11,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "unpinned-uses",
+      "level": "error",
+      "message": "unpinned action reference",
+      "workflow": "MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml",
+      "line": 16,
+      "column": 7,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "unpinned-uses",
+      "level": "error",
+      "message": "unpinned action reference",
+      "workflow": "MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml",
+      "line": 26,
+      "column": 9,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "unpinned-uses",
+      "level": "error",
+      "message": "unpinned action reference",
+      "workflow": "MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml",
+      "line": 37,
+      "column": 9,
+      "note": "audit confidence \u2192 High"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/wp-cli-embed-command-issue-triage.yml
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#dangerous-triggers\dangerous-triggers]8;;\][0m: [1muse of fundamentally insecure workflow trigger[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/wp-cli-embed-command-issue-triage.yml:4:1
+   [1m[94m|[0m
+[1m[94m 4 |[0m [1m[91m/[0m 'on':
+[1m[94m 5 |[0m [1m[91m|[0m   issues:
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m13 |[0m [1m[91m|[0m         required: false
+[1m[94m14 |[0m [1m[91m|[0m         type: string
+   [1m[94m|[0m [1m[91m|____________________^[0m [1m[91mpull_request_target is almost always used insecurely[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m4[39m findings ([1m[93m3[39m suppressed[0m): 0 unknown, [35m0[39m informational, [36m0[39m low, [33m0[39m medium, [31m1[39m high

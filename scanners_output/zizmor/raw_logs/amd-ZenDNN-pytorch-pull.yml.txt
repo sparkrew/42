@@ -1,0 +1,484 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:1:1
+    [1m[94m|[0m
+[1m[94m  1 |[0m [1m[33m/[0m name: pull
+[1m[94m  2 |[0m [1m[33m|[0m
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m394 |[0m [1m[33m|[0m       docker-image: ${{ needs.linux-focal-cuda12_1-py3_10-gcc9-sm86-build.outputs.docker-image }}
+[1m[94m395 |[0m [1m[33m|[0m       test-matrix: ${{ needs.linux-focal-cuda12_1-py3_10-gcc9-sm86-build.outputs.test-matrix }}
+    [1m[94m|[0m [1m[33m|________________________________________________________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:21:3
+   [1m[94m|[0m
+[1m[94m21 |[0m [1m[33m/[0m   linux-jammy-py3_8-gcc11-build:
+[1m[94m22 |[0m [1m[33m|[0m     name: linux-jammy-py3.8-gcc11
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m36 |[0m [1m[33m|[0m           { config: "distributed", shard: 2, num_shards: 2, runner: "linux.2xlarge" },
+[1m[94m37 |[0m [1m[33m|[0m         ]}
+   [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________|[0m
+   [1m[94m|[0m            [1m[33mthis job[0m
+   [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:39:3
+   [1m[94m|[0m
+[1m[94m39 |[0m [1m[33m/[0m   linux-jammy-py3_8-gcc11-test:
+[1m[94m40 |[0m [1m[33m|[0m     name: linux-jammy-py3.8-gcc11
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m45 |[0m [1m[33m|[0m       docker-image: ${{ needs.linux-jammy-py3_8-gcc11-build.outputs.docker-image }}
+[1m[94m46 |[0m [1m[33m|[0m       test-matrix: ${{ needs.linux-jammy-py3_8-gcc11-build.outputs.test-matrix }}
+   [1m[94m|[0m [1m[33m|[0m                                                                                 [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                   [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                   [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:48:3
+   [1m[94m|[0m
+[1m[94m48 |[0m [1m[33m/[0m   linux-docs:
+[1m[94m49 |[0m [1m[33m|[0m     name: linux-docs
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m53 |[0m [1m[33m|[0m       build-environment: linux-jammy-py3.8-gcc11
+[1m[94m54 |[0m [1m[33m|[0m       docker-image: ${{ needs.linux-jammy-py3_8-gcc11-build.outputs.docker-image }}
+   [1m[94m|[0m [1m[33m|[0m                                                                                   [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                     [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                     [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:56:3
+   [1m[94m|[0m
+[1m[94m56 |[0m [1m[33m/[0m   linux-jammy-py3_8-gcc11-no-ops:
+[1m[94m57 |[0m [1m[33m|[0m     name: linux-jammy-py3.8-gcc11-no-ops
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m64 |[0m [1m[33m|[0m           { config: "default", shard: 1, num_shards: 1 },
+[1m[94m65 |[0m [1m[33m|[0m         ]}
+   [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________|[0m
+   [1m[94m|[0m            [1m[33mthis job[0m
+   [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:67:3
+   [1m[94m|[0m
+[1m[94m67 |[0m [1m[33m/[0m   linux-jammy-py3_8-gcc11-pch:
+[1m[94m68 |[0m [1m[33m|[0m     name: linux-jammy-py3.8-gcc11-pch
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m75 |[0m [1m[33m|[0m           { config: "default", shard: 1, num_shards: 1 },
+[1m[94m76 |[0m [1m[33m|[0m         ]}
+   [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________|[0m
+   [1m[94m|[0m            [1m[33mthis job[0m
+   [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:78:3
+   [1m[94m|[0m
+[1m[94m78 |[0m [1m[33m/[0m   linux-jammy-py3_9-clang12-asan-build:
+[1m[94m79 |[0m [1m[33m|[0m     name: linux-jammy-py3.9-clang12-asan
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m92 |[0m [1m[33m|[0m         ]}
+[1m[94m93 |[0m [1m[33m|[0m       sync-tag: asan-build
+   [1m[94m|[0m [1m[33m|[0m                          [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________________________|[0m
+   [1m[94m|[0m                            [1m[33mthis job[0m
+   [1m[94m|[0m                            [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:95:3
+    [1m[94m|[0m
+[1m[94m 95 |[0m [1m[33m/[0m   linux-jammy-py3_9-clang12-asan-test:
+[1m[94m 96 |[0m [1m[33m|[0m     name: linux-jammy-py3.9-clang12-asan
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m102 |[0m [1m[33m|[0m       test-matrix: ${{ needs.linux-jammy-py3_9-clang12-asan-build.outputs.test-matrix }}
+[1m[94m103 |[0m [1m[33m|[0m       sync-tag: asan-test
+    [1m[94m|[0m [1m[33m|[0m                         [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|_________________________|[0m
+    [1m[94m|[0m                           [1m[33mthis job[0m
+    [1m[94m|[0m                           [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:105:3
+    [1m[94m|[0m
+[1m[94m105 |[0m [1m[33m/[0m   linux-focal-py3_8-clang10-onnx-build:
+[1m[94m106 |[0m [1m[33m|[0m     name: linux-focal-py3.8-clang10-onnx
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m114 |[0m [1m[33m|[0m           { config: "default", shard: 2, num_shards: 2, runner: "linux.2xlarge" },
+[1m[94m115 |[0m [1m[33m|[0m         ]}
+    [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________|[0m
+    [1m[94m|[0m            [1m[33mthis job[0m
+    [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:117:3
+    [1m[94m|[0m
+[1m[94m117 |[0m [1m[33m/[0m   linux-focal-py3_8-clang10-onnx-test:
+[1m[94m118 |[0m [1m[33m|[0m     name: linux-focal-py3.8-clang10-onnx
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m123 |[0m [1m[33m|[0m       docker-image: ${{ needs.linux-focal-py3_8-clang10-onnx-build.outputs.docker-image }}
+[1m[94m124 |[0m [1m[33m|[0m       test-matrix: ${{ needs.linux-focal-py3_8-clang10-onnx-build.outputs.test-matrix }}
+    [1m[94m|[0m [1m[33m|[0m                                                                                        [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|________________________________________________________________________________________|[0m
+    [1m[94m|[0m                                                                                          [1m[33mthis job[0m
+    [1m[94m|[0m                                                                                          [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:126:3
+    [1m[94m|[0m
+[1m[94m126 |[0m [1m[33m/[0m   linux-focal-py3_8-clang10-build:
+[1m[94m127 |[0m [1m[33m|[0m     name: linux-focal-py3.8-clang10
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m140 |[0m [1m[33m|[0m           { config: "dynamo", shard: 2, num_shards: 2, runner: "linux.2xlarge" },
+[1m[94m141 |[0m [1m[33m|[0m         ]}
+    [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________|[0m
+    [1m[94m|[0m            [1m[33mthis job[0m
+    [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:143:3
+    [1m[94m|[0m
+[1m[94m143 |[0m [1m[33m/[0m   linux-focal-py3_8-clang10-test:
+[1m[94m144 |[0m [1m[33m|[0m     name: linux-focal-py3.8-clang10
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m149 |[0m [1m[33m|[0m       docker-image: ${{ needs.linux-focal-py3_8-clang10-build.outputs.docker-image }}
+[1m[94m150 |[0m [1m[33m|[0m       test-matrix: ${{ needs.linux-focal-py3_8-clang10-build.outputs.test-matrix }}
+    [1m[94m|[0m [1m[33m|[0m                                                                                   [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|___________________________________________________________________________________|[0m
+    [1m[94m|[0m                                                                                     [1m[33mthis job[0m
+    [1m[94m|[0m                                                                                     [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:152:3
+    [1m[94m|[0m
+[1m[94m152 |[0m [1m[33m/[0m   linux-focal-py3_11-clang10-build:
+[1m[94m153 |[0m [1m[33m|[0m     name: linux-focal-py3.11-clang10
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m166 |[0m [1m[33m|[0m           { config: "dynamo", shard: 2, num_shards: 2, runner: "linux.2xlarge" },
+[1m[94m167 |[0m [1m[33m|[0m         ]}
+    [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________|[0m
+    [1m[94m|[0m            [1m[33mthis job[0m
+    [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:169:3
+    [1m[94m|[0m
+[1m[94m169 |[0m [1m[33m/[0m   linux-focal-py3_11-clang10-test:
+[1m[94m170 |[0m [1m[33m|[0m     name: linux-focal-py3.11-clang10
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m175 |[0m [1m[33m|[0m       docker-image: ${{ needs.linux-focal-py3_11-clang10-build.outputs.docker-image }}
+[1m[94m176 |[0m [1m[33m|[0m       test-matrix: ${{ needs.linux-focal-py3_11-clang10-build.outputs.test-matrix }}
+    [1m[94m|[0m [1m[33m|[0m                                                                                    [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|____________________________________________________________________________________|[0m
+    [1m[94m|[0m                                                                                      [1m[33mthis job[0m
+    [1m[94m|[0m                                                                                      [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:178:3
+    [1m[94m|[0m
+[1m[94m178 |[0m [1m[33m/[0m   linux-focal-cuda11_8-py3_10-gcc9-build:
+[1m[94m179 |[0m [1m[33m|[0m     name: linux-focal-cuda11.8-py3.10-gcc9
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m188 |[0m [1m[33m|[0m           { config: "distributed", shard: 3, num_shards: 3, runner: "linux.8xlarge.nvidia.gpu" },
+[1m[94m189 |[0m [1m[33m|[0m         ]}
+    [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________|[0m
+    [1m[94m|[0m            [1m[33mthis job[0m
+    [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:191:3
+    [1m[94m|[0m
+[1m[94m191 |[0m [1m[33m/[0m   linux-focal-cuda11_8-py3_10-gcc9-test:
+[1m[94m192 |[0m [1m[33m|[0m     name: linux-focal-cuda11.8-py3.10-gcc9
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m198 |[0m [1m[33m|[0m       docker-image: ${{ needs.linux-focal-cuda11_8-py3_10-gcc9-build.outputs.docker-image }}
+[1m[94m199 |[0m [1m[33m|[0m       test-matrix: ${{ needs.linux-focal-cuda11_8-py3_10-gcc9-build.outputs.test-matrix }}
+    [1m[94m|[0m [1m[33m|[0m                                                                                          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________________________________________________________________________________________|[0m
+    [1m[94m|[0m                                                                                            [1m[33mthis job[0m
+    [1m[94m|[0m                                                                                            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:201:3
+    [1m[94m|[0m
+[1m[94m201 |[0m [1m[33m/[0m   linux-focal-cuda12_1-py3_10-gcc9-build:
+[1m[94m202 |[0m [1m[33m|[0m     name: linux-focal-cuda12.1-py3.10-gcc9
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m214 |[0m [1m[33m|[0m           { config: "deploy", shard: 1, num_shards: 1, runner: "linux.4xlarge.nvidia.gpu" },
+[1m[94m215 |[0m [1m[33m|[0m         ]}
+    [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________|[0m
+    [1m[94m|[0m            [1m[33mthis job[0m
+    [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:217:3
+    [1m[94m|[0m
+[1m[94m217 |[0m [1m[33m/[0m   linux-focal-cuda12_1-py3_10-gcc9-test:
+[1m[94m218 |[0m [1m[33m|[0m     name: linux-focal-cuda12.1-py3.10-gcc9
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m224 |[0m [1m[33m|[0m       docker-image: ${{ needs.linux-focal-cuda12_1-py3_10-gcc9-build.outputs.docker-image }}
+[1m[94m225 |[0m [1m[33m|[0m       test-matrix: ${{ needs.linux-focal-cuda12_1-py3_10-gcc9-build.outputs.test-matrix }}
+    [1m[94m|[0m [1m[33m|[0m                                                                                          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________________________________________________________________________________________|[0m
+    [1m[94m|[0m                                                                                            [1m[33mthis job[0m
+    [1m[94m|[0m                                                                                            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:227:3
+    [1m[94m|[0m
+[1m[94m227 |[0m [1m[33m/[0m   linux-jammy-py3-clang12-mobile-build:
+[1m[94m228 |[0m [1m[33m|[0m     name: linux-jammy-py3-clang12-mobile-build
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m236 |[0m [1m[33m|[0m           { config: "default", shard: 1, num_shards: 1 },
+[1m[94m237 |[0m [1m[33m|[0m         ]}
+    [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________|[0m
+    [1m[94m|[0m            [1m[33mthis job[0m
+    [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:239:3
+    [1m[94m|[0m
+[1m[94m239 |[0m [1m[33m/[0m   linux-jammy-cuda-11_8-cudnn8-py3_8-clang12-build:
+[1m[94m240 |[0m [1m[33m|[0m     name: linux-jammy-cuda11.8-cudnn8-py3.8-clang12
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m247 |[0m [1m[33m|[0m           { config: "default", shard: 1, num_shards: 1 },
+[1m[94m248 |[0m [1m[33m|[0m         ]}
+    [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________|[0m
+    [1m[94m|[0m            [1m[33mthis job[0m
+    [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:250:3
+    [1m[94m|[0m
+[1m[94m250 |[0m [1m[33m/[0m   linux-focal-py3-clang9-mobile-custom-build-static:
+[1m[94m251 |[0m [1m[33m|[0m     name: linux-focal-py3-clang9-mobile-custom-build-static
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m259 |[0m [1m[33m|[0m           { config: "default", shard: 1, num_shards: 1 },
+[1m[94m260 |[0m [1m[33m|[0m         ]}
+    [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________|[0m
+    [1m[94m|[0m            [1m[33mthis job[0m
+    [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:262:3
+    [1m[94m|[0m
+[1m[94m262 |[0m [1m[33m/[0m   linux-focal-py3_8-clang9-xla-build:
+[1m[94m263 |[0m [1m[33m|[0m     name: linux-focal-py3_8-clang9-xla
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m270 |[0m [1m[33m|[0m           { config: "xla", shard: 1, num_shards: 1, runner: "linux.12xlarge" },
+[1m[94m271 |[0m [1m[33m|[0m         ]}
+    [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________|[0m
+    [1m[94m|[0m            [1m[33mthis job[0m
+    [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:273:3
+    [1m[94m|[0m
+[1m[94m273 |[0m [1m[33m/[0m   linux-focal-py3_8-clang9-xla-test:
+[1m[94m274 |[0m [1m[33m|[0m     name: linux-focal-py3_8-clang9-xla
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m279 |[0m [1m[33m|[0m       docker-image: ${{ needs.linux-focal-py3_8-clang9-xla-build.outputs.docker-image }}
+[1m[94m280 |[0m [1m[33m|[0m       test-matrix: ${{ needs.linux-focal-py3_8-clang9-xla-build.outputs.test-matrix }}
+    [1m[94m|[0m [1m[33m|[0m                                                                                      [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|______________________________________________________________________________________|[0m
+    [1m[94m|[0m                                                                                        [1m[33mthis job[0m
+    [1m[94m|[0m                                                                                        [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:282:3
+    [1m[94m|[0m
+[1m[94m282 |[0m [1m[33m/[0m   win-vs2019-cpu-py3-build:
+[1m[94m283 |[0m [1m[33m|[0m     # don't run build twice on main
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m295 |[0m [1m[33m|[0m           { config: "default", shard: 3, num_shards: 3, runner: "windows.4xlarge.nonephemeral" },
+[1m[94m296 |[0m [1m[33m|[0m         ]}
+    [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________|[0m
+    [1m[94m|[0m            [1m[33mthis job[0m
+    [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:298:3
+    [1m[94m|[0m
+[1m[94m298 |[0m [1m[33m/[0m   linux-focal-cpu-py3_10-gcc9-bazel-test:
+[1m[94m299 |[0m [1m[33m|[0m     name: linux-focal-cpu-py3.10-gcc9-bazel-test
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m307 |[0m [1m[33m|[0m           { config: "default", shard: 1, num_shards: 1, runner: "linux.4xlarge" },
+[1m[94m308 |[0m [1m[33m|[0m         ]}
+    [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________|[0m
+    [1m[94m|[0m            [1m[33mthis job[0m
+    [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:310:3
+    [1m[94m|[0m
+[1m[94m310 |[0m [1m[33m/[0m   linux-focal-cuda12_1-py3_10-gcc9-bazel-test:
+[1m[94m311 |[0m [1m[33m|[0m     name: linux-focal-cuda12.1-py3.10-gcc9-bazel-test
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m319 |[0m [1m[33m|[0m           { config: "default", shard: 1, num_shards: 1, runner: "linux.4xlarge.nvidia.gpu" },
+[1m[94m320 |[0m [1m[33m|[0m         ]}
+    [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________|[0m
+    [1m[94m|[0m            [1m[33mthis job[0m
+    [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:322:3
+    [1m[94m|[0m
+[1m[94m322 |[0m [1m[33m/[0m   linux-focal-py3-clang9-android-ndk-r19c-gradle-custom-build-single:
+[1m[94m323 |[0m [1m[33m|[0m     name: linux-focal-py3-clang9-android-ndk-r19c-gradle-custom-build-single
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m330 |[0m [1m[33m|[0m           { config: "default", shard: 1, num_shards: 1, runner: "linux.2xlarge" },
+[1m[94m331 |[0m [1m[33m|[0m         ]}
+    [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________|[0m
+    [1m[94m|[0m            [1m[33mthis job[0m
+    [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:333:3
+    [1m[94m|[0m
+[1m[94m333 |[0m [1m[33m/[0m   linux-focal-py3-clang9-android-ndk-r19c-gradle-custom-build-single-full-jit:
+[1m[94m334 |[0m [1m[33m|[0m     name: linux-focal-py3-clang9-android-ndk-r19c-gradle-custom-build-single-full-jit
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m341 |[0m [1m[33m|[0m           { config: "default", shard: 1, num_shards: 1, runner: "linux.2xlarge" },
+[1m[94m342 |[0m [1m[33m|[0m         ]}
+    [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________|[0m
+    [1m[94m|[0m            [1m[33mthis job[0m
+    [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:344:3
+    [1m[94m|[0m
+[1m[94m344 |[0m [1m[33m/[0m   linux-jammy-py3_8-gcc11-mobile-lightweight-dispatch-build:
+[1m[94m345 |[0m [1m[33m|[0m     name: linux-jammy-py3.8-gcc11-mobile-lightweight-dispatch-build
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m353 |[0m [1m[33m|[0m           { config: "default", shard: 1, num_shards: 1 },
+[1m[94m354 |[0m [1m[33m|[0m         ]}
+    [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________|[0m
+    [1m[94m|[0m            [1m[33mthis job[0m
+    [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:356:3
+    [1m[94m|[0m
+[1m[94m356 |[0m [1m[33m/[0m   linux-focal-rocm5_6-py3_8-build:
+[1m[94m357 |[0m [1m[33m|[0m     # don't run build twice on main
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m369 |[0m [1m[33m|[0m           { config: "default", shard: 3, num_shards: 3, runner: "linux.rocm.gpu" },
+[1m[94m370 |[0m [1m[33m|[0m         ]}
+    [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________|[0m
+    [1m[94m|[0m            [1m[33mthis job[0m
+    [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:372:3
+    [1m[94m|[0m
+[1m[94m372 |[0m [1m[33m/[0m   linux-focal-cuda12_1-py3_10-gcc9-sm86-build:
+[1m[94m373 |[0m [1m[33m|[0m     name: linux-focal-cuda12.1-py3.10-gcc9-sm86
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m385 |[0m [1m[33m|[0m           { config: "default", shard: 5, num_shards: 5, runner: "linux.g5.4xlarge.nvidia.gpu" },
+[1m[94m386 |[0m [1m[33m|[0m         ]}
+    [1m[94m|[0m [1m[33m|[0m          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________|[0m
+    [1m[94m|[0m            [1m[33mthis job[0m
+    [1m[94m|[0m            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/amd-ZenDNN-pytorch-pull.yml:388:3
+    [1m[94m|[0m
+[1m[94m388 |[0m [1m[33m/[0m   linux-focal-cuda12_1-py3_10-gcc9-sm86-test:
+[1m[94m389 |[0m [1m[33m|[0m     name: linux-focal-cuda12.1-py3.10-gcc9-sm86
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m394 |[0m [1m[33m|[0m       docker-image: ${{ needs.linux-focal-cuda12_1-py3_10-gcc9-sm86-build.outputs.docker-image }}
+[1m[94m395 |[0m [1m[33m|[0m       test-matrix: ${{ needs.linux-focal-cuda12_1-py3_10-gcc9-sm86-build.outputs.test-matrix }}
+    [1m[94m|[0m [1m[33m|[0m                                                                                                [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|________________________________________________________________________________________________|[0m
+    [1m[94m|[0m                                                                                                  [1m[33mthis job[0m
+    [1m[94m|[0m                                                                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m32[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m32[39m medium, [31m0[39m high

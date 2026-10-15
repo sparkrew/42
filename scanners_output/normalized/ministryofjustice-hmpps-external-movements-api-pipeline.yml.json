@@ -1,0 +1,98 @@
+{
+  "workflow": "ministryofjustice-hmpps-external-movements-api-pipeline.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "ministryofjustice-hmpps-external-movements-api-pipeline.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 8,
+        "by_rule": {
+          "excessive-permissions": 2,
+          "secrets-inherit": 6
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "error",
+          "message": "overly broad permissions",
+          "workflow": "ministryofjustice-hmpps-external-movements-api-pipeline.yml",
+          "line": 21,
+          "column": 3,
+          "note": "audit confidence \u2192 High",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "error",
+          "message": "overly broad permissions",
+          "workflow": "ministryofjustice-hmpps-external-movements-api-pipeline.yml",
+          "line": 22,
+          "column": 3,
+          "note": "audit confidence \u2192 High",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-external-movements-api-pipeline.yml",
+          "line": 30,
+          "column": 5,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-external-movements-api-pipeline.yml",
+          "line": 36,
+          "column": 5,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-external-movements-api-pipeline.yml",
+          "line": 51,
+          "column": 5,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-external-movements-api-pipeline.yml",
+          "line": 67,
+          "column": 5,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-external-movements-api-pipeline.yml",
+          "line": 79,
+          "column": 4,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-external-movements-api-pipeline.yml",
+          "line": 92,
+          "column": 4,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        }
+      ]
+    }
+  }
+}

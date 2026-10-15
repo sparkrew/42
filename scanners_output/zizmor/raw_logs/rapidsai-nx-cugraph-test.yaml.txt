@@ -1,0 +1,69 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-nx-cugraph-test.yaml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-nx-cugraph-test.yaml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name: test
+[1m[94m 2 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m47 |[0m [1m[33m|[0m       # This selects "ARCH=amd64 + the latest supported Python, 1 job per major CUDA version".
+[1m[94m48 |[0m [1m[33m|[0m       matrix_filter: map(select(.ARCH == "amd64")) | group_by(.CUDA_VER|split(".")|map(tonumber)|.[0]) | map(max_by([(.PY_VER|split(".")|map(tonumber)), (.CUDA_VER|split(".")|map(tonumber))]))
+   [1m[94m|[0m [1m[33m|_________________________________________________________________________________________________________________________________________________________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-nx-cugraph-test.yaml:26:3
+   [1m[94m|[0m
+[1m[94m26 |[0m [1m[33m/[0m   conda-python-tests:
+[1m[94m27 |[0m [1m[33m|[0m     secrets: inherit
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m36 |[0m [1m[33m|[0m       run_codecov: false
+[1m[94m37 |[0m [1m[33m|[0m       script: ci/test_python.sh
+   [1m[94m|[0m [1m[33m|[0m                               [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________________________|[0m
+   [1m[94m|[0m                                 [1m[33mthis job[0m
+   [1m[94m|[0m                                 [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-nx-cugraph-test.yaml:38:3
+   [1m[94m|[0m
+[1m[94m38 |[0m [1m[33m/[0m   wheel-tests-nx-cugraph:
+[1m[94m39 |[0m [1m[33m|[0m     secrets: inherit
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m47 |[0m [1m[33m|[0m       # This selects "ARCH=amd64 + the latest supported Python, 1 job per major CUDA version".
+[1m[94m48 |[0m [1m[33m|[0m       matrix_filter: map(select(.ARCH == "amd64")) | group_by(.CUDA_VER|split(".")|map(tonumber)|.[0]) | map(max_by([(.PY_VER|split(".")|map(tonumber)), (.CUDA_VER|split(".")|map(tonumber))]))
+   [1m[94m|[0m [1m[33m|[0m                                                                                                                                                                                                 [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________________________________________________________________________________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                                                                                                                                   [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                                                                                                                                   [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-nx-cugraph-test.yaml:28:5
+   [1m[94m|[0m
+[1m[94m27 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+[1m[94m28 |[0m     uses: rapidsai/shared-workflows/.github/workflows/conda-python-tests.yaml@branch-25.10
+   [1m[94m|[0m     [1m[33m--------------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-nx-cugraph-test.yaml:40:5
+   [1m[94m|[0m
+[1m[94m39 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+[1m[94m40 |[0m     uses: rapidsai/shared-workflows/.github/workflows/wheels-test.yaml@branch-25.10
+   [1m[94m|[0m     [1m[33m-------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m5[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m5[39m medium, [31m0[39m high

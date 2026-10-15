@@ -1,0 +1,76 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/scroll-tech-helm-common-lib-pr-validate.yaml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/scroll-tech-helm-common-lib-pr-validate.yaml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name: "Pull Request: Validate"
+[1m[94m 2 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m47 |[0m [1m[33m|[0m            ) || needs.pr-metadata.outputs.chartsToInstall
+[1m[94m48 |[0m [1m[33m|[0m          }}
+   [1m[94m|[0m [1m[33m|____________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/scroll-tech-helm-common-lib-pr-validate.yaml:17:3
+   [1m[94m|[0m
+[1m[94m17 |[0m [1m[33m/[0m   pr-metadata:
+[1m[94m18 |[0m [1m[33m|[0m     uses: ./.github/workflows/pr-metadata.yaml
+   [1m[94m|[0m [1m[33m|[0m                                              [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|______________________________________________|[0m
+   [1m[94m|[0m                                                [1m[33mthis job[0m
+   [1m[94m|[0m                                                [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/scroll-tech-helm-common-lib-pr-validate.yaml:20:3
+   [1m[94m|[0m
+[1m[94m20 |[0m [1m[33m/[0m   pre-commit-check:
+[1m[94m21 |[0m [1m[33m|[0m     uses: ./.github/workflows/pre-commit-check.yaml
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m24 |[0m [1m[33m|[0m     with:
+[1m[94m25 |[0m [1m[33m|[0m       modifiedFiles: ${{ needs.pr-metadata.outputs.addedOrModifiedFiles }}
+   [1m[94m|[0m [1m[33m|[0m                                                                          [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                            [1m[33mthis job[0m
+   [1m[94m|[0m                                                                            [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/scroll-tech-helm-common-lib-pr-validate.yaml:27:3
+   [1m[94m|[0m
+[1m[94m27 |[0m [1m[33m/[0m   charts-lint:
+[1m[94m28 |[0m [1m[33m|[0m     uses: ./.github/workflows/charts-lint.yaml
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m33 |[0m [1m[33m|[0m       chartsToLint: ${{ needs.pr-metadata.outputs.chartsToLint }}
+[1m[94m34 |[0m [1m[33m|[0m       isRenovatePR: ${{ needs.pr-metadata.outputs.isRenovatePR }}
+   [1m[94m|[0m [1m[33m|[0m                                                                 [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________________________|[0m
+   [1m[94m|[0m                                                                   [1m[33mthis job[0m
+   [1m[94m|[0m                                                                   [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/scroll-tech-helm-common-lib-pr-validate.yaml:36:3
+   [1m[94m|[0m
+[1m[94m36 |[0m [1m[33m/[0m   charts-test:
+[1m[94m37 |[0m [1m[33m|[0m     uses: ./.github/workflows/charts-test.yaml
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m47 |[0m [1m[33m|[0m            ) || needs.pr-metadata.outputs.chartsToInstall
+[1m[94m48 |[0m [1m[33m|[0m          }}
+   [1m[94m|[0m [1m[33m|[0m            [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________|[0m
+   [1m[94m|[0m              [1m[33mthis job[0m
+   [1m[94m|[0m              [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m5[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m5[39m medium, [31m0[39m high

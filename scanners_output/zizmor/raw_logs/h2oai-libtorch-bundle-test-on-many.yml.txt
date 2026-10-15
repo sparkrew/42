@@ -1,0 +1,85 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/h2oai-libtorch-bundle-test-on-many.yml
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/h2oai-libtorch-bundle-test-on-many.yml:94:3
+    [1m[94m|[0m
+[1m[94m 94 |[0m [1m[91m/[0m   dump_contexts_to_log:
+[1m[94m 95 |[0m [1m[91m|[0m     runs-on: ubuntu-latest
+[1m[94m 96 |[0m [1m[91m|[0m     permissions: write-all
+    [1m[94m|[0m [1m[91m|[0m     [1m[91m^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91muses write-all permissions[0m
+[1m[94m 97 |[0m [1m[91m|[0m     steps:
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m115 |[0m [1m[91m|[0m           git ls-remote origin
+[1m[94m116 |[0m [1m[91m|[0m
+    [1m[94m|[0m [1m[91m|__^[0m [1m[91mthis job[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#dangerous-triggers\dangerous-triggers]8;;\][0m: [1muse of fundamentally insecure workflow trigger[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/h2oai-libtorch-bundle-test-on-many.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[91m/[0m on:
+[1m[94m 2 |[0m [1m[91m|[0m   release:
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m87 |[0m [1m[91m|[0m         default: ""
+[1m[94m88 |[0m [1m[91m|[0m         type: string
+   [1m[94m|[0m [1m[91m|____________________^[0m [1m[91mpull_request_target is almost always used insecurely[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/h2oai-libtorch-bundle-test-on-many.yml:100:9
+    [1m[94m|[0m
+[1m[94m100 |[0m       - name: Dump GitHub context
+    [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m101 |[0m         id: github_context_step
+[1m[94m102 |[0m         run: echo '${{ toJSON(github) }}'
+    [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mgithub may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/h2oai-libtorch-bundle-test-on-many.yml:103:9
+    [1m[94m|[0m
+[1m[94m103 |[0m       - name: Dump job context
+    [1m[94m|[0m         [1m[94m----------------------[0m [1m[94minfo: this step[0m
+[1m[94m104 |[0m         run: echo '${{ toJSON(job) }}'
+    [1m[94m|[0m         [1m[94m------------------------------[0m [1m[94minfo: job may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/h2oai-libtorch-bundle-test-on-many.yml:105:9
+    [1m[94m|[0m
+[1m[94m105 |[0m       - name: Dump steps context
+    [1m[94m|[0m         [1m[94m------------------------[0m [1m[94minfo: this step[0m
+[1m[94m106 |[0m         run: echo '${{ toJSON(steps) }}'
+    [1m[94m|[0m         [1m[94m--------------------------------[0m [1m[94minfo: steps may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/h2oai-libtorch-bundle-test-on-many.yml:107:9
+    [1m[94m|[0m
+[1m[94m107 |[0m       - name: Dump runner context
+    [1m[94m|[0m         [1m[94m-------------------------[0m [1m[94minfo: this step[0m
+[1m[94m108 |[0m         run: echo '${{ toJSON(runner) }}'
+    [1m[94m|[0m         [1m[94m---------------------------------[0m [1m[94minfo: runner may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/h2oai-libtorch-bundle-test-on-many.yml:109:9
+    [1m[94m|[0m
+[1m[94m109 |[0m       - name: Dump strategy context
+    [1m[94m|[0m         [1m[94m---------------------------[0m [1m[94minfo: this step[0m
+[1m[94m110 |[0m         run: echo '${{ toJSON(strategy) }}'
+    [1m[94m|[0m         [1m[94m-----------------------------------[0m [1m[94minfo: strategy may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[32m14[39m findings ([1m[93m7[39m suppressed[0m): 0 unknown, [35m4[39m informational, [36m0[39m low, [33m0[39m medium, [31m3[39m high

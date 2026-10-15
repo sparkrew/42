@@ -1,0 +1,78 @@
+{
+  "workflow": "lacework-terraform-gcp-config-test-compat-pr-comment.yml",
+  "tools": {
+    "poutine": {
+      "workflow": "lacework-terraform-gcp-config-test-compat-pr-comment.yml",
+      "tool": "poutine",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "default_permissions_on_risky_events": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "default_permissions_on_risky_events",
+          "line": "",
+          "column": "",
+          "job": "",
+          "step": "",
+          "details": "",
+          "event_triggers": [
+            "workflow_dispatch",
+            "issue_comment"
+          ]
+        }
+      ]
+    },
+    "zizmor": {
+      "workflow": "lacework-terraform-gcp-config-test-compat-pr-comment.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 4,
+        "by_rule": {
+          "excessive-permissions": 3,
+          "secrets-inherit": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "lacework-terraform-gcp-config-test-compat-pr-comment.yml",
+          "line": 1,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "lacework-terraform-gcp-config-test-compat-pr-comment.yml",
+          "line": 9,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "lacework-terraform-gcp-config-test-compat-pr-comment.yml",
+          "line": 26,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "lacework-terraform-gcp-config-test-compat-pr-comment.yml",
+          "line": 28,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        }
+      ]
+    }
+  }
+}

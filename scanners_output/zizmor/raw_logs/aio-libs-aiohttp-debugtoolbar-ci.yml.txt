@@ -1,0 +1,197 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/aio-libs-aiohttp-debugtoolbar-ci.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aio-libs-aiohttp-debugtoolbar-ci.yml:21:7
+   [1m[94m|[0m
+[1m[94m21 |[0m       - name: Checkout
+   [1m[94m|[0m  [1m[33m_______-[0m
+[1m[94m22 |[0m [1m[33m|[0m       uses: actions/checkout@v4
+   [1m[94m|[0m [1m[33m|_______________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aio-libs-aiohttp-debugtoolbar-ci.yml:60:7
+   [1m[94m|[0m
+[1m[94m60 |[0m       - name: Checkout
+   [1m[94m|[0m  [1m[33m_______-[0m
+[1m[94m61 |[0m [1m[33m|[0m       uses: actions/checkout@v4
+   [1m[94m|[0m [1m[33m|_______________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aio-libs-aiohttp-debugtoolbar-ci.yml:104:7
+    [1m[94m|[0m
+[1m[94m104 |[0m       - name: Checkout
+    [1m[94m|[0m  [1m[33m_______-[0m
+[1m[94m105 |[0m [1m[33m|[0m       uses: actions/checkout@v4
+    [1m[94m|[0m [1m[33m|_______________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aio-libs-aiohttp-debugtoolbar-ci.yml:1:1
+    [1m[94m|[0m
+[1m[94m  1 |[0m [1m[33m/[0m name: CI
+[1m[94m  2 |[0m [1m[33m|[0m
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m125 |[0m [1m[33m|[0m         fix_issue_regex: "`#(\\d+) <https://github.com/aio-libs/aiohttp-debugtoolbar/issues/\\1>`"
+[1m[94m126 |[0m [1m[33m|[0m         fix_issue_repl: "(#\\1)"
+    [1m[94m|[0m [1m[33m|_________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aio-libs-aiohttp-debugtoolbar-ci.yml:16:3
+   [1m[94m|[0m
+[1m[94m16 |[0m [1m[33m/[0m   lint:
+[1m[94m17 |[0m [1m[33m|[0m     name: Linter
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m45 |[0m [1m[33m|[0m       run: |
+[1m[94m46 |[0m [1m[33m|[0m         twine check dist/*
+   [1m[94m|[0m [1m[33m|[0m                          [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________________________|[0m
+   [1m[94m|[0m                            [1m[33mthis job[0m
+   [1m[94m|[0m                            [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aio-libs-aiohttp-debugtoolbar-ci.yml:48:3
+   [1m[94m|[0m
+[1m[94m48 |[0m [1m[33m/[0m   test:
+[1m[94m49 |[0m [1m[33m|[0m     name: Test
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m80 |[0m [1m[33m|[0m         file: ./coverage.xml
+[1m[94m81 |[0m [1m[33m|[0m         flags: unit
+   [1m[94m|[0m [1m[33m|[0m                   [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________|[0m
+   [1m[94m|[0m                     [1m[33mthis job[0m
+   [1m[94m|[0m                     [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aio-libs-aiohttp-debugtoolbar-ci.yml:83:3
+   [1m[94m|[0m
+[1m[94m83 |[0m [1m[33m/[0m   check:  # This job does nothing and is only used for the branch protection
+[1m[94m84 |[0m [1m[33m|[0m     if: always()
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m93 |[0m [1m[33m|[0m       with:
+[1m[94m94 |[0m [1m[33m|[0m         jobs: ${{ toJSON(needs) }}
+   [1m[94m|[0m [1m[33m|[0m                                  [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________________________________|[0m
+   [1m[94m|[0m                                    [1m[33mthis job[0m
+   [1m[94m|[0m                                    [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aio-libs-aiohttp-debugtoolbar-ci.yml:96:3
+    [1m[94m|[0m
+[1m[94m 96 |[0m [1m[33m/[0m   deploy:
+[1m[94m 97 |[0m [1m[33m|[0m     name: Deploy
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m125 |[0m [1m[33m|[0m         fix_issue_regex: "`#(\\d+) <https://github.com/aio-libs/aiohttp-debugtoolbar/issues/\\1>`"
+[1m[94m126 |[0m [1m[33m|[0m         fix_issue_repl: "(#\\1)"
+    [1m[94m|[0m [1m[33m|[0m                                 [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|_________________________________|[0m
+    [1m[94m|[0m                                   [1m[33mthis job[0m
+    [1m[94m|[0m                                   [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aio-libs-aiohttp-debugtoolbar-ci.yml:30:7
+   [1m[94m|[0m
+[1m[94m30 |[0m       uses: pre-commit/action@v3.0.1
+   [1m[94m|[0m       [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aio-libs-aiohttp-debugtoolbar-ci.yml:32:7
+   [1m[94m|[0m
+[1m[94m32 |[0m       uses: py-actions/py-dependency-install@v4
+   [1m[94m|[0m       [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aio-libs-aiohttp-debugtoolbar-ci.yml:69:7
+   [1m[94m|[0m
+[1m[94m69 |[0m       uses: py-actions/py-dependency-install@v4
+   [1m[94m|[0m       [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aio-libs-aiohttp-debugtoolbar-ci.yml:78:7
+   [1m[94m|[0m
+[1m[94m78 |[0m       uses: codecov/codecov-action@v5
+   [1m[94m|[0m       [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aio-libs-aiohttp-debugtoolbar-ci.yml:92:7
+   [1m[94m|[0m
+[1m[94m92 |[0m       uses: re-actors/alls-green@release/v1
+   [1m[94m|[0m       [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aio-libs-aiohttp-debugtoolbar-ci.yml:117:7
+    [1m[94m|[0m
+[1m[94m117 |[0m       uses: aio-libs/create-release@v1.6.6
+    [1m[94m|[0m       [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#cache-poisoning\cache-poisoning]8;;\][0m: [1mruntime artifacts potentially vulnerable to a cache poisoning attack[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aio-libs-aiohttp-debugtoolbar-ci.yml:3:1
+   [1m[94m|[0m
+[1m[94m 3 |[0m [1m[91m/[0m on:
+[1m[94m 4 |[0m [1m[91m|[0m   push:
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m11 |[0m [1m[91m|[0m       - master
+[1m[94m12 |[0m [1m[91m|[0m       - '[0-9].[0-9]+'
+   [1m[94m|[0m [1m[91m|______________________^[0m [1m[91mgenerally used when publishing artifacts generated at runtime[0m
+[1m[94m13 |[0m
+[1m[94m...[0m
+[1m[94m24 |[0m         uses: actions/setup-python@v5
+[1m[94m25 |[0m [1m[91m/[0m       with:
+[1m[94m26 |[0m [1m[91m|[0m         python-version: 3.9
+[1m[94m27 |[0m [1m[91m|[0m         cache: 'pip'
+[1m[94m28 |[0m [1m[91m|[0m         cache-dependency-path: '**/requirements*.txt'
+   [1m[94m|[0m [1m[91m|_____________________________________________________^[0m [1m[91mopt-in for caching here[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#cache-poisoning\cache-poisoning]8;;\][0m: [1mruntime artifacts potentially vulnerable to a cache poisoning attack[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aio-libs-aiohttp-debugtoolbar-ci.yml:3:1
+   [1m[94m|[0m
+[1m[94m 3 |[0m [1m[91m/[0m on:
+[1m[94m 4 |[0m [1m[91m|[0m   push:
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m11 |[0m [1m[91m|[0m       - master
+[1m[94m12 |[0m [1m[91m|[0m       - '[0-9].[0-9]+'
+   [1m[94m|[0m [1m[91m|______________________^[0m [1m[91mgenerally used when publishing artifacts generated at runtime[0m
+[1m[94m13 |[0m
+[1m[94m...[0m
+[1m[94m63 |[0m         uses: actions/setup-python@v5
+[1m[94m64 |[0m [1m[91m/[0m       with:
+[1m[94m65 |[0m [1m[91m|[0m         python-version: ${{ matrix.pyver }}
+[1m[94m66 |[0m [1m[91m|[0m         cache: 'pip'
+[1m[94m67 |[0m [1m[91m|[0m         cache-dependency-path: '**/requirements*.txt'
+   [1m[94m|[0m [1m[91m|_____________________________________________________^[0m [1m[91mopt-in for caching here[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[32m16[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m8[39m medium, [31m8[39m high

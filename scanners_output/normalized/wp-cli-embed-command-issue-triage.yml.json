@@ -1,0 +1,27 @@
+{
+  "workflow": "wp-cli-embed-command-issue-triage.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "wp-cli-embed-command-issue-triage.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "dangerous-triggers": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "dangerous-triggers",
+          "level": "error",
+          "message": "use of fundamentally insecure workflow trigger",
+          "workflow": "wp-cli-embed-command-issue-triage.yml",
+          "line": 4,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "privileged-trigger-weakness"
+        }
+      ]
+    }
+  }
+}

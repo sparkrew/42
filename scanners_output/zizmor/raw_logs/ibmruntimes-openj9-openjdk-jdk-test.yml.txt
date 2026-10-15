@@ -1,0 +1,313 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:130:9
+    [1m[94m|[0m
+[1m[94m130 |[0m         - name: 'Checkout the JDK source'
+    [1m[94m|[0m  [1m[33m_________-[0m
+[1m[94m131 |[0m [1m[33m|[0m         uses: actions/checkout@v4
+    [1m[94m|[0m [1m[33m|_________________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:156:9
+    [1m[94m|[0m
+[1m[94m156 |[0m         - name: 'Install dependencies'
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m157 |[0m [1m[91m/[0m         run: |
+[1m[94m158 |[0m [1m[91m|[0m           # On macOS we need to install some dependencies for testing
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m161 |[0m [1m[91m|[0m           # This will make GNU make available as 'make' and not only as 'gmake'
+[1m[94m162 |[0m [1m[91m|[0m           echo '/usr/local/opt/make/libexec/gnubin' >> $GITHUB_PATH
+    [1m[94m|[0m [1m[91m|___________________________________________________________________^[0m [1m[91minputs.xcode-toolset-version may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:165:9
+    [1m[94m|[0m
+[1m[94m165 |[0m         - name: 'Set PATH'
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m166 |[0m           id: path
+[1m[94m167 |[0m [1m[91m/[0m         run: |
+[1m[94m168 |[0m [1m[91m|[0m           # We need a minimal PATH on Windows
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m179 |[0m [1m[91m|[0m             echo "static-lib-test-problemlist-path=`pwd`/test/lib-test/ProblemList-StaticJdk.txt" >> $GITHUB_OUTPUT
+[1m[94m180 |[0m [1m[91m|[0m           fi
+    [1m[94m|[0m [1m[91m|____________^[0m [1m[91minputs.static-suffix may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:182:9
+    [1m[94m|[0m
+[1m[94m182 |[0m         - name: 'Set Extra Options'
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m183 |[0m           id: extra-options
+[1m[94m184 |[0m [1m[91m/[0m         run: |
+[1m[94m185 |[0m [1m[91m|[0m           if [[ '${{ inputs.static-suffix }}' == '-static' ]]; then
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m188 |[0m [1m[91m|[0m             echo "extra-problem-lists=EXTRA_PROBLEM_LISTS=${{ steps.path.outputs.static-hotspot-problemlist-path }}%20${{ steps.pat[1m[94m...[0m
+[1m[94m189 |[0m [1m[91m|[0m           fi
+    [1m[94m|[0m [1m[91m|____________^[0m [1m[91minputs.static-suffix may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:182:9
+    [1m[94m|[0m
+[1m[94m182 |[0m         - name: 'Set Extra Options'
+    [1m[94m|[0m           [1m[94m-------------------------[0m [1m[94minfo: this step[0m
+[1m[94m183 |[0m           id: extra-options
+[1m[94m184 |[0m [1m[94m/[0m         run: |
+[1m[94m185 |[0m [1m[94m|[0m           if [[ '${{ inputs.static-suffix }}' == '-static' ]]; then
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m188 |[0m [1m[94m|[0m             echo "extra-problem-lists=EXTRA_PROBLEM_LISTS=${{ steps.path.outputs.static-hotspot-problemlist-path }}%20${{ steps.pat[1m[94m...[0m
+[1m[94m189 |[0m [1m[94m|[0m           fi
+    [1m[94m|[0m [1m[94m|____________-[0m [1m[94minfo: steps.bundles.outputs.static-jdk-path may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:182:9
+    [1m[94m|[0m
+[1m[94m182 |[0m         - name: 'Set Extra Options'
+    [1m[94m|[0m           [1m[94m-------------------------[0m [1m[94minfo: this step[0m
+[1m[94m183 |[0m           id: extra-options
+[1m[94m184 |[0m [1m[94m/[0m         run: |
+[1m[94m185 |[0m [1m[94m|[0m           if [[ '${{ inputs.static-suffix }}' == '-static' ]]; then
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m188 |[0m [1m[94m|[0m             echo "extra-problem-lists=EXTRA_PROBLEM_LISTS=${{ steps.path.outputs.static-hotspot-problemlist-path }}%20${{ steps.pat[1m[94m...[0m
+[1m[94m189 |[0m [1m[94m|[0m           fi
+    [1m[94m|[0m [1m[94m|____________-[0m [1m[94minfo: steps.bundles.outputs.jdk-path may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:182:9
+    [1m[94m|[0m
+[1m[94m182 |[0m         - name: 'Set Extra Options'
+    [1m[94m|[0m           [1m[94m-------------------------[0m [1m[94minfo: this step[0m
+[1m[94m183 |[0m           id: extra-options
+[1m[94m184 |[0m [1m[94m/[0m         run: |
+[1m[94m185 |[0m [1m[94m|[0m           if [[ '${{ inputs.static-suffix }}' == '-static' ]]; then
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m188 |[0m [1m[94m|[0m             echo "extra-problem-lists=EXTRA_PROBLEM_LISTS=${{ steps.path.outputs.static-hotspot-problemlist-path }}%20${{ steps.pat[1m[94m...[0m
+[1m[94m189 |[0m [1m[94m|[0m           fi
+    [1m[94m|[0m [1m[94m|____________-[0m [1m[94minfo: steps.path.outputs.static-hotspot-problemlist-path may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:182:9
+    [1m[94m|[0m
+[1m[94m182 |[0m         - name: 'Set Extra Options'
+    [1m[94m|[0m           [1m[94m-------------------------[0m [1m[94minfo: this step[0m
+[1m[94m183 |[0m           id: extra-options
+[1m[94m184 |[0m [1m[94m/[0m         run: |
+[1m[94m185 |[0m [1m[94m|[0m           if [[ '${{ inputs.static-suffix }}' == '-static' ]]; then
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m188 |[0m [1m[94m|[0m             echo "extra-problem-lists=EXTRA_PROBLEM_LISTS=${{ steps.path.outputs.static-hotspot-problemlist-path }}%20${{ steps.pat[1m[94m...[0m
+[1m[94m189 |[0m [1m[94m|[0m           fi
+    [1m[94m|[0m [1m[94m|____________-[0m [1m[94minfo: steps.path.outputs.static-jdk-problemlist-path may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:182:9
+    [1m[94m|[0m
+[1m[94m182 |[0m         - name: 'Set Extra Options'
+    [1m[94m|[0m           [1m[94m-------------------------[0m [1m[94minfo: this step[0m
+[1m[94m183 |[0m           id: extra-options
+[1m[94m184 |[0m [1m[94m/[0m         run: |
+[1m[94m185 |[0m [1m[94m|[0m           if [[ '${{ inputs.static-suffix }}' == '-static' ]]; then
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m188 |[0m [1m[94m|[0m             echo "extra-problem-lists=EXTRA_PROBLEM_LISTS=${{ steps.path.outputs.static-hotspot-problemlist-path }}%20${{ steps.pat[1m[94m...[0m
+[1m[94m189 |[0m [1m[94m|[0m           fi
+    [1m[94m|[0m [1m[94m|____________-[0m [1m[94minfo: steps.path.outputs.static-langtools-problemlist-path may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:182:9
+    [1m[94m|[0m
+[1m[94m182 |[0m         - name: 'Set Extra Options'
+    [1m[94m|[0m           [1m[94m-------------------------[0m [1m[94minfo: this step[0m
+[1m[94m183 |[0m           id: extra-options
+[1m[94m184 |[0m [1m[94m/[0m         run: |
+[1m[94m185 |[0m [1m[94m|[0m           if [[ '${{ inputs.static-suffix }}' == '-static' ]]; then
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m188 |[0m [1m[94m|[0m             echo "extra-problem-lists=EXTRA_PROBLEM_LISTS=${{ steps.path.outputs.static-hotspot-problemlist-path }}%20${{ steps.pat[1m[94m...[0m
+[1m[94m189 |[0m [1m[94m|[0m           fi
+    [1m[94m|[0m [1m[94m|____________-[0m [1m[94minfo: steps.path.outputs.static-lib-test-problemlist-path may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:191:9
+    [1m[94m|[0m
+[1m[94m191 |[0m         - name: 'Run tests'
+    [1m[94m|[0m           [1m[94m-----------------[0m [1m[94minfo: this step[0m
+[1m[94m192 |[0m           id: run-tests
+[1m[94m193 |[0m [1m[94m/[0m         run: >
+[1m[94m194 |[0m [1m[94m|[0m           make test-prebuilt
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m203 |[0m [1m[94m|[0m           JTREG='JAVA_OPTIONS=-XX:-CreateCoredumpOnCrash;VERBOSE=fail,error,time;KEYWORDS=!headful;${{ steps.extra-options.outputs.[1m[94m...[0m
+[1m[94m204 |[0m [1m[94m|[0m           && bash ./.github/scripts/gen-test-summary.sh "$GITHUB_STEP_SUMMARY" "$GITHUB_OUTPUT"
+    [1m[94m|[0m [1m[94m|_______________________________________________________________________________________________-[0m [1m[94minfo: steps.bootjdk.outputs.path may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:191:9
+    [1m[94m|[0m
+[1m[94m191 |[0m         - name: 'Run tests'
+    [1m[94m|[0m           [1m[94m-----------------[0m [1m[94minfo: this step[0m
+[1m[94m192 |[0m           id: run-tests
+[1m[94m193 |[0m [1m[94m/[0m         run: >
+[1m[94m194 |[0m [1m[94m|[0m           make test-prebuilt
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m203 |[0m [1m[94m|[0m           JTREG='JAVA_OPTIONS=-XX:-CreateCoredumpOnCrash;VERBOSE=fail,error,time;KEYWORDS=!headful;${{ steps.extra-options.outputs.[1m[94m...[0m
+[1m[94m204 |[0m [1m[94m|[0m           && bash ./.github/scripts/gen-test-summary.sh "$GITHUB_STEP_SUMMARY" "$GITHUB_OUTPUT"
+    [1m[94m|[0m [1m[94m|_______________________________________________________________________________________________-[0m [1m[94minfo: steps.jtreg.outputs.path may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:191:9
+    [1m[94m|[0m
+[1m[94m191 |[0m         - name: 'Run tests'
+    [1m[94m|[0m           [1m[94m-----------------[0m [1m[94minfo: this step[0m
+[1m[94m192 |[0m           id: run-tests
+[1m[94m193 |[0m [1m[94m/[0m         run: >
+[1m[94m194 |[0m [1m[94m|[0m           make test-prebuilt
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m203 |[0m [1m[94m|[0m           JTREG='JAVA_OPTIONS=-XX:-CreateCoredumpOnCrash;VERBOSE=fail,error,time;KEYWORDS=!headful;${{ steps.extra-options.outputs.[1m[94m...[0m
+[1m[94m204 |[0m [1m[94m|[0m           && bash ./.github/scripts/gen-test-summary.sh "$GITHUB_STEP_SUMMARY" "$GITHUB_OUTPUT"
+    [1m[94m|[0m [1m[94m|_______________________________________________________________________________________________-[0m [1m[94minfo: steps.bundles.outputs.jdk-path may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:191:9
+    [1m[94m|[0m
+[1m[94m191 |[0m         - name: 'Run tests'
+    [1m[94m|[0m           [1m[94m-----------------[0m [1m[94minfo: this step[0m
+[1m[94m192 |[0m           id: run-tests
+[1m[94m193 |[0m [1m[94m/[0m         run: >
+[1m[94m194 |[0m [1m[94m|[0m           make test-prebuilt
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m203 |[0m [1m[94m|[0m           JTREG='JAVA_OPTIONS=-XX:-CreateCoredumpOnCrash;VERBOSE=fail,error,time;KEYWORDS=!headful;${{ steps.extra-options.outputs.[1m[94m...[0m
+[1m[94m204 |[0m [1m[94m|[0m           && bash ./.github/scripts/gen-test-summary.sh "$GITHUB_STEP_SUMMARY" "$GITHUB_OUTPUT"
+    [1m[94m|[0m [1m[94m|_______________________________________________________________________________________________-[0m [1m[94minfo: steps.bundles.outputs.symbols-path may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:191:9
+    [1m[94m|[0m
+[1m[94m191 |[0m         - name: 'Run tests'
+    [1m[94m|[0m           [1m[94m-----------------[0m [1m[94minfo: this step[0m
+[1m[94m192 |[0m           id: run-tests
+[1m[94m193 |[0m [1m[94m/[0m         run: >
+[1m[94m194 |[0m [1m[94m|[0m           make test-prebuilt
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m203 |[0m [1m[94m|[0m           JTREG='JAVA_OPTIONS=-XX:-CreateCoredumpOnCrash;VERBOSE=fail,error,time;KEYWORDS=!headful;${{ steps.extra-options.outputs.[1m[94m...[0m
+[1m[94m204 |[0m [1m[94m|[0m           && bash ./.github/scripts/gen-test-summary.sh "$GITHUB_STEP_SUMMARY" "$GITHUB_OUTPUT"
+    [1m[94m|[0m [1m[94m|_______________________________________________________________________________________________-[0m [1m[94minfo: steps.bundles.outputs.tests-path may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:191:9
+    [1m[94m|[0m
+[1m[94m191 |[0m         - name: 'Run tests'
+    [1m[94m|[0m           [1m[94m-----------------[0m [1m[94minfo: this step[0m
+[1m[94m192 |[0m           id: run-tests
+[1m[94m193 |[0m [1m[94m/[0m         run: >
+[1m[94m194 |[0m [1m[94m|[0m           make test-prebuilt
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m203 |[0m [1m[94m|[0m           JTREG='JAVA_OPTIONS=-XX:-CreateCoredumpOnCrash;VERBOSE=fail,error,time;KEYWORDS=!headful;${{ steps.extra-options.outputs.[1m[94m...[0m
+[1m[94m204 |[0m [1m[94m|[0m           && bash ./.github/scripts/gen-test-summary.sh "$GITHUB_STEP_SUMMARY" "$GITHUB_OUTPUT"
+    [1m[94m|[0m [1m[94m|_______________________________________________________________________________________________-[0m [1m[94minfo: steps.extra-options.outputs.test-jdk may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:191:9
+    [1m[94m|[0m
+[1m[94m191 |[0m         - name: 'Run tests'
+    [1m[94m|[0m           [1m[94m-----------------[0m [1m[94minfo: this step[0m
+[1m[94m192 |[0m           id: run-tests
+[1m[94m193 |[0m [1m[94m/[0m         run: >
+[1m[94m194 |[0m [1m[94m|[0m           make test-prebuilt
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m203 |[0m [1m[94m|[0m           JTREG='JAVA_OPTIONS=-XX:-CreateCoredumpOnCrash;VERBOSE=fail,error,time;KEYWORDS=!headful;${{ steps.extra-options.outputs.[1m[94m...[0m
+[1m[94m204 |[0m [1m[94m|[0m           && bash ./.github/scripts/gen-test-summary.sh "$GITHUB_STEP_SUMMARY" "$GITHUB_OUTPUT"
+    [1m[94m|[0m [1m[94m|_______________________________________________________________________________________________-[0m [1m[94minfo: steps.extra-options.outputs.compile-jdk may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:191:9
+    [1m[94m|[0m
+[1m[94m191 |[0m         - name: 'Run tests'
+    [1m[94m|[0m           [1m[94m-----------------[0m [1m[94minfo: this step[0m
+[1m[94m192 |[0m           id: run-tests
+[1m[94m193 |[0m [1m[94m/[0m         run: >
+[1m[94m194 |[0m [1m[94m|[0m           make test-prebuilt
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m203 |[0m [1m[94m|[0m           JTREG='JAVA_OPTIONS=-XX:-CreateCoredumpOnCrash;VERBOSE=fail,error,time;KEYWORDS=!headful;${{ steps.extra-options.outputs.[1m[94m...[0m
+[1m[94m204 |[0m [1m[94m|[0m           && bash ./.github/scripts/gen-test-summary.sh "$GITHUB_STEP_SUMMARY" "$GITHUB_OUTPUT"
+    [1m[94m|[0m [1m[94m|_______________________________________________________________________________________________-[0m [1m[94minfo: steps.extra-options.outputs.extra-problem-lists may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:215:9
+    [1m[94m|[0m
+[1m[94m215 |[0m         - name: 'Package test results'
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m216 |[0m           id: package
+[1m[94m217 |[0m [1m[91m/[0m         run: |
+[1m[94m218 |[0m [1m[91m|[0m           # Package test-results and relevant parts of test-support
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m237 |[0m [1m[91m|[0m           artifact_name="results-${{ inputs.platform }}-$(echo ${{ matrix.test-name }}${{ inputs.static-suffix }} | tr '/ ' '__')"
+[1m[94m238 |[0m [1m[91m|[0m           echo "artifact-name=$artifact_name" >> $GITHUB_OUTPUT
+    [1m[94m|[0m [1m[91m|_______________________________________________________________^[0m [1m[91minputs.platform may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:215:9
+    [1m[94m|[0m
+[1m[94m215 |[0m         - name: 'Package test results'
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m216 |[0m           id: package
+[1m[94m217 |[0m [1m[91m/[0m         run: |
+[1m[94m218 |[0m [1m[91m|[0m           # Package test-results and relevant parts of test-support
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m237 |[0m [1m[91m|[0m           artifact_name="results-${{ inputs.platform }}-$(echo ${{ matrix.test-name }}${{ inputs.static-suffix }} | tr '/ ' '__')"
+[1m[94m238 |[0m [1m[91m|[0m           echo "artifact-name=$artifact_name" >> $GITHUB_OUTPUT
+    [1m[94m|[0m [1m[91m|_______________________________________________________________^[0m [1m[91minputs.static-suffix may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/ibmruntimes-openj9-openjdk-jdk-test.yml:249:9
+    [1m[94m|[0m
+[1m[94m249 |[0m       - name: 'Notify about test failures'
+    [1m[94m|[0m         [1m[94m----------------------------------[0m [1m[94minfo: this step[0m
+[1m[94m250 |[0m         uses: actions/github-script@v7
+[1m[94m251 |[0m         with:
+[1m[94m252 |[0m           script: core.setFailed('${{ steps.run-tests.outputs.error-message }}')
+    [1m[94m|[0m           [1m[94m----------------------------------------------------------------------[0m [1m[94minfo: steps.run-tests.outputs.error-message may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[32m46[39m findings ([1m[93m25[39m suppressed[0m): 0 unknown, [35m15[39m informational, [36m0[39m low, [33m1[39m medium, [31m5[39m high

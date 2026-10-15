@@ -1,0 +1,42 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/Hapag-Lloyd-Renovate-Global-Configuration-welcome_message.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Hapag-Lloyd-Renovate-Global-Configuration-welcome_message.yml:11:3
+   [1m[94m|[0m
+[1m[94m11 |[0m [1m[33m/[0m   default:
+[1m[94m12 |[0m [1m[33m|[0m     # yamllint disable-line rule:line-length
+[1m[94m13 |[0m [1m[33m|[0m     uses: Hapag-Lloyd/Workflow-Templates/.github/workflows/default_welcome_message_callable.yml@2326aab43eb2a7b9e42de364c6e5ad9b5c1d[1m[94m...[0m
+[1m[94m14 |[0m [1m[33m|[0m     secrets: inherit
+   [1m[94m|[0m [1m[33m|[0m                     [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________|[0m
+   [1m[94m|[0m                       [1m[33mthis job[0m
+   [1m[94m|[0m                       [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#dangerous-triggers\dangerous-triggers]8;;\][0m: [1muse of fundamentally insecure workflow trigger[0m
+ [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Hapag-Lloyd-Renovate-Global-Configuration-welcome_message.yml:5:1
+  [1m[94m|[0m
+[1m[94m5 |[0m [1m[91m/[0m on:
+[1m[94m6 |[0m [1m[91m|[0m   pull_request_target:
+[1m[94m7 |[0m [1m[91m|[0m     types:
+[1m[94m8 |[0m [1m[91m|[0m       - opened
+  [1m[94m|[0m [1m[91m|______________^[0m [1m[91mpull_request_target is almost always used insecurely[0m
+  [1m[94m|[0m
+  [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Hapag-Lloyd-Renovate-Global-Configuration-welcome_message.yml:13:5
+   [1m[94m|[0m
+[1m[94m13 |[0m     uses: Hapag-Lloyd/Workflow-Templates/.github/workflows/default_welcome_message_callable.yml@2326aab43eb2a7b9e42de364c6e5ad9b5c1d5693 # [1m[94m...[0m
+   [1m[94m|[0m     [1m[33m------------------------------------------------------------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m14 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m4[39m findings ([1m[93m1[39m suppressed[0m): 0 unknown, [35m0[39m informational, [36m0[39m low, [33m2[39m medium, [31m1[39m high

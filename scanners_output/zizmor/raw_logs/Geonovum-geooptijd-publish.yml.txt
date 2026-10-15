@@ -1,0 +1,155 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/Geonovum-geooptijd-publish.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Geonovum-geooptijd-publish.yml:20:9
+   [1m[94m|[0m
+[1m[94m20 |[0m       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+   [1m[94m|[0m         [1m[33m------------------------------------------------------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Geonovum-geooptijd-publish.yml:156:9
+    [1m[94m|[0m
+[1m[94m156 |[0m         - name: Checkout private docs
+    [1m[94m|[0m  [1m[33m_________-[0m
+[1m[94m157 |[0m [1m[33m|[0m         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m160 |[0m [1m[33m|[0m           token: ${{ steps.app-token.outputs.token }}
+[1m[94m161 |[0m [1m[33m|[0m           path: docs.geostandaarden.nl
+    [1m[94m|[0m [1m[33m|______________________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Geonovum-geooptijd-publish.yml:163:9
+    [1m[94m|[0m
+[1m[94m163 |[0m         - name: Switch naar develop branch bij pre-release
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m164 |[0m           if: ${{ github.event.release.prerelease == true }}
+[1m[94m165 |[0m [1m[91m/[0m         run: |
+[1m[94m166 |[0m [1m[91m|[0m           cd docs.geostandaarden.nl
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m169 |[0m [1m[91m|[0m           git fetch --all
+[1m[94m170 |[0m [1m[91m|[0m           git checkout develop || git checkout -b develop origin/develop
+    [1m[94m|[0m [1m[91m|________________________________________________________________________^[0m [1m[91mgithub.actor may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Geonovum-geooptijd-publish.yml:163:9
+    [1m[94m|[0m
+[1m[94m163 |[0m         - name: Switch naar develop branch bij pre-release
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m164 |[0m           if: ${{ github.event.release.prerelease == true }}
+[1m[94m165 |[0m [1m[91m/[0m         run: |
+[1m[94m166 |[0m [1m[91m|[0m           cd docs.geostandaarden.nl
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m169 |[0m [1m[91m|[0m           git fetch --all
+[1m[94m170 |[0m [1m[91m|[0m           git checkout develop || git checkout -b develop origin/develop
+    [1m[94m|[0m [1m[91m|________________________________________________________________________^[0m [1m[91mgithub.actor_id may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Geonovum-geooptijd-publish.yml:163:9
+    [1m[94m|[0m
+[1m[94m163 |[0m         - name: Switch naar develop branch bij pre-release
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m164 |[0m           if: ${{ github.event.release.prerelease == true }}
+[1m[94m165 |[0m [1m[91m/[0m         run: |
+[1m[94m166 |[0m [1m[91m|[0m           cd docs.geostandaarden.nl
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m169 |[0m [1m[91m|[0m           git fetch --all
+[1m[94m170 |[0m [1m[91m|[0m           git checkout develop || git checkout -b develop origin/develop
+    [1m[94m|[0m [1m[91m|________________________________________________________________________^[0m [1m[91mgithub.actor may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Geonovum-geooptijd-publish.yml:172:9
+    [1m[94m|[0m
+[1m[94m172 |[0m         - name: Copy output to pubDomain folder
+    [1m[94m|[0m           [1m[94m-------------------------------------[0m [1m[94minfo: this step[0m
+[1m[94m173 |[0m [1m[94m/[0m         run: |
+[1m[94m174 |[0m [1m[94m|[0m           mkdir -p docs.geostandaarden.nl/${{ steps.metadata.outputs.folderPath }}
+[1m[94m175 |[0m [1m[94m|[0m           cp -r content/* docs.geostandaarden.nl/${{ steps.metadata.outputs.folderPath }}/
+[1m[94m176 |[0m [1m[94m|[0m           rm docs.geostandaarden.nl/${{ steps.metadata.outputs.folderPath }}/js/config.js
+    [1m[94m|[0m [1m[94m|_________________________________________________________________________________________-[0m [1m[94minfo: steps.metadata.outputs.folderPath may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Geonovum-geooptijd-publish.yml:172:9
+    [1m[94m|[0m
+[1m[94m172 |[0m         - name: Copy output to pubDomain folder
+    [1m[94m|[0m           [1m[94m-------------------------------------[0m [1m[94minfo: this step[0m
+[1m[94m173 |[0m [1m[94m/[0m         run: |
+[1m[94m174 |[0m [1m[94m|[0m           mkdir -p docs.geostandaarden.nl/${{ steps.metadata.outputs.folderPath }}
+[1m[94m175 |[0m [1m[94m|[0m           cp -r content/* docs.geostandaarden.nl/${{ steps.metadata.outputs.folderPath }}/
+[1m[94m176 |[0m [1m[94m|[0m           rm docs.geostandaarden.nl/${{ steps.metadata.outputs.folderPath }}/js/config.js
+    [1m[94m|[0m [1m[94m|_________________________________________________________________________________________-[0m [1m[94minfo: steps.metadata.outputs.folderPath may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Geonovum-geooptijd-publish.yml:172:9
+    [1m[94m|[0m
+[1m[94m172 |[0m         - name: Copy output to pubDomain folder
+    [1m[94m|[0m           [1m[94m-------------------------------------[0m [1m[94minfo: this step[0m
+[1m[94m173 |[0m [1m[94m/[0m         run: |
+[1m[94m174 |[0m [1m[94m|[0m           mkdir -p docs.geostandaarden.nl/${{ steps.metadata.outputs.folderPath }}
+[1m[94m175 |[0m [1m[94m|[0m           cp -r content/* docs.geostandaarden.nl/${{ steps.metadata.outputs.folderPath }}/
+[1m[94m176 |[0m [1m[94m|[0m           rm docs.geostandaarden.nl/${{ steps.metadata.outputs.folderPath }}/js/config.js
+    [1m[94m|[0m [1m[94m|_________________________________________________________________________________________-[0m [1m[94minfo: steps.metadata.outputs.folderPath may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Geonovum-geooptijd-publish.yml:178:9
+    [1m[94m|[0m
+[1m[94m178 |[0m         - name: Update .htaccess “latest” pointer
+    [1m[94m|[0m           [1m[94m---------------------------------------[0m [1m[94minfo: this step[0m
+[1m[94m179 |[0m [1m[94m/[0m         run: |
+[1m[94m180 |[0m [1m[94m|[0m           set -euo pipefail
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m207 |[0m [1m[94m|[0m
+[1m[94m208 |[0m [1m[94m|[0m           echo "Updated $REPO_DIR/$LINK_DIR/.htaccess -> /$TOPIC/$VERSION_DIR/"
+    [1m[94m|[0m [1m[94m|_______________________________________________________________________________-[0m [1m[94minfo: steps.metadata.outputs.folderPath may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Geonovum-geooptijd-publish.yml:178:9
+    [1m[94m|[0m
+[1m[94m178 |[0m         - name: Update .htaccess “latest” pointer
+    [1m[94m|[0m           [1m[94m---------------------------------------[0m [1m[94minfo: this step[0m
+[1m[94m179 |[0m [1m[94m/[0m         run: |
+[1m[94m180 |[0m [1m[94m|[0m           set -euo pipefail
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m207 |[0m [1m[94m|[0m
+[1m[94m208 |[0m [1m[94m|[0m           echo "Updated $REPO_DIR/$LINK_DIR/.htaccess -> /$TOPIC/$VERSION_DIR/"
+    [1m[94m|[0m [1m[94m|_______________________________________________________________________________-[0m [1m[94minfo: steps.metadata.outputs.shortName may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Geonovum-geooptijd-publish.yml:210:9
+    [1m[94m|[0m
+[1m[94m210 |[0m         - name: Push naar develop bij pre-release
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m211 |[0m           if: ${{ github.event.release.prerelease == true }}
+[1m[94m212 |[0m [1m[91m/[0m         run: |
+[1m[94m213 |[0m [1m[91m|[0m           cd docs.geostandaarden.nl
+[1m[94m214 |[0m [1m[91m|[0m           git add .
+[1m[94m215 |[0m [1m[91m|[0m           git commit -m "Automatische pre-release update van ${{ github.repository }} (triggered by ${{ github.actor }})"
+[1m[94m216 |[0m [1m[91m|[0m           git push origin develop
+    [1m[94m|[0m [1m[91m|_________________________________^[0m [1m[91mgithub.actor may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m22[39m findings ([1m[93m11[39m suppressed[0m): 0 unknown, [35m5[39m informational, [36m0[39m low, [33m2[39m medium, [31m4[39m high

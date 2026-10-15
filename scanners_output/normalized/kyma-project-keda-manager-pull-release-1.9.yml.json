@@ -1,0 +1,38 @@
+{
+  "workflow": "kyma-project-keda-manager-pull-release-1.9.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "kyma-project-keda-manager-pull-release-1.9.yaml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 2,
+        "by_rule": {
+          "excessive-permissions": 1,
+          "dangerous-triggers": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "error",
+          "message": "overly broad permissions",
+          "workflow": "kyma-project-keda-manager-pull-release-1.9.yaml",
+          "line": 9,
+          "column": 3,
+          "note": "audit confidence \u2192 High",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "dangerous-triggers",
+          "level": "error",
+          "message": "use of fundamentally insecure workflow trigger",
+          "workflow": "kyma-project-keda-manager-pull-release-1.9.yaml",
+          "line": 2,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "privileged-trigger-weakness"
+        }
+      ]
+    }
+  }
+}

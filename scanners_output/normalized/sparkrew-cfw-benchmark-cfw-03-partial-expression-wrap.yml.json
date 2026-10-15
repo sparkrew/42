@@ -1,0 +1,52 @@
+{
+  "workflow": "sparkrew-cfw-benchmark-cfw-03-partial-expression-wrap.yml",
+  "tools": {
+    "poutine": {
+      "workflow": "sparkrew-cfw-benchmark-cfw-03-partial-expression-wrap.yml",
+      "tool": "poutine",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "if_always_true": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "if_always_true",
+          "line": 26,
+          "column": "",
+          "job": "deploy-infra",
+          "step": "",
+          "details": "",
+          "event_triggers": [
+            "push",
+            "workflow_dispatch"
+          ],
+          "capability": "control-flow-weakness"
+        }
+      ]
+    },
+    "zizmor": {
+      "workflow": "sparkrew-cfw-benchmark-cfw-03-partial-expression-wrap.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "excessive-permissions": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "sparkrew-cfw-benchmark-cfw-03-partial-expression-wrap.yml",
+          "line": 19,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        }
+      ]
+    }
+  }
+}

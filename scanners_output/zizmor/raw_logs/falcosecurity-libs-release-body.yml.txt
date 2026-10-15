@@ -1,0 +1,137 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/falcosecurity-libs-release-body.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/falcosecurity-libs-release-body.yml:60:9
+   [1m[94m|[0m
+[1m[94m60 |[0m         - name: Clone repo
+   [1m[94m|[0m  [1m[33m_________-[0m
+[1m[94m61 |[0m [1m[33m|[0m         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+   [1m[94m|[0m [1m[33m|________________________________________________________________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/falcosecurity-libs-release-body.yml:122:9
+    [1m[94m|[0m
+[1m[94m122 |[0m         - name: Clone libs repo
+    [1m[94m|[0m  [1m[33m_________-[0m
+[1m[94m123 |[0m [1m[33m|[0m         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+    [1m[94m|[0m [1m[33m|________________________________________________________________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/falcosecurity-libs-release-body.yml:1:1
+    [1m[94m|[0m
+[1m[94m  1 |[0m [1m[33m/[0m name: Generate release body for published releases
+[1m[94m  2 |[0m [1m[33m|[0m on:
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m188 |[0m [1m[33m|[0m           tag_name: ${{ github.event.release.tag_name }}
+[1m[94m189 |[0m [1m[33m|[0m           name: ${{ github.event.release.name }}
+    [1m[94m|[0m [1m[33m|_________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/falcosecurity-libs-release-body.yml:12:3
+   [1m[94m|[0m
+[1m[94m12 |[0m [1m[33m/[0m   release-settings:
+[1m[94m13 |[0m [1m[33m|[0m     runs-on: ubuntu-latest
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m50 |[0m [1m[33m|[0m             print(f'is_latest={is_latest}'.lower(), file=ofp)
+[1m[94m51 |[0m [1m[33m|[0m             print(f'is_driver={is_driver}'.lower(), file=ofp)
+   [1m[94m|[0m [1m[33m|[0m                                                             [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________________________________________________|[0m
+   [1m[94m|[0m                                                               [1m[33mthis job[0m
+   [1m[94m|[0m                                                               [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/falcosecurity-libs-release-body.yml:107:3
+    [1m[94m|[0m
+[1m[94m107 |[0m [1m[33m/[0m   kernel-tests-release:
+[1m[94m108 |[0m [1m[33m|[0m     needs: [release-settings]
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m112 |[0m [1m[33m|[0m       libsversion: ${{ github.event.release.tag_name }}
+[1m[94m113 |[0m [1m[33m|[0m     secrets: inherit
+    [1m[94m|[0m [1m[33m|[0m                    [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|____________________|[0m
+    [1m[94m|[0m                      [1m[33mthis job[0m
+    [1m[94m|[0m                      [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/falcosecurity-libs-release-body.yml:26:9
+   [1m[94m|[0m
+[1m[94m26 |[0m         - name: Get settings for this release
+   [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m27 |[0m           id: get_settings
+[1m[94m28 |[0m           shell: python
+[1m[94m29 |[0m [1m[91m/[0m         run: |
+[1m[94m30 |[0m [1m[91m|[0m           import os
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m50 |[0m [1m[91m|[0m             print(f'is_latest={is_latest}'.lower(), file=ofp)
+[1m[94m51 |[0m [1m[91m|[0m             print(f'is_driver={is_driver}'.lower(), file=ofp)
+   [1m[94m|[0m [1m[91m|_____________________________________________________________^[0m [1m[91mgithub.event.release.tag_name may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/falcosecurity-libs-release-body.yml:26:9
+   [1m[94m|[0m
+[1m[94m26 |[0m         - name: Get settings for this release
+   [1m[94m|[0m           [1m[94m-----------------------------------[0m [1m[94minfo: this step[0m
+[1m[94m27 |[0m           id: get_settings
+[1m[94m28 |[0m           shell: python
+[1m[94m29 |[0m [1m[94m/[0m         run: |
+[1m[94m30 |[0m [1m[94m|[0m           import os
+[1m[94m...[0m  [1m[94m|[0m
+[1m[94m50 |[0m [1m[94m|[0m             print(f'is_latest={is_latest}'.lower(), file=ofp)
+[1m[94m51 |[0m [1m[94m|[0m             print(f'is_driver={is_driver}'.lower(), file=ofp)
+   [1m[94m|[0m [1m[94m|_____________________________________________________________-[0m [1m[94minfo: steps.latest_release.outputs.release may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/falcosecurity-libs-release-body.yml:95:9
+   [1m[94m|[0m
+[1m[94m95 |[0m         - name: Attach release creator to release body
+   [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m96 |[0m [1m[91m/[0m         run: |
+[1m[94m97 |[0m [1m[91m|[0m           echo "" >> release-body.md
+[1m[94m98 |[0m [1m[91m|[0m           echo "#### Release Manager @${{ github.event.release.author.login }}" >> release-body.md
+   [1m[94m|[0m [1m[91m|__________________________________________________________________________________________________^[0m [1m[91mgithub.event.release.author.login may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/falcosecurity-libs-release-body.yml:179:9
+    [1m[94m|[0m
+[1m[94m179 |[0m         - name: Attach release creator to release body
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m180 |[0m [1m[91m/[0m         run: |
+[1m[94m181 |[0m [1m[91m|[0m           echo "" >> release-body.md
+[1m[94m182 |[0m [1m[91m|[0m           echo "#### Release Manager @${{ github.event.release.author.login }}" >> release-body.md
+    [1m[94m|[0m [1m[91m|__________________________________________________________________________________________________^[0m [1m[91mgithub.event.release.author.login may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/falcosecurity-libs-release-body.yml:110:5
+    [1m[94m|[0m
+[1m[94m110 |[0m     uses: ./.github/workflows/reusable_kernel_tests.yaml
+    [1m[94m|[0m     [1m[33m----------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m111 |[0m     with:
+[1m[94m112 |[0m       libsversion: ${{ github.event.release.tag_name }}
+[1m[94m113 |[0m     secrets: inherit
+    [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m14[39m findings ([1m[93m4[39m suppressed[0m): 0 unknown, [35m1[39m informational, [36m0[39m low, [33m6[39m medium, [31m3[39m high

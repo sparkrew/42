@@ -1,0 +1,205 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:37:9
+   [1m[94m|[0m
+[1m[94m37 |[0m       - uses: actions/checkout@v5
+   [1m[94m|[0m         [1m[33m-------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:49:9
+   [1m[94m|[0m
+[1m[94m49 |[0m       - uses: actions/checkout@v5
+   [1m[94m|[0m         [1m[33m-------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:63:9
+   [1m[94m|[0m
+[1m[94m63 |[0m       - uses: actions/checkout@v5
+   [1m[94m|[0m         [1m[33m-------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:77:9
+   [1m[94m|[0m
+[1m[94m77 |[0m       - uses: actions/checkout@v5
+   [1m[94m|[0m         [1m[33m-------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:90:9
+   [1m[94m|[0m
+[1m[94m90 |[0m       - uses: actions/checkout@v5
+   [1m[94m|[0m         [1m[33m-------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:123:9
+    [1m[94m|[0m
+[1m[94m123 |[0m       - uses: actions/checkout@v5
+    [1m[94m|[0m         [1m[33m-------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:1:1
+    [1m[94m|[0m
+[1m[94m  1 |[0m [1m[33m/[0m # Run Puppet checks and test matrix on Pull Requests
+[1m[94m  2 |[0m [1m[33m|[0m # ------------------------------------------------------------------------------
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m140 |[0m [1m[33m|[0m #        run: echo "$GITHUB_CONTEXT"
+[1m[94m141 |[0m [1m[33m|[0m #
+    [1m[94m|[0m [1m[33m|__-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:33:3
+   [1m[94m|[0m
+[1m[94m33 |[0m [1m[33m/[0m   puppet-syntax:
+[1m[94m34 |[0m [1m[33m|[0m     name: 'Puppet Syntax'
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m42 |[0m [1m[33m|[0m           bundler-cache: true
+[1m[94m43 |[0m [1m[33m|[0m       - run: "bundle exec rake syntax"
+   [1m[94m|[0m [1m[33m|[0m                                      [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|______________________________________|[0m
+   [1m[94m|[0m                                        [1m[33mthis job[0m
+   [1m[94m|[0m                                        [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:45:3
+   [1m[94m|[0m
+[1m[94m45 |[0m [1m[33m/[0m   puppet-style:
+[1m[94m46 |[0m [1m[33m|[0m     name: 'Puppet Style'
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m55 |[0m [1m[33m|[0m       - run: "bundle exec rake lint"
+[1m[94m56 |[0m [1m[33m|[0m       - run: "bundle exec rake metadata_lint"
+   [1m[94m|[0m [1m[33m|[0m                                             [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________________________________|[0m
+   [1m[94m|[0m                                               [1m[33mthis job[0m
+   [1m[94m|[0m                                               [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:58:3
+   [1m[94m|[0m
+[1m[94m58 |[0m [1m[33m/[0m   ruby-style:
+[1m[94m59 |[0m [1m[33m|[0m     name: 'Ruby Style'
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m70 |[0m [1m[33m|[0m           bundle show
+[1m[94m71 |[0m [1m[33m|[0m           bundle exec rake rubocop
+   [1m[94m|[0m [1m[33m|[0m                                  [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________________________________|[0m
+   [1m[94m|[0m                                    [1m[33mthis job[0m
+   [1m[94m|[0m                                    [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:73:3
+   [1m[94m|[0m
+[1m[94m73 |[0m [1m[33m/[0m   file-checks:
+[1m[94m74 |[0m [1m[33m|[0m     name: 'File checks'
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m83 |[0m [1m[33m|[0m       - run: bundle exec rake check:dot_underscore
+[1m[94m84 |[0m [1m[33m|[0m       - run: bundle exec rake check:test_file
+   [1m[94m|[0m [1m[33m|[0m                                             [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________________________________|[0m
+   [1m[94m|[0m                                               [1m[33mthis job[0m
+   [1m[94m|[0m                                               [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:86:3
+    [1m[94m|[0m
+[1m[94m 86 |[0m [1m[33m/[0m   releng-checks:
+[1m[94m 87 |[0m [1m[33m|[0m     name: 'RELENG checks'
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m101 |[0m [1m[33m|[0m       - name: 'Test-build the Puppet module'
+[1m[94m102 |[0m [1m[33m|[0m         run: 'bundle exec pdk build --force'
+    [1m[94m|[0m [1m[33m|[0m                                            [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|____________________________________________|[0m
+    [1m[94m|[0m                                              [1m[33mthis job[0m
+    [1m[94m|[0m                                              [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:104:3
+    [1m[94m|[0m
+[1m[94m104 |[0m [1m[33m/[0m   spec-tests:
+[1m[94m105 |[0m [1m[33m|[0m     name: 'Puppet Spec'
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m140 |[0m [1m[33m|[0m #        run: echo "$GITHUB_CONTEXT"
+[1m[94m141 |[0m [1m[33m|[0m #
+    [1m[94m|[0m [1m[33m|[0m  [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__|[0m
+    [1m[94m|[0m    [1m[33mthis job[0m
+    [1m[94m|[0m    [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:39:9
+   [1m[94m|[0m
+[1m[94m39 |[0m         uses: ruby/setup-ruby@v1  # ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:51:9
+   [1m[94m|[0m
+[1m[94m51 |[0m         uses: ruby/setup-ruby@v1
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:65:9
+   [1m[94m|[0m
+[1m[94m65 |[0m         uses: ruby/setup-ruby@v1
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:79:9
+   [1m[94m|[0m
+[1m[94m79 |[0m         uses: ruby/setup-ruby@v1
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:92:9
+   [1m[94m|[0m
+[1m[94m92 |[0m         uses: ruby/setup-ruby@v1
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-ntpd-pr_tests.yml:125:9
+    [1m[94m|[0m
+[1m[94m125 |[0m         uses: ruby/setup-ruby@v1
+    [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m19[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m13[39m medium, [31m6[39m high

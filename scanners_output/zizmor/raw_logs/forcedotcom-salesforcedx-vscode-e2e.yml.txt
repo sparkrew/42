@@ -1,0 +1,331 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:1:1
+    [1m[94m|[0m
+[1m[94m  1 |[0m [1m[33m/[0m name: End to End Tests
+[1m[94m  2 |[0m [1m[33m|[0m on:
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m164 |[0m [1m[33m|[0m       vscodeVersion: '1.90.0'
+[1m[94m165 |[0m [1m[33m|[0m       runId: ${{ github.event.workflow_run.id }}
+    [1m[94m|[0m [1m[33m|_________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:59:3
+   [1m[94m|[0m
+[1m[94m59 |[0m [1m[33m/[0m   Apex:
+[1m[94m60 |[0m [1m[33m|[0m     if: ${{ inputs.apexE2ETests || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m65 |[0m [1m[33m|[0m       vscodeVersion: ${{ inputs.vscodeVersion || 'stable' }}
+[1m[94m66 |[0m [1m[33m|[0m       runId: ${{ inputs.runId || github.event.workflow_run.id }}
+   [1m[94m|[0m [1m[33m|[0m                                                                [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________________________________________________|[0m
+   [1m[94m|[0m                                                                  [1m[33mthis job[0m
+   [1m[94m|[0m                                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:68:3
+   [1m[94m|[0m
+[1m[94m68 |[0m [1m[33m/[0m   Core:
+[1m[94m69 |[0m [1m[33m|[0m     if: ${{ inputs.coreE2ETests || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m74 |[0m [1m[33m|[0m       vscodeVersion: ${{ inputs.vscodeVersion || 'stable' }}
+[1m[94m75 |[0m [1m[33m|[0m       runId: ${{ inputs.runId || github.event.workflow_run.id }}
+   [1m[94m|[0m [1m[33m|[0m                                                                [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________________________________________________|[0m
+   [1m[94m|[0m                                                                  [1m[33mthis job[0m
+   [1m[94m|[0m                                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:77:3
+   [1m[94m|[0m
+[1m[94m77 |[0m [1m[33m/[0m   DeployAndRetrieve:
+[1m[94m78 |[0m [1m[33m|[0m     if: ${{ inputs.deployAndRetrieveE2ETests || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'suc[1m[94m...[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m83 |[0m [1m[33m|[0m       vscodeVersion: ${{ inputs.vscodeVersion || 'stable' }}
+[1m[94m84 |[0m [1m[33m|[0m       runId: ${{ inputs.runId || github.event.workflow_run.id }}
+   [1m[94m|[0m [1m[33m|[0m                                                                [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________________________________________________|[0m
+   [1m[94m|[0m                                                                  [1m[33mthis job[0m
+   [1m[94m|[0m                                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:86:3
+   [1m[94m|[0m
+[1m[94m86 |[0m [1m[33m/[0m   LSP:
+[1m[94m87 |[0m [1m[33m|[0m     if: ${{ inputs.lspE2ETests || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m92 |[0m [1m[33m|[0m       vscodeVersion: ${{ inputs.vscodeVersion || 'stable' }}
+[1m[94m93 |[0m [1m[33m|[0m       runId: ${{ inputs.runId || github.event.workflow_run.id }}
+   [1m[94m|[0m [1m[33m|[0m                                                                [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________________________________________________|[0m
+   [1m[94m|[0m                                                                  [1m[33mthis job[0m
+   [1m[94m|[0m                                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:95:3
+    [1m[94m|[0m
+[1m[94m 95 |[0m [1m[33m/[0m   LWC:
+[1m[94m 96 |[0m [1m[33m|[0m     if: ${{ inputs.lwcE2ETests || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m101 |[0m [1m[33m|[0m       vscodeVersion: ${{ inputs.vscodeVersion || 'stable' }}
+[1m[94m102 |[0m [1m[33m|[0m       runId: ${{ inputs.runId || github.event.workflow_run.id }}
+    [1m[94m|[0m [1m[33m|[0m                                                                [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|________________________________________________________________|[0m
+    [1m[94m|[0m                                                                  [1m[33mthis job[0m
+    [1m[94m|[0m                                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:104:3
+    [1m[94m|[0m
+[1m[94m104 |[0m [1m[33m/[0m   SOQL:
+[1m[94m105 |[0m [1m[33m|[0m     if: ${{ inputs.soqlE2ETests || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m110 |[0m [1m[33m|[0m       vscodeVersion: ${{ inputs.vscodeVersion || 'stable' }}
+[1m[94m111 |[0m [1m[33m|[0m       runId: ${{ inputs.runId || github.event.workflow_run.id }}
+    [1m[94m|[0m [1m[33m|[0m                                                                [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|________________________________________________________________|[0m
+    [1m[94m|[0m                                                                  [1m[33mthis job[0m
+    [1m[94m|[0m                                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:113:3
+    [1m[94m|[0m
+[1m[94m113 |[0m [1m[33m/[0m   Apex_min_vscode_version:
+[1m[94m114 |[0m [1m[33m|[0m     if: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' }}
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m119 |[0m [1m[33m|[0m       vscodeVersion: '1.90.0'
+[1m[94m120 |[0m [1m[33m|[0m       runId: ${{ github.event.workflow_run.id }}
+    [1m[94m|[0m [1m[33m|[0m                                                [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|________________________________________________|[0m
+    [1m[94m|[0m                                                  [1m[33mthis job[0m
+    [1m[94m|[0m                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:122:3
+    [1m[94m|[0m
+[1m[94m122 |[0m [1m[33m/[0m   Core_min_vscode_version:
+[1m[94m123 |[0m [1m[33m|[0m     if: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' }}
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m128 |[0m [1m[33m|[0m       vscodeVersion: '1.90.0'
+[1m[94m129 |[0m [1m[33m|[0m       runId: ${{ github.event.workflow_run.id }}
+    [1m[94m|[0m [1m[33m|[0m                                                [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|________________________________________________|[0m
+    [1m[94m|[0m                                                  [1m[33mthis job[0m
+    [1m[94m|[0m                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:131:3
+    [1m[94m|[0m
+[1m[94m131 |[0m [1m[33m/[0m   DeployAndRetrieve_min_vscode_version:
+[1m[94m132 |[0m [1m[33m|[0m     if: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' }}
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m137 |[0m [1m[33m|[0m       vscodeVersion: '1.90.0'
+[1m[94m138 |[0m [1m[33m|[0m       runId: ${{ github.event.workflow_run.id }}
+    [1m[94m|[0m [1m[33m|[0m                                                [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|________________________________________________|[0m
+    [1m[94m|[0m                                                  [1m[33mthis job[0m
+    [1m[94m|[0m                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:140:3
+    [1m[94m|[0m
+[1m[94m140 |[0m [1m[33m/[0m   LSP_min_vscode_version:
+[1m[94m141 |[0m [1m[33m|[0m     if: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' }}
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m146 |[0m [1m[33m|[0m       vscodeVersion: '1.90.0'
+[1m[94m147 |[0m [1m[33m|[0m       runId: ${{ github.event.workflow_run.id }}
+    [1m[94m|[0m [1m[33m|[0m                                                [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|________________________________________________|[0m
+    [1m[94m|[0m                                                  [1m[33mthis job[0m
+    [1m[94m|[0m                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:149:3
+    [1m[94m|[0m
+[1m[94m149 |[0m [1m[33m/[0m   LWC_min_vscode_version:
+[1m[94m150 |[0m [1m[33m|[0m     if: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' }}
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m155 |[0m [1m[33m|[0m       vscodeVersion: '1.90.0'
+[1m[94m156 |[0m [1m[33m|[0m       runId: ${{ github.event.workflow_run.id }}
+    [1m[94m|[0m [1m[33m|[0m                                                [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|________________________________________________|[0m
+    [1m[94m|[0m                                                  [1m[33mthis job[0m
+    [1m[94m|[0m                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:158:3
+    [1m[94m|[0m
+[1m[94m158 |[0m [1m[33m/[0m   SOQL_min_vscode_version:
+[1m[94m159 |[0m [1m[33m|[0m     if: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' }}
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m164 |[0m [1m[33m|[0m       vscodeVersion: '1.90.0'
+[1m[94m165 |[0m [1m[33m|[0m       runId: ${{ github.event.workflow_run.id }}
+    [1m[94m|[0m [1m[33m|[0m                                                 [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|_________________________________________________|[0m
+    [1m[94m|[0m                                                   [1m[33mthis job[0m
+    [1m[94m|[0m                                                   [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#dangerous-triggers\dangerous-triggers]8;;\][0m: [1muse of fundamentally insecure workflow trigger[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:2:1
+   [1m[94m|[0m
+[1m[94m 2 |[0m [1m[91m/[0m on:
+[1m[94m 3 |[0m [1m[91m|[0m   workflow_run:
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m55 |[0m [1m[91m|[0m         required: true
+[1m[94m56 |[0m [1m[91m|[0m         type: string
+   [1m[94m|[0m [1m[91m|____________________^[0m [1m[91mworkflow_run is almost always used insecurely[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:61:5
+   [1m[94m|[0m
+[1m[94m61 |[0m     uses: ./.github/workflows/apexE2E.yml
+   [1m[94m|[0m     [1m[33m-------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m62 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:70:5
+   [1m[94m|[0m
+[1m[94m70 |[0m     uses: ./.github/workflows/coreE2E.yml
+   [1m[94m|[0m     [1m[33m-------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m71 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:79:5
+   [1m[94m|[0m
+[1m[94m79 |[0m     uses: ./.github/workflows/deployRetrieveE2E.yml
+   [1m[94m|[0m     [1m[33m-----------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m80 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:88:5
+   [1m[94m|[0m
+[1m[94m88 |[0m     uses: ./.github/workflows/lspE2E.yml
+   [1m[94m|[0m     [1m[33m------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m89 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:97:5
+   [1m[94m|[0m
+[1m[94m97 |[0m     uses: ./.github/workflows/lwcE2E.yml
+   [1m[94m|[0m     [1m[33m------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m98 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:106:5
+    [1m[94m|[0m
+[1m[94m106 |[0m     uses: ./.github/workflows/soqlE2E.yml
+    [1m[94m|[0m     [1m[33m-------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m107 |[0m     secrets: inherit
+    [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:115:5
+    [1m[94m|[0m
+[1m[94m115 |[0m     uses: ./.github/workflows/apexE2E.yml
+    [1m[94m|[0m     [1m[33m-------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m116 |[0m     secrets: inherit
+    [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:124:5
+    [1m[94m|[0m
+[1m[94m124 |[0m     uses: ./.github/workflows/coreE2E.yml
+    [1m[94m|[0m     [1m[33m-------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m125 |[0m     secrets: inherit
+    [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:133:5
+    [1m[94m|[0m
+[1m[94m133 |[0m     uses: ./.github/workflows/deployRetrieveE2E.yml
+    [1m[94m|[0m     [1m[33m-----------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m134 |[0m     secrets: inherit
+    [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:142:5
+    [1m[94m|[0m
+[1m[94m142 |[0m     uses: ./.github/workflows/lspE2E.yml
+    [1m[94m|[0m     [1m[33m------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m143 |[0m     secrets: inherit
+    [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:151:5
+    [1m[94m|[0m
+[1m[94m151 |[0m     uses: ./.github/workflows/lwcE2E.yml
+    [1m[94m|[0m     [1m[33m------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m152 |[0m     secrets: inherit
+    [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/forcedotcom-salesforcedx-vscode-e2e.yml:160:5
+    [1m[94m|[0m
+[1m[94m160 |[0m     uses: ./.github/workflows/soqlE2E.yml
+    [1m[94m|[0m     [1m[33m-------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m161 |[0m     secrets: inherit
+    [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m26[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m25[39m medium, [31m1[39m high

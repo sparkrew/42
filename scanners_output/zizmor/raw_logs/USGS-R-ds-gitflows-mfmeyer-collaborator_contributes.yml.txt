@@ -1,0 +1,69 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/USGS-R-ds-gitflows-mfmeyer-collaborator_contributes.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/USGS-R-ds-gitflows-mfmeyer-collaborator_contributes.yml:25:9
+   [1m[94m|[0m
+[1m[94m25 |[0m         - name: Checkout repository
+   [1m[94m|[0m  [1m[33m_________-[0m
+[1m[94m26 |[0m [1m[33m|[0m         uses: actions/checkout@v1
+[1m[94m27 |[0m [1m[33m|[0m     
+[1m[94m28 |[0m [1m[33m|[0m       # Add the next story section to the file
+   [1m[94m|[0m [1m[33m|______________________________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/USGS-R-ds-gitflows-mfmeyer-collaborator_contributes.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m # This workflow will be run when an issue labeled "trigger-collab" is closed.
+[1m[94m 2 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m55 |[0m [1m[33m|[0m       - name: Always run
+[1m[94m56 |[0m [1m[33m|[0m         run: echo "This job is used to prevent the worflow status from showing failed if the build_if_collab job is skipped."
+   [1m[94m|[0m [1m[33m|______________________________________________________________________________________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/USGS-R-ds-gitflows-mfmeyer-collaborator_contributes.yml:13:3
+   [1m[94m|[0m
+[1m[94m13 |[0m [1m[33m/[0m   build_if_collab:
+[1m[94m14 |[0m [1m[33m|[0m     # The type of runner that the job will run on
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m49 |[0m [1m[33m|[0m   
+[1m[94m50 |[0m [1m[33m|[0m   # Idea from https://github.community/t5/GitHub-Actions/Workflow-is-failing-if-no-job-can-be-ran-due-to-condition/td-p/38085
+   [1m[94m|[0m [1m[33m|[0m                                                                                                                             [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________________________________________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                                                               [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                                                               [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/USGS-R-ds-gitflows-mfmeyer-collaborator_contributes.yml:51:3
+   [1m[94m|[0m
+[1m[94m51 |[0m [1m[33m/[0m   always_job:
+[1m[94m52 |[0m [1m[33m|[0m     name: Always run job
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m55 |[0m [1m[33m|[0m       - name: Always run
+[1m[94m56 |[0m [1m[33m|[0m         run: echo "This job is used to prevent the worflow status from showing failed if the build_if_collab job is skipped."
+   [1m[94m|[0m [1m[33m|[0m                                                                                                                              [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|______________________________________________________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                                                                [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                                                                [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/USGS-R-ds-gitflows-mfmeyer-collaborator_contributes.yml:44:9
+   [1m[94m|[0m
+[1m[94m44 |[0m         uses: test-room-7/action-update-file@v1
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m5[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m4[39m medium, [31m1[39m high

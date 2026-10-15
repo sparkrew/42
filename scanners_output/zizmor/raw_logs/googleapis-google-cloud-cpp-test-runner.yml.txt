@@ -1,0 +1,245 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/googleapis-google-cloud-cpp-test-runner.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/googleapis-google-cloud-cpp-test-runner.yml:1:1
+    [1m[94m|[0m
+[1m[94m  1 |[0m [1m[33m/[0m name: "gha: macOS & Windows"
+[1m[94m  2 |[0m [1m[33m|[0m
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m184 |[0m [1m[33m|[0m             "${status}" "${{ github.server_url }}" "${{ github.repository }}" "${{ github.run_id }}" |
+[1m[94m185 |[0m [1m[33m|[0m           curl -fsX POST -o /dev/null -d@- -H "Content-Type: application/json; charset=UTF-8" '${{ secrets.CLOUD_CPP_BUILD_ALERTS_WEBHOOK }}'
+    [1m[94m|[0m [1m[33m|______________________________________________________________________________________________________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/googleapis-google-cloud-cpp-test-runner.yml:33:3
+   [1m[94m|[0m
+[1m[94m33 |[0m [1m[33m/[0m   debug:
+[1m[94m34 |[0m [1m[33m|[0m     name: debug_job
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m43 |[0m [1m[33m|[0m           echo "user=${{ github.event.pull_request.user }}" || true
+[1m[94m44 |[0m [1m[33m|[0m           echo "user_orgs=${{ github.event.pull_request.user.organizations_url }}" || true
+   [1m[94m|[0m [1m[33m|[0m                                                                                          [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                            [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                            [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/googleapis-google-cloud-cpp-test-runner.yml:46:3
+   [1m[94m|[0m
+[1m[94m46 |[0m [1m[33m/[0m   pre-flight:
+[1m[94m47 |[0m [1m[33m|[0m     # Save the `ref` of the pull request, so downstream jobs know what to checkout.
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m77 |[0m [1m[33m|[0m   # the additional jobs inherit any secrets needed to use the remote caches and
+[1m[94m78 |[0m [1m[33m|[0m   # receive what version to checkout as an input.
+   [1m[94m|[0m [1m[33m|[0m                                                 [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________|[0m
+   [1m[94m|[0m                                                   [1m[33mthis job[0m
+   [1m[94m|[0m                                                   [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/googleapis-google-cloud-cpp-test-runner.yml:79:3
+   [1m[94m|[0m
+[1m[94m79 |[0m [1m[33m/[0m   macos-bazel:
+[1m[94m80 |[0m [1m[33m|[0m     # Disabled
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m88 |[0m [1m[33m|[0m       execute-integration-tests: true
+[1m[94m89 |[0m [1m[33m|[0m     secrets: inherit
+   [1m[94m|[0m [1m[33m|[0m                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________|[0m
+   [1m[94m|[0m                      [1m[33mthis job[0m
+   [1m[94m|[0m                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/googleapis-google-cloud-cpp-test-runner.yml:90:3
+    [1m[94m|[0m
+[1m[94m 90 |[0m [1m[33m/[0m   windows-bazel:
+[1m[94m 91 |[0m [1m[33m|[0m     # Build the full matrix only on push events to the default branch, or
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m106 |[0m [1m[33m|[0m       execute-integration-tests: true
+[1m[94m107 |[0m [1m[33m|[0m     secrets: inherit
+    [1m[94m|[0m [1m[33m|[0m                    [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|____________________|[0m
+    [1m[94m|[0m                      [1m[33mthis job[0m
+    [1m[94m|[0m                      [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/googleapis-google-cloud-cpp-test-runner.yml:108:3
+    [1m[94m|[0m
+[1m[94m108 |[0m [1m[33m/[0m   macos-cmake:
+[1m[94m109 |[0m [1m[33m|[0m     # Disabled
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m127 |[0m [1m[33m|[0m       execute-integration-tests: true
+[1m[94m128 |[0m [1m[33m|[0m     secrets: inherit
+    [1m[94m|[0m [1m[33m|[0m                    [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|____________________|[0m
+    [1m[94m|[0m                      [1m[33mthis job[0m
+    [1m[94m|[0m                      [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/googleapis-google-cloud-cpp-test-runner.yml:129:3
+    [1m[94m|[0m
+[1m[94m129 |[0m [1m[33m/[0m   windows-cmake:
+[1m[94m130 |[0m [1m[33m|[0m     # Disabled
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m148 |[0m [1m[33m|[0m       execute-integration-tests: true
+[1m[94m149 |[0m [1m[33m|[0m     secrets: inherit
+    [1m[94m|[0m [1m[33m|[0m                    [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|____________________|[0m
+    [1m[94m|[0m                      [1m[33mthis job[0m
+    [1m[94m|[0m                      [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/googleapis-google-cloud-cpp-test-runner.yml:150:3
+    [1m[94m|[0m
+[1m[94m150 |[0m [1m[33m/[0m   notify:
+[1m[94m151 |[0m [1m[33m|[0m     name: Notify-Google-Chat
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m184 |[0m [1m[33m|[0m             "${status}" "${{ github.server_url }}" "${{ github.repository }}" "${{ github.run_id }}" |
+[1m[94m185 |[0m [1m[33m|[0m           curl -fsX POST -o /dev/null -d@- -H "Content-Type: application/json; charset=UTF-8" '${{ secrets.CLOUD_CPP_BUILD_ALERTS_WEBHOOK }}'
+    [1m[94m|[0m [1m[33m|[0m                                                                                                                                              [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|______________________________________________________________________________________________________________________________________________|[0m
+    [1m[94m|[0m                                                                                                                                                [1m[33mthis job[0m
+    [1m[94m|[0m                                                                                                                                                [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#dangerous-triggers\dangerous-triggers]8;;\][0m: [1muse of fundamentally insecure workflow trigger[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/googleapis-google-cloud-cpp-test-runner.yml:5:1
+   [1m[94m|[0m
+[1m[94m 5 |[0m [1m[91m/[0m on:
+[1m[94m 6 |[0m [1m[91m|[0m   # Start these builds on pushes (think "after the merge") too. Normally there
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m26 |[0m [1m[91m|[0m # PR or branch. That reduces billing, but it creates more noise about cancelled
+[1m[94m27 |[0m [1m[91m|[0m # jobs
+   [1m[94m|[0m [1m[91m|______^[0m [1m[91mpull_request_target is almost always used insecurely[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/googleapis-google-cloud-cpp-test-runner.yml:37:9
+   [1m[94m|[0m
+[1m[94m37 |[0m         - name: debug_steps
+   [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m38 |[0m           id: debug-steps
+[1m[94m39 |[0m [1m[91m/[0m         run: |
+[1m[94m40 |[0m [1m[91m|[0m           echo "event=${{ github.event_name }}"
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m43 |[0m [1m[91m|[0m           echo "user=${{ github.event.pull_request.user }}" || true
+[1m[94m44 |[0m [1m[91m|[0m           echo "user_orgs=${{ github.event.pull_request.user.organizations_url }}" || true
+   [1m[94m|[0m [1m[91m|__________________________________________________________________________________________^[0m [1m[91mgithub.organization may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/googleapis-google-cloud-cpp-test-runner.yml:37:9
+   [1m[94m|[0m
+[1m[94m37 |[0m         - name: debug_steps
+   [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m38 |[0m           id: debug-steps
+[1m[94m39 |[0m [1m[91m/[0m         run: |
+[1m[94m40 |[0m [1m[91m|[0m           echo "event=${{ github.event_name }}"
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m43 |[0m [1m[91m|[0m           echo "user=${{ github.event.pull_request.user }}" || true
+[1m[94m44 |[0m [1m[91m|[0m           echo "user_orgs=${{ github.event.pull_request.user.organizations_url }}" || true
+   [1m[94m|[0m [1m[91m|__________________________________________________________________________________________^[0m [1m[91mgithub.event.pull_request.user may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/googleapis-google-cloud-cpp-test-runner.yml:37:9
+   [1m[94m|[0m
+[1m[94m37 |[0m         - name: debug_steps
+   [1m[94m|[0m           [1m[33m-----------------[0m [1m[33mthis step[0m
+[1m[94m38 |[0m           id: debug-steps
+[1m[94m39 |[0m [1m[33m/[0m         run: |
+[1m[94m40 |[0m [1m[33m|[0m           echo "event=${{ github.event_name }}"
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m43 |[0m [1m[33m|[0m           echo "user=${{ github.event.pull_request.user }}" || true
+[1m[94m44 |[0m [1m[33m|[0m           echo "user_orgs=${{ github.event.pull_request.user.organizations_url }}" || true
+   [1m[94m|[0m [1m[33m|__________________________________________________________________________________________-[0m [1m[33mgithub.event.pull_request.user.organizations_url may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/googleapis-google-cloud-cpp-test-runner.yml:69:9
+   [1m[94m|[0m
+[1m[94m69 |[0m         - name: Save Pull Request
+   [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m70 |[0m           id: save-pull-request
+[1m[94m71 |[0m [1m[91m/[0m         run: >
+[1m[94m72 |[0m [1m[91m|[0m           echo "sha=${{ github.event.pull_request.head.sha || github.ref }}" >> $GITHUB_OUTPUT
+   [1m[94m|[0m [1m[91m|______________________________________________________________________________________________^[0m [1m[91mgithub.ref may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/googleapis-google-cloud-cpp-test-runner.yml:84:5
+   [1m[94m|[0m
+[1m[94m84 |[0m     uses: ./.github/workflows/macos-bazel.yml
+   [1m[94m|[0m     [1m[33m-----------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m85 |[0m     with:
+[1m[94m...[0m
+[1m[94m88 |[0m       execute-integration-tests: true
+[1m[94m89 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/googleapis-google-cloud-cpp-test-runner.yml:102:5
+    [1m[94m|[0m
+[1m[94m102 |[0m     uses: ./.github/workflows/windows-bazel.yml
+    [1m[94m|[0m     [1m[33m-------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m103 |[0m     with:
+[1m[94m...[0m
+[1m[94m106 |[0m       execute-integration-tests: true
+[1m[94m107 |[0m     secrets: inherit
+    [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/googleapis-google-cloud-cpp-test-runner.yml:113:5
+    [1m[94m|[0m
+[1m[94m113 |[0m     uses: ./.github/workflows/macos-cmake.yml
+    [1m[94m|[0m     [1m[33m-----------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m114 |[0m     with:
+[1m[94m...[0m
+[1m[94m127 |[0m       execute-integration-tests: true
+[1m[94m128 |[0m     secrets: inherit
+    [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/googleapis-google-cloud-cpp-test-runner.yml:134:5
+    [1m[94m|[0m
+[1m[94m134 |[0m     uses: ./.github/workflows/windows-cmake.yml
+    [1m[94m|[0m     [1m[33m-------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m135 |[0m     with:
+[1m[94m...[0m
+[1m[94m148 |[0m       execute-integration-tests: true
+[1m[94m149 |[0m     secrets: inherit
+    [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m30[39m findings ([1m[93m13[39m suppressed[0m): 0 unknown, [35m0[39m informational, [36m0[39m low, [33m13[39m medium, [31m4[39m high

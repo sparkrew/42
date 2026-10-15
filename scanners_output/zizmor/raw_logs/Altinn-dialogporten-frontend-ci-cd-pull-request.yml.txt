@@ -1,0 +1,127 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/Altinn-dialogporten-frontend-ci-cd-pull-request.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Altinn-dialogporten-frontend-ci-cd-pull-request.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name: CI/CD Pull Request
+[1m[94m 2 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m72 |[0m [1m[33m|[0m       dryRun: true
+[1m[94m73 |[0m [1m[33m|[0m       version: ${{ needs.get-current-version.outputs.version }}-${{ needs.generate-git-short-sha.outputs.gitShortSha }}
+   [1m[94m|[0m [1m[33m|________________________________________________________________________________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Altinn-dialogporten-frontend-ci-cd-pull-request.yml:9:3
+   [1m[94m|[0m
+[1m[94m 9 |[0m [1m[33m/[0m   generate-git-short-sha:
+[1m[94m10 |[0m [1m[33m|[0m     name: Generate git short sha
+[1m[94m11 |[0m [1m[33m|[0m     uses: ./.github/workflows/workflow-generate-git-short-sha.yml
+   [1m[94m|[0m [1m[33m|[0m                                                                 [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________________________|[0m
+   [1m[94m|[0m                                                                   [1m[33mthis job[0m
+   [1m[94m|[0m                                                                   [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Altinn-dialogporten-frontend-ci-cd-pull-request.yml:13:3
+   [1m[94m|[0m
+[1m[94m13 |[0m [1m[33m/[0m   get-current-version:
+[1m[94m14 |[0m [1m[33m|[0m     name: Get current version
+[1m[94m15 |[0m [1m[33m|[0m     uses: ./.github/workflows/workflow-get-current-version.yml
+   [1m[94m|[0m [1m[33m|[0m                                                              [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|______________________________________________________________|[0m
+   [1m[94m|[0m                                                                [1m[33mthis job[0m
+   [1m[94m|[0m                                                                [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Altinn-dialogporten-frontend-ci-cd-pull-request.yml:17:3
+   [1m[94m|[0m
+[1m[94m17 |[0m [1m[33m/[0m   check-for-changes:
+[1m[94m18 |[0m [1m[33m|[0m     name: Check for changes
+[1m[94m19 |[0m [1m[33m|[0m     uses: ./.github/workflows/workflow-check-for-changes.yml
+   [1m[94m|[0m [1m[33m|[0m                                                            [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________________________________________________|[0m
+   [1m[94m|[0m                                                              [1m[33mthis job[0m
+   [1m[94m|[0m                                                              [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Altinn-dialogporten-frontend-ci-cd-pull-request.yml:21:3
+   [1m[94m|[0m
+[1m[94m21 |[0m [1m[33m/[0m   build-and-test:
+[1m[94m22 |[0m [1m[33m|[0m     uses: ./.github/workflows/workflow-build-and-test.yml
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m25 |[0m [1m[33m|[0m     with:
+[1m[94m26 |[0m [1m[33m|[0m       environment: test
+   [1m[94m|[0m [1m[33m|[0m                       [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________________|[0m
+   [1m[94m|[0m                         [1m[33mthis job[0m
+   [1m[94m|[0m                         [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Altinn-dialogporten-frontend-ci-cd-pull-request.yml:28:3
+   [1m[94m|[0m
+[1m[94m28 |[0m [1m[33m/[0m   translations-check:
+[1m[94m29 |[0m [1m[33m|[0m     uses: ./.github/workflows/workflow-check-translations.yml
+   [1m[94m|[0m [1m[33m|[0m                                                             [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________________________________________________|[0m
+   [1m[94m|[0m                                                               [1m[33mthis job[0m
+   [1m[94m|[0m                                                               [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Altinn-dialogporten-frontend-ci-cd-pull-request.yml:31:3
+   [1m[94m|[0m
+[1m[94m31 |[0m [1m[33m/[0m   playwright-test:
+[1m[94m32 |[0m [1m[33m|[0m     uses: ./.github/workflows/workflow-playwright-test.yml
+   [1m[94m|[0m [1m[33m|[0m                                                          [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________________________________________________________|[0m
+   [1m[94m|[0m                                                            [1m[33mthis job[0m
+   [1m[94m|[0m                                                            [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Altinn-dialogporten-frontend-ci-cd-pull-request.yml:34:3
+   [1m[94m|[0m
+[1m[94m34 |[0m [1m[33m/[0m   dry-run-deploy-infra:
+[1m[94m35 |[0m [1m[33m|[0m     uses: ./.github/workflows/workflow-deploy-infrastructure.yml
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m50 |[0m [1m[33m|[0m       dryRun: true
+[1m[94m51 |[0m [1m[33m|[0m       version: ${{needs.get-current-version.outputs.version}}-${{ needs.generate-git-short-sha.outputs.gitShortSha }}
+   [1m[94m|[0m [1m[33m|[0m                                                                                                                     [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________________________________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                                                       [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                                                       [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Altinn-dialogporten-frontend-ci-cd-pull-request.yml:53:3
+   [1m[94m|[0m
+[1m[94m53 |[0m [1m[33m/[0m   deploy-apps-test:
+[1m[94m54 |[0m [1m[33m|[0m     name: Deploy apps to test
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m72 |[0m [1m[33m|[0m       dryRun: true
+[1m[94m73 |[0m [1m[33m|[0m       version: ${{ needs.get-current-version.outputs.version }}-${{ needs.generate-git-short-sha.outputs.gitShortSha }}
+   [1m[94m|[0m [1m[33m|[0m                                                                                                                        [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________________________________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                                                          [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                                                          [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m9[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m9[39m medium, [31m0[39m high

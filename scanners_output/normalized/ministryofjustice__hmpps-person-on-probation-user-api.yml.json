@@ -1,0 +1,78 @@
+{
+  "workflow": "ministryofjustice__hmpps-person-on-probation-user-api.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "ministryofjustice__hmpps-person-on-probation-user-api.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 6,
+        "by_rule": {
+          "excessive-permissions": 1,
+          "secrets-inherit": 5
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "error",
+          "message": "overly broad permissions",
+          "workflow": "ministryofjustice__hmpps-person-on-probation-user-api.yml",
+          "line": 20,
+          "column": 3,
+          "note": "audit confidence \u2192 High",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice__hmpps-person-on-probation-user-api.yml",
+          "line": 30,
+          "column": 5,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice__hmpps-person-on-probation-user-api.yml",
+          "line": 36,
+          "column": 5,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice__hmpps-person-on-probation-user-api.yml",
+          "line": 56,
+          "column": 5,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice__hmpps-person-on-probation-user-api.yml",
+          "line": 68,
+          "column": 5,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice__hmpps-person-on-probation-user-api.yml",
+          "line": 80,
+          "column": 5,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        }
+      ]
+    }
+  }
+}

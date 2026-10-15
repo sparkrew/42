@@ -1,0 +1,218 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/insightsengineering-roxy.shinylive-check.yaml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/insightsengineering-roxy.shinylive-check.yaml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m ---
+[1m[94m 2 |[0m [1m[33m|[0m name: Check 🛠
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m94 |[0m [1m[33m|[0m     name: Grammar Check 🔤
+[1m[94m95 |[0m [1m[33m|[0m     uses: insightsengineering/r.pkg.template/.github/workflows/grammar.yaml@main
+   [1m[94m|[0m [1m[33m|_________________________________________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/insightsengineering-roxy.shinylive-check.yaml:19:3
+   [1m[94m|[0m
+[1m[94m19 |[0m [1m[33m/[0m   audit:
+[1m[94m20 |[0m [1m[33m|[0m     name: Audit Dependencies 🕵️♂️
+[1m[94m21 |[0m [1m[33m|[0m     uses: insightsengineering/r.pkg.template/.github/workflows/audit.yaml@main
+   [1m[94m|[0m [1m[33m|[0m                                                                              [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|______________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/insightsengineering-roxy.shinylive-check.yaml:22:3
+   [1m[94m|[0m
+[1m[94m22 |[0m [1m[33m/[0m   r-cmd:
+[1m[94m23 |[0m [1m[33m|[0m     name: R CMD Check 🧬
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m29 |[0m [1m[33m|[0m         _R_CHECK_CRAN_INCOMING_REMOTE_=false
+[1m[94m30 |[0m [1m[33m|[0m       additional-r-cmd-check-params: --as-cran
+   [1m[94m|[0m [1m[33m|[0m                                              [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|______________________________________________|[0m
+   [1m[94m|[0m                                                [1m[33mthis job[0m
+   [1m[94m|[0m                                                [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/insightsengineering-roxy.shinylive-check.yaml:31:3
+   [1m[94m|[0m
+[1m[94m31 |[0m [1m[33m/[0m   r-cmd-non-cran:
+[1m[94m32 |[0m [1m[33m|[0m     name: R CMD Check (non-CRAN) 🧬
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m39 |[0m [1m[33m|[0m       concurrency-group: non-cran
+[1m[94m40 |[0m [1m[33m|[0m       unit-test-report-directory: unit-test-report-non-cran
+   [1m[94m|[0m [1m[33m|[0m                                                           [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________________________________________________|[0m
+   [1m[94m|[0m                                                             [1m[33mthis job[0m
+   [1m[94m|[0m                                                             [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/insightsengineering-roxy.shinylive-check.yaml:41:3
+   [1m[94m|[0m
+[1m[94m41 |[0m [1m[33m/[0m   coverage:
+[1m[94m42 |[0m [1m[33m|[0m     name: Coverage 📔
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m47 |[0m [1m[33m|[0m       additional-env-vars: |
+[1m[94m48 |[0m [1m[33m|[0m         NOT_CRAN=true
+   [1m[94m|[0m [1m[33m|[0m                     [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________|[0m
+   [1m[94m|[0m                       [1m[33mthis job[0m
+   [1m[94m|[0m                       [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/insightsengineering-roxy.shinylive-check.yaml:49:3
+   [1m[94m|[0m
+[1m[94m49 |[0m [1m[33m/[0m   linter:
+[1m[94m50 |[0m [1m[33m|[0m     if: github.event_name != 'push'
+[1m[94m51 |[0m [1m[33m|[0m     name: SuperLinter 🦸♀️
+[1m[94m52 |[0m [1m[33m|[0m     uses: insightsengineering/r.pkg.template/.github/workflows/linter.yaml@main
+   [1m[94m|[0m [1m[33m|[0m                                                                               [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                 [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                 [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/insightsengineering-roxy.shinylive-check.yaml:53:3
+   [1m[94m|[0m
+[1m[94m53 |[0m [1m[33m/[0m   roxygen:
+[1m[94m54 |[0m [1m[33m|[0m     name: Roxygen 🅾
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m58 |[0m [1m[33m|[0m     with:
+[1m[94m59 |[0m [1m[33m|[0m       auto-update: true
+   [1m[94m|[0m [1m[33m|[0m                       [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________________|[0m
+   [1m[94m|[0m                         [1m[33mthis job[0m
+   [1m[94m|[0m                         [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/insightsengineering-roxy.shinylive-check.yaml:60:3
+   [1m[94m|[0m
+[1m[94m60 |[0m [1m[33m/[0m   gitleaks:
+[1m[94m61 |[0m [1m[33m|[0m     name: gitleaks 💧
+[1m[94m62 |[0m [1m[33m|[0m     uses: insightsengineering/r.pkg.template/.github/workflows/gitleaks.yaml@main
+   [1m[94m|[0m [1m[33m|[0m                                                                                 [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                   [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                   [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/insightsengineering-roxy.shinylive-check.yaml:63:3
+   [1m[94m|[0m
+[1m[94m63 |[0m [1m[33m/[0m   spelling:
+[1m[94m64 |[0m [1m[33m|[0m     name: Spell Check 🆎
+[1m[94m65 |[0m [1m[33m|[0m     uses: insightsengineering/r.pkg.template/.github/workflows/spelling.yaml@main
+[1m[94m66 |[0m [1m[33m|[0m     secrets:
+[1m[94m67 |[0m [1m[33m|[0m       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
+   [1m[94m|[0m [1m[33m|[0m                                                         [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________________|[0m
+   [1m[94m|[0m                                                           [1m[33mthis job[0m
+   [1m[94m|[0m                                                           [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/insightsengineering-roxy.shinylive-check.yaml:68:3
+   [1m[94m|[0m
+[1m[94m68 |[0m [1m[33m/[0m   links:
+[1m[94m69 |[0m [1m[33m|[0m     if: github.event_name != 'push'
+[1m[94m70 |[0m [1m[33m|[0m     name: Check URLs 🌐
+[1m[94m71 |[0m [1m[33m|[0m     uses: insightsengineering/r.pkg.template/.github/workflows/links.yaml@main
+   [1m[94m|[0m [1m[33m|[0m                                                                              [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|______________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/insightsengineering-roxy.shinylive-check.yaml:72:3
+   [1m[94m|[0m
+[1m[94m72 |[0m [1m[33m/[0m   vbump:
+[1m[94m73 |[0m [1m[33m|[0m     name: Version Bump 🤜🤛
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m76 |[0m [1m[33m|[0m     secrets:
+[1m[94m77 |[0m [1m[33m|[0m       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
+   [1m[94m|[0m [1m[33m|[0m                                                         [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________________|[0m
+   [1m[94m|[0m                                                           [1m[33mthis job[0m
+   [1m[94m|[0m                                                           [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/insightsengineering-roxy.shinylive-check.yaml:78:3
+   [1m[94m|[0m
+[1m[94m78 |[0m [1m[33m/[0m   version:
+[1m[94m79 |[0m [1m[33m|[0m     name: Version Check 🏁
+[1m[94m80 |[0m [1m[33m|[0m     uses: insightsengineering/r.pkg.template/.github/workflows/version.yaml@main
+   [1m[94m|[0m [1m[33m|[0m                                                                                [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                  [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/insightsengineering-roxy.shinylive-check.yaml:81:3
+   [1m[94m|[0m
+[1m[94m81 |[0m [1m[33m/[0m   licenses:
+[1m[94m82 |[0m [1m[33m|[0m     name: License Check 🃏
+[1m[94m83 |[0m [1m[33m|[0m     uses: insightsengineering/r.pkg.template/.github/workflows/licenses.yaml@main
+   [1m[94m|[0m [1m[33m|[0m                                                                                 [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                   [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                   [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/insightsengineering-roxy.shinylive-check.yaml:84:3
+   [1m[94m|[0m
+[1m[94m84 |[0m [1m[33m/[0m   style:
+[1m[94m85 |[0m [1m[33m|[0m     if: github.event_name != 'push'
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m90 |[0m [1m[33m|[0m     secrets:
+[1m[94m91 |[0m [1m[33m|[0m       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
+   [1m[94m|[0m [1m[33m|[0m                                                         [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________________|[0m
+   [1m[94m|[0m                                                           [1m[33mthis job[0m
+   [1m[94m|[0m                                                           [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/insightsengineering-roxy.shinylive-check.yaml:92:3
+   [1m[94m|[0m
+[1m[94m92 |[0m [1m[33m/[0m   grammar:
+[1m[94m93 |[0m [1m[33m|[0m     if: github.event_name != 'push'
+[1m[94m94 |[0m [1m[33m|[0m     name: Grammar Check 🔤
+[1m[94m95 |[0m [1m[33m|[0m     uses: insightsengineering/r.pkg.template/.github/workflows/grammar.yaml@main
+   [1m[94m|[0m [1m[33m|[0m                                                                                 [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                   [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                   [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m15[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m15[39m medium, [31m0[39m high

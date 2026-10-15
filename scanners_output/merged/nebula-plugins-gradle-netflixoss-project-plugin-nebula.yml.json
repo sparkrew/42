@@ -1,0 +1,164 @@
+{
+  "workflow": "nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 16,
+        "by_rule": {
+          "artipacked": 4,
+          "excessive-permissions": 5,
+          "unpinned-uses": 1,
+          "cache-poisoning": 6
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml",
+          "line": 16,
+          "column": 9,
+          "note": "audit confidence \u2192 Low"
+        },
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml",
+          "line": 28,
+          "column": 9,
+          "note": "audit confidence \u2192 Low"
+        },
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml",
+          "line": 68,
+          "column": 9,
+          "note": "audit confidence \u2192 Low"
+        },
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml",
+          "line": 113,
+          "column": 9,
+          "note": "audit confidence \u2192 Low"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml",
+          "line": 1,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml",
+          "line": 12,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml",
+          "line": 18,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml",
+          "line": 59,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml",
+          "line": 100,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml",
+          "line": 17,
+          "column": 9,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "cache-poisoning",
+          "level": "error",
+          "message": "runtime artifacts potentially vulnerable to a cache poisoning attack",
+          "workflow": "nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml",
+          "line": 2,
+          "column": 1,
+          "note": "audit confidence \u2192 Low"
+        },
+        {
+          "rule_id": "cache-poisoning",
+          "level": "error",
+          "message": "runtime artifacts potentially vulnerable to a cache poisoning attack",
+          "workflow": "nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml",
+          "line": 2,
+          "column": 1,
+          "note": "audit confidence \u2192 Low"
+        },
+        {
+          "rule_id": "cache-poisoning",
+          "level": "error",
+          "message": "runtime artifacts potentially vulnerable to a cache poisoning attack",
+          "workflow": "nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml",
+          "line": 2,
+          "column": 1,
+          "note": "audit confidence \u2192 Low"
+        },
+        {
+          "rule_id": "cache-poisoning",
+          "level": "error",
+          "message": "runtime artifacts potentially vulnerable to a cache poisoning attack",
+          "workflow": "nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml",
+          "line": 2,
+          "column": 1,
+          "note": "audit confidence \u2192 Low"
+        },
+        {
+          "rule_id": "cache-poisoning",
+          "level": "error",
+          "message": "runtime artifacts potentially vulnerable to a cache poisoning attack",
+          "workflow": "nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml",
+          "line": 2,
+          "column": 1,
+          "note": "audit confidence \u2192 Low"
+        },
+        {
+          "rule_id": "cache-poisoning",
+          "level": "error",
+          "message": "runtime artifacts potentially vulnerable to a cache poisoning attack",
+          "workflow": "nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml",
+          "line": 2,
+          "column": 1,
+          "note": "audit confidence \u2192 Low"
+        }
+      ]
+    }
+  }
+}

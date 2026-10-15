@@ -1,0 +1,214 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/fedspendingtransparency-usaspending-api-pull-request-checks.yaml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/fedspendingtransparency-usaspending-api-pull-request-checks.yaml:1:1
+    [1m[94m|[0m
+[1m[94m  1 |[0m [1m[33m/[0m name: Pull Request Checks
+[1m[94m  2 |[0m [1m[33m|[0m
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m137 |[0m [1m[33m|[0m     secrets:
+[1m[94m138 |[0m [1m[33m|[0m       cc_test_reporter_id: ${{ secrets.CC_TEST_REPORTER_ID }}
+    [1m[94m|[0m [1m[33m|______________________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/fedspendingtransparency-usaspending-api-pull-request-checks.yaml:22:3
+   [1m[94m|[0m
+[1m[94m22 |[0m [1m[33m/[0m   Cancel-If-Draft-Pull-Request:
+[1m[94m23 |[0m [1m[33m|[0m     if: github.event.pull_request.draft == true
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m26 |[0m [1m[33m|[0m   # The conditional in each of the workflows below is required. Without these checks they will be skipped
+[1m[94m27 |[0m [1m[33m|[0m   # when the "Cancel-If-Draft-Pull-Request" workflow is skipped.
+   [1m[94m|[0m [1m[33m|[0m                                                                [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________________________________________________|[0m
+   [1m[94m|[0m                                                                  [1m[33mthis job[0m
+   [1m[94m|[0m                                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/fedspendingtransparency-usaspending-api-pull-request-checks.yaml:28:3
+   [1m[94m|[0m
+[1m[94m28 |[0m [1m[33m/[0m   Run-Code-Style-Checks:
+[1m[94m29 |[0m [1m[33m|[0m     name: Run Code Style Checks
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m37 |[0m [1m[33m|[0m   # Broker backend image. To avoid having to run this multiple times we instead build it once
+[1m[94m38 |[0m [1m[33m|[0m   # and store it as an artifact on the workflow.
+   [1m[94m|[0m [1m[33m|[0m                                                [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________________________________|[0m
+   [1m[94m|[0m                                                  [1m[33mthis job[0m
+   [1m[94m|[0m                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/fedspendingtransparency-usaspending-api-pull-request-checks.yaml:39:3
+   [1m[94m|[0m
+[1m[94m39 |[0m [1m[33m/[0m   Build-Broker-Docker-Image:
+[1m[94m40 |[0m [1m[33m|[0m     name: Build Broker Docker Image
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m46 |[0m [1m[33m|[0m
+[1m[94m47 |[0m [1m[33m|[0m   # Prepare Code Climate to receive coverage report
+   [1m[94m|[0m [1m[33m|[0m                                                   [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________________________________________|[0m
+   [1m[94m|[0m                                                     [1m[33mthis job[0m
+   [1m[94m|[0m                                                     [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/fedspendingtransparency-usaspending-api-pull-request-checks.yaml:48:3
+   [1m[94m|[0m
+[1m[94m48 |[0m [1m[33m/[0m   Code-Climate-Before-Build:
+[1m[94m49 |[0m [1m[33m|[0m     name: Code Climate Before Build
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m59 |[0m [1m[33m|[0m   # The test suite is broken into multiple groups based on a combination of what is under test
+[1m[94m60 |[0m [1m[33m|[0m   # and the time that it takes to run tests for that group.
+   [1m[94m|[0m [1m[33m|[0m                                                           [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________________________________________________|[0m
+   [1m[94m|[0m                                                             [1m[33mthis job[0m
+   [1m[94m|[0m                                                             [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/fedspendingtransparency-usaspending-api-pull-request-checks.yaml:61:3
+   [1m[94m|[0m
+[1m[94m61 |[0m [1m[33m/[0m   Run-Spark-Integration-Load-Transaction-FABS-and-FPDS-Tests:
+[1m[94m62 |[0m [1m[33m|[0m     name: Run Spark Integration Load Transactions FABS and FPDS Tests
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m66 |[0m [1m[33m|[0m     if: ${{ !failure() && !cancelled() }}
+[1m[94m67 |[0m [1m[33m|[0m     uses: ./.github/workflows/test-spark-integration-load-transactions-fabs-fpds.yaml
+   [1m[94m|[0m [1m[33m|[0m                                                                                     [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                       [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                       [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/fedspendingtransparency-usaspending-api-pull-request-checks.yaml:69:3
+   [1m[94m|[0m
+[1m[94m69 |[0m [1m[33m/[0m   Run-Spark-Integration-Load-Transactions-Lookup-Tests:
+[1m[94m70 |[0m [1m[33m|[0m     name: Run Spark Integration Load Transactions Lookup Tests
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m74 |[0m [1m[33m|[0m     if: ${{ !failure() && !cancelled() }}
+[1m[94m75 |[0m [1m[33m|[0m     uses: ./.github/workflows/test-spark-integration-load-transactions-lookup.yaml
+   [1m[94m|[0m [1m[33m|[0m                                                                                  [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                    [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                    [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/fedspendingtransparency-usaspending-api-pull-request-checks.yaml:77:3
+   [1m[94m|[0m
+[1m[94m77 |[0m [1m[33m/[0m   Run-Spark-Integration-Load-To-From-Delta-Tests:
+[1m[94m78 |[0m [1m[33m|[0m     name: Run Spark Integration Load To From Delta Tests
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m82 |[0m [1m[33m|[0m     if: ${{ !failure() && !cancelled() }}
+[1m[94m83 |[0m [1m[33m|[0m     uses: ./.github/workflows/test-spark-integration-load-to-from-delta.yaml
+   [1m[94m|[0m [1m[33m|[0m                                                                            [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                              [1m[33mthis job[0m
+   [1m[94m|[0m                                                                              [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/fedspendingtransparency-usaspending-api-pull-request-checks.yaml:85:3
+   [1m[94m|[0m
+[1m[94m85 |[0m [1m[33m/[0m   Run-Spark-Integration-Other-Tests:
+[1m[94m86 |[0m [1m[33m|[0m     name: Run Spark Integration Other Tests
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m90 |[0m [1m[33m|[0m     if: ${{ !failure() && !cancelled() }}
+[1m[94m91 |[0m [1m[33m|[0m     uses: ./.github/workflows/test-spark-integration-other.yaml
+   [1m[94m|[0m [1m[33m|[0m                                                               [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________________________________________________________|[0m
+   [1m[94m|[0m                                                                 [1m[33mthis job[0m
+   [1m[94m|[0m                                                                 [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/fedspendingtransparency-usaspending-api-pull-request-checks.yaml:93:3
+   [1m[94m|[0m
+[1m[94m93 |[0m [1m[33m/[0m   Run-Non-Spark-Integration-Tests:
+[1m[94m94 |[0m [1m[33m|[0m     name: Run Non-Spark Integration Tests
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m98 |[0m [1m[33m|[0m     if: ${{ !failure() && !cancelled() }}
+[1m[94m99 |[0m [1m[33m|[0m     uses: ./.github/workflows/test-non-spark-integration.yaml
+   [1m[94m|[0m [1m[33m|[0m                                                             [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________________________________________________|[0m
+   [1m[94m|[0m                                                               [1m[33mthis job[0m
+   [1m[94m|[0m                                                               [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/fedspendingtransparency-usaspending-api-pull-request-checks.yaml:101:3
+    [1m[94m|[0m
+[1m[94m101 |[0m [1m[33m/[0m   Run-Non-Spark-Integration-Tests-With-Signal-Handling:
+[1m[94m102 |[0m [1m[33m|[0m     name: Run Non-Spark Integration Tests With Signal Handling
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m106 |[0m [1m[33m|[0m     if: ${{ !failure() && !cancelled() }}
+[1m[94m107 |[0m [1m[33m|[0m     uses: ./.github/workflows/test-non-spark-integration-signal-handling.yaml
+    [1m[94m|[0m [1m[33m|[0m                                                                             [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|_____________________________________________________________________________|[0m
+    [1m[94m|[0m                                                                               [1m[33mthis job[0m
+    [1m[94m|[0m                                                                               [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/fedspendingtransparency-usaspending-api-pull-request-checks.yaml:109:3
+    [1m[94m|[0m
+[1m[94m109 |[0m [1m[33m/[0m   Run-Unit-Tests:
+[1m[94m110 |[0m [1m[33m|[0m     name: Run Unit Tests
+[1m[94m111 |[0m [1m[33m|[0m     needs: Code-Climate-Before-Build
+[1m[94m112 |[0m [1m[33m|[0m     if: ${{ !failure() && !cancelled() }}
+[1m[94m113 |[0m [1m[33m|[0m     uses: ./.github/workflows/test-unit.yaml
+    [1m[94m|[0m [1m[33m|[0m                                            [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|____________________________________________|[0m
+    [1m[94m|[0m                                              [1m[33mthis job[0m
+    [1m[94m|[0m                                              [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/fedspendingtransparency-usaspending-api-pull-request-checks.yaml:115:3
+    [1m[94m|[0m
+[1m[94m115 |[0m [1m[33m/[0m   Run-Unit-Tests-With-Signal-Handling:
+[1m[94m116 |[0m [1m[33m|[0m     name: Run Unit Tests With Signal Handling
+[1m[94m117 |[0m [1m[33m|[0m     needs: Code-Climate-Before-Build
+[1m[94m118 |[0m [1m[33m|[0m     if: ${{ !failure() && !cancelled() }}
+[1m[94m119 |[0m [1m[33m|[0m     uses: ./.github/workflows/test-unit-signal-handling.yaml
+    [1m[94m|[0m [1m[33m|[0m                                                            [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|____________________________________________________________|[0m
+    [1m[94m|[0m                                                              [1m[33mthis job[0m
+    [1m[94m|[0m                                                              [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/fedspendingtransparency-usaspending-api-pull-request-checks.yaml:121:3
+    [1m[94m|[0m
+[1m[94m121 |[0m [1m[33m/[0m   Code-Climate-Report-Coverage:
+[1m[94m122 |[0m [1m[33m|[0m     name: Code Climate Report Coverage
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m137 |[0m [1m[33m|[0m     secrets:
+[1m[94m138 |[0m [1m[33m|[0m       cc_test_reporter_id: ${{ secrets.CC_TEST_REPORTER_ID }}
+    [1m[94m|[0m [1m[33m|[0m                                                              [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|______________________________________________________________|[0m
+    [1m[94m|[0m                                                                [1m[33mthis job[0m
+    [1m[94m|[0m                                                                [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m14[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m14[39m medium, [31m0[39m high

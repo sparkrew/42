@@ -1,0 +1,169 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+ [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml:9:11
+  [1m[94m|[0m
+[1m[94m9 |[0m         - uses: actions/checkout@v4
+  [1m[94m|[0m           [1m[33m-------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+  [1m[94m|[0m
+  [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml:15:7
+   [1m[94m|[0m
+[1m[94m15 |[0m     - uses: actions/checkout@v4
+   [1m[94m|[0m       [1m[33m-------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml:24:9
+   [1m[94m|[0m
+[1m[94m24 |[0m       - uses: actions/checkout@v4
+   [1m[94m|[0m         [1m[33m-------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml:33:9
+   [1m[94m|[0m
+[1m[94m33 |[0m         - uses: actions/checkout@v4
+   [1m[94m|[0m  [1m[33m_________-[0m
+[1m[94m34 |[0m [1m[33m|[0m
+[1m[94m35 |[0m [1m[33m|[0m       # passing ruff linting is required
+   [1m[94m|[0m [1m[33m|________________________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml:57:9
+   [1m[94m|[0m
+[1m[94m57 |[0m       - uses: actions/checkout@v4
+   [1m[94m|[0m         [1m[33m-------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name: ET CI Checks
+[1m[94m 2 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m79 |[0m [1m[33m|[0m         run: python -m unittest
+[1m[94m80 |[0m [1m[33m|[0m         shell: bash
+   [1m[94m|[0m [1m[33m|____________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml:6:3
+   [1m[94m|[0m
+[1m[94m 6 |[0m [1m[33m/[0m   ls_linting:
+[1m[94m 7 |[0m [1m[33m|[0m       runs-on: ubuntu-latest
+[1m[94m 8 |[0m [1m[33m|[0m       steps:  
+[1m[94m 9 |[0m [1m[33m|[0m         - uses: actions/checkout@v4
+[1m[94m10 |[0m [1m[33m|[0m         - uses: ls-lint/action@v2.2.3
+   [1m[94m|[0m [1m[33m|[0m                                     [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________________________|[0m
+   [1m[94m|[0m                                       [1m[33mthis job[0m
+   [1m[94m|[0m                                       [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml:12:3
+   [1m[94m|[0m
+[1m[94m12 |[0m [1m[33m/[0m   md_formatting:
+[1m[94m13 |[0m [1m[33m|[0m     runs-on: ubuntu-latest
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m18 |[0m [1m[33m|[0m         files: .
+[1m[94m19 |[0m [1m[33m|[0m         config_file: .markdownlint.yml
+   [1m[94m|[0m [1m[33m|[0m                                      [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|______________________________________|[0m
+   [1m[94m|[0m                                        [1m[33mthis job[0m
+   [1m[94m|[0m                                        [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml:21:3
+   [1m[94m|[0m
+[1m[94m21 |[0m [1m[33m/[0m   py_formatting:
+[1m[94m22 |[0m [1m[33m|[0m     runs-on: ubuntu-latest
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m27 |[0m [1m[33m|[0m         with:
+[1m[94m28 |[0m [1m[33m|[0m           args: "format --check"
+   [1m[94m|[0m [1m[33m|[0m                                [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________________|[0m
+   [1m[94m|[0m                                  [1m[33mthis job[0m
+   [1m[94m|[0m                                  [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml:30:3
+   [1m[94m|[0m
+[1m[94m30 |[0m [1m[33m/[0m   py_linting:
+[1m[94m31 |[0m [1m[33m|[0m     runs-on: ubuntu-latest
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m51 |[0m [1m[33m|[0m         run: "pylint solutions tests  || echo '::warning title=Pylint Error(s)::Discuss solutions and trade-offs in code review.'"
+[1m[94m52 |[0m [1m[33m|[0m         shell: bash
+   [1m[94m|[0m [1m[33m|[0m                   [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________|[0m
+   [1m[94m|[0m                     [1m[33mthis job[0m
+   [1m[94m|[0m                     [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml:54:3
+   [1m[94m|[0m
+[1m[94m54 |[0m [1m[33m/[0m   py_tests:
+[1m[94m55 |[0m [1m[33m|[0m     runs-on: ubuntu-latest
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m79 |[0m [1m[33m|[0m         run: python -m unittest
+[1m[94m80 |[0m [1m[33m|[0m         shell: bash
+   [1m[94m|[0m [1m[33m|[0m                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________|[0m
+   [1m[94m|[0m                      [1m[33mthis job[0m
+   [1m[94m|[0m                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml:10:11
+   [1m[94m|[0m
+[1m[94m10 |[0m         - uses: ls-lint/action@v2.2.3
+   [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml:16:7
+   [1m[94m|[0m
+[1m[94m16 |[0m     - uses: nosborn/github-action-markdown-cli@v3.3.0
+   [1m[94m|[0m       [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml:26:9
+   [1m[94m|[0m
+[1m[94m26 |[0m         uses: astral-sh/ruff-action@v1
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/MIT-Emerging-Talent-ET6-MITx-Recitations_Group30-ci-checks.yml:37:9
+   [1m[94m|[0m
+[1m[94m37 |[0m         uses: astral-sh/ruff-action@v1
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m15[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m11[39m medium, [31m4[39m high

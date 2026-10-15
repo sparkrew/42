@@ -1,0 +1,54 @@
+{
+  "workflow": "puppetlabs-puppetlabs-yumrepo_core-daily_unit_tests_with_nightly_puppet_gem.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "puppetlabs-puppetlabs-yumrepo_core-daily_unit_tests_with_nightly_puppet_gem.yaml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 4,
+        "by_rule": {
+          "excessive-permissions": 3,
+          "unpinned-uses": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "puppetlabs-puppetlabs-yumrepo_core-daily_unit_tests_with_nightly_puppet_gem.yaml",
+          "line": 1,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "puppetlabs-puppetlabs-yumrepo_core-daily_unit_tests_with_nightly_puppet_gem.yaml",
+          "line": 10,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "puppetlabs-puppetlabs-yumrepo_core-daily_unit_tests_with_nightly_puppet_gem.yaml",
+          "line": 13,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "puppetlabs-puppetlabs-yumrepo_core-daily_unit_tests_with_nightly_puppet_gem.yaml",
+          "line": 19,
+          "column": 9,
+          "note": "audit confidence \u2192 High"
+        }
+      ]
+    }
+  }
+}

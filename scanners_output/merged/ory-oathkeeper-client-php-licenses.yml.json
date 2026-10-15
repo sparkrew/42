@@ -1,0 +1,54 @@
+{
+  "workflow": "ory-oathkeeper-client-php-licenses.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "ory-oathkeeper-client-php-licenses.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 4,
+        "by_rule": {
+          "excessive-permissions": 1,
+          "unpinned-uses": 3
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "ory-oathkeeper-client-php-licenses.yml",
+          "line": 15,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "ory-oathkeeper-client-php-licenses.yml",
+          "line": 20,
+          "column": 9,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "ory-oathkeeper-client-php-licenses.yml",
+          "line": 24,
+          "column": 9,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "ory-oathkeeper-client-php-licenses.yml",
+          "line": 26,
+          "column": 9,
+          "note": "audit confidence \u2192 High"
+        }
+      ]
+    }
+  }
+}

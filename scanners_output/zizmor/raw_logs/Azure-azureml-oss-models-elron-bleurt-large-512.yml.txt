@@ -1,0 +1,66 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/Azure-azureml-oss-models-elron-bleurt-large-512.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Azure-azureml-oss-models-elron-bleurt-large-512.yml:18:7
+   [1m[94m|[0m
+[1m[94m18 |[0m       - name: check-out-repo-step
+   [1m[94m|[0m  [1m[33m_______-[0m
+[1m[94m19 |[0m [1m[33m|[0m       uses: actions/checkout@v2
+   [1m[94m|[0m [1m[33m|_______________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Azure-azureml-oss-models-elron-bleurt-large-512.yml:15:3
+   [1m[94m|[0m
+[1m[94m15 |[0m [1m[33m/[0m   deploy-model-job:
+[1m[94m16 |[0m [1m[33m|[0m     runs-on: ubuntu-latest
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m33 |[0m [1m[33m|[0m       if: ${{ env.test_trigger_next_model == 'true' && steps.deploy-model-step.outputs.NEXT_MODEL != '' && (success() || failure())}}
+[1m[94m34 |[0m [1m[33m|[0m       run: gh workflow run ${{ steps.deploy-model-step.outputs.NEXT_MODEL }} --ref ${{ github.ref_name }}
+   [1m[94m|[0m [1m[33m|[0m                                                                                                         [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                                           [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                                           [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Azure-azureml-oss-models-elron-bleurt-large-512.yml:30:7
+   [1m[94m|[0m
+[1m[94m30 |[0m     - name: trigger-next-model-step
+   [1m[94m|[0m       [1m[94m-----------------------------[0m [1m[94minfo: this step[0m
+[1m[94m31 |[0m       env:
+[1m[94m32 |[0m         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+[1m[94m33 |[0m       if: ${{ env.test_trigger_next_model == 'true' && steps.deploy-model-step.outputs.NEXT_MODEL != '' && (success() || failure())}}
+[1m[94m34 |[0m       run: gh workflow run ${{ steps.deploy-model-step.outputs.NEXT_MODEL }} --ref ${{ github.ref_name }}
+   [1m[94m|[0m       [1m[94m---------------------------------------------------------------------------------------------------[0m [1m[94minfo: steps.deploy-model-step.outputs.NEXT_MODEL may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Azure-azureml-oss-models-elron-bleurt-large-512.yml:30:7
+   [1m[94m|[0m
+[1m[94m30 |[0m     - name: trigger-next-model-step
+   [1m[94m|[0m       [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m31 |[0m       env:
+[1m[94m32 |[0m         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+[1m[94m33 |[0m       if: ${{ env.test_trigger_next_model == 'true' && steps.deploy-model-step.outputs.NEXT_MODEL != '' && (success() || failure())}}
+[1m[94m34 |[0m       run: gh workflow run ${{ steps.deploy-model-step.outputs.NEXT_MODEL }} --ref ${{ github.ref_name }}
+   [1m[94m|[0m       [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mgithub.ref_name may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/Azure-azureml-oss-models-elron-bleurt-large-512.yml:21:7
+   [1m[94m|[0m
+[1m[94m21 |[0m       uses: azure/login@v1
+   [1m[94m|[0m       [1m[91m^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m8[39m findings ([1m[93m3[39m suppressed[0m): 0 unknown, [35m1[39m informational, [36m0[39m low, [33m2[39m medium, [31m2[39m high

@@ -1,0 +1,27 @@
+{
+  "workflow": "cloudposse-terraform-aws-route53-cluster-zone-branch.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "cloudposse-terraform-aws-route53-cluster-zone-branch.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "secrets-inherit": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "cloudposse-terraform-aws-route53-cluster-zone-branch.yml",
+          "line": 24,
+          "column": 5,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        }
+      ]
+    }
+  }
+}

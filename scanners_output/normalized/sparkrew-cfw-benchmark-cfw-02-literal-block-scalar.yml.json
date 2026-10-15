@@ -1,0 +1,86 @@
+{
+  "workflow": "sparkrew-cfw-benchmark-cfw-02-literal-block-scalar.yml",
+  "tools": {
+    "poutine": {
+      "workflow": "sparkrew-cfw-benchmark-cfw-02-literal-block-scalar.yml",
+      "tool": "poutine",
+      "summary": {
+        "total_findings": 2,
+        "by_rule": {
+          "if_always_true": 1,
+          "default_permissions_on_risky_events": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "if_always_true",
+          "line": 25,
+          "column": "",
+          "job": "publish-package",
+          "step": "",
+          "details": "",
+          "event_triggers": [
+            "pull_request_target"
+          ],
+          "capability": "control-flow-weakness"
+        },
+        {
+          "rule_id": "default_permissions_on_risky_events",
+          "line": "",
+          "column": "",
+          "job": "",
+          "step": "",
+          "details": "",
+          "event_triggers": [
+            "pull_request_target"
+          ],
+          "capability": "excessive-permission-weakness"
+        }
+      ]
+    },
+    "zizmor": {
+      "workflow": "sparkrew-cfw-benchmark-cfw-02-literal-block-scalar.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 3,
+        "by_rule": {
+          "artipacked": 1,
+          "excessive-permissions": 1,
+          "dangerous-triggers": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "sparkrew-cfw-benchmark-cfw-02-literal-block-scalar.yml",
+          "line": 29,
+          "column": 9,
+          "note": "audit confidence \u2192 Low",
+          "capability": "artifact-integrity-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "sparkrew-cfw-benchmark-cfw-02-literal-block-scalar.yml",
+          "line": 19,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "dangerous-triggers",
+          "level": "error",
+          "message": "use of fundamentally insecure workflow trigger",
+          "workflow": "sparkrew-cfw-benchmark-cfw-02-literal-block-scalar.yml",
+          "line": 14,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "privileged-trigger-weakness"
+        }
+      ]
+    }
+  }
+}

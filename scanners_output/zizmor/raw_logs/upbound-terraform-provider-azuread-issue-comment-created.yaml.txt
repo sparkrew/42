@@ -1,0 +1,23 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/upbound-terraform-provider-azuread-issue-comment-created.yaml
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+ [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/upbound-terraform-provider-azuread-issue-comment-created.yaml:9:3
+  [1m[94m|[0m
+[1m[94m9 |[0m   pull-requests: write
+  [1m[94m|[0m   [1m[91m^^^^^^^^^^^^^^^^^^^^[0m [1m[91mpull-requests: write is overly broad at the workflow level[0m
+  [1m[94m|[0m
+  [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/upbound-terraform-provider-azuread-issue-comment-created.yaml:10:3
+   [1m[94m|[0m
+[1m[94m10 |[0m   issues: write
+   [1m[94m|[0m   [1m[91m^^^^^^^^^^^^^[0m [1m[91missues: write is overly broad at the workflow level[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m2[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m0[39m medium, [31m2[39m high

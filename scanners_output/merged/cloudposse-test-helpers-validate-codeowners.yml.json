@@ -1,0 +1,55 @@
+{
+  "workflow": "cloudposse-test-helpers-validate-codeowners.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "cloudposse-test-helpers-validate-codeowners.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 4,
+        "by_rule": {
+          "artipacked": 1,
+          "excessive-permissions": 1,
+          "unpinned-uses": 2
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "cloudposse-test-helpers-validate-codeowners.yml",
+          "line": 11,
+          "column": 7,
+          "note": "audit confidence \u2192 Low"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "cloudposse-test-helpers-validate-codeowners.yml",
+          "line": 8,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "cloudposse-test-helpers-validate-codeowners.yml",
+          "line": 14,
+          "column": 7,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "cloudposse-test-helpers-validate-codeowners.yml",
+          "line": 25,
+          "column": 7,
+          "note": "audit confidence \u2192 High"
+        }
+      ]
+    }
+  }
+}

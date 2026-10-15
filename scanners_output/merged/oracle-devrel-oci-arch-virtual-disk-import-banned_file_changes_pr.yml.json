@@ -1,0 +1,124 @@
+{
+  "workflow": "oracle-devrel-oci-arch-virtual-disk-import-banned_file_changes_pr.yml",
+  "tools": {
+    "poutine": {
+      "workflow": "oracle-devrel-oci-arch-virtual-disk-import-banned_file_changes_pr.yml",
+      "tool": "poutine",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "default_permissions_on_risky_events": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "default_permissions_on_risky_events",
+          "line": "",
+          "column": "",
+          "job": "",
+          "step": "",
+          "details": "",
+          "event_triggers": [
+            "pull_request_target"
+          ]
+        }
+      ]
+    },
+    "zizmor": {
+      "workflow": "oracle-devrel-oci-arch-virtual-disk-import-banned_file_changes_pr.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 9,
+        "by_rule": {
+          "artipacked": 1,
+          "excessive-permissions": 1,
+          "dangerous-triggers": 1,
+          "unpinned-uses": 6
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "oracle-devrel-oci-arch-virtual-disk-import-banned_file_changes_pr.yml",
+          "line": 17,
+          "column": 9,
+          "note": "audit confidence \u2192 Low"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "oracle-devrel-oci-arch-virtual-disk-import-banned_file_changes_pr.yml",
+          "line": 8,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "dangerous-triggers",
+          "level": "error",
+          "message": "use of fundamentally insecure workflow trigger",
+          "workflow": "oracle-devrel-oci-arch-virtual-disk-import-banned_file_changes_pr.yml",
+          "line": 2,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "oracle-devrel-oci-arch-virtual-disk-import-banned_file_changes_pr.yml",
+          "line": 13,
+          "column": 9,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "oracle-devrel-oci-arch-virtual-disk-import-banned_file_changes_pr.yml",
+          "line": 24,
+          "column": 9,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "oracle-devrel-oci-arch-virtual-disk-import-banned_file_changes_pr.yml",
+          "line": 34,
+          "column": 9,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "oracle-devrel-oci-arch-virtual-disk-import-banned_file_changes_pr.yml",
+          "line": 46,
+          "column": 9,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "oracle-devrel-oci-arch-virtual-disk-import-banned_file_changes_pr.yml",
+          "line": 54,
+          "column": 9,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "oracle-devrel-oci-arch-virtual-disk-import-banned_file_changes_pr.yml",
+          "line": 66,
+          "column": 9,
+          "note": "audit confidence \u2192 High"
+        }
+      ]
+    }
+  }
+}

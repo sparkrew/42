@@ -1,0 +1,103 @@
+{
+  "workflow": "pulumi-pulumi-fastly-test.yml",
+  "tools": {
+    "poutine": {
+      "workflow": "pulumi-pulumi-fastly-test.yml",
+      "tool": "poutine",
+      "summary": {
+        "total_findings": 5,
+        "by_rule": {
+          "untrusted_checkout_exec": 5
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "untrusted_checkout_exec",
+          "line": 62,
+          "column": "",
+          "job": "",
+          "step": "",
+          "details": "Detected usage of `make`",
+          "event_triggers": [
+            "workflow_call"
+          ]
+        },
+        {
+          "rule_id": "untrusted_checkout_exec",
+          "line": 82,
+          "column": "",
+          "job": "",
+          "step": "",
+          "details": "Detected usage of `make`",
+          "event_triggers": [
+            "workflow_call"
+          ]
+        },
+        {
+          "rule_id": "untrusted_checkout_exec",
+          "line": 91,
+          "column": "",
+          "job": "",
+          "step": "",
+          "details": "Detected usage of `make`",
+          "event_triggers": [
+            "workflow_call"
+          ]
+        },
+        {
+          "rule_id": "untrusted_checkout_exec",
+          "line": 66,
+          "column": "",
+          "job": "",
+          "step": "",
+          "details": "Detected usage of a Local GitHub Action at path: `./.github/actions/download-provider`",
+          "event_triggers": [
+            "workflow_call"
+          ]
+        },
+        {
+          "rule_id": "untrusted_checkout_exec",
+          "line": 78,
+          "column": "",
+          "job": "",
+          "step": "",
+          "details": "Detected usage of a Local GitHub Action at path: `./.github/actions/download-sdk`",
+          "event_triggers": [
+            "workflow_call"
+          ]
+        }
+      ]
+    },
+    "zizmor": {
+      "workflow": "pulumi-pulumi-fastly-test.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 2,
+        "by_rule": {
+          "artipacked": 1,
+          "unpinned-uses": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "pulumi-pulumi-fastly-test.yml",
+          "line": 45,
+          "column": 7,
+          "note": "audit confidence \u2192 Low"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "pulumi-pulumi-fastly-test.yml",
+          "line": 52,
+          "column": 7,
+          "note": "audit confidence \u2192 High"
+        }
+      ]
+    }
+  }
+}

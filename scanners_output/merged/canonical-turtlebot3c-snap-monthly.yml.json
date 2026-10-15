@@ -1,0 +1,62 @@
+{
+  "workflow": "canonical-turtlebot3c-snap-monthly.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "canonical-turtlebot3c-snap-monthly.yaml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 5,
+        "by_rule": {
+          "excessive-permissions": 5
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "canonical-turtlebot3c-snap-monthly.yaml",
+          "line": 1,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "canonical-turtlebot3c-snap-monthly.yaml",
+          "line": 8,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "canonical-turtlebot3c-snap-monthly.yaml",
+          "line": 12,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "canonical-turtlebot3c-snap-monthly.yaml",
+          "line": 16,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "canonical-turtlebot3c-snap-monthly.yaml",
+          "line": 20,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        }
+      ]
+    }
+  }
+}

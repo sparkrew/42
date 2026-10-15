@@ -1,0 +1,23 @@
+{
+  "workflow": "sparkrew-cfw-benchmark-cfw-01-classic-folded-scalar.yml",
+  "tool": "poutine",
+  "summary": {
+    "total_findings": 1,
+    "by_rule": {
+      "if_always_true": 1
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "if_always_true",
+      "line": 41,
+      "column": "",
+      "job": "deploy-to-prod",
+      "step": "",
+      "details": "",
+      "event_triggers": [
+        "workflow_run"
+      ]
+    }
+  ]
+}

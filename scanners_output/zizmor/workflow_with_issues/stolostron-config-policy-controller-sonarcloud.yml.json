@@ -1,0 +1,31 @@
+{
+  "workflow": "stolostron-config-policy-controller-sonarcloud.yml",
+  "tool": "zizmor",
+  "summary": {
+    "total_findings": 2,
+    "by_rule": {
+      "excessive-permissions": 1,
+      "dangerous-triggers": 1
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "stolostron-config-policy-controller-sonarcloud.yml",
+      "line": 11,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "dangerous-triggers",
+      "level": "error",
+      "message": "use of fundamentally insecure workflow trigger",
+      "workflow": "stolostron-config-policy-controller-sonarcloud.yml",
+      "line": 3,
+      "column": 1,
+      "note": "audit confidence \u2192 Medium"
+    }
+  ]
+}

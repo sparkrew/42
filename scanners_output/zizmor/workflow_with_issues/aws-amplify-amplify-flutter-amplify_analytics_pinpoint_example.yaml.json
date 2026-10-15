@@ -1,0 +1,76 @@
+{
+  "workflow": "aws-amplify-amplify-flutter-amplify_analytics_pinpoint_example.yaml",
+  "tool": "zizmor",
+  "summary": {
+    "total_findings": 7,
+    "by_rule": {
+      "excessive-permissions": 1,
+      "secrets-inherit": 6
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "excessive-permissions",
+      "level": "error",
+      "message": "overly broad permissions",
+      "workflow": "aws-amplify-amplify-flutter-amplify_analytics_pinpoint_example.yaml",
+      "line": 144,
+      "column": 3,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "secrets-inherit",
+      "level": "warning",
+      "message": "secrets unconditionally inherited by called workflow",
+      "workflow": "aws-amplify-amplify-flutter-amplify_analytics_pinpoint_example.yaml",
+      "line": 155,
+      "column": 5,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "secrets-inherit",
+      "level": "warning",
+      "message": "secrets unconditionally inherited by called workflow",
+      "workflow": "aws-amplify-amplify-flutter-amplify_analytics_pinpoint_example.yaml",
+      "line": 163,
+      "column": 5,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "secrets-inherit",
+      "level": "warning",
+      "message": "secrets unconditionally inherited by called workflow",
+      "workflow": "aws-amplify-amplify-flutter-amplify_analytics_pinpoint_example.yaml",
+      "line": 171,
+      "column": 5,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "secrets-inherit",
+      "level": "warning",
+      "message": "secrets unconditionally inherited by called workflow",
+      "workflow": "aws-amplify-amplify-flutter-amplify_analytics_pinpoint_example.yaml",
+      "line": 179,
+      "column": 5,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "secrets-inherit",
+      "level": "warning",
+      "message": "secrets unconditionally inherited by called workflow",
+      "workflow": "aws-amplify-amplify-flutter-amplify_analytics_pinpoint_example.yaml",
+      "line": 187,
+      "column": 5,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "secrets-inherit",
+      "level": "warning",
+      "message": "secrets unconditionally inherited by called workflow",
+      "workflow": "aws-amplify-amplify-flutter-amplify_analytics_pinpoint_example.yaml",
+      "line": 195,
+      "column": 5,
+      "note": "audit confidence \u2192 High"
+    }
+  ]
+}

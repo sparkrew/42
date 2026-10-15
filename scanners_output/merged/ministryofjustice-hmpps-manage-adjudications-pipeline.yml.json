@@ -1,0 +1,99 @@
+{
+  "workflow": "ministryofjustice-hmpps-manage-adjudications-pipeline.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "ministryofjustice-hmpps-manage-adjudications-pipeline.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 9,
+        "by_rule": {
+          "excessive-permissions": 1,
+          "secrets-inherit": 8
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "error",
+          "message": "overly broad permissions",
+          "workflow": "ministryofjustice-hmpps-manage-adjudications-pipeline.yml",
+          "line": 22,
+          "column": 3,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-manage-adjudications-pipeline.yml",
+          "line": 29,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-manage-adjudications-pipeline.yml",
+          "line": 33,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-manage-adjudications-pipeline.yml",
+          "line": 38,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-manage-adjudications-pipeline.yml",
+          "line": 46,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-manage-adjudications-pipeline.yml",
+          "line": 69,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-manage-adjudications-pipeline.yml",
+          "line": 80,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-manage-adjudications-pipeline.yml",
+          "line": 91,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-manage-adjudications-pipeline.yml",
+          "line": 102,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "workflow": "DEFRA-ffc-pay-alerting-main.yml",
+  "tool": "poutine",
+  "summary": {
+    "total_findings": 2,
+    "by_rule": {
+      "injection": 2
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "injection",
+      "line": 71,
+      "column": "",
+      "job": "version-bump",
+      "step": "10",
+      "details": "Sources: github.head_ref",
+      "event_triggers": [
+        "pull_request"
+      ]
+    },
+    {
+      "rule_id": "injection",
+      "line": 75,
+      "column": "",
+      "job": "version-bump",
+      "step": "11",
+      "details": "Sources: github.head_ref",
+      "event_triggers": [
+        "pull_request"
+      ]
+    }
+  ]
+}

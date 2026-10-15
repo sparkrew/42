@@ -1,0 +1,173 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/docker-build-push-action-.e2e-run.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/docker-build-push-action-.e2e-run.yml:52:9
+   [1m[94m|[0m
+[1m[94m52 |[0m [1m[33m/[0m         name: Checkout
+[1m[94m53 |[0m [1m[33m|[0m         uses: actions/checkout@v4
+   [1m[94m|[0m [1m[33m|_________________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/docker-build-push-action-.e2e-run.yml:55:9
+   [1m[94m|[0m
+[1m[94m55 |[0m           name: Set up env
+   [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m56 |[0m           if: inputs.type == 'local'
+[1m[94m57 |[0m [1m[91m/[0m         run: |
+[1m[94m58 |[0m [1m[91m|[0m           cat ./.github/e2e/${{ inputs.id }}/env >> $GITHUB_ENV
+   [1m[94m|[0m [1m[91m|_______________________________________________________________^[0m [1m[91minputs.id may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/docker-build-push-action-.e2e-run.yml:60:9
+   [1m[94m|[0m
+[1m[94m60 |[0m           name: Set up BuildKit config
+   [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m61 |[0m [1m[91m/[0m         run: |
+[1m[94m62 |[0m [1m[91m|[0m           touch /tmp/buildkitd.toml
+[1m[94m63 |[0m [1m[91m|[0m           if [ "${{ inputs.type }}" = "local" ]; then
+[1m[94m64 |[0m [1m[91m|[0m             echo -e "[registry.\"${{ env.REGISTRY_FQDN }}\"]\nhttp = true\ninsecure = true" > /tmp/buildkitd.toml
+[1m[94m65 |[0m [1m[91m|[0m           fi
+   [1m[94m|[0m [1m[91m|____________^[0m [1m[91minputs.type may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/docker-build-push-action-.e2e-run.yml:78:9
+   [1m[94m|[0m
+[1m[94m78 |[0m           name: Install ${{ inputs.name }}
+   [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m79 |[0m           if: inputs.type == 'local'
+[1m[94m80 |[0m [1m[91m/[0m         run: |
+[1m[94m81 |[0m [1m[91m|[0m           sudo -E bash ./.github/e2e/${{ inputs.id }}/install.sh
+[1m[94m82 |[0m [1m[91m|[0m           sudo chown $(id -u):$(id -g) -R ~/.docker
+   [1m[94m|[0m [1m[91m|___________________________________________________^[0m [1m[91minputs.id may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/docker-build-push-action-.e2e-run.yml:127:9
+    [1m[94m|[0m
+[1m[94m127 |[0m           name: Inspect image
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m128 |[0m [1m[91m/[0m         run: |
+[1m[94m129 |[0m [1m[91m|[0m           docker pull ${{ env.REGISTRY_SLUG || inputs.slug }}:${{ steps.meta.outputs.version }}
+[1m[94m130 |[0m [1m[91m|[0m           docker image inspect ${{ env.REGISTRY_SLUG || inputs.slug }}:${{ steps.meta.outputs.version }}
+    [1m[94m|[0m [1m[91m|________________________________________________________________________________________________________^[0m [1m[91minputs.slug may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/docker-build-push-action-.e2e-run.yml:127:9
+    [1m[94m|[0m
+[1m[94m127 |[0m           name: Inspect image
+    [1m[94m|[0m           [1m[94m-------------------[0m [1m[94minfo: this step[0m
+[1m[94m128 |[0m [1m[94m/[0m         run: |
+[1m[94m129 |[0m [1m[94m|[0m           docker pull ${{ env.REGISTRY_SLUG || inputs.slug }}:${{ steps.meta.outputs.version }}
+[1m[94m130 |[0m [1m[94m|[0m           docker image inspect ${{ env.REGISTRY_SLUG || inputs.slug }}:${{ steps.meta.outputs.version }}
+    [1m[94m|[0m [1m[94m|________________________________________________________________________________________________________-[0m [1m[94minfo: steps.meta.outputs.version may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/docker-build-push-action-.e2e-run.yml:127:9
+    [1m[94m|[0m
+[1m[94m127 |[0m           name: Inspect image
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m128 |[0m [1m[91m/[0m         run: |
+[1m[94m129 |[0m [1m[91m|[0m           docker pull ${{ env.REGISTRY_SLUG || inputs.slug }}:${{ steps.meta.outputs.version }}
+[1m[94m130 |[0m [1m[91m|[0m           docker image inspect ${{ env.REGISTRY_SLUG || inputs.slug }}:${{ steps.meta.outputs.version }}
+    [1m[94m|[0m [1m[91m|________________________________________________________________________________________________________^[0m [1m[91minputs.slug may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/docker-build-push-action-.e2e-run.yml:127:9
+    [1m[94m|[0m
+[1m[94m127 |[0m           name: Inspect image
+    [1m[94m|[0m           [1m[94m-------------------[0m [1m[94minfo: this step[0m
+[1m[94m128 |[0m [1m[94m/[0m         run: |
+[1m[94m129 |[0m [1m[94m|[0m           docker pull ${{ env.REGISTRY_SLUG || inputs.slug }}:${{ steps.meta.outputs.version }}
+[1m[94m130 |[0m [1m[94m|[0m           docker image inspect ${{ env.REGISTRY_SLUG || inputs.slug }}:${{ steps.meta.outputs.version }}
+    [1m[94m|[0m [1m[94m|________________________________________________________________________________________________________-[0m [1m[94minfo: steps.meta.outputs.version may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/docker-build-push-action-.e2e-run.yml:132:9
+    [1m[94m|[0m
+[1m[94m132 |[0m   [1m[94m...[0m   name: Check manifest
+    [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m133 |[0m [1m[91m/[0m [1m[94m...[0m   run: |
+[1m[94m134 |[0m [1m[91m|[0m [1m[94m...[0m     docker buildx imagetools inspect ${{ env.REGISTRY_SLUG || inputs.slug }}:${{ steps.meta.outputs.version }} --format '{{json .}}'
+    [1m[94m|[0m [1m[91m|_________________________________________________________________________________________________________________________________________^[0m [1m[91minputs.slug may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/docker-build-push-action-.e2e-run.yml:132:9
+    [1m[94m|[0m
+[1m[94m132 |[0m   [1m[94m...[0m   name: Check manifest
+    [1m[94m|[0m         [1m[94m--------------------[0m [1m[94minfo: this step[0m
+[1m[94m133 |[0m [1m[94m/[0m [1m[94m...[0m   run: |
+[1m[94m134 |[0m [1m[94m|[0m [1m[94m...[0m     docker buildx imagetools inspect ${{ env.REGISTRY_SLUG || inputs.slug }}:${{ steps.meta.outputs.version }} --format '{{json .}}'
+    [1m[94m|[0m [1m[94m|_________________________________________________________________________________________________________________________________________-[0m [1m[94minfo: steps.meta.outputs.version may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/docker-build-push-action-.e2e-run.yml:86:9
+   [1m[94m|[0m
+[1m[94m86 |[0m         uses: docker/metadata-action@v5
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/docker-build-push-action-.e2e-run.yml:95:9
+   [1m[94m|[0m
+[1m[94m95 |[0m         uses: docker/setup-qemu-action@v3
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/docker-build-push-action-.e2e-run.yml:98:9
+   [1m[94m|[0m
+[1m[94m98 |[0m         uses: docker/setup-buildx-action@v3
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/docker-build-push-action-.e2e-run.yml:109:9
+    [1m[94m|[0m
+[1m[94m109 |[0m         uses: docker/login-action@v3
+    [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#overprovisioned-secrets\overprovisioned-secrets]8;;\][0m: [1mexcessively provisioned secrets[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/docker-build-push-action-.e2e-run.yml:112:21
+    [1m[94m|[0m
+[1m[94m112 |[0m           username: ${{ env.REGISTRY_USER || secrets[inputs.username_secret] }}
+    [1m[94m|[0m                     [1m[33m-----------------------------------------------------------[0m [1m[33minjects the entire secrets context into the runner[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#overprovisioned-secrets\overprovisioned-secrets]8;;\][0m: [1mexcessively provisioned secrets[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/docker-build-push-action-.e2e-run.yml:113:21
+    [1m[94m|[0m
+[1m[94m113 |[0m           password: ${{ env.REGISTRY_PASSWORD || secrets[inputs.password_secret] }}
+    [1m[94m|[0m                     [1m[33m---------------------------------------------------------------[0m [1m[33minjects the entire secrets context into the runner[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m29[39m findings ([1m[93m13[39m suppressed[0m): 0 unknown, [35m3[39m informational, [36m0[39m low, [33m3[39m medium, [31m10[39m high

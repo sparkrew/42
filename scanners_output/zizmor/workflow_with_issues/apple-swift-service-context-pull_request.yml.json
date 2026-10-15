@@ -1,0 +1,84 @@
+{
+  "workflow": "apple-swift-service-context-pull_request.yml",
+  "tool": "zizmor",
+  "summary": {
+    "total_findings": 8,
+    "by_rule": {
+      "excessive-permissions": 8
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "apple-swift-service-context-pull_request.yml",
+      "line": 1,
+      "column": 1,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "apple-swift-service-context-pull_request.yml",
+      "line": 8,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "apple-swift-service-context-pull_request.yml",
+      "line": 14,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "apple-swift-service-context-pull_request.yml",
+      "line": 25,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "apple-swift-service-context-pull_request.yml",
+      "line": 31,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "apple-swift-service-context-pull_request.yml",
+      "line": 35,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "apple-swift-service-context-pull_request.yml",
+      "line": 40,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "apple-swift-service-context-pull_request.yml",
+      "line": 47,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    }
+  ]
+}

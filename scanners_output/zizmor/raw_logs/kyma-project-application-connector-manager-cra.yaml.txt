@@ -1,0 +1,83 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/kyma-project-application-connector-manager-cra.yaml
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/kyma-project-application-connector-manager-cra.yaml:31:3
+   [1m[94m|[0m
+[1m[94m31 |[0m   id-token: write # This is required for requesting the JWT token
+   [1m[94m|[0m   [1m[91m^^^^^^^^^^^^^^^[0m [1m[91mid-token: write is overly broad at the workflow level[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#dangerous-triggers\dangerous-triggers]8;;\][0m: [1muse of fundamentally insecure workflow trigger[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/kyma-project-application-connector-manager-cra.yaml:3:1
+   [1m[94m|[0m
+[1m[94m 3 |[0m [1m[91m/[0m on:
+[1m[94m 4 |[0m [1m[91m|[0m   push:
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m27 |[0m [1m[91m|[0m       - "!tests/Dockerfile.*"
+[1m[94m28 |[0m [1m[91m|[0m       - "tests/Dockerfile.compass-runtime-agent"
+   [1m[94m|[0m [1m[91m|________________________________________________^[0m [1m[91mpull_request_target is almost always used insecurely[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/kyma-project-application-connector-manager-cra.yaml:94:9
+    [1m[94m|[0m
+[1m[94m 94 |[0m         - name: "Generate summary"
+    [1m[94m|[0m           [1m[94m------------------------[0m [1m[94minfo: this step[0m
+[1m[94m 95 |[0m [1m[94m/[0m         run: |
+[1m[94m 96 |[0m [1m[94m|[0m           {
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m107 |[0m [1m[94m|[0m             printf '\n```\n'
+[1m[94m108 |[0m [1m[94m|[0m           } >> $GITHUB_STEP_SUMMARY
+    [1m[94m|[0m [1m[94m|____________________________________-[0m [1m[94minfo: needs.build-image.result may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/kyma-project-application-connector-manager-cra.yaml:94:9
+    [1m[94m|[0m
+[1m[94m 94 |[0m         - name: "Generate summary"
+    [1m[94m|[0m           [1m[94m------------------------[0m [1m[94minfo: this step[0m
+[1m[94m 95 |[0m [1m[94m/[0m         run: |
+[1m[94m 96 |[0m [1m[94m|[0m           {
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m107 |[0m [1m[94m|[0m             printf '\n```\n'
+[1m[94m108 |[0m [1m[94m|[0m           } >> $GITHUB_STEP_SUMMARY
+    [1m[94m|[0m [1m[94m|____________________________________-[0m [1m[94minfo: needs.build-image.outputs.images may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/kyma-project-application-connector-manager-cra.yaml:94:9
+    [1m[94m|[0m
+[1m[94m 94 |[0m         - name: "Generate summary"
+    [1m[94m|[0m           [1m[94m------------------------[0m [1m[94minfo: this step[0m
+[1m[94m 95 |[0m [1m[94m/[0m         run: |
+[1m[94m 96 |[0m [1m[94m|[0m           {
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m107 |[0m [1m[94m|[0m             printf '\n```\n'
+[1m[94m108 |[0m [1m[94m|[0m           } >> $GITHUB_STEP_SUMMARY
+    [1m[94m|[0m [1m[94m|____________________________________-[0m [1m[94minfo: needs.build-test-image.result may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/kyma-project-application-connector-manager-cra.yaml:94:9
+    [1m[94m|[0m
+[1m[94m 94 |[0m         - name: "Generate summary"
+    [1m[94m|[0m           [1m[94m------------------------[0m [1m[94minfo: this step[0m
+[1m[94m 95 |[0m [1m[94m/[0m         run: |
+[1m[94m 96 |[0m [1m[94m|[0m           {
+[1m[94m...[0m   [1m[94m|[0m
+[1m[94m107 |[0m [1m[94m|[0m             printf '\n```\n'
+[1m[94m108 |[0m [1m[94m|[0m           } >> $GITHUB_STEP_SUMMARY
+    [1m[94m|[0m [1m[94m|____________________________________-[0m [1m[94minfo: needs.build-test-image.outputs.images may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[32m10[39m findings ([1m[93m4[39m suppressed[0m): 0 unknown, [35m4[39m informational, [36m0[39m low, [33m0[39m medium, [31m2[39m high

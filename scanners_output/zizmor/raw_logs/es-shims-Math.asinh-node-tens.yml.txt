@@ -1,0 +1,49 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/es-shims-Math.asinh-node-tens.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/es-shims-Math.asinh-node-tens.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name: 'Tests: node.js >= 10'
+[1m[94m 2 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m17 |[0m [1m[33m|[0m     steps:
+[1m[94m18 |[0m [1m[33m|[0m       - run: 'echo tests completed'
+   [1m[94m|[0m [1m[33m|____________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/es-shims-Math.asinh-node-tens.yml:6:3
+   [1m[94m|[0m
+[1m[94m 6 |[0m [1m[33m/[0m   tests:
+[1m[94m 7 |[0m [1m[33m|[0m     uses: ljharb/actions/.github/workflows/node.yml@main
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m10 |[0m [1m[33m|[0m       type: minors
+[1m[94m11 |[0m [1m[33m|[0m       command: npm run tests-only
+   [1m[94m|[0m [1m[33m|[0m                                 [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________|[0m
+   [1m[94m|[0m                                   [1m[33mthis job[0m
+   [1m[94m|[0m                                   [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/es-shims-Math.asinh-node-tens.yml:13:3
+   [1m[94m|[0m
+[1m[94m13 |[0m [1m[33m/[0m   node:
+[1m[94m14 |[0m [1m[33m|[0m     name: 'node >= 10'
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m17 |[0m [1m[33m|[0m     steps:
+[1m[94m18 |[0m [1m[33m|[0m       - run: 'echo tests completed'
+   [1m[94m|[0m [1m[33m|[0m                                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________________________|[0m
+   [1m[94m|[0m                                      [1m[33mthis job[0m
+   [1m[94m|[0m                                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m3[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m3[39m medium, [31m0[39m high

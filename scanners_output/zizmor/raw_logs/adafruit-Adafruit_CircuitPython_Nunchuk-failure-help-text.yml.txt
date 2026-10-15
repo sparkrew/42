@@ -1,0 +1,42 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/adafruit-Adafruit_CircuitPython_Nunchuk-failure-help-text.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/adafruit-Adafruit_CircuitPython_Nunchuk-failure-help-text.yml:14:3
+   [1m[94m|[0m
+[1m[94m14 |[0m [1m[33m/[0m   post-help:
+[1m[94m15 |[0m [1m[33m|[0m     runs-on: ubuntu-latest
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m18 |[0m [1m[33m|[0m     - name: Post comment to help
+[1m[94m19 |[0m [1m[33m|[0m       uses: adafruit/circuitpython-action-library-ci-failed@v1
+   [1m[94m|[0m [1m[33m|[0m                                                               [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________________________________________________________|[0m
+   [1m[94m|[0m                                                                 [1m[33mthis job[0m
+   [1m[94m|[0m                                                                 [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#dangerous-triggers\dangerous-triggers]8;;\][0m: [1muse of fundamentally insecure workflow trigger[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/adafruit-Adafruit_CircuitPython_Nunchuk-failure-help-text.yml:7:1
+   [1m[94m|[0m
+[1m[94m 7 |[0m [1m[91m/[0m on:
+[1m[94m 8 |[0m [1m[91m|[0m   workflow_run:
+[1m[94m 9 |[0m [1m[91m|[0m     workflows: ["Build CI"]
+[1m[94m10 |[0m [1m[91m|[0m     types:
+[1m[94m11 |[0m [1m[91m|[0m       - completed
+   [1m[94m|[0m [1m[91m|_________________^[0m [1m[91mworkflow_run is almost always used insecurely[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/adafruit-Adafruit_CircuitPython_Nunchuk-failure-help-text.yml:19:7
+   [1m[94m|[0m
+[1m[94m19 |[0m       uses: adafruit/circuitpython-action-library-ci-failed@v1
+   [1m[94m|[0m       [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m4[39m findings ([1m[93m1[39m suppressed[0m): 0 unknown, [35m0[39m informational, [36m0[39m low, [33m1[39m medium, [31m2[39m high

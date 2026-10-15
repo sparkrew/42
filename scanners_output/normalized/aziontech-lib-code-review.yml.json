@@ -1,0 +1,27 @@
+{
+  "workflow": "aziontech-lib-code-review.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "aziontech-lib-code-review.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "artipacked": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "aziontech-lib-code-review.yml",
+          "line": 19,
+          "column": 9,
+          "note": "audit confidence \u2192 Low",
+          "capability": "artifact-integrity-weakness"
+        }
+      ]
+    }
+  }
+}

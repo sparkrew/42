@@ -1,0 +1,89 @@
+{
+  "workflow": "DEFRA-ffc-pay-alerting-main.yml",
+  "tools": {
+    "poutine": {
+      "workflow": "DEFRA-ffc-pay-alerting-main.yml",
+      "tool": "poutine",
+      "summary": {
+        "total_findings": 2,
+        "by_rule": {
+          "injection": 2
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "injection",
+          "line": 71,
+          "column": "",
+          "job": "version-bump",
+          "step": "10",
+          "details": "Sources: github.head_ref",
+          "event_triggers": [
+            "pull_request"
+          ]
+        },
+        {
+          "rule_id": "injection",
+          "line": 75,
+          "column": "",
+          "job": "version-bump",
+          "step": "11",
+          "details": "Sources: github.head_ref",
+          "event_triggers": [
+            "pull_request"
+          ]
+        }
+      ]
+    },
+    "zizmor": {
+      "workflow": "DEFRA-ffc-pay-alerting-main.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 4,
+        "by_rule": {
+          "artipacked": 1,
+          "excessive-permissions": 1,
+          "template-injection": 2
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "DEFRA-ffc-pay-alerting-main.yml",
+          "line": 12,
+          "column": 9,
+          "note": "audit confidence \u2192 Low"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "DEFRA-ffc-pay-alerting-main.yml",
+          "line": 8,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "template-injection",
+          "level": "error",
+          "message": "code injection via template expansion",
+          "workflow": "DEFRA-ffc-pay-alerting-main.yml",
+          "line": 70,
+          "column": 9,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "template-injection",
+          "level": "error",
+          "message": "code injection via template expansion",
+          "workflow": "DEFRA-ffc-pay-alerting-main.yml",
+          "line": 74,
+          "column": 9,
+          "note": "audit confidence \u2192 High"
+        }
+      ]
+    }
+  }
+}

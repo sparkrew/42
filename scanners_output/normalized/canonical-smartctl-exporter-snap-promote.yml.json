@@ -1,0 +1,103 @@
+{
+  "workflow": "canonical-smartctl-exporter-snap-promote.yml",
+  "tools": {
+    "poutine": {
+      "workflow": "canonical-smartctl-exporter-snap-promote.yaml",
+      "tool": "poutine",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "injection": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "injection",
+          "line": 30,
+          "column": "",
+          "job": "promote-snap",
+          "step": "3",
+          "details": "Sources: github.event.inputs.channel-promotion",
+          "event_triggers": [
+            "workflow_dispatch"
+          ],
+          "capability": "injection-weakness"
+        }
+      ]
+    },
+    "zizmor": {
+      "workflow": "canonical-smartctl-exporter-snap-promote.yaml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 6,
+        "by_rule": {
+          "artipacked": 1,
+          "excessive-permissions": 1,
+          "template-injection": 4
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "canonical-smartctl-exporter-snap-promote.yaml",
+          "line": 22,
+          "column": 9,
+          "note": "audit confidence \u2192 Low",
+          "capability": "artifact-integrity-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "canonical-smartctl-exporter-snap-promote.yaml",
+          "line": 18,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "template-injection",
+          "level": "error",
+          "message": "code injection via template expansion",
+          "workflow": "canonical-smartctl-exporter-snap-promote.yaml",
+          "line": 28,
+          "column": 9,
+          "note": "audit confidence \u2192 High",
+          "capability": "injection-weakness"
+        },
+        {
+          "rule_id": "template-injection",
+          "level": "info",
+          "message": "code injection via template expansion",
+          "workflow": "canonical-smartctl-exporter-snap-promote.yaml",
+          "line": 36,
+          "column": 9,
+          "note": "audit confidence \u2192 Low",
+          "capability": "injection-weakness"
+        },
+        {
+          "rule_id": "template-injection",
+          "level": "info",
+          "message": "code injection via template expansion",
+          "workflow": "canonical-smartctl-exporter-snap-promote.yaml",
+          "line": 36,
+          "column": 9,
+          "note": "audit confidence \u2192 Low",
+          "capability": "injection-weakness"
+        },
+        {
+          "rule_id": "template-injection",
+          "level": "info",
+          "message": "code injection via template expansion",
+          "workflow": "canonical-smartctl-exporter-snap-promote.yaml",
+          "line": 36,
+          "column": 9,
+          "note": "audit confidence \u2192 Low",
+          "capability": "injection-weakness"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "workflow": "stolostron-backplane-operator-handle-onboard-request-464bf54a.yml",
+  "tool": "poutine",
+  "summary": {
+    "total_findings": 4,
+    "by_rule": {
+      "untrusted_checkout_exec": 2,
+      "injection": 1,
+      "default_permissions_on_risky_events": 1
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "untrusted_checkout_exec",
+      "line": 68,
+      "column": "",
+      "job": "",
+      "step": "",
+      "details": "Detected usage of `make`",
+      "event_triggers": [
+        "workflow_dispatch",
+        "pull_request_target"
+      ]
+    },
+    {
+      "rule_id": "untrusted_checkout_exec",
+      "line": 74,
+      "column": "",
+      "job": "",
+      "step": "",
+      "details": "Detected usage of `make`",
+      "event_triggers": [
+        "workflow_dispatch",
+        "pull_request_target"
+      ]
+    },
+    {
+      "rule_id": "injection",
+      "line": 102,
+      "column": "",
+      "job": "build",
+      "step": "9",
+      "details": "Sources: github.event.pull_request.head.ref",
+      "event_triggers": [
+        "workflow_dispatch",
+        "pull_request_target"
+      ]
+    },
+    {
+      "rule_id": "default_permissions_on_risky_events",
+      "line": "",
+      "column": "",
+      "job": "",
+      "step": "",
+      "details": "",
+      "event_triggers": [
+        "workflow_dispatch",
+        "pull_request_target"
+      ]
+    }
+  ]
+}

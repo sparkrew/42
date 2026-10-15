@@ -1,0 +1,106 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/atlassian-data-center-helm-charts-crc.yaml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/atlassian-data-center-helm-charts-crc.yaml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m # This workflow is for testing Helm charts in MicroShift
+[1m[94m 2 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m59 |[0m [1m[33m|[0m     secrets:
+[1m[94m60 |[0m [1m[33m|[0m       OPENSHIFT_PULL_SECRET: "${{ secrets.OPENSHIFT_PULL_SECRET }}"
+   [1m[94m|[0m [1m[33m|____________________________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/atlassian-data-center-helm-charts-crc.yaml:23:3
+   [1m[94m|[0m
+[1m[94m23 |[0m [1m[33m/[0m   jira:
+[1m[94m24 |[0m [1m[33m|[0m     uses: ./.github/workflows/openshift.yaml
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m28 |[0m [1m[33m|[0m       JIRA_LICENSE: "${{ secrets.JIRA_LICENSE }}"
+[1m[94m29 |[0m [1m[33m|[0m       OPENSHIFT_PULL_SECRET: "${{ secrets.OPENSHIFT_PULL_SECRET }}"
+   [1m[94m|[0m [1m[33m|[0m                                                                   [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________________________________________________________|[0m
+   [1m[94m|[0m                                                                     [1m[33mthis job[0m
+   [1m[94m|[0m                                                                     [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/atlassian-data-center-helm-charts-crc.yaml:31:3
+   [1m[94m|[0m
+[1m[94m31 |[0m [1m[33m/[0m   confluence:
+[1m[94m32 |[0m [1m[33m|[0m     uses: ./.github/workflows/openshift.yaml
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m36 |[0m [1m[33m|[0m       CONFLUENCE_LICENSE: "${{ secrets.TF_VAR_CONFLUENCE_LICENSE }}"
+[1m[94m37 |[0m [1m[33m|[0m       OPENSHIFT_PULL_SECRET: "${{ secrets.OPENSHIFT_PULL_SECRET }}"
+   [1m[94m|[0m [1m[33m|[0m                                                                   [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________________________________________________________|[0m
+   [1m[94m|[0m                                                                     [1m[33mthis job[0m
+   [1m[94m|[0m                                                                     [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/atlassian-data-center-helm-charts-crc.yaml:39:3
+   [1m[94m|[0m
+[1m[94m39 |[0m [1m[33m/[0m   bitbucket:
+[1m[94m40 |[0m [1m[33m|[0m     uses: ./.github/workflows/openshift.yaml
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m44 |[0m [1m[33m|[0m       BITBUCKET_LICENSE: "${{ secrets.TF_VAR_BITBUCKET_LICENSE }}"
+[1m[94m45 |[0m [1m[33m|[0m       OPENSHIFT_PULL_SECRET: "${{ secrets.OPENSHIFT_PULL_SECRET }}"
+   [1m[94m|[0m [1m[33m|[0m                                                                   [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________________________________________________________|[0m
+   [1m[94m|[0m                                                                     [1m[33mthis job[0m
+   [1m[94m|[0m                                                                     [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/atlassian-data-center-helm-charts-crc.yaml:47:3
+   [1m[94m|[0m
+[1m[94m47 |[0m [1m[33m/[0m   bamboo:
+[1m[94m48 |[0m [1m[33m|[0m     uses: ./.github/workflows/openshift.yaml
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m52 |[0m [1m[33m|[0m       BAMBOO_LICENSE: "${{ secrets.TF_VAR_BAMBOO_LICENSE }}"
+[1m[94m53 |[0m [1m[33m|[0m       OPENSHIFT_PULL_SECRET: "${{ secrets.OPENSHIFT_PULL_SECRET }}"
+   [1m[94m|[0m [1m[33m|[0m                                                                   [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________________________________________________________|[0m
+   [1m[94m|[0m                                                                     [1m[33mthis job[0m
+   [1m[94m|[0m                                                                     [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/atlassian-data-center-helm-charts-crc.yaml:55:3
+   [1m[94m|[0m
+[1m[94m55 |[0m [1m[33m/[0m   crowd:
+[1m[94m56 |[0m [1m[33m|[0m     uses: ./.github/workflows/openshift.yaml
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m59 |[0m [1m[33m|[0m     secrets:
+[1m[94m60 |[0m [1m[33m|[0m       OPENSHIFT_PULL_SECRET: "${{ secrets.OPENSHIFT_PULL_SECRET }}"
+   [1m[94m|[0m [1m[33m|[0m                                                                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________________________________________________________|[0m
+   [1m[94m|[0m                                                                      [1m[33mthis job[0m
+   [1m[94m|[0m                                                                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#dangerous-triggers\dangerous-triggers]8;;\][0m: [1muse of fundamentally insecure workflow trigger[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/atlassian-data-center-helm-charts-crc.yaml:5:1
+   [1m[94m|[0m
+[1m[94m 5 |[0m [1m[91m/[0m on:
+[1m[94m 6 |[0m [1m[91m|[0m   schedule:
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m19 |[0m [1m[91m|[0m   pull_request_target:
+[1m[94m20 |[0m [1m[91m|[0m     types: [ labeled ]
+   [1m[94m|[0m [1m[91m|______________________^[0m [1m[91mpull_request_target is almost always used insecurely[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m7[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m6[39m medium, [31m1[39m high

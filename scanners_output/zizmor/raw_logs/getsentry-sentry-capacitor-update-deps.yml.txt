@@ -1,0 +1,94 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/getsentry-sentry-capacitor-update-deps.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/getsentry-sentry-capacitor-update-deps.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name: Update Dependencies
+[1m[94m 2 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m56 |[0m [1m[33m|[0m     secrets:
+[1m[94m57 |[0m [1m[33m|[0m       api-token: ${{ secrets.CI_DEPLOY_KEY }}
+   [1m[94m|[0m [1m[33m|______________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/getsentry-sentry-capacitor-update-deps.yml:13:3
+   [1m[94m|[0m
+[1m[94m13 |[0m [1m[33m/[0m   android:
+[1m[94m14 |[0m [1m[33m|[0m     uses: getsentry/github-workflows/.github/workflows/updater.yml@v2
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m19 |[0m [1m[33m|[0m     secrets:
+[1m[94m20 |[0m [1m[33m|[0m       api-token: ${{ secrets.CI_DEPLOY_KEY }}
+   [1m[94m|[0m [1m[33m|[0m                                             [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________________________________|[0m
+   [1m[94m|[0m                                               [1m[33mthis job[0m
+   [1m[94m|[0m                                               [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/getsentry-sentry-capacitor-update-deps.yml:22:3
+   [1m[94m|[0m
+[1m[94m22 |[0m [1m[33m/[0m   cocoa:
+[1m[94m23 |[0m [1m[33m|[0m     uses: getsentry/github-workflows/.github/workflows/updater.yml@v2
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m28 |[0m [1m[33m|[0m     secrets:
+[1m[94m29 |[0m [1m[33m|[0m       api-token: ${{ secrets.CI_DEPLOY_KEY }}
+   [1m[94m|[0m [1m[33m|[0m                                             [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________________________________|[0m
+   [1m[94m|[0m                                               [1m[33mthis job[0m
+   [1m[94m|[0m                                               [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/getsentry-sentry-capacitor-update-deps.yml:31:3
+   [1m[94m|[0m
+[1m[94m31 |[0m [1m[33m/[0m   javascript:
+[1m[94m32 |[0m [1m[33m|[0m     uses: getsentry/github-workflows/.github/workflows/updater.yml@v2
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m37 |[0m [1m[33m|[0m     secrets:
+[1m[94m38 |[0m [1m[33m|[0m       api-token: ${{ secrets.CI_DEPLOY_KEY }}
+   [1m[94m|[0m [1m[33m|[0m                                             [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________________________________|[0m
+   [1m[94m|[0m                                               [1m[33mthis job[0m
+   [1m[94m|[0m                                               [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/getsentry-sentry-capacitor-update-deps.yml:40:3
+   [1m[94m|[0m
+[1m[94m40 |[0m [1m[33m/[0m   javascript-siblings:
+[1m[94m41 |[0m [1m[33m|[0m     uses: getsentry/github-workflows/.github/workflows/updater.yml@v2
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m46 |[0m [1m[33m|[0m     secrets:
+[1m[94m47 |[0m [1m[33m|[0m       api-token: ${{ secrets.CI_DEPLOY_KEY }}
+   [1m[94m|[0m [1m[33m|[0m                                             [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________________________________|[0m
+   [1m[94m|[0m                                               [1m[33mthis job[0m
+   [1m[94m|[0m                                               [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/getsentry-sentry-capacitor-update-deps.yml:49:3
+   [1m[94m|[0m
+[1m[94m49 |[0m [1m[33m/[0m   wizard:
+[1m[94m50 |[0m [1m[33m|[0m     uses: getsentry/github-workflows/.github/workflows/updater.yml@v2
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m56 |[0m [1m[33m|[0m     secrets:
+[1m[94m57 |[0m [1m[33m|[0m       api-token: ${{ secrets.CI_DEPLOY_KEY }}
+   [1m[94m|[0m [1m[33m|[0m                                              [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|______________________________________________|[0m
+   [1m[94m|[0m                                                [1m[33mthis job[0m
+   [1m[94m|[0m                                                [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m6[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m6[39m medium, [31m0[39m high

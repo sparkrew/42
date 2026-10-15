@@ -1,0 +1,88 @@
+{
+  "workflow": "ministryofjustice-check-my-diary-pipeline.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "ministryofjustice-check-my-diary-pipeline.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 7,
+        "by_rule": {
+          "excessive-permissions": 1,
+          "secrets-inherit": 6
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "error",
+          "message": "overly broad permissions",
+          "workflow": "ministryofjustice-check-my-diary-pipeline.yml",
+          "line": 20,
+          "column": 3,
+          "note": "audit confidence \u2192 High",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-check-my-diary-pipeline.yml",
+          "line": 28,
+          "column": 5,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-check-my-diary-pipeline.yml",
+          "line": 32,
+          "column": 5,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-check-my-diary-pipeline.yml",
+          "line": 37,
+          "column": 5,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-check-my-diary-pipeline.yml",
+          "line": 45,
+          "column": 5,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-check-my-diary-pipeline.yml",
+          "line": 68,
+          "column": 5,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-check-my-diary-pipeline.yml",
+          "line": 79,
+          "column": 5,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "workflow": "adafruit-Adafruit_CircuitPython_FXAS21002C-release_gh.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "adafruit-Adafruit_CircuitPython_FXAS21002C-release_gh.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 2,
+        "by_rule": {
+          "excessive-permissions": 1,
+          "unpinned-uses": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "adafruit-Adafruit_CircuitPython_FXAS21002C-release_gh.yml",
+          "line": 12,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "adafruit-Adafruit_CircuitPython_FXAS21002C-release_gh.yml",
+          "line": 16,
+          "column": 7,
+          "note": "audit confidence \u2192 High"
+        }
+      ]
+    }
+  }
+}

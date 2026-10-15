@@ -1,0 +1,26 @@
+{
+  "workflow": "Adyen-adyen-apex-api-library-unit-tests.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "Adyen-adyen-apex-api-library-unit-tests.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "artipacked": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "Adyen-adyen-apex-api-library-unit-tests.yml",
+          "line": 20,
+          "column": 9,
+          "note": "audit confidence \u2192 Low"
+        }
+      ]
+    }
+  }
+}

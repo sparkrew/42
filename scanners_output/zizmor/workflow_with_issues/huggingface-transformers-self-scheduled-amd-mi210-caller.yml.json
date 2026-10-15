@@ -1,0 +1,104 @@
+{
+  "workflow": "huggingface-transformers-self-scheduled-amd-mi210-caller.yml",
+  "tool": "zizmor",
+  "summary": {
+    "total_findings": 10,
+    "by_rule": {
+      "excessive-permissions": 5,
+      "dangerous-triggers": 1,
+      "secrets-inherit": 4
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "huggingface-transformers-self-scheduled-amd-mi210-caller.yml",
+      "line": 1,
+      "column": 1,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "huggingface-transformers-self-scheduled-amd-mi210-caller.yml",
+      "line": 13,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "huggingface-transformers-self-scheduled-amd-mi210-caller.yml",
+      "line": 24,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "huggingface-transformers-self-scheduled-amd-mi210-caller.yml",
+      "line": 35,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "huggingface-transformers-self-scheduled-amd-mi210-caller.yml",
+      "line": 46,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "dangerous-triggers",
+      "level": "error",
+      "message": "use of fundamentally insecure workflow trigger",
+      "workflow": "huggingface-transformers-self-scheduled-amd-mi210-caller.yml",
+      "line": 3,
+      "column": 1,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "secrets-inherit",
+      "level": "warning",
+      "message": "secrets unconditionally inherited by called workflow",
+      "workflow": "huggingface-transformers-self-scheduled-amd-mi210-caller.yml",
+      "line": 15,
+      "column": 5,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "secrets-inherit",
+      "level": "warning",
+      "message": "secrets unconditionally inherited by called workflow",
+      "workflow": "huggingface-transformers-self-scheduled-amd-mi210-caller.yml",
+      "line": 26,
+      "column": 5,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "secrets-inherit",
+      "level": "warning",
+      "message": "secrets unconditionally inherited by called workflow",
+      "workflow": "huggingface-transformers-self-scheduled-amd-mi210-caller.yml",
+      "line": 37,
+      "column": 5,
+      "note": "audit confidence \u2192 High"
+    },
+    {
+      "rule_id": "secrets-inherit",
+      "level": "warning",
+      "message": "secrets unconditionally inherited by called workflow",
+      "workflow": "huggingface-transformers-self-scheduled-amd-mi210-caller.yml",
+      "line": 48,
+      "column": 5,
+      "note": "audit confidence \u2192 High"
+    }
+  ]
+}

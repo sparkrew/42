@@ -1,0 +1,166 @@
+{
+  "workflow": "stolostron-backplane-operator-handle-onboard-request.yml",
+  "tools": {
+    "poutine": {
+      "workflow": "stolostron-backplane-operator-handle-onboard-request.yml",
+      "tool": "poutine",
+      "summary": {
+        "total_findings": 4,
+        "by_rule": {
+          "untrusted_checkout_exec": 2,
+          "injection": 1,
+          "default_permissions_on_risky_events": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "untrusted_checkout_exec",
+          "line": 68,
+          "column": "",
+          "job": "",
+          "step": "",
+          "details": "Detected usage of `make`",
+          "event_triggers": [
+            "workflow_dispatch",
+            "pull_request_target"
+          ],
+          "capability": "artifact-integrity-weakness"
+        },
+        {
+          "rule_id": "untrusted_checkout_exec",
+          "line": 74,
+          "column": "",
+          "job": "",
+          "step": "",
+          "details": "Detected usage of `make`",
+          "event_triggers": [
+            "workflow_dispatch",
+            "pull_request_target"
+          ],
+          "capability": "artifact-integrity-weakness"
+        },
+        {
+          "rule_id": "injection",
+          "line": 102,
+          "column": "",
+          "job": "build",
+          "step": "9",
+          "details": "Sources: github.event.pull_request.head.ref",
+          "event_triggers": [
+            "workflow_dispatch",
+            "pull_request_target"
+          ],
+          "capability": "injection-weakness"
+        },
+        {
+          "rule_id": "default_permissions_on_risky_events",
+          "line": "",
+          "column": "",
+          "job": "",
+          "step": "",
+          "details": "",
+          "event_triggers": [
+            "workflow_dispatch",
+            "pull_request_target"
+          ],
+          "capability": "excessive-permission-weakness"
+        }
+      ]
+    },
+    "zizmor": {
+      "workflow": "stolostron-backplane-operator-handle-onboard-request.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 8,
+        "by_rule": {
+          "artipacked": 1,
+          "excessive-permissions": 1,
+          "dangerous-triggers": 1,
+          "template-injection": 5
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "stolostron-backplane-operator-handle-onboard-request.yml",
+          "line": 24,
+          "column": 9,
+          "note": "audit confidence \u2192 Low",
+          "capability": "artifact-integrity-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "stolostron-backplane-operator-handle-onboard-request.yml",
+          "line": 18,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "dangerous-triggers",
+          "level": "error",
+          "message": "use of fundamentally insecure workflow trigger",
+          "workflow": "stolostron-backplane-operator-handle-onboard-request.yml",
+          "line": 6,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "privileged-trigger-weakness"
+        },
+        {
+          "rule_id": "template-injection",
+          "level": "info",
+          "message": "code injection via template expansion",
+          "workflow": "stolostron-backplane-operator-handle-onboard-request.yml",
+          "line": 78,
+          "column": 9,
+          "note": "audit confidence \u2192 Low",
+          "capability": "injection-weakness"
+        },
+        {
+          "rule_id": "template-injection",
+          "level": "info",
+          "message": "code injection via template expansion",
+          "workflow": "stolostron-backplane-operator-handle-onboard-request.yml",
+          "line": 78,
+          "column": 9,
+          "note": "audit confidence \u2192 Low",
+          "capability": "injection-weakness"
+        },
+        {
+          "rule_id": "template-injection",
+          "level": "error",
+          "message": "code injection via template expansion",
+          "workflow": "stolostron-backplane-operator-handle-onboard-request.yml",
+          "line": 100,
+          "column": 9,
+          "note": "audit confidence \u2192 High",
+          "capability": "injection-weakness"
+        },
+        {
+          "rule_id": "template-injection",
+          "level": "error",
+          "message": "code injection via template expansion",
+          "workflow": "stolostron-backplane-operator-handle-onboard-request.yml",
+          "line": 100,
+          "column": 9,
+          "note": "audit confidence \u2192 High",
+          "capability": "injection-weakness"
+        },
+        {
+          "rule_id": "template-injection",
+          "level": "error",
+          "message": "code injection via template expansion",
+          "workflow": "stolostron-backplane-operator-handle-onboard-request.yml",
+          "line": 100,
+          "column": 9,
+          "note": "audit confidence \u2192 High",
+          "capability": "injection-weakness"
+        }
+      ]
+    }
+  }
+}

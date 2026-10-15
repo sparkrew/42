@@ -1,0 +1,67 @@
+{
+  "workflow": "pulumi-pulumi-fastly-test.yml",
+  "tool": "poutine",
+  "summary": {
+    "total_findings": 5,
+    "by_rule": {
+      "untrusted_checkout_exec": 5
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "untrusted_checkout_exec",
+      "line": 62,
+      "column": "",
+      "job": "",
+      "step": "",
+      "details": "Detected usage of `make`",
+      "event_triggers": [
+        "workflow_call"
+      ]
+    },
+    {
+      "rule_id": "untrusted_checkout_exec",
+      "line": 82,
+      "column": "",
+      "job": "",
+      "step": "",
+      "details": "Detected usage of `make`",
+      "event_triggers": [
+        "workflow_call"
+      ]
+    },
+    {
+      "rule_id": "untrusted_checkout_exec",
+      "line": 91,
+      "column": "",
+      "job": "",
+      "step": "",
+      "details": "Detected usage of `make`",
+      "event_triggers": [
+        "workflow_call"
+      ]
+    },
+    {
+      "rule_id": "untrusted_checkout_exec",
+      "line": 66,
+      "column": "",
+      "job": "",
+      "step": "",
+      "details": "Detected usage of a Local GitHub Action at path: `./.github/actions/download-provider`",
+      "event_triggers": [
+        "workflow_call"
+      ]
+    },
+    {
+      "rule_id": "untrusted_checkout_exec",
+      "line": 78,
+      "column": "",
+      "job": "",
+      "step": "",
+      "details": "Detected usage of a Local GitHub Action at path: `./.github/actions/download-sdk`",
+      "event_triggers": [
+        "workflow_call"
+      ]
+    }
+  ]
+}

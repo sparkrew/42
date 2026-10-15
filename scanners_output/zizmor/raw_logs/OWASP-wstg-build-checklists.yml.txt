@@ -1,0 +1,33 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/OWASP-wstg-build-checklists.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/OWASP-wstg-build-checklists.yml:16:3
+   [1m[94m|[0m
+[1m[94m16 |[0m [1m[33m/[0m   create_pr:
+[1m[94m17 |[0m [1m[33m|[0m     name: Create Pull Request
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m92 |[0m [1m[33m|[0m         npm run-script publishxlsx --  ${{ secrets.GDRIVEFILEID }}  ${{ github.event.inputs.version }}
+[1m[94m93 |[0m [1m[33m|[0m
+   [1m[94m|[0m [1m[33m|_--[0m [1m[33mthis job[0m
+   [1m[94m|[0m   [1m[33m|[0m
+   [1m[94m|[0m   [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/OWASP-wstg-build-checklists.yml:90:7
+   [1m[94m|[0m
+[1m[94m90 |[0m       - name: Publish XLSX file to Google Drive
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m91 |[0m [1m[91m/[0m       run: |
+[1m[94m92 |[0m [1m[91m|[0m         npm run-script publishxlsx --  ${{ secrets.GDRIVEFILEID }}  ${{ github.event.inputs.version }}
+[1m[94m93 |[0m [1m[91m|[0m
+   [1m[94m|[0m [1m[91m|__^[0m [1m[91mgithub.event.inputs.version may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m7[39m findings ([1m[93m5[39m suppressed[0m): 0 unknown, [35m0[39m informational, [36m0[39m low, [33m1[39m medium, [31m1[39m high

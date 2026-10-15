@@ -1,0 +1,113 @@
+{
+  "workflow": "microsoft-dstoolkit-mlops-databricks-onRelease.yml",
+  "tools": {
+    "poutine": {
+      "workflow": "microsoft-dstoolkit-mlops-databricks-onRelease.yaml",
+      "tool": "poutine",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "injection": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "injection",
+          "line": 54,
+          "column": "",
+          "job": "pr_CI_UAT",
+          "step": "1",
+          "details": "Sources: github.head_ref",
+          "event_triggers": [
+            "pull_request"
+          ]
+        }
+      ]
+    },
+    "zizmor": {
+      "workflow": "microsoft-dstoolkit-mlops-databricks-onRelease.yaml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 8,
+        "by_rule": {
+          "excessive-permissions": 6,
+          "template-injection": 2
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "microsoft-dstoolkit-mlops-databricks-onRelease.yaml",
+          "line": 3,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "microsoft-dstoolkit-mlops-databricks-onRelease.yaml",
+          "line": 17,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "microsoft-dstoolkit-mlops-databricks-onRelease.yaml",
+          "line": 32,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "microsoft-dstoolkit-mlops-databricks-onRelease.yaml",
+          "line": 46,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "microsoft-dstoolkit-mlops-databricks-onRelease.yaml",
+          "line": 58,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "microsoft-dstoolkit-mlops-databricks-onRelease.yaml",
+          "line": 79,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "template-injection",
+          "level": "error",
+          "message": "code injection via template expansion",
+          "workflow": "microsoft-dstoolkit-mlops-databricks-onRelease.yaml",
+          "line": 54,
+          "column": 9,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "template-injection",
+          "level": "error",
+          "message": "code injection via template expansion",
+          "workflow": "microsoft-dstoolkit-mlops-databricks-onRelease.yaml",
+          "line": 54,
+          "column": 9,
+          "note": "audit confidence \u2192 High"
+        }
+      ]
+    }
+  }
+}

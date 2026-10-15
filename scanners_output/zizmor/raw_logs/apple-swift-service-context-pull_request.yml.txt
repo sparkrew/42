@@ -1,0 +1,119 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/apple-swift-service-context-pull_request.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/apple-swift-service-context-pull_request.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name: PR
+[1m[94m 2 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m48 |[0m [1m[33m|[0m     name: Release builds
+[1m[94m49 |[0m [1m[33m|[0m     uses: apple/swift-nio/.github/workflows/release_builds.yml@main
+   [1m[94m|[0m [1m[33m|____________________________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/apple-swift-service-context-pull_request.yml:8:3
+   [1m[94m|[0m
+[1m[94m 8 |[0m [1m[33m/[0m   soundness:
+[1m[94m 9 |[0m [1m[33m|[0m     name: Soundness
+[1m[94m10 |[0m [1m[33m|[0m     uses: swiftlang/github-workflows/.github/workflows/soundness.yml@main
+[1m[94m11 |[0m [1m[33m|[0m     with:
+[1m[94m12 |[0m [1m[33m|[0m       license_header_check_project_name: "Swift Service Context"
+   [1m[94m|[0m [1m[33m|[0m                                                                [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________________________________________________|[0m
+   [1m[94m|[0m                                                                  [1m[33mthis job[0m
+   [1m[94m|[0m                                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/apple-swift-service-context-pull_request.yml:14:3
+   [1m[94m|[0m
+[1m[94m14 |[0m [1m[33m/[0m   unit-tests:
+[1m[94m15 |[0m [1m[33m|[0m     name: Unit tests
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m22 |[0m [1m[33m|[0m       linux_nightly_6_0_arguments_override: "--explicit-target-dependency-import-check error -Xswiftc -require-explicit-sendable"
+[1m[94m23 |[0m [1m[33m|[0m       linux_nightly_main_arguments_override: "--explicit-target-dependency-import-check error -Xswiftc -require-explicit-sendable"
+   [1m[94m|[0m [1m[33m|[0m                                                                                                                                  [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________________________________________________________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                                                                    [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                                                                    [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/apple-swift-service-context-pull_request.yml:25:3
+   [1m[94m|[0m
+[1m[94m25 |[0m [1m[33m/[0m   benchmarks:
+[1m[94m26 |[0m [1m[33m|[0m     name: Benchmarks
+[1m[94m27 |[0m [1m[33m|[0m     uses: apple/swift-nio/.github/workflows/benchmarks.yml@main
+[1m[94m28 |[0m [1m[33m|[0m     with:
+[1m[94m29 |[0m [1m[33m|[0m       benchmark_package_path: "Benchmarks"
+   [1m[94m|[0m [1m[33m|[0m                                          [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________________________________________|[0m
+   [1m[94m|[0m                                            [1m[33mthis job[0m
+   [1m[94m|[0m                                            [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/apple-swift-service-context-pull_request.yml:31:3
+   [1m[94m|[0m
+[1m[94m31 |[0m [1m[33m/[0m   cxx-interop:
+[1m[94m32 |[0m [1m[33m|[0m     name: Cxx interop
+[1m[94m33 |[0m [1m[33m|[0m     uses: apple/swift-nio/.github/workflows/cxx_interop.yml@main
+   [1m[94m|[0m [1m[33m|[0m                                                                [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________________________________________________|[0m
+   [1m[94m|[0m                                                                  [1m[33mthis job[0m
+   [1m[94m|[0m                                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/apple-swift-service-context-pull_request.yml:35:3
+   [1m[94m|[0m
+[1m[94m35 |[0m [1m[33m/[0m   static-sdk:
+[1m[94m36 |[0m [1m[33m|[0m     name: Static SDK
+[1m[94m37 |[0m [1m[33m|[0m     # Workaround https://github.com/nektos/act/issues/1875
+[1m[94m38 |[0m [1m[33m|[0m     uses: apple/swift-nio/.github/workflows/static_sdk.yml@main
+   [1m[94m|[0m [1m[33m|[0m                                                               [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________________________________________________________|[0m
+   [1m[94m|[0m                                                                 [1m[33mthis job[0m
+   [1m[94m|[0m                                                                 [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/apple-swift-service-context-pull_request.yml:40:3
+   [1m[94m|[0m
+[1m[94m40 |[0m [1m[33m/[0m   macos-tests:
+[1m[94m41 |[0m [1m[33m|[0m     name: macOS tests
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m44 |[0m [1m[33m|[0m       runner_pool: general
+[1m[94m45 |[0m [1m[33m|[0m       build_scheme: swift-service-context-Package
+   [1m[94m|[0m [1m[33m|[0m                                                 [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________|[0m
+   [1m[94m|[0m                                                   [1m[33mthis job[0m
+   [1m[94m|[0m                                                   [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/apple-swift-service-context-pull_request.yml:47:3
+   [1m[94m|[0m
+[1m[94m47 |[0m [1m[33m/[0m   release-builds:
+[1m[94m48 |[0m [1m[33m|[0m     name: Release builds
+[1m[94m49 |[0m [1m[33m|[0m     uses: apple/swift-nio/.github/workflows/release_builds.yml@main
+   [1m[94m|[0m [1m[33m|[0m                                                                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________________________________________________________|[0m
+   [1m[94m|[0m                                                                      [1m[33mthis job[0m
+   [1m[94m|[0m                                                                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m8[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m8[39m medium, [31m0[39m high

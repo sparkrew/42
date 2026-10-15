@@ -1,0 +1,50 @@
+{
+  "workflow": "terraform-google-modules-cloud-foundation-training-lint.yaml",
+  "tool": "zizmor",
+  "summary": {
+    "total_findings": 4,
+    "by_rule": {
+      "artipacked": 1,
+      "excessive-permissions": 1,
+      "template-injection": 2
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "artipacked",
+      "level": "warning",
+      "message": "credential persistence through GitHub Actions artifacts",
+      "workflow": "terraform-google-modules-cloud-foundation-training-lint.yaml",
+      "line": 35,
+      "column": 9,
+      "note": "audit confidence \u2192 Low"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "terraform-google-modules-cloud-foundation-training-lint.yaml",
+      "line": 31,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "template-injection",
+      "level": "info",
+      "message": "code injection via template expansion",
+      "workflow": "terraform-google-modules-cloud-foundation-training-lint.yaml",
+      "line": 47,
+      "column": 9,
+      "note": "audit confidence \u2192 Low"
+    },
+    {
+      "rule_id": "template-injection",
+      "level": "info",
+      "message": "code injection via template expansion",
+      "workflow": "terraform-google-modules-cloud-foundation-training-lint.yaml",
+      "line": 48,
+      "column": 9,
+      "note": "audit confidence \u2192 Low"
+    }
+  ]
+}

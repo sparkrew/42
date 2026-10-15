@@ -1,0 +1,26 @@
+{
+  "workflow": "ocicl-cl-dbi-connection-pool-main.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "ocicl-cl-dbi-connection-pool-main.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "unpinned-uses": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "ocicl-cl-dbi-connection-pool-main.yml",
+          "line": 12,
+          "column": 9,
+          "note": "audit confidence \u2192 High"
+        }
+      ]
+    }
+  }
+}

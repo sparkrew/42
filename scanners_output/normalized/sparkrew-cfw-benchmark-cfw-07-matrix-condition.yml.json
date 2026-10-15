@@ -1,0 +1,63 @@
+{
+  "workflow": "sparkrew-cfw-benchmark-cfw-07-matrix-condition.yml",
+  "tools": {
+    "poutine": {
+      "workflow": "sparkrew-cfw-benchmark-cfw-07-matrix-condition.yml",
+      "tool": "poutine",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "if_always_true": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "if_always_true",
+          "line": 35,
+          "column": "",
+          "job": "ci-matrix",
+          "step": "3",
+          "details": "",
+          "event_triggers": [
+            "push",
+            "pull_request"
+          ],
+          "capability": "control-flow-weakness"
+        }
+      ]
+    },
+    "zizmor": {
+      "workflow": "sparkrew-cfw-benchmark-cfw-07-matrix-condition.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 2,
+        "by_rule": {
+          "artipacked": 1,
+          "excessive-permissions": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "sparkrew-cfw-benchmark-cfw-07-matrix-condition.yml",
+          "line": 25,
+          "column": 9,
+          "note": "audit confidence \u2192 Low",
+          "capability": "artifact-integrity-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "sparkrew-cfw-benchmark-cfw-07-matrix-condition.yml",
+          "line": 19,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        }
+      ]
+    }
+  }
+}

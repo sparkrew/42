@@ -1,0 +1,26 @@
+{
+  "workflow": "fortify-fortify-ssc-parser-burp-update-repo-docs.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "fortify-fortify-ssc-parser-burp-update-repo-docs.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "excessive-permissions": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "fortify-fortify-ssc-parser-burp-update-repo-docs.yml",
+          "line": 12,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "workflow": "aio-libs-aiohttp-debugtoolbar-ci.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "aio-libs-aiohttp-debugtoolbar-ci.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 16,
+        "by_rule": {
+          "artipacked": 3,
+          "excessive-permissions": 5,
+          "unpinned-uses": 6,
+          "cache-poisoning": 2
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "aio-libs-aiohttp-debugtoolbar-ci.yml",
+          "line": 21,
+          "column": 7,
+          "note": "audit confidence \u2192 Low"
+        },
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "aio-libs-aiohttp-debugtoolbar-ci.yml",
+          "line": 60,
+          "column": 7,
+          "note": "audit confidence \u2192 Low"
+        },
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "aio-libs-aiohttp-debugtoolbar-ci.yml",
+          "line": 104,
+          "column": 7,
+          "note": "audit confidence \u2192 Low"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "aio-libs-aiohttp-debugtoolbar-ci.yml",
+          "line": 1,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "aio-libs-aiohttp-debugtoolbar-ci.yml",
+          "line": 16,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "aio-libs-aiohttp-debugtoolbar-ci.yml",
+          "line": 48,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "aio-libs-aiohttp-debugtoolbar-ci.yml",
+          "line": 83,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "aio-libs-aiohttp-debugtoolbar-ci.yml",
+          "line": 96,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "aio-libs-aiohttp-debugtoolbar-ci.yml",
+          "line": 30,
+          "column": 7,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "aio-libs-aiohttp-debugtoolbar-ci.yml",
+          "line": 32,
+          "column": 7,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "aio-libs-aiohttp-debugtoolbar-ci.yml",
+          "line": 69,
+          "column": 7,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "aio-libs-aiohttp-debugtoolbar-ci.yml",
+          "line": 78,
+          "column": 7,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "aio-libs-aiohttp-debugtoolbar-ci.yml",
+          "line": 92,
+          "column": 7,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "aio-libs-aiohttp-debugtoolbar-ci.yml",
+          "line": 117,
+          "column": 7,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "cache-poisoning",
+          "level": "error",
+          "message": "runtime artifacts potentially vulnerable to a cache poisoning attack",
+          "workflow": "aio-libs-aiohttp-debugtoolbar-ci.yml",
+          "line": 3,
+          "column": 1,
+          "note": "audit confidence \u2192 Low"
+        },
+        {
+          "rule_id": "cache-poisoning",
+          "level": "error",
+          "message": "runtime artifacts potentially vulnerable to a cache poisoning attack",
+          "workflow": "aio-libs-aiohttp-debugtoolbar-ci.yml",
+          "line": 3,
+          "column": 1,
+          "note": "audit confidence \u2192 Low"
+        }
+      ]
+    }
+  }
+}

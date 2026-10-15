@@ -1,0 +1,49 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-ngc-integrator-operator-on_pull_request.yaml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-ngc-integrator-operator-on_pull_request.yaml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name: On Pull Request
+[1m[94m 2 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m22 |[0m [1m[33m|[0m     secrets:
+[1m[94m23 |[0m [1m[33m|[0m       CHARMCRAFT_CREDENTIALS: ${{ secrets.CHARMCRAFT_CREDENTIALS }}
+   [1m[94m|[0m [1m[33m|____________________________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-ngc-integrator-operator-on_pull_request.yaml:12:3
+   [1m[94m|[0m
+[1m[94m12 |[0m [1m[33m/[0m   tests:
+[1m[94m13 |[0m [1m[33m|[0m     name: Run Tests
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m17 |[0m [1m[33m|[0m
+[1m[94m18 |[0m [1m[33m|[0m   # publish runs in parallel with tests, as we always publish in this situation
+   [1m[94m|[0m [1m[33m|[0m                                                                               [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                 [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                 [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-ngc-integrator-operator-on_pull_request.yaml:19:3
+   [1m[94m|[0m
+[1m[94m19 |[0m [1m[33m/[0m   publish-charm:
+[1m[94m20 |[0m [1m[33m|[0m     name: Publish Charm
+[1m[94m21 |[0m [1m[33m|[0m     uses: ./.github/workflows/publish.yaml
+[1m[94m22 |[0m [1m[33m|[0m     secrets:
+[1m[94m23 |[0m [1m[33m|[0m       CHARMCRAFT_CREDENTIALS: ${{ secrets.CHARMCRAFT_CREDENTIALS }}
+   [1m[94m|[0m [1m[33m|[0m                                                                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________________________________________________________|[0m
+   [1m[94m|[0m                                                                      [1m[33mthis job[0m
+   [1m[94m|[0m                                                                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m3[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m3[39m medium, [31m0[39m high

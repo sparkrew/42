@@ -1,0 +1,347 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:1:1
+    [1m[94m|[0m
+[1m[94m  1 |[0m [1m[33m/[0m #
+[1m[94m  2 |[0m [1m[33m|[0m # Copyright (c) 2022, 2024, Oracle and/or its affiliates. All rights reserved.
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m408 |[0m [1m[33m|[0m             || echo "Failed to remove bundle"
+[1m[94m409 |[0m [1m[33m|[0m           done
+    [1m[94m|[0m [1m[33m|_______________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:57:3
+    [1m[94m|[0m
+[1m[94m 57 |[0m [1m[33m/[0m   select:
+[1m[94m 58 |[0m [1m[33m|[0m     name: 'Select platforms'
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m147 |[0m [1m[33m|[0m   ### Build jobs
+[1m[94m148 |[0m [1m[33m|[0m   ###
+    [1m[94m|[0m [1m[33m|[0m     [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|_____|[0m
+    [1m[94m|[0m       [1m[33mthis job[0m
+    [1m[94m|[0m       [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:150:3
+    [1m[94m|[0m
+[1m[94m150 |[0m [1m[33m/[0m   build-linux-x64:
+[1m[94m151 |[0m [1m[33m|[0m     name: linux-x64
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m158 |[0m [1m[33m|[0m       make-arguments: ${{ github.event.inputs.make-arguments }}
+[1m[94m159 |[0m [1m[33m|[0m     if: needs.select.outputs.linux-x64 == 'true'
+    [1m[94m|[0m [1m[33m|[0m                                                [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|________________________________________________|[0m
+    [1m[94m|[0m                                                  [1m[33mthis job[0m
+    [1m[94m|[0m                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:161:3
+    [1m[94m|[0m
+[1m[94m161 |[0m [1m[33m/[0m   build-linux-x86-hs:
+[1m[94m162 |[0m [1m[33m|[0m     name: linux-x86-hs
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m176 |[0m [1m[33m|[0m       make-arguments: ${{ github.event.inputs.make-arguments }}
+[1m[94m177 |[0m [1m[33m|[0m     if: needs.select.outputs.linux-x86-hs == 'true'
+    [1m[94m|[0m [1m[33m|[0m                                                   [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|___________________________________________________|[0m
+    [1m[94m|[0m                                                     [1m[33mthis job[0m
+    [1m[94m|[0m                                                     [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:179:3
+    [1m[94m|[0m
+[1m[94m179 |[0m [1m[33m/[0m   build-linux-x64-hs-nopch:
+[1m[94m180 |[0m [1m[33m|[0m     name: linux-x64-hs-nopch
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m190 |[0m [1m[33m|[0m       make-arguments: ${{ github.event.inputs.make-arguments }}
+[1m[94m191 |[0m [1m[33m|[0m     if: needs.select.outputs.linux-x64-variants == 'true'
+    [1m[94m|[0m [1m[33m|[0m                                                         [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|_________________________________________________________|[0m
+    [1m[94m|[0m                                                           [1m[33mthis job[0m
+    [1m[94m|[0m                                                           [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:193:3
+    [1m[94m|[0m
+[1m[94m193 |[0m [1m[33m/[0m   build-linux-x64-hs-zero:
+[1m[94m194 |[0m [1m[33m|[0m     name: linux-x64-hs-zero
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m204 |[0m [1m[33m|[0m       make-arguments: ${{ github.event.inputs.make-arguments }}
+[1m[94m205 |[0m [1m[33m|[0m     if: needs.select.outputs.linux-x64-variants == 'true'
+    [1m[94m|[0m [1m[33m|[0m                                                         [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|_________________________________________________________|[0m
+    [1m[94m|[0m                                                           [1m[33mthis job[0m
+    [1m[94m|[0m                                                           [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:207:3
+    [1m[94m|[0m
+[1m[94m207 |[0m [1m[33m/[0m   build-linux-x64-hs-minimal:
+[1m[94m208 |[0m [1m[33m|[0m     name: linux-x64-hs-minimal
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m218 |[0m [1m[33m|[0m       make-arguments: ${{ github.event.inputs.make-arguments }}
+[1m[94m219 |[0m [1m[33m|[0m     if: needs.select.outputs.linux-x64-variants == 'true'
+    [1m[94m|[0m [1m[33m|[0m                                                         [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|_________________________________________________________|[0m
+    [1m[94m|[0m                                                           [1m[33mthis job[0m
+    [1m[94m|[0m                                                           [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:221:3
+    [1m[94m|[0m
+[1m[94m221 |[0m [1m[33m/[0m   build-linux-x64-hs-optimized:
+[1m[94m222 |[0m [1m[33m|[0m     name: linux-x64-hs-optimized
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m233 |[0m [1m[33m|[0m       make-arguments: ${{ github.event.inputs.make-arguments }}
+[1m[94m234 |[0m [1m[33m|[0m     if: needs.select.outputs.linux-x64-variants == 'true'
+    [1m[94m|[0m [1m[33m|[0m                                                         [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|_________________________________________________________|[0m
+    [1m[94m|[0m                                                           [1m[33mthis job[0m
+    [1m[94m|[0m                                                           [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:236:3
+    [1m[94m|[0m
+[1m[94m236 |[0m [1m[33m/[0m   build-linux-cross-compile:
+[1m[94m237 |[0m [1m[33m|[0m     name: linux-cross-compile
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m244 |[0m [1m[33m|[0m       make-arguments: ${{ github.event.inputs.make-arguments }}
+[1m[94m245 |[0m [1m[33m|[0m     if: needs.select.outputs.linux-cross-compile == 'true'
+    [1m[94m|[0m [1m[33m|[0m                                                          [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________________________________________________________|[0m
+    [1m[94m|[0m                                                            [1m[33mthis job[0m
+    [1m[94m|[0m                                                            [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:247:3
+    [1m[94m|[0m
+[1m[94m247 |[0m [1m[33m/[0m   build-alpine-linux-x64:
+[1m[94m248 |[0m [1m[33m|[0m     name: alpine-linux-x64
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m254 |[0m [1m[33m|[0m       make-arguments: ${{ github.event.inputs.make-arguments }}
+[1m[94m255 |[0m [1m[33m|[0m     if: needs.select.outputs.alpine-linux-x64 == 'true'
+    [1m[94m|[0m [1m[33m|[0m                                                       [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|_______________________________________________________|[0m
+    [1m[94m|[0m                                                         [1m[33mthis job[0m
+    [1m[94m|[0m                                                         [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:257:3
+    [1m[94m|[0m
+[1m[94m257 |[0m [1m[33m/[0m   build-macos-x64:
+[1m[94m258 |[0m [1m[33m|[0m     name: macos-x64
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m266 |[0m [1m[33m|[0m       make-arguments: ${{ github.event.inputs.make-arguments }}
+[1m[94m267 |[0m [1m[33m|[0m     if: needs.select.outputs.macos-x64 == 'true'
+    [1m[94m|[0m [1m[33m|[0m                                                [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|________________________________________________|[0m
+    [1m[94m|[0m                                                  [1m[33mthis job[0m
+    [1m[94m|[0m                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:269:3
+    [1m[94m|[0m
+[1m[94m269 |[0m [1m[33m/[0m   build-macos-aarch64:
+[1m[94m270 |[0m [1m[33m|[0m     name: macos-aarch64
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m278 |[0m [1m[33m|[0m       make-arguments: ${{ github.event.inputs.make-arguments }}
+[1m[94m279 |[0m [1m[33m|[0m     if: needs.select.outputs.macos-aarch64 == 'true'
+    [1m[94m|[0m [1m[33m|[0m                                                    [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|____________________________________________________|[0m
+    [1m[94m|[0m                                                      [1m[33mthis job[0m
+    [1m[94m|[0m                                                      [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:281:3
+    [1m[94m|[0m
+[1m[94m281 |[0m [1m[33m/[0m   build-windows-x64:
+[1m[94m282 |[0m [1m[33m|[0m     name: windows-x64
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m290 |[0m [1m[33m|[0m       make-arguments: ${{ github.event.inputs.make-arguments }}
+[1m[94m291 |[0m [1m[33m|[0m     if: needs.select.outputs.windows-x64 == 'true'
+    [1m[94m|[0m [1m[33m|[0m                                                  [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|__________________________________________________|[0m
+    [1m[94m|[0m                                                    [1m[33mthis job[0m
+    [1m[94m|[0m                                                    [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:293:3
+    [1m[94m|[0m
+[1m[94m293 |[0m [1m[33m/[0m   build-windows-aarch64:
+[1m[94m294 |[0m [1m[33m|[0m     name: windows-aarch64
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m304 |[0m [1m[33m|[0m       make-arguments: ${{ github.event.inputs.make-arguments }}
+[1m[94m305 |[0m [1m[33m|[0m     if: needs.select.outputs.windows-aarch64 == 'true'
+    [1m[94m|[0m [1m[33m|[0m                                                      [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|______________________________________________________|[0m
+    [1m[94m|[0m                                                        [1m[33mthis job[0m
+    [1m[94m|[0m                                                        [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:307:3
+    [1m[94m|[0m
+[1m[94m307 |[0m [1m[33m/[0m   build-docs:
+[1m[94m308 |[0m [1m[33m|[0m     name: docs
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m324 |[0m [1m[33m|[0m   ### Test jobs
+[1m[94m325 |[0m [1m[33m|[0m   ###
+    [1m[94m|[0m [1m[33m|[0m     [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|_____|[0m
+    [1m[94m|[0m       [1m[33mthis job[0m
+    [1m[94m|[0m       [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:327:3
+    [1m[94m|[0m
+[1m[94m327 |[0m [1m[33m/[0m   test-linux-x64:
+[1m[94m328 |[0m [1m[33m|[0m     name: linux-x64
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m334 |[0m [1m[33m|[0m       bootjdk-platform: linux-x64
+[1m[94m335 |[0m [1m[33m|[0m       runs-on: ubuntu-22.04
+    [1m[94m|[0m [1m[33m|[0m                           [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|___________________________|[0m
+    [1m[94m|[0m                             [1m[33mthis job[0m
+    [1m[94m|[0m                             [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:337:3
+    [1m[94m|[0m
+[1m[94m337 |[0m [1m[33m/[0m   test-macos-x64:
+[1m[94m338 |[0m [1m[33m|[0m     name: macos-x64
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m344 |[0m [1m[33m|[0m       bootjdk-platform: macos-x64
+[1m[94m345 |[0m [1m[33m|[0m       runs-on: macos-13
+    [1m[94m|[0m [1m[33m|[0m                       [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|_______________________|[0m
+    [1m[94m|[0m                         [1m[33mthis job[0m
+    [1m[94m|[0m                         [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:347:3
+    [1m[94m|[0m
+[1m[94m347 |[0m [1m[33m/[0m   test-macos-aarch64:
+[1m[94m348 |[0m [1m[33m|[0m     name: macos-aarch64
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m354 |[0m [1m[33m|[0m       bootjdk-platform: macos-aarch64
+[1m[94m355 |[0m [1m[33m|[0m       runs-on: macos-14
+    [1m[94m|[0m [1m[33m|[0m                       [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|_______________________|[0m
+    [1m[94m|[0m                         [1m[33mthis job[0m
+    [1m[94m|[0m                         [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:357:3
+    [1m[94m|[0m
+[1m[94m357 |[0m [1m[33m/[0m   test-windows-x64:
+[1m[94m358 |[0m [1m[33m|[0m     name: windows-x64
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m366 |[0m [1m[33m|[0m
+[1m[94m367 |[0m [1m[33m|[0m   # Remove bundles so they are not misconstrued as binary distributions from the JDK project
+    [1m[94m|[0m [1m[33m|[0m                                                                                            [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|____________________________________________________________________________________________|[0m
+    [1m[94m|[0m                                                                                              [1m[33mthis job[0m
+    [1m[94m|[0m                                                                                              [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:368:3
+    [1m[94m|[0m
+[1m[94m368 |[0m [1m[33m/[0m   remove-bundles:
+[1m[94m369 |[0m [1m[33m|[0m     name: 'Remove bundle artifacts'
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m408 |[0m [1m[33m|[0m             || echo "Failed to remove bundle"
+[1m[94m409 |[0m [1m[33m|[0m           done
+    [1m[94m|[0m [1m[33m|[0m               [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|_______________|[0m
+    [1m[94m|[0m                 [1m[33mthis job[0m
+    [1m[94m|[0m                 [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:77:9
+    [1m[94m|[0m
+[1m[94m 77 |[0m         - name: 'Check what jobs to run'
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m 78 |[0m           id: include
+[1m[94m 79 |[0m [1m[91m/[0m         run: |
+[1m[94m 80 |[0m [1m[91m|[0m           # Determine which platform jobs to run
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m143 |[0m [1m[91m|[0m           echo "windows-aarch64=$(check_platform windows-aarch64 windows aarch64)" >> $GITHUB_OUTPUT
+[1m[94m144 |[0m [1m[91m|[0m           echo "docs=$(check_platform docs)" >> $GITHUB_OUTPUT
+    [1m[94m|[0m [1m[91m|______________________________________________________________^[0m [1m[91mgithub.event.inputs.platforms may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:390:9
+    [1m[94m|[0m
+[1m[94m390 |[0m         - name: 'Remove bundle artifacts'
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m391 |[0m [1m[91m/[0m         run: |
+[1m[94m392 |[0m [1m[91m|[0m           # Find and remove all bundle artifacts
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m408 |[0m [1m[91m|[0m             || echo "Failed to remove bundle"
+[1m[94m409 |[0m [1m[91m|[0m           done
+    [1m[94m|[0m [1m[91m|_______________^[0m [1m[91mgithub.api_url may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/openjdk-amber-main.yml:390:9
+    [1m[94m|[0m
+[1m[94m390 |[0m         - name: 'Remove bundle artifacts'
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m391 |[0m [1m[91m/[0m         run: |
+[1m[94m392 |[0m [1m[91m|[0m           # Find and remove all bundle artifacts
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m408 |[0m [1m[91m|[0m             || echo "Failed to remove bundle"
+[1m[94m409 |[0m [1m[91m|[0m           done
+    [1m[94m|[0m [1m[91m|_______________^[0m [1m[91mgithub.api_url may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m33[39m findings ([1m[93m10[39m suppressed[0m): 0 unknown, [35m0[39m informational, [36m0[39m low, [33m20[39m medium, [31m3[39m high

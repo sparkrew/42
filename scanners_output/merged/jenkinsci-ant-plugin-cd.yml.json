@@ -1,0 +1,26 @@
+{
+  "workflow": "jenkinsci-ant-plugin-cd.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "jenkinsci-ant-plugin-cd.yaml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "excessive-permissions": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "jenkinsci-ant-plugin-cd.yaml",
+          "line": 11,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        }
+      ]
+    }
+  }
+}

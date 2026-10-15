@@ -1,0 +1,101 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-cert-manager-rock-pull_request.yaml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-cert-manager-rock-pull_request.yaml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name: Push Multiarch Images
+[1m[94m 2 |[0m [1m[33m|[0m on:
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m41 |[0m [1m[33m|[0m       rock-metas: ${{ needs.build-and-push-arch-specifics.outputs.changed-rock-metas }}
+[1m[94m42 |[0m [1m[33m|[0m       dry-run: ${{ github.event_name != 'push' }}
+   [1m[94m|[0m [1m[33m|__________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-cert-manager-rock-pull_request.yaml:9:3
+   [1m[94m|[0m
+[1m[94m 9 |[0m [1m[33m/[0m   build-and-push-arch-specifics:
+[1m[94m10 |[0m [1m[33m|[0m     name: Build Rocks and Push Arch Specific Images
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m19 |[0m [1m[33m|[0m       arch-skipping-maximize-build-space: '["arm64"]'
+[1m[94m20 |[0m [1m[33m|[0m       platform-labels: '{"arm64": ["self-hosted", "Linux", "ARM64", "jammy"]}'
+   [1m[94m|[0m [1m[33m|[0m                                                                              [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|______________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-cert-manager-rock-pull_request.yaml:21:3
+   [1m[94m|[0m
+[1m[94m21 |[0m [1m[33m/[0m   run-tests:
+[1m[94m22 |[0m [1m[33m|[0m     uses: canonical/k8s-workflows/.github/workflows/run_tests.yaml@main
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m25 |[0m [1m[33m|[0m     with:
+[1m[94m26 |[0m [1m[33m|[0m       rock-metas: ${{ needs.build-and-push-arch-specifics.outputs.rock-metas }}
+   [1m[94m|[0m [1m[33m|[0m                                                                               [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                 [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                 [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-cert-manager-rock-pull_request.yaml:27:3
+   [1m[94m|[0m
+[1m[94m27 |[0m [1m[33m/[0m   scan-images:
+[1m[94m28 |[0m [1m[33m|[0m     uses: canonical/k8s-workflows/.github/workflows/scan_images.yaml@main
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m33 |[0m [1m[33m|[0m       images: ${{ needs.build-and-push-arch-specifics.outputs.images }}
+[1m[94m34 |[0m [1m[33m|[0m       trivy-image-config: ./trivy.yaml
+   [1m[94m|[0m [1m[33m|[0m                                      [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|______________________________________|[0m
+   [1m[94m|[0m                                        [1m[33mthis job[0m
+   [1m[94m|[0m                                        [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-cert-manager-rock-pull_request.yaml:35:3
+   [1m[94m|[0m
+[1m[94m35 |[0m [1m[33m/[0m   build-and-push-multiarch-manifest:
+[1m[94m36 |[0m [1m[33m|[0m     name: Combine Rocks and Push Multiarch Manifest
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m41 |[0m [1m[33m|[0m       rock-metas: ${{ needs.build-and-push-arch-specifics.outputs.changed-rock-metas }}
+[1m[94m42 |[0m [1m[33m|[0m       dry-run: ${{ github.event_name != 'push' }}
+   [1m[94m|[0m [1m[33m|[0m                                                  [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________________________________________________|[0m
+   [1m[94m|[0m                                                    [1m[33mthis job[0m
+   [1m[94m|[0m                                                    [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-cert-manager-rock-pull_request.yaml:22:5
+   [1m[94m|[0m
+[1m[94m22 |[0m     uses: canonical/k8s-workflows/.github/workflows/run_tests.yaml@main
+   [1m[94m|[0m     [1m[33m-------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m23 |[0m     needs: [build-and-push-arch-specifics]
+[1m[94m24 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-cert-manager-rock-pull_request.yaml:28:5
+   [1m[94m|[0m
+[1m[94m28 |[0m     uses: canonical/k8s-workflows/.github/workflows/scan_images.yaml@main
+   [1m[94m|[0m     [1m[33m---------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m29 |[0m     needs: [build-and-push-arch-specifics]
+[1m[94m30 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m7[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m7[39m medium, [31m0[39m high

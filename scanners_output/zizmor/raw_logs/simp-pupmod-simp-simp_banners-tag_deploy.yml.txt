@@ -1,0 +1,171 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-simp_banners-tag_deploy.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-simp_banners-tag_deploy.yml:52:9
+   [1m[94m|[0m
+[1m[94m52 |[0m         - uses: actions/checkout@v6
+   [1m[94m|[0m  [1m[33m_________-[0m
+[1m[94m53 |[0m [1m[33m|[0m         with:
+[1m[94m54 |[0m [1m[33m|[0m           ref: ${{ github.ref }}
+[1m[94m55 |[0m [1m[33m|[0m           clean: true
+   [1m[94m|[0m [1m[33m|_____________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-simp_banners-tag_deploy.yml:77:9
+   [1m[94m|[0m
+[1m[94m77 |[0m         - name: Checkout code
+   [1m[94m|[0m  [1m[33m_________-[0m
+[1m[94m78 |[0m [1m[33m|[0m         uses: actions/checkout@v6
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m81 |[0m [1m[33m|[0m           clean: true
+[1m[94m82 |[0m [1m[33m|[0m           fetch-depth: 0
+   [1m[94m|[0m [1m[33m|________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-simp_banners-tag_deploy.yml:176:9
+    [1m[94m|[0m
+[1m[94m176 |[0m         - name: Checkout code
+    [1m[94m|[0m  [1m[33m_________-[0m
+[1m[94m177 |[0m [1m[33m|[0m         uses: actions/checkout@v6
+[1m[94m178 |[0m [1m[33m|[0m         with:
+[1m[94m179 |[0m [1m[33m|[0m           ref: ${{ github.ref }}
+[1m[94m180 |[0m [1m[33m|[0m           clean: true
+    [1m[94m|[0m [1m[33m|_____________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-simp_banners-tag_deploy.yml:1:1
+    [1m[94m|[0m
+[1m[94m  1 |[0m [1m[33m/[0m # Build & Deploy Puppet module & GitHub release when a SemVer tag is pushed
+[1m[94m  2 |[0m [1m[33m|[0m # ------------------------------------------------------------------------------
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m192 |[0m [1m[33m|[0m             --form "file=@$(find $PWD/pkg -name ''*.tar.gz'')" \
+[1m[94m193 |[0m [1m[33m|[0m             "$FORGE_API_URL"
+    [1m[94m|[0m [1m[33m|_____________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-simp_banners-tag_deploy.yml:45:3
+   [1m[94m|[0m
+[1m[94m45 |[0m [1m[33m/[0m   releng-checks:
+[1m[94m46 |[0m [1m[33m|[0m     name: "RELENG checks"
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m64 |[0m [1m[33m|[0m       - name: "Test that Puppet module can build"
+[1m[94m65 |[0m [1m[33m|[0m         run: "bundle exec pdk build --force"
+   [1m[94m|[0m [1m[33m|[0m                                            [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________________________________|[0m
+   [1m[94m|[0m                                              [1m[33mthis job[0m
+   [1m[94m|[0m                                              [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-simp_banners-tag_deploy.yml:68:3
+    [1m[94m|[0m
+[1m[94m 68 |[0m [1m[33m/[0m   create-github-release:
+[1m[94m 69 |[0m [1m[33m|[0m     name: Deploy GitHub Release
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m125 |[0m [1m[33m|[0m
+[1m[94m126 |[0m [1m[33m|[0m           gh release create ${args[@]} "$TARGET_TAG"
+    [1m[94m|[0m [1m[33m|[0m                                                    [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|____________________________________________________|[0m
+    [1m[94m|[0m                                                      [1m[33mthis job[0m
+    [1m[94m|[0m                                                      [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-simp_banners-tag_deploy.yml:128:3
+    [1m[94m|[0m
+[1m[94m128 |[0m [1m[33m/[0m   build-and-attach-rpms:
+[1m[94m129 |[0m [1m[33m|[0m     name: Trigger RPM release
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m163 |[0m [1m[33m|[0m               console.log( `== Submitted workflow dispatch to build RPMs from ${{ matrix.os }}: status ${result.status}` )
+[1m[94m164 |[0m [1m[33m|[0m             })
+    [1m[94m|[0m [1m[33m|[0m              [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|______________|[0m
+    [1m[94m|[0m                [1m[33mthis job[0m
+    [1m[94m|[0m                [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-simp_banners-tag_deploy.yml:166:3
+    [1m[94m|[0m
+[1m[94m166 |[0m [1m[33m/[0m   deploy-to-puppet-forge:
+[1m[94m167 |[0m [1m[33m|[0m     name: 'Deploy PuppetForge Release'
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m192 |[0m [1m[33m|[0m             --form "file=@$(find $PWD/pkg -name ''*.tar.gz'')" \
+[1m[94m193 |[0m [1m[33m|[0m             "$FORGE_API_URL"
+    [1m[94m|[0m [1m[33m|[0m                             [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|_____________________________|[0m
+    [1m[94m|[0m                               [1m[33mthis job[0m
+    [1m[94m|[0m                               [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-simp_banners-tag_deploy.yml:56:9
+   [1m[94m|[0m
+[1m[94m56 |[0m       - uses: ruby/setup-ruby@v1
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-simp_banners-tag_deploy.yml:181:9
+    [1m[94m|[0m
+[1m[94m181 |[0m       - uses: ruby/setup-ruby@v1
+    [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#cache-poisoning\cache-poisoning]8;;\][0m: [1mruntime artifacts potentially vulnerable to a cache poisoning attack[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-simp_banners-tag_deploy.yml:33:1
+   [1m[94m|[0m
+[1m[94m33 |[0m [1m[91m/[0m on:
+[1m[94m34 |[0m [1m[91m|[0m   push:
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m38 |[0m [1m[91m|[0m       - '[0-9]+\.[0-9]+\.[0-9]+'
+[1m[94m39 |[0m [1m[91m|[0m       - '[0-9]+\.[0-9]+\.[0-9]+\-[a-z]+[0-9]+'
+   [1m[94m|[0m [1m[91m|______________________________________________^[0m [1m[91mgenerally used when publishing artifacts generated at runtime[0m
+[1m[94m40 |[0m
+[1m[94m...[0m
+[1m[94m56 |[0m         - uses: ruby/setup-ruby@v1
+[1m[94m57 |[0m [1m[91m/[0m         with:
+[1m[94m58 |[0m [1m[91m|[0m           ruby-version: 2.7.8
+[1m[94m59 |[0m [1m[91m|[0m           bundler-cache: true
+   [1m[94m|[0m [1m[91m|_____________________________^[0m [1m[91mopt-in for caching here[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#cache-poisoning\cache-poisoning]8;;\][0m: [1mruntime artifacts potentially vulnerable to a cache poisoning attack[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-simp_banners-tag_deploy.yml:33:1
+    [1m[94m|[0m
+[1m[94m 33 |[0m [1m[91m/[0m on:
+[1m[94m 34 |[0m [1m[91m|[0m   push:
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m 38 |[0m [1m[91m|[0m       - '[0-9]+\.[0-9]+\.[0-9]+'
+[1m[94m 39 |[0m [1m[91m|[0m       - '[0-9]+\.[0-9]+\.[0-9]+\-[a-z]+[0-9]+'
+    [1m[94m|[0m [1m[91m|______________________________________________^[0m [1m[91mgenerally used when publishing artifacts generated at runtime[0m
+[1m[94m 40 |[0m
+[1m[94m...[0m
+[1m[94m181 |[0m         - uses: ruby/setup-ruby@v1
+[1m[94m182 |[0m [1m[91m/[0m         with:
+[1m[94m183 |[0m [1m[91m|[0m           ruby-version: 2.7.8
+[1m[94m184 |[0m [1m[91m|[0m           bundler-cache: true
+    [1m[94m|[0m [1m[91m|_____________________________^[0m [1m[91mopt-in for caching here[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[32m15[39m findings ([1m[93m3[39m suppressed[0m): 0 unknown, [35m0[39m informational, [36m0[39m low, [33m8[39m medium, [31m4[39m high

@@ -1,0 +1,154 @@
+{
+  "workflow": "rapidsai-cudf-pr_issue_status_automation-fa5dd546.yml",
+  "tools": {
+    "poutine": {
+      "workflow": "rapidsai-cudf-pr_issue_status_automation-fa5dd546.yml",
+      "tool": "poutine",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "default_permissions_on_risky_events": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "default_permissions_on_risky_events",
+          "line": "",
+          "column": "",
+          "job": "",
+          "step": "",
+          "details": "",
+          "event_triggers": [
+            "pull_request_target"
+          ],
+          "capability": "excessive-permission-weakness"
+        }
+      ]
+    },
+    "zizmor": {
+      "workflow": "rapidsai-cudf-pr_issue_status_automation-fa5dd546.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 11,
+        "by_rule": {
+          "excessive-permissions": 5,
+          "dangerous-triggers": 1,
+          "template-injection": 1,
+          "secrets-inherit": 4
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "rapidsai-cudf-pr_issue_status_automation-fa5dd546.yml",
+          "line": 1,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "rapidsai-cudf-pr_issue_status_automation-fa5dd546.yml",
+          "line": 35,
+          "column": 5,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "rapidsai-cudf-pr_issue_status_automation-fa5dd546.yml",
+          "line": 51,
+          "column": 5,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "rapidsai-cudf-pr_issue_status_automation-fa5dd546.yml",
+          "line": 66,
+          "column": 5,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "rapidsai-cudf-pr_issue_status_automation-fa5dd546.yml",
+          "line": 80,
+          "column": 5,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "dangerous-triggers",
+          "level": "error",
+          "message": "use of fundamentally insecure workflow trigger",
+          "workflow": "rapidsai-cudf-pr_issue_status_automation-fa5dd546.yml",
+          "line": 18,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "privileged-trigger-weakness"
+        },
+        {
+          "rule_id": "template-injection",
+          "level": "error",
+          "message": "code injection via template expansion",
+          "workflow": "rapidsai-cudf-pr_issue_status_automation-fa5dd546.yml",
+          "line": 73,
+          "column": 11,
+          "note": "audit confidence \u2192 High",
+          "capability": "injection-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "rapidsai-cudf-pr_issue_status_automation-fa5dd546.yml",
+          "line": 26,
+          "column": 7,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "rapidsai-cudf-pr_issue_status_automation-fa5dd546.yml",
+          "line": 37,
+          "column": 7,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "rapidsai-cudf-pr_issue_status_automation-fa5dd546.yml",
+          "line": 53,
+          "column": 7,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "rapidsai-cudf-pr_issue_status_automation-fa5dd546.yml",
+          "line": 82,
+          "column": 7,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        }
+      ]
+    }
+  }
+}

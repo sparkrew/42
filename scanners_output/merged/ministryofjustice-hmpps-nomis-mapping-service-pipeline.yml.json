@@ -1,0 +1,82 @@
+{
+  "workflow": "ministryofjustice-hmpps-nomis-mapping-service-pipeline.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "ministryofjustice-hmpps-nomis-mapping-service-pipeline.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 7,
+        "by_rule": {
+          "excessive-permissions": 1,
+          "unpinned-uses": 1,
+          "secrets-inherit": 5
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "error",
+          "message": "overly broad permissions",
+          "workflow": "ministryofjustice-hmpps-nomis-mapping-service-pipeline.yml",
+          "line": 20,
+          "column": 3,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "ministryofjustice-hmpps-nomis-mapping-service-pipeline.yml",
+          "line": 42,
+          "column": 9,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-nomis-mapping-service-pipeline.yml",
+          "line": 31,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-nomis-mapping-service-pipeline.yml",
+          "line": 45,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-nomis-mapping-service-pipeline.yml",
+          "line": 76,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-nomis-mapping-service-pipeline.yml",
+          "line": 88,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "ministryofjustice-hmpps-nomis-mapping-service-pipeline.yml",
+          "line": 100,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        }
+      ]
+    }
+  }
+}

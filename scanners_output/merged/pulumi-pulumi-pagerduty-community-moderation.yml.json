@@ -1,0 +1,59 @@
+{
+  "workflow": "pulumi-pulumi-pagerduty-community-moderation.yml",
+  "tools": {
+    "poutine": {
+      "workflow": "pulumi-pulumi-pagerduty-community-moderation.yml",
+      "tool": "poutine",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "default_permissions_on_risky_events": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "default_permissions_on_risky_events",
+          "line": "",
+          "column": "",
+          "job": "",
+          "step": "",
+          "details": "",
+          "event_triggers": [
+            "pull_request_target"
+          ]
+        }
+      ]
+    },
+    "zizmor": {
+      "workflow": "pulumi-pulumi-pagerduty-community-moderation.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 2,
+        "by_rule": {
+          "excessive-permissions": 1,
+          "dangerous-triggers": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "pulumi-pulumi-pagerduty-community-moderation.yml",
+          "line": 6,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "dangerous-triggers",
+          "level": "error",
+          "message": "use of fundamentally insecure workflow trigger",
+          "workflow": "pulumi-pulumi-pagerduty-community-moderation.yml",
+          "line": 40,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium"
+        }
+      ]
+    }
+  }
+}

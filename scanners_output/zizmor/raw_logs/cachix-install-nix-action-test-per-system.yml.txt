@@ -1,0 +1,94 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/cachix-install-nix-action-test-per-system.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/cachix-install-nix-action-test-per-system.yml:26:7
+   [1m[94m|[0m
+[1m[94m26 |[0m     - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+   [1m[94m|[0m       [1m[33m------------------------------------------------------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/cachix-install-nix-action-test-per-system.yml:42:7
+   [1m[94m|[0m
+[1m[94m42 |[0m     - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+   [1m[94m|[0m       [1m[33m------------------------------------------------------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/cachix-install-nix-action-test-per-system.yml:53:7
+   [1m[94m|[0m
+[1m[94m53 |[0m     - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+   [1m[94m|[0m       [1m[33m------------------------------------------------------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/cachix-install-nix-action-test-per-system.yml:66:7
+   [1m[94m|[0m
+[1m[94m66 |[0m     - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+   [1m[94m|[0m       [1m[33m------------------------------------------------------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/cachix-install-nix-action-test-per-system.yml:74:7
+   [1m[94m|[0m
+[1m[94m74 |[0m     - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+   [1m[94m|[0m       [1m[33m------------------------------------------------------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/cachix-install-nix-action-test-per-system.yml:91:7
+   [1m[94m|[0m
+[1m[94m91 |[0m     - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+   [1m[94m|[0m       [1m[33m------------------------------------------------------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/cachix-install-nix-action-test-per-system.yml:75:7
+   [1m[94m|[0m
+[1m[94m75 |[0m       - name: Run NAR server
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m76 |[0m [1m[91m/[0m       run: |
+[1m[94m77 |[0m [1m[91m|[0m         curl --location https://github.com/cachix/nar-toolbox/releases/download/v0.1.0/nar-toolbox-${{ inputs.system }} -O
+[1m[94m78 |[0m [1m[91m|[0m         chmod +x ./nar-toolbox-${{ inputs.system }}
+[1m[94m79 |[0m [1m[91m|[0m         ./nar-toolbox-${{ inputs.system }} serve https://cache.nixos.org &
+   [1m[94m|[0m [1m[91m|__________________________________________________________________________^[0m [1m[91minputs.system may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/cachix-install-nix-action-test-per-system.yml:75:7
+   [1m[94m|[0m
+[1m[94m75 |[0m       - name: Run NAR server
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m76 |[0m [1m[91m/[0m       run: |
+[1m[94m77 |[0m [1m[91m|[0m         curl --location https://github.com/cachix/nar-toolbox/releases/download/v0.1.0/nar-toolbox-${{ inputs.system }} -O
+[1m[94m78 |[0m [1m[91m|[0m         chmod +x ./nar-toolbox-${{ inputs.system }}
+[1m[94m79 |[0m [1m[91m|[0m         ./nar-toolbox-${{ inputs.system }} serve https://cache.nixos.org &
+   [1m[94m|[0m [1m[91m|__________________________________________________________________________^[0m [1m[91minputs.system may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/cachix-install-nix-action-test-per-system.yml:75:7
+   [1m[94m|[0m
+[1m[94m75 |[0m       - name: Run NAR server
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m76 |[0m [1m[91m/[0m       run: |
+[1m[94m77 |[0m [1m[91m|[0m         curl --location https://github.com/cachix/nar-toolbox/releases/download/v0.1.0/nar-toolbox-${{ inputs.system }} -O
+[1m[94m78 |[0m [1m[91m|[0m         chmod +x ./nar-toolbox-${{ inputs.system }}
+[1m[94m79 |[0m [1m[91m|[0m         ./nar-toolbox-${{ inputs.system }} serve https://cache.nixos.org &
+   [1m[94m|[0m [1m[91m|__________________________________________________________________________^[0m [1m[91minputs.system may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[32m20[39m findings ([1m[93m11[39m suppressed[0m): 0 unknown, [35m0[39m informational, [36m0[39m low, [33m6[39m medium, [31m3[39m high

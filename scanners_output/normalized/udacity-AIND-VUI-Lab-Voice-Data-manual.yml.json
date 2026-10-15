@@ -1,0 +1,106 @@
+{
+  "workflow": "udacity-AIND-VUI-Lab-Voice-Data-manual.yml",
+  "tools": {
+    "poutine": {
+      "workflow": "udacity-AIND-VUI-Lab-Voice-Data-manual.yml",
+      "tool": "poutine",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "default_permissions_on_risky_events": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "default_permissions_on_risky_events",
+          "line": "",
+          "column": "",
+          "job": "",
+          "step": "",
+          "details": "",
+          "event_triggers": [
+            "pull_request_target",
+            "workflow_dispatch"
+          ],
+          "capability": "excessive-permission-weakness"
+        }
+      ]
+    },
+    "zizmor": {
+      "workflow": "udacity-AIND-VUI-Lab-Voice-Data-manual.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 6,
+        "by_rule": {
+          "artipacked": 1,
+          "excessive-permissions": 1,
+          "dangerous-triggers": 1,
+          "template-injection": 1,
+          "unpinned-uses": 2
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "udacity-AIND-VUI-Lab-Voice-Data-manual.yml",
+          "line": 19,
+          "column": 7,
+          "note": "audit confidence \u2192 Low",
+          "capability": "artifact-integrity-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "udacity-AIND-VUI-Lab-Voice-Data-manual.yml",
+          "line": 15,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "dangerous-triggers",
+          "level": "error",
+          "message": "use of fundamentally insecure workflow trigger",
+          "workflow": "udacity-AIND-VUI-Lab-Voice-Data-manual.yml",
+          "line": 6,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "privileged-trigger-weakness"
+        },
+        {
+          "rule_id": "template-injection",
+          "level": "info",
+          "message": "code injection via template expansion",
+          "workflow": "udacity-AIND-VUI-Lab-Voice-Data-manual.yml",
+          "line": 45,
+          "column": 7,
+          "note": "audit confidence \u2192 Low",
+          "capability": "injection-weakness"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "udacity-AIND-VUI-Lab-Voice-Data-manual.yml",
+          "line": 23,
+          "column": 7,
+          "note": "audit confidence \u2192 High",
+          "capability": "unpinned-dependency-weakness"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "udacity-AIND-VUI-Lab-Voice-Data-manual.yml",
+          "line": 31,
+          "column": 7,
+          "note": "audit confidence \u2192 High",
+          "capability": "unpinned-dependency-weakness"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,59 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/linode-apl-tasks-pr-auto-updater.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/linode-apl-tasks-pr-auto-updater.yml:14:9
+   [1m[94m|[0m
+[1m[94m14 |[0m         - name: Checkout
+   [1m[94m|[0m  [1m[33m_________-[0m
+[1m[94m15 |[0m [1m[33m|[0m         uses: actions/checkout@v5
+[1m[94m16 |[0m [1m[33m|[0m         with:
+[1m[94m17 |[0m [1m[33m|[0m           fetch-depth: 0
+[1m[94m18 |[0m [1m[33m|[0m           token: ${{ secrets.BOT_TOKEN }}
+   [1m[94m|[0m [1m[33m|_________________________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/linode-apl-tasks-pr-auto-updater.yml:11:3
+   [1m[94m|[0m
+[1m[94m11 |[0m [1m[33m/[0m   pr-autoupdate:
+[1m[94m12 |[0m [1m[33m|[0m     runs-on: ubuntu-22.04
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m49 |[0m [1m[33m|[0m             fi
+[1m[94m50 |[0m [1m[33m|[0m           done <<< "$prs"
+   [1m[94m|[0m [1m[33m|[0m                          [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________________________|[0m
+   [1m[94m|[0m                            [1m[33mthis job[0m
+   [1m[94m|[0m                            [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/linode-apl-tasks-pr-auto-updater.yml:25:9
+   [1m[94m|[0m
+[1m[94m25 |[0m         - name: Configure Git
+   [1m[94m|[0m           [1m[94m-------------------[0m [1m[94minfo: this step[0m
+[1m[94m26 |[0m [1m[94m/[0m         run: |
+[1m[94m27 |[0m [1m[94m|[0m           git config --global user.email ${{ vars.BOT_EMAIL }}
+[1m[94m28 |[0m [1m[94m|[0m           git config --global user.name ${{ vars.BOT_USERNAME }}
+   [1m[94m|[0m [1m[94m|________________________________________________________________-[0m [1m[94minfo: vars.BOT_EMAIL may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/linode-apl-tasks-pr-auto-updater.yml:25:9
+   [1m[94m|[0m
+[1m[94m25 |[0m         - name: Configure Git
+   [1m[94m|[0m           [1m[94m-------------------[0m [1m[94minfo: this step[0m
+[1m[94m26 |[0m [1m[94m/[0m         run: |
+[1m[94m27 |[0m [1m[94m|[0m           git config --global user.email ${{ vars.BOT_EMAIL }}
+[1m[94m28 |[0m [1m[94m|[0m           git config --global user.name ${{ vars.BOT_USERNAME }}
+   [1m[94m|[0m [1m[94m|________________________________________________________________-[0m [1m[94minfo: vars.BOT_USERNAME may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[32m7[39m findings ([1m[93m3[39m suppressed[0m): 0 unknown, [35m2[39m informational, [36m0[39m low, [33m2[39m medium, [31m0[39m high

@@ -1,0 +1,69 @@
+{
+  "workflow": "symfony-sms77-notifier-close-pull-request.yml",
+  "tools": {
+    "poutine": {
+      "workflow": "symfony-sms77-notifier-close-pull-request.yml",
+      "tool": "poutine",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "default_permissions_on_risky_events": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "default_permissions_on_risky_events",
+          "line": "",
+          "column": "",
+          "job": "",
+          "step": "",
+          "details": "",
+          "event_triggers": [
+            "pull_request_target"
+          ]
+        }
+      ]
+    },
+    "zizmor": {
+      "workflow": "symfony-sms77-notifier-close-pull-request.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 3,
+        "by_rule": {
+          "excessive-permissions": 1,
+          "dangerous-triggers": 1,
+          "unpinned-uses": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "symfony-sms77-notifier-close-pull-request.yml",
+          "line": 8,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "dangerous-triggers",
+          "level": "error",
+          "message": "use of fundamentally insecure workflow trigger",
+          "workflow": "symfony-sms77-notifier-close-pull-request.yml",
+          "line": 3,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "unpinned-uses",
+          "level": "error",
+          "message": "unpinned action reference",
+          "workflow": "symfony-sms77-notifier-close-pull-request.yml",
+          "line": 11,
+          "column": 7,
+          "note": "audit confidence \u2192 High"
+        }
+      ]
+    }
+  }
+}

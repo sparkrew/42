@@ -1,0 +1,21 @@
+{
+  "workflow": "sparkrew-cfw-benchmark-cfw-04-workflow-run-fork-check.yml",
+  "tool": "zizmor",
+  "summary": {
+    "total_findings": 1,
+    "by_rule": {
+      "dangerous-triggers": 1
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "dangerous-triggers",
+      "level": "error",
+      "message": "use of fundamentally insecure workflow trigger",
+      "workflow": "sparkrew-cfw-benchmark-cfw-04-workflow-run-fork-check.yml",
+      "line": 10,
+      "column": 1,
+      "note": "audit confidence \u2192 Medium"
+    }
+  ]
+}

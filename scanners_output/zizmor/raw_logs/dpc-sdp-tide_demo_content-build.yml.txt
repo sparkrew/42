@@ -1,0 +1,118 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/dpc-sdp-tide_demo_content-build.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/dpc-sdp-tide_demo_content-build.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name: build
+[1m[94m 2 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m35 |[0m [1m[33m|[0m       description: 'Tide Build'
+[1m[94m36 |[0m [1m[33m|[0m       target_url: ${{ github.event.repository.html_url }}/actions/runs/${{ github.run_id }}
+   [1m[94m|[0m [1m[33m|____________________________________________________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/dpc-sdp-tide_demo_content-build.yml:6:3
+   [1m[94m|[0m
+[1m[94m 6 |[0m [1m[33m/[0m   set_status_in_progress:
+[1m[94m 7 |[0m [1m[33m|[0m     name: set_status_in_progress
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m14 |[0m [1m[33m|[0m       state: 'pending'
+[1m[94m15 |[0m [1m[33m|[0m       target_url: ${{ github.event.repository.html_url }}/actions/runs/${{ github.run_id }}
+   [1m[94m|[0m [1m[33m|[0m                                                                                           [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                             [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                             [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/dpc-sdp-tide_demo_content-build.yml:16:3
+   [1m[94m|[0m
+[1m[94m16 |[0m [1m[33m/[0m   tide_build:
+[1m[94m17 |[0m [1m[33m|[0m     name: tide_build
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m21 |[0m [1m[33m|[0m       module_build: true
+[1m[94m22 |[0m [1m[33m|[0m       runner: biggy-tide
+   [1m[94m|[0m [1m[33m|[0m                        [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________|[0m
+   [1m[94m|[0m                          [1m[33mthis job[0m
+   [1m[94m|[0m                          [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/dpc-sdp-tide_demo_content-build.yml:23:3
+   [1m[94m|[0m
+[1m[94m23 |[0m [1m[33m/[0m   export_config:
+[1m[94m24 |[0m [1m[33m|[0m     name: export_config
+[1m[94m25 |[0m [1m[33m|[0m     secrets: inherit
+[1m[94m26 |[0m [1m[33m|[0m     uses: dpc-sdp/github-actions/.github/workflows/export_config.yml@main
+   [1m[94m|[0m [1m[33m|[0m                                                                         [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                           [1m[33mthis job[0m
+   [1m[94m|[0m                                                                           [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/dpc-sdp-tide_demo_content-build.yml:27:3
+   [1m[94m|[0m
+[1m[94m27 |[0m [1m[33m/[0m   set_status:
+[1m[94m28 |[0m [1m[33m|[0m     name: set_status
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m35 |[0m [1m[33m|[0m       description: 'Tide Build'
+[1m[94m36 |[0m [1m[33m|[0m       target_url: ${{ github.event.repository.html_url }}/actions/runs/${{ github.run_id }}
+   [1m[94m|[0m [1m[33m|[0m                                                                                            [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                              [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                              [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/dpc-sdp-tide_demo_content-build.yml:9:5
+   [1m[94m|[0m
+[1m[94m 9 |[0m     uses: dpc-sdp/github-actions/.github/workflows/set_status.yml@main
+   [1m[94m|[0m     [1m[33m------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m10 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/dpc-sdp-tide_demo_content-build.yml:19:5
+   [1m[94m|[0m
+[1m[94m18 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+[1m[94m19 |[0m     uses: dpc-sdp/github-actions/.github/workflows/tide_build.yml@main
+   [1m[94m|[0m     [1m[33m------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/dpc-sdp-tide_demo_content-build.yml:26:5
+   [1m[94m|[0m
+[1m[94m25 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+[1m[94m26 |[0m     uses: dpc-sdp/github-actions/.github/workflows/export_config.yml@main
+   [1m[94m|[0m     [1m[33m---------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/dpc-sdp-tide_demo_content-build.yml:31:5
+   [1m[94m|[0m
+[1m[94m31 |[0m     uses: dpc-sdp/github-actions/.github/workflows/set_status.yml@main
+   [1m[94m|[0m     [1m[33m------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m32 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m9[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m9[39m medium, [31m0[39m high

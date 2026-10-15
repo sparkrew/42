@@ -1,0 +1,36 @@
+{
+  "workflow": "AdobeDocs-ffs-audio-video-API-lint.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "AdobeDocs-ffs-audio-video-API-lint.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 2,
+        "by_rule": {
+          "artipacked": 1,
+          "excessive-permissions": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "artipacked",
+          "level": "warning",
+          "message": "credential persistence through GitHub Actions artifacts",
+          "workflow": "AdobeDocs-ffs-audio-video-API-lint.yml",
+          "line": 13,
+          "column": 13,
+          "note": "audit confidence \u2192 Low"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "AdobeDocs-ffs-audio-video-API-lint.yml",
+          "line": 10,
+          "column": 7,
+          "note": "audit confidence \u2192 Medium"
+        }
+      ]
+    }
+  }
+}

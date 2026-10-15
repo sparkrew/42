@@ -1,0 +1,24 @@
+{
+  "workflow": "sparkrew-cfw-benchmark-cfw-03-partial-expression-wrap.yml",
+  "tool": "poutine",
+  "summary": {
+    "total_findings": 1,
+    "by_rule": {
+      "if_always_true": 1
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "if_always_true",
+      "line": 26,
+      "column": "",
+      "job": "deploy-infra",
+      "step": "",
+      "details": "",
+      "event_triggers": [
+        "push",
+        "workflow_dispatch"
+      ]
+    }
+  ]
+}

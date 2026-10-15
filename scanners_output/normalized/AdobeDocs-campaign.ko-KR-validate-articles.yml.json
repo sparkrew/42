@@ -1,0 +1,54 @@
+{
+  "workflow": "AdobeDocs-campaign.ko-KR-validate-articles.yml",
+  "tools": {
+    "poutine": {
+      "workflow": "AdobeDocs-campaign.ko-KR-validate-articles.yml",
+      "tool": "poutine",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "default_permissions_on_risky_events": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "default_permissions_on_risky_events",
+          "line": "",
+          "column": "",
+          "job": "",
+          "step": "",
+          "details": "",
+          "event_triggers": [
+            "pull_request",
+            "push",
+            "issue_comment",
+            "workflow_dispatch"
+          ],
+          "capability": "excessive-permission-weakness"
+        }
+      ]
+    },
+    "zizmor": {
+      "workflow": "AdobeDocs-campaign.ko-KR-validate-articles.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "excessive-permissions": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "AdobeDocs-campaign.ko-KR-validate-articles.yml",
+          "line": 14,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        }
+      ]
+    }
+  }
+}

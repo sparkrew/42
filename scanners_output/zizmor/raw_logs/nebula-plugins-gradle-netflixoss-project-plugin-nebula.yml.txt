@@ -1,0 +1,221 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml:16:9
+   [1m[94m|[0m
+[1m[94m16 |[0m       - uses: actions/checkout@v2
+   [1m[94m|[0m         [1m[33m-------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml:28:9
+   [1m[94m|[0m
+[1m[94m28 |[0m       - uses: actions/checkout@v1
+   [1m[94m|[0m         [1m[33m-------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml:68:9
+   [1m[94m|[0m
+[1m[94m68 |[0m       - uses: actions/checkout@v1
+   [1m[94m|[0m         [1m[33m-------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml:113:9
+    [1m[94m|[0m
+[1m[94m113 |[0m       - uses: actions/checkout@v1
+    [1m[94m|[0m         [1m[33m-------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml:1:1
+    [1m[94m|[0m
+[1m[94m  1 |[0m [1m[33m/[0m name: Nebula Build
+[1m[94m  2 |[0m [1m[33m|[0m on:
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m148 |[0m [1m[33m|[0m           (!contains(github.ref, '-rc.'))
+[1m[94m149 |[0m [1m[33m|[0m         run: ./gradlew --info --stacktrace -Dgradle.publish.key=${{ secrets.gradlePublishKey }} -Dgradle.publish.secret=${{ secrets.gradlePublishSecret }} -Prelease.useLastTag=true final
+    [1m[94m|[0m [1m[33m|___________________________________________________________________________________________________________________________________________________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml:12:3
+   [1m[94m|[0m
+[1m[94m12 |[0m [1m[33m/[0m   validation:
+[1m[94m13 |[0m [1m[33m|[0m     name: "Gradle Wrapper Validation"
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m16 |[0m [1m[33m|[0m       - uses: actions/checkout@v2
+[1m[94m17 |[0m [1m[33m|[0m       - uses: gradle/wrapper-validation-action@v1
+   [1m[94m|[0m [1m[33m|[0m                                                 [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________|[0m
+   [1m[94m|[0m                                                   [1m[33mthis job[0m
+   [1m[94m|[0m                                                   [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml:18:3
+   [1m[94m|[0m
+[1m[94m18 |[0m [1m[33m/[0m   buildmultijdk:
+[1m[94m19 |[0m [1m[33m|[0m     if: (!startsWith(github.ref, 'refs/tags/v'))
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m57 |[0m [1m[33m|[0m         env:
+[1m[94m58 |[0m [1m[33m|[0m           JDK_VERSION_FOR_TESTS: ${{ matrix.java }}
+   [1m[94m|[0m [1m[33m|[0m                                                   [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________________________________________|[0m
+   [1m[94m|[0m                                                     [1m[33mthis job[0m
+   [1m[94m|[0m                                                     [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml:59:3
+   [1m[94m|[0m
+[1m[94m59 |[0m [1m[33m/[0m   validatepluginpublication:
+[1m[94m60 |[0m [1m[33m|[0m     if: startsWith(github.ref, 'refs/tags/v')
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m98 |[0m [1m[33m|[0m           (!contains(github.ref, '-rc.'))
+[1m[94m99 |[0m [1m[33m|[0m         run: ./gradlew  --stacktrace -Dgradle.publish.key=${{ secrets.gradlePublishKey }} -Dgradle.publish.secret=${{ secrets.gradlePublishSecret }}  -Prelease.useLastTag=true final publishPlugin --validate-only -x check -x signPluginMavenPublication
+   [1m[94m|[0m [1m[33m|[0m                                                                                                                                                                                                                                                          [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                                                                                                                                                                                            [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                                                                                                                                                                                            [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml:100:3
+    [1m[94m|[0m
+[1m[94m100 |[0m [1m[33m/[0m   publish:
+[1m[94m101 |[0m [1m[33m|[0m     if: startsWith(github.ref, 'refs/tags/v')
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m148 |[0m [1m[33m|[0m           (!contains(github.ref, '-rc.'))
+[1m[94m149 |[0m [1m[33m|[0m         run: ./gradlew --info --stacktrace -Dgradle.publish.key=${{ secrets.gradlePublishKey }} -Dgradle.publish.secret=${{ secrets.gradlePublishSecret }} -Prelease.useLastTag=true final
+    [1m[94m|[0m [1m[33m|[0m                                                                                                                                                                                           [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|___________________________________________________________________________________________________________________________________________________________________________________________|[0m
+    [1m[94m|[0m                                                                                                                                                                                             [1m[33mthis job[0m
+    [1m[94m|[0m                                                                                                                                                                                             [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml:17:9
+   [1m[94m|[0m
+[1m[94m17 |[0m       - uses: gradle/wrapper-validation-action@v1
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#cache-poisoning\cache-poisoning]8;;\][0m: [1mruntime artifacts potentially vulnerable to a cache poisoning attack[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml:2:1
+   [1m[94m|[0m
+[1m[94m 2 |[0m [1m[91m/[0m on:
+[1m[94m 3 |[0m [1m[91m|[0m   push:
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m 8 |[0m [1m[91m|[0m       - v*.*.*-rc.*
+[1m[94m 9 |[0m [1m[91m|[0m   pull_request:
+   [1m[94m|[0m [1m[91m|_______________^[0m [1m[91mgenerally used when publishing artifacts generated at runtime[0m
+[1m[94m10 |[0m
+[1m[94m...[0m
+[1m[94m40 |[0m             java-package: jdk
+[1m[94m41 |[0m         - uses: actions/cache@v4
+   [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mcache enabled by default here[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#cache-poisoning\cache-poisoning]8;;\][0m: [1mruntime artifacts potentially vulnerable to a cache poisoning attack[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml:2:1
+   [1m[94m|[0m
+[1m[94m 2 |[0m [1m[91m/[0m on:
+[1m[94m 3 |[0m [1m[91m|[0m   push:
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m 8 |[0m [1m[91m|[0m       - v*.*.*-rc.*
+[1m[94m 9 |[0m [1m[91m|[0m   pull_request:
+   [1m[94m|[0m [1m[91m|_______________^[0m [1m[91mgenerally used when publishing artifacts generated at runtime[0m
+[1m[94m10 |[0m
+[1m[94m...[0m
+[1m[94m47 |[0m               - ${{ runner.os }}-gradle-
+[1m[94m48 |[0m         - uses: actions/cache@v4
+   [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mcache enabled by default here[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#cache-poisoning\cache-poisoning]8;;\][0m: [1mruntime artifacts potentially vulnerable to a cache poisoning attack[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml:2:1
+   [1m[94m|[0m
+[1m[94m 2 |[0m [1m[91m/[0m on:
+[1m[94m 3 |[0m [1m[91m|[0m   push:
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m 8 |[0m [1m[91m|[0m       - v*.*.*-rc.*
+[1m[94m 9 |[0m [1m[91m|[0m   pull_request:
+   [1m[94m|[0m [1m[91m|_______________^[0m [1m[91mgenerally used when publishing artifacts generated at runtime[0m
+[1m[94m10 |[0m
+[1m[94m...[0m
+[1m[94m80 |[0m             java-package: jdk
+[1m[94m81 |[0m         - uses: actions/cache@v4
+   [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mcache enabled by default here[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#cache-poisoning\cache-poisoning]8;;\][0m: [1mruntime artifacts potentially vulnerable to a cache poisoning attack[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml:2:1
+   [1m[94m|[0m
+[1m[94m 2 |[0m [1m[91m/[0m on:
+[1m[94m 3 |[0m [1m[91m|[0m   push:
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m 8 |[0m [1m[91m|[0m       - v*.*.*-rc.*
+[1m[94m 9 |[0m [1m[91m|[0m   pull_request:
+   [1m[94m|[0m [1m[91m|_______________^[0m [1m[91mgenerally used when publishing artifacts generated at runtime[0m
+[1m[94m10 |[0m
+[1m[94m...[0m
+[1m[94m87 |[0m               - ${{ runner.os }}-gradle-
+[1m[94m88 |[0m         - uses: actions/cache@v4
+   [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mcache enabled by default here[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#cache-poisoning\cache-poisoning]8;;\][0m: [1mruntime artifacts potentially vulnerable to a cache poisoning attack[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml:2:1
+    [1m[94m|[0m
+[1m[94m  2 |[0m [1m[91m/[0m on:
+[1m[94m  3 |[0m [1m[91m|[0m   push:
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m  8 |[0m [1m[91m|[0m       - v*.*.*-rc.*
+[1m[94m  9 |[0m [1m[91m|[0m   pull_request:
+    [1m[94m|[0m [1m[91m|_______________^[0m [1m[91mgenerally used when publishing artifacts generated at runtime[0m
+[1m[94m 10 |[0m
+[1m[94m...[0m
+[1m[94m125 |[0m             java-package: jdk
+[1m[94m126 |[0m         - uses: actions/cache@v4
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mcache enabled by default here[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#cache-poisoning\cache-poisoning]8;;\][0m: [1mruntime artifacts potentially vulnerable to a cache poisoning attack[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/nebula-plugins-gradle-netflixoss-project-plugin-nebula.yml:2:1
+    [1m[94m|[0m
+[1m[94m  2 |[0m [1m[91m/[0m on:
+[1m[94m  3 |[0m [1m[91m|[0m   push:
+[1m[94m...[0m   [1m[91m|[0m
+[1m[94m  8 |[0m [1m[91m|[0m       - v*.*.*-rc.*
+[1m[94m  9 |[0m [1m[91m|[0m   pull_request:
+    [1m[94m|[0m [1m[91m|_______________^[0m [1m[91mgenerally used when publishing artifacts generated at runtime[0m
+[1m[94m 10 |[0m
+[1m[94m...[0m
+[1m[94m132 |[0m               - ${{ runner.os }}-gradle-
+[1m[94m133 |[0m         - uses: actions/cache@v4
+    [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mcache enabled by default here[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[32m20[39m findings ([1m[93m4[39m suppressed[0m): 0 unknown, [35m0[39m informational, [36m0[39m low, [33m9[39m medium, [31m7[39m high

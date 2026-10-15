@@ -1,0 +1,24 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[33m WARN[0m [1maudit[0m[2m:[0m[1maudit[0m[1m{[0m[3minput[0m[2m=[0mWorkflow(file:///home/huawei/BOOSTSECURITY/42/.github/workflows/sparkrew-cfw-benchmark-cfw-03-partial-expression-wrap.yml)[1m}[0m[2m:[0m [2mzizmor::audit::unsound_contains[0m[2m:[0m couldn't parse expression: ${{ github.ref == 'refs/heads/main' }} or manual override requested
+
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/sparkrew-cfw-benchmark-cfw-03-partial-expression-wrap.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/sparkrew-cfw-benchmark-cfw-03-partial-expression-wrap.yml:19:3
+   [1m[94m|[0m
+[1m[94m19 |[0m [1m[33m/[0m   deploy-infra:
+[1m[94m20 |[0m [1m[33m|[0m     runs-on: ubuntu-latest
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m33 |[0m [1m[33m|[0m           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+[1m[94m34 |[0m [1m[33m|[0m           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+   [1m[94m|[0m [1m[33m|[0m                                                                      [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|______________________________________________________________________|[0m
+   [1m[94m|[0m                                                                        [1m[33mthis job[0m
+   [1m[94m|[0m                                                                        [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m2[39m findings ([1m[93m1[39m suppressed[0m): 0 unknown, [35m0[39m informational, [36m0[39m low, [33m1[39m medium, [31m0[39m high

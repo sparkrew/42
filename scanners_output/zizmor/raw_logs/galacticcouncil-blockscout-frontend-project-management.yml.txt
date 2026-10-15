@@ -1,0 +1,115 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/galacticcouncil-blockscout-frontend-project-management.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/galacticcouncil-blockscout-frontend-project-management.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name: Project management
+[1m[94m 2 |[0m [1m[33m|[0m on:
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m88 |[0m [1m[33m|[0m             field_value: Review
+[1m[94m89 |[0m [1m[33m|[0m             issues: ${{ needs.review_requested_issues.outputs.issues }}
+   [1m[94m|[0m [1m[33m|________________________________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/galacticcouncil-blockscout-frontend-project-management.yml:9:5
+   [1m[94m|[0m
+[1m[94m 9 |[0m [1m[33m/[0m     not_planned_issue:
+[1m[94m10 |[0m [1m[33m|[0m         name: Update task for not planned issue
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m17 |[0m [1m[33m|[0m             issues: "[${{ github.event.issue.number }}]"
+[1m[94m18 |[0m [1m[33m|[0m         secrets: inherit
+   [1m[94m|[0m [1m[33m|[0m                        [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________|[0m
+   [1m[94m|[0m                          [1m[33mthis job[0m
+   [1m[94m|[0m                          [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/galacticcouncil-blockscout-frontend-project-management.yml:20:5
+   [1m[94m|[0m
+[1m[94m20 |[0m [1m[33m/[0m     completed_issue:
+[1m[94m21 |[0m [1m[33m|[0m         name: Update task for completed issue
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m28 |[0m [1m[33m|[0m             issues: "[${{ github.event.issue.number }}]"
+[1m[94m29 |[0m [1m[33m|[0m         secrets: inherit
+   [1m[94m|[0m [1m[33m|[0m                        [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________|[0m
+   [1m[94m|[0m                          [1m[33mthis job[0m
+   [1m[94m|[0m                          [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/galacticcouncil-blockscout-frontend-project-management.yml:31:5
+   [1m[94m|[0m
+[1m[94m31 |[0m [1m[33m/[0m     review_requested_issues:
+[1m[94m32 |[0m [1m[33m|[0m         name: Get issues linked to PR
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m76 |[0m [1m[33m|[0m
+[1m[94m77 |[0m [1m[33m|[0m                     return issues;
+   [1m[94m|[0m [1m[33m|[0m                                  [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________________________________|[0m
+   [1m[94m|[0m                                    [1m[33mthis job[0m
+   [1m[94m|[0m                                    [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/galacticcouncil-blockscout-frontend-project-management.yml:79:5
+   [1m[94m|[0m
+[1m[94m79 |[0m [1m[33m/[0m     review_requested_tasks:
+[1m[94m80 |[0m [1m[33m|[0m         name: Update status for issues in review
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m88 |[0m [1m[33m|[0m             field_value: Review
+[1m[94m89 |[0m [1m[33m|[0m             issues: ${{ needs.review_requested_issues.outputs.issues }}
+   [1m[94m|[0m [1m[33m|[0m                                                                        [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                          [1m[33mthis job[0m
+   [1m[94m|[0m                                                                          [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/galacticcouncil-blockscout-frontend-project-management.yml:12:9
+   [1m[94m|[0m
+[1m[94m12 |[0m         uses: './.github/workflows/update-project-cards.yml'
+   [1m[94m|[0m         [1m[33m----------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m13 |[0m         with:
+[1m[94m...[0m
+[1m[94m17 |[0m             issues: "[${{ github.event.issue.number }}]"
+[1m[94m18 |[0m         secrets: inherit
+   [1m[94m|[0m         [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/galacticcouncil-blockscout-frontend-project-management.yml:23:9
+   [1m[94m|[0m
+[1m[94m23 |[0m         uses: './.github/workflows/update-project-cards.yml'
+   [1m[94m|[0m         [1m[33m----------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m24 |[0m         with:
+[1m[94m...[0m
+[1m[94m28 |[0m             issues: "[${{ github.event.issue.number }}]"
+[1m[94m29 |[0m         secrets: inherit
+   [1m[94m|[0m         [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/galacticcouncil-blockscout-frontend-project-management.yml:83:9
+   [1m[94m|[0m
+[1m[94m83 |[0m         uses: './.github/workflows/update-project-cards.yml'
+   [1m[94m|[0m         [1m[33m----------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m84 |[0m         secrets: inherit
+   [1m[94m|[0m         [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m8[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m8[39m medium, [31m0[39m high

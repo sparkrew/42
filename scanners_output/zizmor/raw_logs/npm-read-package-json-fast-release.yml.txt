@@ -1,0 +1,176 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml:32:9
+   [1m[94m|[0m
+[1m[94m32 |[0m         - name: Checkout
+   [1m[94m|[0m  [1m[33m_________-[0m
+[1m[94m33 |[0m [1m[33m|[0m         uses: actions/checkout@v4
+   [1m[94m|[0m [1m[33m|_________________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml:109:9
+    [1m[94m|[0m
+[1m[94m109 |[0m         - name: Checkout
+    [1m[94m|[0m  [1m[33m_________-[0m
+[1m[94m110 |[0m [1m[33m|[0m         uses: actions/checkout@v4
+[1m[94m111 |[0m [1m[33m|[0m         with:
+[1m[94m112 |[0m [1m[33m|[0m           fetch-depth: 0
+[1m[94m113 |[0m [1m[33m|[0m           ref: ${{ needs.release.outputs.pr-branch }}
+    [1m[94m|[0m [1m[33m|_____________________________________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml:11:3
+   [1m[94m|[0m
+[1m[94m11 |[0m   contents: write
+   [1m[94m|[0m   [1m[91m^^^^^^^^^^^^^^^[0m [1m[91mcontents: write is overly broad at the workflow level[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml:12:3
+   [1m[94m|[0m
+[1m[94m12 |[0m   pull-requests: write
+   [1m[94m|[0m   [1m[91m^^^^^^^^^^^^^^^^^^^^[0m [1m[91mpull-requests: write is overly broad at the workflow level[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml:13:3
+   [1m[94m|[0m
+[1m[94m13 |[0m   checks: write
+   [1m[94m|[0m   [1m[33m-------------[0m [1m[33mchecks: write is overly broad at the workflow level[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml:50:9
+   [1m[94m|[0m
+[1m[94m50 |[0m       - name: Release Please
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m51 |[0m         id: release
+[1m[94m52 |[0m         env:
+[1m[94m53 |[0m           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+[1m[94m54 |[0m         run: npx --offline template-oss-release-please --branch="${{ github.ref_name }}" --backport="" --defaultTag="latest"
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mgithub.ref_name may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml:130:9
+    [1m[94m|[0m
+[1m[94m130 |[0m [1m[94m...[0m - name: Create Release Manager Checklist Text
+    [1m[94m|[0m       [1m[94m-------------------------------------------[0m [1m[94minfo: this step[0m
+[1m[94m131 |[0m [1m[94m...[0m   id: comment-text
+[1m[94m132 |[0m [1m[94m...[0m   env:
+[1m[94m133 |[0m [1m[94m...[0m     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+[1m[94m134 |[0m [1m[94m...[0m   run: npm exec --offline -- template-oss-release-manager --pr="${{ needs.release.outputs.pr-number }}" --backport="" --defaultTag="latest" --publish
+    [1m[94m|[0m       [1m[94m---------------------------------------------------------------------------------------------------------------------------------------------------[0m [1m[94minfo: needs.release.outputs.pr-number may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml:141:9
+    [1m[94m|[0m
+[1m[94m141 |[0m [1m[94m...[0m - name: Run Post Pull Request Actions
+    [1m[94m|[0m       [1m[94m-----------------------------------[0m [1m[94minfo: this step[0m
+[1m[94m142 |[0m [1m[94m...[0m   env:
+[1m[94m143 |[0m [1m[94m...[0m     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+[1m[94m144 |[0m [1m[94m...[0m   run: npm run rp-pull-request --ignore-scripts --if-present -- --pr="${{ needs.release.outputs.pr-number }}" --commentId="${{ needs.release.outputs.comment-id }}"
+    [1m[94m|[0m       [1m[94m-----------------------------------------------------------------------------------------------------------------------------------------------------------------[0m [1m[94minfo: needs.release.outputs.pr-number may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml:141:9
+    [1m[94m|[0m
+[1m[94m141 |[0m [1m[94m...[0m - name: Run Post Pull Request Actions
+    [1m[94m|[0m       [1m[94m-----------------------------------[0m [1m[94minfo: this step[0m
+[1m[94m142 |[0m [1m[94m...[0m   env:
+[1m[94m143 |[0m [1m[94m...[0m     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+[1m[94m144 |[0m [1m[94m...[0m   run: npm run rp-pull-request --ignore-scripts --if-present -- --pr="${{ needs.release.outputs.pr-number }}" --commentId="${{ needs.release.outputs.comment-id }}"
+    [1m[94m|[0m       [1m[94m-----------------------------------------------------------------------------------------------------------------------------------------------------------------[0m [1m[94minfo: needs.release.outputs.comment-id may expand into attacker-controllable code[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml:66:9
+   [1m[94m|[0m
+[1m[94m66 |[0m         uses: peter-evans/find-comment@v2
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml:76:9
+   [1m[94m|[0m
+[1m[94m76 |[0m         uses: peter-evans/create-or-update-comment@v3
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml:83:9
+   [1m[94m|[0m
+[1m[94m83 |[0m         uses: peter-evans/create-or-update-comment@v3
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml:136:9
+    [1m[94m|[0m
+[1m[94m136 |[0m         uses: peter-evans/create-or-update-comment@v3
+    [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml:162:9
+    [1m[94m|[0m
+[1m[94m162 |[0m         uses: LouisBrunner/checks-action@v1.6.0
+    [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml:199:9
+    [1m[94m|[0m
+[1m[94m199 |[0m         uses: LouisBrunner/checks-action@v1.6.0
+    [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml:236:9
+    [1m[94m|[0m
+[1m[94m236 |[0m         uses: peter-evans/create-or-update-comment@v3
+    [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml:275:9
+    [1m[94m|[0m
+[1m[94m275 |[0m         uses: peter-evans/find-comment@v2
+    [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/npm-read-package-json-fast-release.yml:304:9
+    [1m[94m|[0m
+[1m[94m304 |[0m         uses: peter-evans/create-or-update-comment@v3
+    [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m26[39m findings ([1m[93m8[39m suppressed[0m): 0 unknown, [35m3[39m informational, [36m0[39m low, [33m3[39m medium, [31m12[39m high

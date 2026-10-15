@@ -1,0 +1,49 @@
+{
+  "workflow": "sparkrew-cfw-benchmark-cfw-10-contrastive-pair.yml",
+  "tool": "zizmor",
+  "summary": {
+    "total_findings": 4,
+    "by_rule": {
+      "excessive-permissions": 3,
+      "dangerous-triggers": 1
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "sparkrew-cfw-benchmark-cfw-10-contrastive-pair.yml",
+      "line": 1,
+      "column": 1,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "sparkrew-cfw-benchmark-cfw-10-contrastive-pair.yml",
+      "line": 23,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "excessive-permissions",
+      "level": "warning",
+      "message": "overly broad permissions",
+      "workflow": "sparkrew-cfw-benchmark-cfw-10-contrastive-pair.yml",
+      "line": 35,
+      "column": 3,
+      "note": "audit confidence \u2192 Medium"
+    },
+    {
+      "rule_id": "dangerous-triggers",
+      "level": "error",
+      "message": "use of fundamentally insecure workflow trigger",
+      "workflow": "sparkrew-cfw-benchmark-cfw-10-contrastive-pair.yml",
+      "line": 17,
+      "column": 1,
+      "note": "audit confidence \u2192 Medium"
+    }
+  ]
+}

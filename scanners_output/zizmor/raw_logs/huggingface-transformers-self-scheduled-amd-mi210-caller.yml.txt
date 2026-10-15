@@ -1,0 +1,143 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/huggingface-transformers-self-scheduled-amd-mi210-caller.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/huggingface-transformers-self-scheduled-amd-mi210-caller.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name: Self-hosted runner (AMD mi210 scheduled CI caller)
+[1m[94m 2 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m54 |[0m [1m[33m|[0m       ci_event: Scheduled CI (AMD) - mi210
+[1m[94m55 |[0m [1m[33m|[0m     secrets: inherit
+   [1m[94m|[0m [1m[33m|_____________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/huggingface-transformers-self-scheduled-amd-mi210-caller.yml:13:3
+   [1m[94m|[0m
+[1m[94m13 |[0m [1m[33m/[0m   model-ci:
+[1m[94m14 |[0m [1m[33m|[0m     name: Model CI
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m21 |[0m [1m[33m|[0m       ci_event: Scheduled CI (AMD) - mi210
+[1m[94m22 |[0m [1m[33m|[0m     secrets: inherit
+   [1m[94m|[0m [1m[33m|[0m                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________|[0m
+   [1m[94m|[0m                      [1m[33mthis job[0m
+   [1m[94m|[0m                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/huggingface-transformers-self-scheduled-amd-mi210-caller.yml:24:3
+   [1m[94m|[0m
+[1m[94m24 |[0m [1m[33m/[0m   torch-pipeline:
+[1m[94m25 |[0m [1m[33m|[0m     name: Torch pipeline CI
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m32 |[0m [1m[33m|[0m       ci_event: Scheduled CI (AMD) - mi210
+[1m[94m33 |[0m [1m[33m|[0m     secrets: inherit
+   [1m[94m|[0m [1m[33m|[0m                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________|[0m
+   [1m[94m|[0m                      [1m[33mthis job[0m
+   [1m[94m|[0m                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/huggingface-transformers-self-scheduled-amd-mi210-caller.yml:35:3
+   [1m[94m|[0m
+[1m[94m35 |[0m [1m[33m/[0m   example-ci:
+[1m[94m36 |[0m [1m[33m|[0m     name: Example CI
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m43 |[0m [1m[33m|[0m       ci_event: Scheduled CI (AMD) - mi210
+[1m[94m44 |[0m [1m[33m|[0m     secrets: inherit
+   [1m[94m|[0m [1m[33m|[0m                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________|[0m
+   [1m[94m|[0m                      [1m[33mthis job[0m
+   [1m[94m|[0m                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/huggingface-transformers-self-scheduled-amd-mi210-caller.yml:46:3
+   [1m[94m|[0m
+[1m[94m46 |[0m [1m[33m/[0m   deepspeed-ci:
+[1m[94m47 |[0m [1m[33m|[0m     name: DeepSpeed CI
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m54 |[0m [1m[33m|[0m       ci_event: Scheduled CI (AMD) - mi210
+[1m[94m55 |[0m [1m[33m|[0m     secrets: inherit
+   [1m[94m|[0m [1m[33m|[0m                     [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________|[0m
+   [1m[94m|[0m                       [1m[33mthis job[0m
+   [1m[94m|[0m                       [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#dangerous-triggers\dangerous-triggers]8;;\][0m: [1muse of fundamentally insecure workflow trigger[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/huggingface-transformers-self-scheduled-amd-mi210-caller.yml:3:1
+   [1m[94m|[0m
+[1m[94m 3 |[0m [1m[91m/[0m on:
+[1m[94m 4 |[0m [1m[91m|[0m   workflow_run:
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m 9 |[0m [1m[91m|[0m     branches:
+[1m[94m10 |[0m [1m[91m|[0m       - run_amd_scheduled_ci_caller*
+   [1m[94m|[0m [1m[91m|____________________________________^[0m [1m[91mworkflow_run is almost always used insecurely[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/huggingface-transformers-self-scheduled-amd-mi210-caller.yml:15:5
+   [1m[94m|[0m
+[1m[94m15 |[0m     uses: huggingface/hf-workflows/.github/workflows/transformers_amd_ci_scheduled.yaml@main
+   [1m[94m|[0m     [1m[33m----------------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m16 |[0m     with:
+[1m[94m...[0m
+[1m[94m21 |[0m       ci_event: Scheduled CI (AMD) - mi210
+[1m[94m22 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/huggingface-transformers-self-scheduled-amd-mi210-caller.yml:26:5
+   [1m[94m|[0m
+[1m[94m26 |[0m     uses: huggingface/hf-workflows/.github/workflows/transformers_amd_ci_scheduled.yaml@main
+   [1m[94m|[0m     [1m[33m----------------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m27 |[0m     with:
+[1m[94m...[0m
+[1m[94m32 |[0m       ci_event: Scheduled CI (AMD) - mi210
+[1m[94m33 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/huggingface-transformers-self-scheduled-amd-mi210-caller.yml:37:5
+   [1m[94m|[0m
+[1m[94m37 |[0m     uses: huggingface/hf-workflows/.github/workflows/transformers_amd_ci_scheduled.yaml@main
+   [1m[94m|[0m     [1m[33m----------------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m38 |[0m     with:
+[1m[94m...[0m
+[1m[94m43 |[0m       ci_event: Scheduled CI (AMD) - mi210
+[1m[94m44 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/huggingface-transformers-self-scheduled-amd-mi210-caller.yml:48:5
+   [1m[94m|[0m
+[1m[94m48 |[0m     uses: huggingface/hf-workflows/.github/workflows/transformers_amd_ci_scheduled.yaml@main
+   [1m[94m|[0m     [1m[33m----------------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m49 |[0m     with:
+[1m[94m...[0m
+[1m[94m54 |[0m       ci_event: Scheduled CI (AMD) - mi210
+[1m[94m55 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m10[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m9[39m medium, [31m1[39m high

@@ -1,0 +1,27 @@
+{
+  "workflow": "discourse-discourse-browser-history-d-compat-branch.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "discourse-discourse-browser-history-d-compat-branch.yml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 1,
+        "by_rule": {
+          "excessive-permissions": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "discourse-discourse-browser-history-d-compat-branch.yml",
+          "line": 9,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        }
+      ]
+    }
+  }
+}

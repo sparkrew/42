@@ -1,0 +1,95 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/apollographql-rover-run-smokes-scheduled.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/apollographql-rover-run-smokes-scheduled.yml:24:9
+   [1m[94m|[0m
+[1m[94m24 |[0m         - uses: actions/checkout@v6
+   [1m[94m|[0m  [1m[33m_________-[0m
+[1m[94m25 |[0m [1m[33m|[0m         name: "Checkout rover repo"
+   [1m[94m|[0m [1m[33m|___________________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/apollographql-rover-run-smokes-scheduled.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m on:
+[1m[94m 2 |[0m [1m[33m|[0m   schedule:
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m69 |[0m [1m[33m|[0m           webhook: ${{ secrets.SLACK_E2E_TEST_FAILURE_WEBHOOK_URL }}
+[1m[94m70 |[0m [1m[33m|[0m           webhook-type: webhook-trigger
+   [1m[94m|[0m [1m[33m|________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/apollographql-rover-run-smokes-scheduled.yml:17:3
+   [1m[94m|[0m
+[1m[94m17 |[0m [1m[33m/[0m   calculate_correct_version_ranges:
+[1m[94m18 |[0m [1m[33m|[0m     name: "Calculate Correct Version Ranges"
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m44 |[0m [1m[33m|[0m         working-directory: ".github/scripts"
+[1m[94m45 |[0m [1m[33m|[0m         name: "Resolve Supergraph Plugin versions"
+   [1m[94m|[0m [1m[33m|[0m                                                  [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|__________________________________________________|[0m
+   [1m[94m|[0m                                                    [1m[33mthis job[0m
+   [1m[94m|[0m                                                    [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/apollographql-rover-run-smokes-scheduled.yml:47:3
+   [1m[94m|[0m
+[1m[94m47 |[0m [1m[33m/[0m   run-smokes:
+[1m[94m48 |[0m [1m[33m|[0m     name: "Run Smoke Tests"
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m53 |[0m [1m[33m|[0m       router-versions: '${{ needs.calculate_correct_version_ranges.outputs.router_versions }}'
+[1m[94m54 |[0m [1m[33m|[0m     secrets: inherit
+   [1m[94m|[0m [1m[33m|[0m                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________|[0m
+   [1m[94m|[0m                      [1m[33mthis job[0m
+   [1m[94m|[0m                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/apollographql-rover-run-smokes-scheduled.yml:56:3
+   [1m[94m|[0m
+[1m[94m56 |[0m [1m[33m/[0m   message-slack:
+[1m[94m57 |[0m [1m[33m|[0m     runs-on: ubuntu-24.04
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m69 |[0m [1m[33m|[0m           webhook: ${{ secrets.SLACK_E2E_TEST_FAILURE_WEBHOOK_URL }}
+[1m[94m70 |[0m [1m[33m|[0m           webhook-type: webhook-trigger
+   [1m[94m|[0m [1m[33m|[0m                                        [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________________________|[0m
+   [1m[94m|[0m                                          [1m[33mthis job[0m
+   [1m[94m|[0m                                          [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/apollographql-rover-run-smokes-scheduled.yml:64:9
+   [1m[94m|[0m
+[1m[94m64 |[0m         uses: slackapi/slack-github-action@v2.1.1
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/apollographql-rover-run-smokes-scheduled.yml:49:5
+   [1m[94m|[0m
+[1m[94m49 |[0m     uses: ./.github/workflows/smoke-test.yml
+   [1m[94m|[0m     [1m[33m----------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m50 |[0m     needs: calculate_correct_version_ranges
+[1m[94m...[0m
+[1m[94m53 |[0m       router-versions: '${{ needs.calculate_correct_version_ranges.outputs.router_versions }}'
+[1m[94m54 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m7[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m6[39m medium, [31m1[39m high

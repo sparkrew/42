@@ -1,0 +1,107 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/kyoh86-ddu-source-git_diff_tree-deno-update.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/kyoh86-ddu-source-git_diff_tree-deno-update.yml:19:9
+   [1m[94m|[0m
+[1m[94m19 |[0m         - name: Setup repo
+   [1m[94m|[0m  [1m[33m_________-[0m
+[1m[94m20 |[0m [1m[33m|[0m         uses: actions/checkout@v6
+   [1m[94m|[0m [1m[33m|_________________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/kyoh86-ddu-source-git_diff_tree-deno-update.yml:14:3
+   [1m[94m|[0m
+[1m[94m14 |[0m [1m[91m/[0m   update:
+[1m[94m15 |[0m [1m[91m|[0m     permissions: write-all
+   [1m[94m|[0m [1m[91m|[0m     [1m[91m^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91muses write-all permissions[0m
+[1m[94m16 |[0m [1m[91m|[0m     runs-on: ubuntu-latest
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m96 |[0m [1m[91m|[0m           author: GitHub <noreply@github.com>
+[1m[94m97 |[0m [1m[91m|[0m           delete-branch: true
+   [1m[94m|[0m [1m[91m|______________________________^[0m [1m[91mthis job[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/kyoh86-ddu-source-git_diff_tree-deno-update.yml:57:9
+   [1m[94m|[0m
+[1m[94m57 |[0m         - name: Export Vim Executable
+   [1m[94m|[0m           [1m[94m---------------------------[0m [1m[94minfo: this step[0m
+[1m[94m58 |[0m [1m[94m/[0m         run: |
+[1m[94m59 |[0m [1m[94m|[0m           echo "DENOPS_TEST_VIM_EXECUTABLE=${{ steps.vim.outputs.executable }}" >> "$GITHUB_ENV"
+   [1m[94m|[0m [1m[94m|________________________________________________________________________________________________-[0m [1m[94minfo: steps.vim.outputs.executable may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/kyoh86-ddu-source-git_diff_tree-deno-update.yml:61:9
+   [1m[94m|[0m
+[1m[94m61 |[0m         - name: Export Vim Version
+   [1m[94m|[0m           [1m[94m------------------------[0m [1m[94minfo: this step[0m
+[1m[94m62 |[0m [1m[94m/[0m         run: |
+[1m[94m63 |[0m [1m[94m|[0m           ${{ steps.vim.outputs.executable }} --version
+   [1m[94m|[0m [1m[94m|_______________________________________________________-[0m [1m[94minfo: steps.vim.outputs.executable may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/kyoh86-ddu-source-git_diff_tree-deno-update.yml:70:9
+   [1m[94m|[0m
+[1m[94m70 |[0m         - name: Export Neovim Executable
+   [1m[94m|[0m           [1m[94m------------------------------[0m [1m[94minfo: this step[0m
+[1m[94m71 |[0m [1m[94m/[0m         run: |
+[1m[94m72 |[0m [1m[94m|[0m           echo "DENOPS_TEST_NVIM_EXECUTABLE=${{ steps.nvim.outputs.executable }}" >> "$GITHUB_ENV"
+   [1m[94m|[0m [1m[94m|__________________________________________________________________________________________________-[0m [1m[94minfo: steps.nvim.outputs.executable may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/kyoh86-ddu-source-git_diff_tree-deno-update.yml:74:9
+   [1m[94m|[0m
+[1m[94m74 |[0m         - name: Export Neovim Version
+   [1m[94m|[0m           [1m[94m---------------------------[0m [1m[94minfo: this step[0m
+[1m[94m75 |[0m [1m[94m/[0m         run: |
+[1m[94m76 |[0m [1m[94m|[0m           ${{ steps.nvim.outputs.executable }} --version
+   [1m[94m|[0m [1m[94m|________________________________________________________-[0m [1m[94minfo: steps.nvim.outputs.executable may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/kyoh86-ddu-source-git_diff_tree-deno-update.yml:23:9
+   [1m[94m|[0m
+[1m[94m23 |[0m         uses: denoland/setup-deno@v2
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/kyoh86-ddu-source-git_diff_tree-deno-update.yml:52:9
+   [1m[94m|[0m
+[1m[94m52 |[0m       - uses: rhysd/action-setup-vim@v1
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/kyoh86-ddu-source-git_diff_tree-deno-update.yml:65:9
+   [1m[94m|[0m
+[1m[94m65 |[0m       - uses: rhysd/action-setup-vim@v1
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#unpinned-uses\unpinned-uses]8;;\][0m: [1munpinned action reference[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/kyoh86-ddu-source-git_diff_tree-deno-update.yml:82:9
+   [1m[94m|[0m
+[1m[94m82 |[0m         uses: peter-evans/create-pull-request@v8
+   [1m[94m|[0m         [1m[91m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1m[91maction is not pinned to a hash (required by blanket policy)[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m15[39m findings ([1m[93m5[39m suppressed[0m): 0 unknown, [35m4[39m informational, [36m0[39m low, [33m1[39m medium, [31m5[39m high

@@ -1,0 +1,31 @@
+{
+  "workflow": "pulumi-pulumi-fastly-test.yml",
+  "tool": "zizmor",
+  "summary": {
+    "total_findings": 2,
+    "by_rule": {
+      "artipacked": 1,
+      "unpinned-uses": 1
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "artipacked",
+      "level": "warning",
+      "message": "credential persistence through GitHub Actions artifacts",
+      "workflow": "pulumi-pulumi-fastly-test.yml",
+      "line": 45,
+      "column": 7,
+      "note": "audit confidence \u2192 Low"
+    },
+    {
+      "rule_id": "unpinned-uses",
+      "level": "error",
+      "message": "unpinned action reference",
+      "workflow": "pulumi-pulumi-fastly-test.yml",
+      "line": 52,
+      "column": 7,
+      "note": "audit confidence \u2192 High"
+    }
+  ]
+}

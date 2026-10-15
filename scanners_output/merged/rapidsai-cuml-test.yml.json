@@ -1,0 +1,153 @@
+{
+  "workflow": "rapidsai-cuml-test.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "rapidsai-cuml-test.yaml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 15,
+        "by_rule": {
+          "excessive-permissions": 8,
+          "secrets-inherit": 7
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "rapidsai-cuml-test.yaml",
+          "line": 1,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "rapidsai-cuml-test.yaml",
+          "line": 20,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "rapidsai-cuml-test.yaml",
+          "line": 30,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "rapidsai-cuml-test.yaml",
+          "line": 39,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "rapidsai-cuml-test.yaml",
+          "line": 48,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "rapidsai-cuml-test.yaml",
+          "line": 57,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "rapidsai-cuml-test.yaml",
+          "line": 68,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "rapidsai-cuml-test.yaml",
+          "line": 77,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "rapidsai-cuml-test.yaml",
+          "line": 22,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "rapidsai-cuml-test.yaml",
+          "line": 32,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "rapidsai-cuml-test.yaml",
+          "line": 41,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "rapidsai-cuml-test.yaml",
+          "line": 50,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "rapidsai-cuml-test.yaml",
+          "line": 59,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "rapidsai-cuml-test.yaml",
+          "line": 70,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "rapidsai-cuml-test.yaml",
+          "line": 79,
+          "column": 5,
+          "note": "audit confidence \u2192 High"
+        }
+      ]
+    }
+  }
+}

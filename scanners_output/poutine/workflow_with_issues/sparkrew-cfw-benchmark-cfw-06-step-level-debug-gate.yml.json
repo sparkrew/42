@@ -1,0 +1,23 @@
+{
+  "workflow": "sparkrew-cfw-benchmark-cfw-06-step-level-debug-gate.yml",
+  "tool": "poutine",
+  "summary": {
+    "total_findings": 1,
+    "by_rule": {
+      "if_always_true": 1
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "if_always_true",
+      "line": 25,
+      "column": "",
+      "job": "build-and-test",
+      "step": "2",
+      "details": "",
+      "event_triggers": [
+        "pull_request"
+      ]
+    }
+  ]
+}

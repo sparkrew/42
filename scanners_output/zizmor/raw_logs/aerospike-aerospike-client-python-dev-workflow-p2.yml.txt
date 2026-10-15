@@ -1,0 +1,126 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/aerospike-aerospike-client-python-dev-workflow-p2.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aerospike-aerospike-client-python-dev-workflow-p2.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name: Dev workflow (part 2)
+[1m[94m 2 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m42 |[0m [1m[33m|[0m     needs: upload-to-jfrog
+[1m[94m43 |[0m [1m[33m|[0m     uses: ./.github/workflows/delete-artifacts.yml
+   [1m[94m|[0m [1m[33m|___________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aerospike-aerospike-client-python-dev-workflow-p2.yml:12:3
+   [1m[94m|[0m
+[1m[94m12 |[0m [1m[33m/[0m   bump-dev-number:
+[1m[94m13 |[0m [1m[33m|[0m     if: ${{ github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true }}
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m16 |[0m [1m[33m|[0m       change: 'bump-dev-num'
+[1m[94m17 |[0m [1m[33m|[0m     secrets: inherit
+   [1m[94m|[0m [1m[33m|[0m                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________|[0m
+   [1m[94m|[0m                      [1m[33mthis job[0m
+   [1m[94m|[0m                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aerospike-aerospike-client-python-dev-workflow-p2.yml:19:3
+   [1m[94m|[0m
+[1m[94m19 |[0m [1m[33m/[0m   rebuild-artifacts-with-new-dev-num:
+[1m[94m20 |[0m [1m[33m|[0m     needs: bump-dev-number
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m26 |[0m [1m[33m|[0m       sha-to-build-and-test: ${{ needs.bump-dev-number.outputs.bump_sha }}
+[1m[94m27 |[0m [1m[33m|[0m     secrets: inherit
+   [1m[94m|[0m [1m[33m|[0m                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________|[0m
+   [1m[94m|[0m                      [1m[33mthis job[0m
+   [1m[94m|[0m                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aerospike-aerospike-client-python-dev-workflow-p2.yml:29:3
+   [1m[94m|[0m
+[1m[94m29 |[0m [1m[33m/[0m   upload-to-jfrog:
+[1m[94m30 |[0m [1m[33m|[0m     name: Upload artifacts to JFrog
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m39 |[0m [1m[33m|[0m
+[1m[94m40 |[0m [1m[33m|[0m   # We don't want the artifacts in JFrog to also exist in Github
+   [1m[94m|[0m [1m[33m|[0m                                                                [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|________________________________________________________________|[0m
+   [1m[94m|[0m                                                                  [1m[33mthis job[0m
+   [1m[94m|[0m                                                                  [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aerospike-aerospike-client-python-dev-workflow-p2.yml:41:3
+   [1m[94m|[0m
+[1m[94m41 |[0m [1m[33m/[0m   delete-artifacts:
+[1m[94m42 |[0m [1m[33m|[0m     needs: upload-to-jfrog
+[1m[94m43 |[0m [1m[33m|[0m     uses: ./.github/workflows/delete-artifacts.yml
+   [1m[94m|[0m [1m[33m|[0m                                                   [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________________________________________|[0m
+   [1m[94m|[0m                                                     [1m[33mthis job[0m
+   [1m[94m|[0m                                                     [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#dangerous-triggers\dangerous-triggers]8;;\][0m: [1muse of fundamentally insecure workflow trigger[0m
+ [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aerospike-aerospike-client-python-dev-workflow-p2.yml:3:1
+  [1m[94m|[0m
+[1m[94m3 |[0m [1m[91m/[0m on:
+[1m[94m4 |[0m [1m[91m|[0m   pull_request_target:
+[1m[94m...[0m [1m[91m|[0m
+[1m[94m8 |[0m [1m[91m|[0m       - closed
+[1m[94m9 |[0m [1m[91m|[0m   workflow_dispatch:
+  [1m[94m|[0m [1m[91m|____________________^[0m [1m[91mpull_request_target is almost always used insecurely[0m
+  [1m[94m|[0m
+  [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aerospike-aerospike-client-python-dev-workflow-p2.yml:14:5
+   [1m[94m|[0m
+[1m[94m14 |[0m     uses: ./.github/workflows/bump-version.yml
+   [1m[94m|[0m     [1m[33m------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m15 |[0m     with:
+[1m[94m16 |[0m       change: 'bump-dev-num'
+[1m[94m17 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aerospike-aerospike-client-python-dev-workflow-p2.yml:22:5
+   [1m[94m|[0m
+[1m[94m22 |[0m     uses: ./.github/workflows/build-artifacts.yml
+   [1m[94m|[0m     [1m[33m---------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m23 |[0m     with:
+[1m[94m...[0m
+[1m[94m26 |[0m       sha-to-build-and-test: ${{ needs.bump-dev-number.outputs.bump_sha }}
+[1m[94m27 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/aerospike-aerospike-client-python-dev-workflow-p2.yml:35:5
+   [1m[94m|[0m
+[1m[94m35 |[0m     uses: ./.github/workflows/upload-to-jfrog.yml
+   [1m[94m|[0m     [1m[33m---------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m36 |[0m     with:
+[1m[94m37 |[0m       version: ${{ needs.bump-dev-number.outputs.new_version }}
+[1m[94m38 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m9[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m8[39m medium, [31m1[39m high

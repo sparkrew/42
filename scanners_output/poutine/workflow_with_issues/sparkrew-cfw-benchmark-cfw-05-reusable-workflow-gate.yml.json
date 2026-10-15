@@ -1,0 +1,23 @@
+{
+  "workflow": "sparkrew-cfw-benchmark-cfw-05-reusable-workflow-gate.yml",
+  "tool": "poutine",
+  "summary": {
+    "total_findings": 1,
+    "by_rule": {
+      "if_always_true": 1
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "if_always_true",
+      "line": 23,
+      "column": "",
+      "job": "call-release",
+      "step": "",
+      "details": "",
+      "event_triggers": [
+        "push"
+      ]
+    }
+  ]
+}

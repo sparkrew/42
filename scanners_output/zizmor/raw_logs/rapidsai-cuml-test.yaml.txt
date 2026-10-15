@@ -1,0 +1,194 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-cuml-test.yaml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-cuml-test.yaml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name: test
+[1m[94m 2 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m84 |[0m [1m[33m|[0m       sha: ${{ inputs.sha }}
+[1m[94m85 |[0m [1m[33m|[0m       script: ci/test_wheel_dask.sh
+   [1m[94m|[0m [1m[33m|____________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-cuml-test.yaml:20:3
+   [1m[94m|[0m
+[1m[94m20 |[0m [1m[33m/[0m   conda-cpp-checks:
+[1m[94m21 |[0m [1m[33m|[0m     secrets: inherit
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m28 |[0m [1m[33m|[0m       enable_check_symbols: true
+[1m[94m29 |[0m [1m[33m|[0m       symbol_exclusions: raft_cutlass
+   [1m[94m|[0m [1m[33m|[0m                                     [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________________________|[0m
+   [1m[94m|[0m                                       [1m[33mthis job[0m
+   [1m[94m|[0m                                       [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-cuml-test.yaml:30:3
+   [1m[94m|[0m
+[1m[94m30 |[0m [1m[33m/[0m   conda-cpp-tests:
+[1m[94m31 |[0m [1m[33m|[0m     secrets: inherit
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m37 |[0m [1m[33m|[0m       script: ci/test_cpp.sh
+[1m[94m38 |[0m [1m[33m|[0m       sha: ${{ inputs.sha }}
+   [1m[94m|[0m [1m[33m|[0m                            [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________________|[0m
+   [1m[94m|[0m                              [1m[33mthis job[0m
+   [1m[94m|[0m                              [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-cuml-test.yaml:39:3
+   [1m[94m|[0m
+[1m[94m39 |[0m [1m[33m/[0m   conda-python-tests-singlegpu:
+[1m[94m40 |[0m [1m[33m|[0m     secrets: inherit
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m46 |[0m [1m[33m|[0m       sha: ${{ inputs.sha }}
+[1m[94m47 |[0m [1m[33m|[0m       script: "ci/test_python_singlegpu.sh"
+   [1m[94m|[0m [1m[33m|[0m                                           [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________________________________|[0m
+   [1m[94m|[0m                                             [1m[33mthis job[0m
+   [1m[94m|[0m                                             [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-cuml-test.yaml:48:3
+   [1m[94m|[0m
+[1m[94m48 |[0m [1m[33m/[0m   conda-python-tests-dask:
+[1m[94m49 |[0m [1m[33m|[0m     secrets: inherit
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m55 |[0m [1m[33m|[0m       sha: ${{ inputs.sha }}
+[1m[94m56 |[0m [1m[33m|[0m       script: "ci/test_python_dask.sh"
+   [1m[94m|[0m [1m[33m|[0m                                      [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|______________________________________|[0m
+   [1m[94m|[0m                                        [1m[33mthis job[0m
+   [1m[94m|[0m                                        [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-cuml-test.yaml:57:3
+   [1m[94m|[0m
+[1m[94m57 |[0m [1m[33m/[0m   conda-python-scikit-learn-accel-tests:
+[1m[94m58 |[0m [1m[33m|[0m     secrets: inherit
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m66 |[0m [1m[33m|[0m       # Select amd64 and one job per major CUDA version with the latest CUDA and Python versions
+[1m[94m67 |[0m [1m[33m|[0m       matrix_filter: map(select(.ARCH == "amd64")) | group_by(.CUDA_VER|split(".")|map(tonumber)|.[0]) | map(max_by([.CUDA_VER,.PY_VER]|map(split(".")|map(tonumber))))
+   [1m[94m|[0m [1m[33m|[0m                                                                                                                                                                       [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________________________________________________________________________________________________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                                                                                                         [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                                                                                                         [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-cuml-test.yaml:68:3
+   [1m[94m|[0m
+[1m[94m68 |[0m [1m[33m/[0m   wheel-tests-cuml:
+[1m[94m69 |[0m [1m[33m|[0m     secrets: inherit
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m75 |[0m [1m[33m|[0m       sha: ${{ inputs.sha }}
+[1m[94m76 |[0m [1m[33m|[0m       script: ci/test_wheel.sh
+   [1m[94m|[0m [1m[33m|[0m                              [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|______________________________|[0m
+   [1m[94m|[0m                                [1m[33mthis job[0m
+   [1m[94m|[0m                                [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-cuml-test.yaml:77:3
+   [1m[94m|[0m
+[1m[94m77 |[0m [1m[33m/[0m   wheel-tests-cuml-dask:
+[1m[94m78 |[0m [1m[33m|[0m     secrets: inherit
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m84 |[0m [1m[33m|[0m       sha: ${{ inputs.sha }}
+[1m[94m85 |[0m [1m[33m|[0m       script: ci/test_wheel_dask.sh
+   [1m[94m|[0m [1m[33m|[0m                                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________________________|[0m
+   [1m[94m|[0m                                      [1m[33mthis job[0m
+   [1m[94m|[0m                                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-cuml-test.yaml:22:5
+   [1m[94m|[0m
+[1m[94m21 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+[1m[94m22 |[0m     uses: rapidsai/shared-workflows/.github/workflows/conda-cpp-post-build-checks.yaml@branch-25.08
+   [1m[94m|[0m     [1m[33m-----------------------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-cuml-test.yaml:32:5
+   [1m[94m|[0m
+[1m[94m31 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+[1m[94m32 |[0m     uses: rapidsai/shared-workflows/.github/workflows/conda-cpp-tests.yaml@branch-25.08
+   [1m[94m|[0m     [1m[33m-----------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-cuml-test.yaml:41:5
+   [1m[94m|[0m
+[1m[94m40 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+[1m[94m41 |[0m     uses: rapidsai/shared-workflows/.github/workflows/conda-python-tests.yaml@branch-25.08
+   [1m[94m|[0m     [1m[33m--------------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-cuml-test.yaml:50:5
+   [1m[94m|[0m
+[1m[94m49 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+[1m[94m50 |[0m     uses: rapidsai/shared-workflows/.github/workflows/conda-python-tests.yaml@branch-25.08
+   [1m[94m|[0m     [1m[33m--------------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-cuml-test.yaml:59:5
+   [1m[94m|[0m
+[1m[94m58 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+[1m[94m59 |[0m     uses: rapidsai/shared-workflows/.github/workflows/conda-python-tests.yaml@branch-25.08
+   [1m[94m|[0m     [1m[33m--------------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-cuml-test.yaml:70:5
+   [1m[94m|[0m
+[1m[94m69 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+[1m[94m70 |[0m     uses: rapidsai/shared-workflows/.github/workflows/wheels-test.yaml@branch-25.08
+   [1m[94m|[0m     [1m[33m-------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/rapidsai-cuml-test.yaml:79:5
+   [1m[94m|[0m
+[1m[94m78 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+[1m[94m79 |[0m     uses: rapidsai/shared-workflows/.github/workflows/wheels-test.yaml@branch-25.08
+   [1m[94m|[0m     [1m[33m-------------------------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m15[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m15[39m medium, [31m0[39m high

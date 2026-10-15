@@ -1,0 +1,109 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/opensearch-project-dashboards-anywhere-os-osd-deployment-scheduled.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/opensearch-project-dashboards-anywhere-os-osd-deployment-scheduled.yml:1:1
+    [1m[94m|[0m
+[1m[94m  1 |[0m [1m[33m/[0m # This workflow is a scheduled workflow and used for deploying the preview version of OpenSearch
+[1m[94m  2 |[0m [1m[33m|[0m # and OpenSearch Dashboards to AWS EKS (Elastic Kubernetes Service) cluster.
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m103 |[0m [1m[33m|[0m       osd-user: ${{ secrets.OSD_USER_OBSERVABILITY }}
+[1m[94m104 |[0m [1m[33m|[0m       osd-user-password: ${{ secrets.OSD_USER_PASSWORD_OBSERVABILITY }}
+    [1m[94m|[0m [1m[33m|_______________________________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/opensearch-project-dashboards-anywhere-os-osd-deployment-scheduled.yml:15:3
+   [1m[94m|[0m
+[1m[94m15 |[0m [1m[33m/[0m   OS-OSD-Preview-Scheduled-Deployment:
+[1m[94m16 |[0m [1m[33m|[0m     uses: opensearch-project/dashboards-anywhere/.github/workflows/deployment-template.yml@main
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m33 |[0m [1m[33m|[0m       otel_data_prepper_cert: ${{ secrets.OTEL_DATA_PREPPER_CERT }}
+[1m[94m34 |[0m [1m[33m|[0m       kibanaserver: ${{ secrets.KIBANASERVER }}
+   [1m[94m|[0m [1m[33m|[0m                                               [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________________________________________|[0m
+   [1m[94m|[0m                                                 [1m[33mthis job[0m
+   [1m[94m|[0m                                                 [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/opensearch-project-dashboards-anywhere-os-osd-deployment-scheduled.yml:36:3
+   [1m[94m|[0m
+[1m[94m36 |[0m [1m[33m/[0m   OS-OSD-SearchApps-Scheduled-Deployment:
+[1m[94m37 |[0m [1m[33m|[0m     uses: opensearch-project/dashboards-anywhere/.github/workflows/deployment-template.yml@main
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m54 |[0m [1m[33m|[0m       otel_data_prepper_cert: ${{ secrets.OTEL_DATA_PREPPER_CERT }}
+[1m[94m55 |[0m [1m[33m|[0m       kibanaserver: ${{ secrets.KIBANASERVER }}
+   [1m[94m|[0m [1m[33m|[0m                                               [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________________________________________|[0m
+   [1m[94m|[0m                                                 [1m[33mthis job[0m
+   [1m[94m|[0m                                                 [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/opensearch-project-dashboards-anywhere-os-osd-deployment-scheduled.yml:57:3
+   [1m[94m|[0m
+[1m[94m57 |[0m [1m[33m/[0m   OS-OSD-Observability-Scheduled-Deployment:
+[1m[94m58 |[0m [1m[33m|[0m     uses: opensearch-project/dashboards-anywhere/.github/workflows/deployment-template.yml@main
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m76 |[0m [1m[33m|[0m       kibanaserver: ${{ secrets.KIBANASERVER }}
+[1m[94m77 |[0m [1m[33m|[0m       query_datasources_master_key: ${{ secrets.QUERY_DATASOURCES_MASTER_KEY }}
+   [1m[94m|[0m [1m[33m|[0m                                                                               [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                                 [1m[33mthis job[0m
+   [1m[94m|[0m                                                                                 [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/opensearch-project-dashboards-anywhere-os-osd-deployment-scheduled.yml:79:3
+   [1m[94m|[0m
+[1m[94m79 |[0m [1m[33m/[0m   OSD-Functional-Test-Preview:
+[1m[94m80 |[0m [1m[33m|[0m     needs: OS-OSD-Preview-Scheduled-Deployment
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m85 |[0m [1m[33m|[0m       osd-user: ${{ secrets.OSD_USER_PREVIEW }}
+[1m[94m86 |[0m [1m[33m|[0m       osd-user-password: ${{ secrets.OSD_USER_PASSWORD_PREVIEW }}
+   [1m[94m|[0m [1m[33m|[0m                                                                 [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_________________________________________________________________|[0m
+   [1m[94m|[0m                                                                   [1m[33mthis job[0m
+   [1m[94m|[0m                                                                   [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/opensearch-project-dashboards-anywhere-os-osd-deployment-scheduled.yml:88:3
+   [1m[94m|[0m
+[1m[94m88 |[0m [1m[33m/[0m   OSD-Functional-Test-SearchApps:
+[1m[94m89 |[0m [1m[33m|[0m     needs: OS-OSD-SearchApps-Scheduled-Deployment
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m94 |[0m [1m[33m|[0m       osd-user: ${{ secrets.OSD_USER_SEARCHAPPS }}
+[1m[94m95 |[0m [1m[33m|[0m       osd-user-password: ${{ secrets.OSD_USER_PASSWORD_SEARCHAPPS }}
+   [1m[94m|[0m [1m[33m|[0m                                                                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________________________________________________________|[0m
+   [1m[94m|[0m                                                                      [1m[33mthis job[0m
+   [1m[94m|[0m                                                                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/opensearch-project-dashboards-anywhere-os-osd-deployment-scheduled.yml:97:3
+    [1m[94m|[0m
+[1m[94m 97 |[0m [1m[33m/[0m   OSD-Functional-Test-Observability:
+[1m[94m 98 |[0m [1m[33m|[0m     needs: OS-OSD-Observability-Scheduled-Deployment
+[1m[94m...[0m   [1m[33m|[0m
+[1m[94m103 |[0m [1m[33m|[0m       osd-user: ${{ secrets.OSD_USER_OBSERVABILITY }}
+[1m[94m104 |[0m [1m[33m|[0m       osd-user-password: ${{ secrets.OSD_USER_PASSWORD_OBSERVABILITY }}
+    [1m[94m|[0m [1m[33m|[0m                                                                       [1m[33m-[0m
+    [1m[94m|[0m [1m[33m|_______________________________________________________________________|[0m
+    [1m[94m|[0m                                                                         [1m[33mthis job[0m
+    [1m[94m|[0m                                                                         [1m[33mdefault permissions used due to no permissions: block[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m7[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m7[39m medium, [31m0[39m high

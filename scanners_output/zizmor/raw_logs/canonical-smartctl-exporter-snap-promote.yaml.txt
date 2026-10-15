@@ -1,0 +1,96 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-smartctl-exporter-snap-promote.yaml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-smartctl-exporter-snap-promote.yaml:22:9
+   [1m[94m|[0m
+[1m[94m22 |[0m       - uses: actions/checkout@v6
+   [1m[94m|[0m         [1m[33m-------------------------[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-smartctl-exporter-snap-promote.yaml:18:3
+   [1m[94m|[0m
+[1m[94m18 |[0m [1m[33m/[0m   promote-snap:
+[1m[94m19 |[0m [1m[33m|[0m     name: Promote snap
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m45 |[0m [1m[33m|[0m           --from-channel ${{ steps.set-channels.outputs.origin-channel }} \
+[1m[94m46 |[0m [1m[33m|[0m           --to-channel ${{ steps.set-channels.outputs.destination-channel }}
+   [1m[94m|[0m [1m[33m|[0m                                                                             [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________________________________________________________________|[0m
+   [1m[94m|[0m                                                                               [1m[33mthis job[0m
+   [1m[94m|[0m                                                                               [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-smartctl-exporter-snap-promote.yaml:28:9
+   [1m[94m|[0m
+[1m[94m28 |[0m         - name: Set channels
+   [1m[94m|[0m           [1m[91m^^^^^^^^^^^^^^^^^^[0m [1m[91mthis step[0m
+[1m[94m29 |[0m           id: set-channels
+[1m[94m30 |[0m [1m[91m/[0m         run: |
+[1m[94m31 |[0m [1m[91m|[0m           channel_promotion="${{ github.event.inputs.channel-promotion }}"
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m34 |[0m [1m[91m|[0m           echo "destination-channel=$destination" >> $GITHUB_OUTPUT
+[1m[94m35 |[0m [1m[91m|[0m           echo "origin-channel=$origin" >> $GITHUB_OUTPUT
+   [1m[94m|[0m [1m[91m|_________________________________________________________^[0m [1m[91mgithub.event.inputs.channel-promotion may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-smartctl-exporter-snap-promote.yaml:36:9
+   [1m[94m|[0m
+[1m[94m36 |[0m         - name: Snapcraft promote snap
+   [1m[94m|[0m           [1m[94m----------------------------[0m [1m[94minfo: this step[0m
+[1m[94m37 |[0m           env:
+[1m[94m38 |[0m             SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.STORE_LOGIN }}
+[1m[94m39 |[0m             SNAPCRAFT_HAS_TTY: "true" # this is necessary because snapcraft will not allow --yes for promotions of the edge channel ht[1m[94m...[0m
+[1m[94m40 |[0m [1m[94m/[0m         run: |
+[1m[94m41 |[0m [1m[94m|[0m           # Note: using `yes |` instead of `--yes` because snapcraft will
+[1m[94m...[0m  [1m[94m|[0m
+[1m[94m45 |[0m [1m[94m|[0m           --from-channel ${{ steps.set-channels.outputs.origin-channel }} \
+[1m[94m46 |[0m [1m[94m|[0m           --to-channel ${{ steps.set-channels.outputs.destination-channel }}
+   [1m[94m|[0m [1m[94m|_____________________________________________________________________________-[0m [1m[94minfo: steps.snap.outputs.name may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-smartctl-exporter-snap-promote.yaml:36:9
+   [1m[94m|[0m
+[1m[94m36 |[0m         - name: Snapcraft promote snap
+   [1m[94m|[0m           [1m[94m----------------------------[0m [1m[94minfo: this step[0m
+[1m[94m37 |[0m           env:
+[1m[94m38 |[0m             SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.STORE_LOGIN }}
+[1m[94m39 |[0m             SNAPCRAFT_HAS_TTY: "true" # this is necessary because snapcraft will not allow --yes for promotions of the edge channel ht[1m[94m...[0m
+[1m[94m40 |[0m [1m[94m/[0m         run: |
+[1m[94m41 |[0m [1m[94m|[0m           # Note: using `yes |` instead of `--yes` because snapcraft will
+[1m[94m...[0m  [1m[94m|[0m
+[1m[94m45 |[0m [1m[94m|[0m           --from-channel ${{ steps.set-channels.outputs.origin-channel }} \
+[1m[94m46 |[0m [1m[94m|[0m           --to-channel ${{ steps.set-channels.outputs.destination-channel }}
+   [1m[94m|[0m [1m[94m|_____________________________________________________________________________-[0m [1m[94minfo: steps.set-channels.outputs.origin-channel may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[94minfo[]8;;https://docs.zizmor.sh/audits/#template-injection\template-injection]8;;\][0m: [1mcode injection via template expansion[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-smartctl-exporter-snap-promote.yaml:36:9
+   [1m[94m|[0m
+[1m[94m36 |[0m         - name: Snapcraft promote snap
+   [1m[94m|[0m           [1m[94m----------------------------[0m [1m[94minfo: this step[0m
+[1m[94m37 |[0m           env:
+[1m[94m38 |[0m             SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.STORE_LOGIN }}
+[1m[94m39 |[0m             SNAPCRAFT_HAS_TTY: "true" # this is necessary because snapcraft will not allow --yes for promotions of the edge channel ht[1m[94m...[0m
+[1m[94m40 |[0m [1m[94m/[0m         run: |
+[1m[94m41 |[0m [1m[94m|[0m           # Note: using `yes |` instead of `--yes` because snapcraft will
+[1m[94m...[0m  [1m[94m|[0m
+[1m[94m45 |[0m [1m[94m|[0m           --from-channel ${{ steps.set-channels.outputs.origin-channel }} \
+[1m[94m46 |[0m [1m[94m|[0m           --to-channel ${{ steps.set-channels.outputs.destination-channel }}
+   [1m[94m|[0m [1m[94m|_____________________________________________________________________________-[0m [1m[94minfo: steps.set-channels.outputs.destination-channel may expand into attacker-controllable code[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[32m11[39m findings ([1m[93m5[39m suppressed[0m): 0 unknown, [35m3[39m informational, [36m0[39m low, [33m2[39m medium, [31m1[39m high

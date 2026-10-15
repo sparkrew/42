@@ -1,0 +1,45 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/intel-libvpl-tools-pr-draft.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+ [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/intel-libvpl-tools-pr-draft.yml:3:1
+  [1m[94m|[0m
+[1m[94m3 |[0m permissions: read-all
+  [1m[94m|[0m [1m[33m---------------------[0m [1m[33muses read-all permissions[0m
+  [1m[94m|[0m
+  [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/intel-libvpl-tools-pr-draft.yml:39:5
+   [1m[94m|[0m
+[1m[94m39 |[0m     uses: ./.github/workflows/setup-variables.yml
+   [1m[94m|[0m     [1m[33m---------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m40 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/intel-libvpl-tools-pr-draft.yml:108:5
+    [1m[94m|[0m
+[1m[94m108 |[0m     uses: ./.github/workflows/acceptance.yml
+    [1m[94m|[0m     [1m[33m----------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m109 |[0m     secrets: inherit
+    [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/intel-libvpl-tools-pr-draft.yml:135:5
+    [1m[94m|[0m
+[1m[94m135 |[0m     uses: ./.github/workflows/acceptance.yml
+    [1m[94m|[0m     [1m[33m----------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m136 |[0m     secrets: inherit
+    [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m4[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m4[39m medium, [31m0[39m high

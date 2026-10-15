@@ -1,0 +1,48 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-simp_grub-validate_tokens.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-simp_grub-validate_tokens.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m # Validate API tokens in GitHub Secrets against their respective services
+[1m[94m 2 |[0m [1m[33m|[0m # ------------------------------------------------------------------------------
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m68 |[0m [1m[33m|[0m           fi
+[1m[94m69 |[0m [1m[33m|[0m
+   [1m[94m|[0m [1m[33m|__-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-simp_grub-validate_tokens.yml:28:3
+   [1m[94m|[0m
+[1m[94m28 |[0m [1m[33m/[0m   puppetforge:
+[1m[94m29 |[0m [1m[33m|[0m     name: 'Puppet Forge token authenticates with API'
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m38 |[0m [1m[33m|[0m            --header "Authorization: Bearer ${PUPPETFORGE_API_TOKEN:-default_content_to_cause_401_response}" \
+[1m[94m39 |[0m [1m[33m|[0m            https://forgeapi.puppet.com/v3/users > /dev/null
+   [1m[94m|[0m [1m[33m|[0m                                                           [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|___________________________________________________________|[0m
+   [1m[94m|[0m                                                             [1m[33mthis job[0m
+   [1m[94m|[0m                                                             [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/simp-pupmod-simp-simp_grub-validate_tokens.yml:41:3
+   [1m[94m|[0m
+[1m[94m41 |[0m [1m[33m/[0m   github-no-scope:
+[1m[94m42 |[0m [1m[33m|[0m     name: 'No-scope GitHub token has NO scopes'
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m68 |[0m [1m[33m|[0m           fi
+[1m[94m69 |[0m [1m[33m|[0m
+   [1m[94m|[0m [1m[33m|_--[0m [1m[33mthis job[0m
+   [1m[94m|[0m   [1m[33m|[0m
+   [1m[94m|[0m   [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m3[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m3[39m medium, [31m0[39m high

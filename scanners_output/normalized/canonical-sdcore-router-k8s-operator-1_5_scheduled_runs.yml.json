@@ -1,0 +1,108 @@
+{
+  "workflow": "canonical-sdcore-router-k8s-operator-1_5_scheduled_runs.yml",
+  "tools": {
+    "zizmor": {
+      "workflow": "canonical-sdcore-router-k8s-operator-1_5_scheduled_runs.yaml",
+      "tool": "zizmor",
+      "summary": {
+        "total_findings": 9,
+        "by_rule": {
+          "excessive-permissions": 8,
+          "secrets-inherit": 1
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "canonical-sdcore-router-k8s-operator-1_5_scheduled_runs.yaml",
+          "line": 1,
+          "column": 1,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "canonical-sdcore-router-k8s-operator-1_5_scheduled_runs.yaml",
+          "line": 8,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "canonical-sdcore-router-k8s-operator-1_5_scheduled_runs.yaml",
+          "line": 14,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "canonical-sdcore-router-k8s-operator-1_5_scheduled_runs.yaml",
+          "line": 19,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "canonical-sdcore-router-k8s-operator-1_5_scheduled_runs.yaml",
+          "line": 24,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "canonical-sdcore-router-k8s-operator-1_5_scheduled_runs.yaml",
+          "line": 29,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "canonical-sdcore-router-k8s-operator-1_5_scheduled_runs.yaml",
+          "line": 34,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "excessive-permissions",
+          "level": "warning",
+          "message": "overly broad permissions",
+          "workflow": "canonical-sdcore-router-k8s-operator-1_5_scheduled_runs.yaml",
+          "line": 44,
+          "column": 3,
+          "note": "audit confidence \u2192 Medium",
+          "capability": "excessive-permission-weakness"
+        },
+        {
+          "rule_id": "secrets-inherit",
+          "level": "warning",
+          "message": "secrets unconditionally inherited by called workflow",
+          "workflow": "canonical-sdcore-router-k8s-operator-1_5_scheduled_runs.yaml",
+          "line": 39,
+          "column": 5,
+          "note": "audit confidence \u2192 High",
+          "capability": "secrets-exposure-weakness"
+        }
+      ]
+    }
+  }
+}

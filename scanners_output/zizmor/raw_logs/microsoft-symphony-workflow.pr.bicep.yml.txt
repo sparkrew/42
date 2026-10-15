@@ -1,0 +1,129 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-symphony-workflow.pr.bicep.yml
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-symphony-workflow.pr.bicep.yml:29:3
+   [1m[94m|[0m
+[1m[94m29 |[0m   id-token: write
+   [1m[94m|[0m   [1m[91m^^^^^^^^^^^^^^^[0m [1m[91mid-token: write is overly broad at the workflow level[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-symphony-workflow.pr.bicep.yml:31:3
+   [1m[94m|[0m
+[1m[94m31 |[0m   pull-requests: write
+   [1m[94m|[0m   [1m[91m^^^^^^^^^^^^^^^^^^^^[0m [1m[91mpull-requests: write is overly broad at the workflow level[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-symphony-workflow.pr.bicep.yml:32:3
+   [1m[94m|[0m
+[1m[94m32 |[0m   checks: write
+   [1m[94m|[0m   [1m[33m-------------[0m [1m[33mchecks: write is overly broad at the workflow level[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-symphony-workflow.pr.bicep.yml:34:3
+   [1m[94m|[0m
+[1m[94m34 |[0m   security-events: write
+   [1m[94m|[0m   [1m[33m----------------------[0m [1m[33msecurity-events: write is overly broad at the workflow level[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[91merror[]8;;https://docs.zizmor.sh/audits/#dangerous-triggers\dangerous-triggers]8;;\][0m: [1muse of fundamentally insecure workflow trigger[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-symphony-workflow.pr.bicep.yml:4:1
+   [1m[94m|[0m
+[1m[94m 4 |[0m [1m[91m/[0m on: # yamllint disable-line rule:truthy
+[1m[94m 5 |[0m [1m[91m|[0m   pull_request_target:
+[1m[94m...[0m  [1m[91m|[0m
+[1m[94m10 |[0m [1m[91m|[0m     branches:
+[1m[94m11 |[0m [1m[91m|[0m       - main
+   [1m[94m|[0m [1m[91m|____________^[0m [1m[91mpull_request_target is almost always used insecurely[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-symphony-workflow.pr.bicep.yml:61:5
+   [1m[94m|[0m
+[1m[94m61 |[0m     uses: ./.github/workflows/template.bicep.validate.yml
+   [1m[94m|[0m     [1m[33m-----------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m62 |[0m     with:
+[1m[94m...[0m
+[1m[94m67 |[0m       githubEnvironment: symphony
+[1m[94m68 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-symphony-workflow.pr.bicep.yml:93:5
+    [1m[94m|[0m
+[1m[94m 93 |[0m     uses: ./.github/workflows/template.storeevent.yml
+    [1m[94m|[0m     [1m[33m-------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m 94 |[0m     with:
+[1m[94m...[0m
+[1m[94m108 |[0m         }}
+[1m[94m109 |[0m     secrets: inherit
+    [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-symphony-workflow.pr.bicep.yml:113:5
+    [1m[94m|[0m
+[1m[94m113 |[0m     uses: ./.github/workflows/template.bicep.previewdeploy.yml
+    [1m[94m|[0m     [1m[33m----------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m114 |[0m     with:
+[1m[94m...[0m
+[1m[94m119 |[0m       githubEnvironment: symphony
+[1m[94m120 |[0m     secrets: inherit
+    [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-symphony-workflow.pr.bicep.yml:124:5
+    [1m[94m|[0m
+[1m[94m124 |[0m     uses: ./.github/workflows/template.bicep.previewdeploy.yml
+    [1m[94m|[0m     [1m[33m----------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m125 |[0m     with:
+[1m[94m...[0m
+[1m[94m130 |[0m       githubEnvironment: symphony
+[1m[94m131 |[0m     secrets: inherit
+    [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-symphony-workflow.pr.bicep.yml:135:5
+    [1m[94m|[0m
+[1m[94m135 |[0m     uses: ./.github/workflows/template.bicep.test.yml
+    [1m[94m|[0m     [1m[33m-------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m136 |[0m     with:
+[1m[94m...[0m
+[1m[94m140 |[0m       githubEnvironment: symphony
+[1m[94m141 |[0m     secrets: inherit
+    [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+   [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/microsoft-symphony-workflow.pr.bicep.yml:146:5
+    [1m[94m|[0m
+[1m[94m146 |[0m     uses: ./.github/workflows/template.bicep.destroy.yml
+    [1m[94m|[0m     [1m[33m----------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m147 |[0m     with:
+[1m[94m...[0m
+[1m[94m151 |[0m       githubEnvironment: symphony
+[1m[94m152 |[0m     secrets: inherit
+    [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m11[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m8[39m medium, [31m3[39m high

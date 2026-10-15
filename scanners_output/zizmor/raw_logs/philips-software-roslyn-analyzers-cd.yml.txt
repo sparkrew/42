@@ -1,0 +1,94 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/philips-software-roslyn-analyzers-cd.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/philips-software-roslyn-analyzers-cd.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name: CD
+[1m[94m 2 |[0m [1m[33m|[0m on:
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m50 |[0m [1m[33m|[0m     secrets:
+[1m[94m51 |[0m [1m[33m|[0m       nuget-token: ${{ secrets.NUGET_TOKEN }}      
+   [1m[94m|[0m [1m[33m|____________________________________________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/philips-software-roslyn-analyzers-cd.yml:12:3
+   [1m[94m|[0m
+[1m[94m12 |[0m [1m[33m/[0m   publish-warning:
+[1m[94m13 |[0m [1m[33m|[0m     if: ${{ github.event_name == 'pull_request' && !startsWith(github.head_ref, 'release-') }}
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m18 |[0m [1m[33m|[0m          echo 'This PR changes the CHANGELOG.md file and as such will trigger a release of production software! If this is not your [1m[94m...[0m
+[1m[94m19 |[0m [1m[33m|[0m          exit 1
+   [1m[94m|[0m [1m[33m|[0m               [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________|[0m
+   [1m[94m|[0m                 [1m[33mthis job[0m
+   [1m[94m|[0m                 [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/philips-software-roslyn-analyzers-cd.yml:21:3
+   [1m[94m|[0m
+[1m[94m21 |[0m [1m[33m/[0m   tagversion:
+[1m[94m22 |[0m [1m[33m|[0m     if: ${{ github.event_name == 'push'}}
+[1m[94m23 |[0m [1m[33m|[0m     uses: ./.github/workflows/tagversion.yml
+[1m[94m24 |[0m [1m[33m|[0m     with:
+[1m[94m25 |[0m [1m[33m|[0m       prerelease: false
+   [1m[94m|[0m [1m[33m|[0m                       [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________________|[0m
+   [1m[94m|[0m                         [1m[33mthis job[0m
+   [1m[94m|[0m                         [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/philips-software-roslyn-analyzers-cd.yml:27:3
+   [1m[94m|[0m
+[1m[94m27 |[0m [1m[33m/[0m   build:
+[1m[94m28 |[0m [1m[33m|[0m     needs: [tagversion]
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m32 |[0m [1m[33m|[0m       new_tag: ${{ needs.tagversion.outputs.new_tag }}
+[1m[94m33 |[0m [1m[33m|[0m       new_version: ${{ needs.tagversion.outputs.new_version }}
+   [1m[94m|[0m [1m[33m|[0m                                                              [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|______________________________________________________________|[0m
+   [1m[94m|[0m                                                                [1m[33mthis job[0m
+   [1m[94m|[0m                                                                [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/philips-software-roslyn-analyzers-cd.yml:35:3
+   [1m[94m|[0m
+[1m[94m35 |[0m [1m[33m/[0m   release:
+[1m[94m36 |[0m [1m[33m|[0m     needs: [tagversion, build]
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m41 |[0m [1m[33m|[0m       changelog: ${{ needs.tagversion.outputs.changelog }}
+[1m[94m42 |[0m [1m[33m|[0m       prerelease: false
+   [1m[94m|[0m [1m[33m|[0m                       [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_______________________|[0m
+   [1m[94m|[0m                         [1m[33mthis job[0m
+   [1m[94m|[0m                         [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/philips-software-roslyn-analyzers-cd.yml:44:3
+   [1m[94m|[0m
+[1m[94m44 |[0m [1m[33m/[0m   publish:
+[1m[94m45 |[0m [1m[33m|[0m     needs: [tagversion, release]
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m50 |[0m [1m[33m|[0m     secrets:
+[1m[94m51 |[0m [1m[33m|[0m       nuget-token: ${{ secrets.NUGET_TOKEN }}      
+   [1m[94m|[0m [1m[33m|[0m                                                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________________________________________|[0m
+   [1m[94m|[0m                                                      [1m[33mthis job[0m
+   [1m[94m|[0m                                                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[32m6[39m findings: 0 unknown, [35m0[39m informational, [36m0[39m low, [33m6[39m medium, [31m0[39m high

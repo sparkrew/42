@@ -1,0 +1,145 @@
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping impostor-commit: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping ref-confusion: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping known-vulnerable-actions: can't run without a GitHub API token
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping forbidden-uses: audit not configured
+[32m INFO[0m [2mzizmor[0m[2m:[0m skipping stale-action-refs: can't run without a GitHub API token
+[32m INFO[0m [1maudit[0m[2m:[0m [2mzizmor[0m[2m:[0m 🌈 [32mcompleted[39m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-checkbox-daily-builds.yml
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#artipacked\artipacked]8;;\][0m: [1mcredential persistence through GitHub Actions artifacts[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-checkbox-daily-builds.yml:22:9
+   [1m[94m|[0m
+[1m[94m22 |[0m         - uses: actions/checkout@v4
+   [1m[94m|[0m  [1m[33m_________-[0m
+[1m[94m23 |[0m [1m[33m|[0m         with:
+[1m[94m24 |[0m [1m[33m|[0m           fetch-depth: 0
+   [1m[94m|[0m [1m[33m|________________________-[0m [1m[33mdoes not set persist-credentials: false[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Low
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-checkbox-daily-builds.yml:1:1
+   [1m[94m|[0m
+[1m[94m 1 |[0m [1m[33m/[0m name: Daily builds
+[1m[94m 2 |[0m [1m[33m|[0m
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m60 |[0m [1m[33m|[0m     uses: ./.github/workflows/snapcraft8_builds.yaml
+[1m[94m61 |[0m [1m[33m|[0m     secrets: inherit
+   [1m[94m|[0m [1m[33m|_____________________-[0m [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-checkbox-daily-builds.yml:9:3
+   [1m[94m|[0m
+[1m[94m 9 |[0m [1m[33m/[0m   check_for_commits:
+[1m[94m10 |[0m [1m[33m|[0m     runs-on:
+[1m[94m...[0m  [1m[33m|[0m
+[1m[94m36 |[0m [1m[33m|[0m           commit_count=$(git log --since="$LAST_PASS_DAILY_BUILD" --oneline -- checkbox-ng checkbox-support providers checkbox-core-[1m[94m...[0m
+[1m[94m37 |[0m [1m[33m|[0m           echo "new_commit_count=$commit_count" | tee $GITHUB_OUTPUT
+   [1m[94m|[0m [1m[33m|[0m                                                                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________________________________________________________|[0m
+   [1m[94m|[0m                                                                      [1m[33mthis job[0m
+   [1m[94m|[0m                                                                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-checkbox-daily-builds.yml:39:3
+   [1m[94m|[0m
+[1m[94m39 |[0m [1m[33m/[0m   snapcraft7-runtime:
+[1m[94m40 |[0m [1m[33m|[0m     needs: check_for_commits
+[1m[94m41 |[0m [1m[33m|[0m     if: ${{ needs.check_for_commits.outputs.new_commit_count > 0 || github.event_name == 'workflow_dispatch' }}
+[1m[94m42 |[0m [1m[33m|[0m     uses: ./.github/workflows/checkbox-core-snap-daily-builds.yml
+[1m[94m43 |[0m [1m[33m|[0m     secrets: inherit
+   [1m[94m|[0m [1m[33m|[0m                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________|[0m
+   [1m[94m|[0m                      [1m[33mthis job[0m
+   [1m[94m|[0m                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-checkbox-daily-builds.yml:45:3
+   [1m[94m|[0m
+[1m[94m45 |[0m [1m[33m/[0m   snapcraft7-frontend:
+[1m[94m46 |[0m [1m[33m|[0m     needs: check_for_commits
+[1m[94m47 |[0m [1m[33m|[0m     if: ${{ needs.check_for_commits.outputs.new_commit_count > 0 || github.event_name == 'workflow_dispatch' }}
+[1m[94m48 |[0m [1m[33m|[0m     uses: ./.github/workflows/checkbox-snap-daily-builds.yml
+[1m[94m49 |[0m [1m[33m|[0m     secrets: inherit
+   [1m[94m|[0m [1m[33m|[0m                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________|[0m
+   [1m[94m|[0m                      [1m[33mthis job[0m
+   [1m[94m|[0m                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-checkbox-daily-builds.yml:51:3
+   [1m[94m|[0m
+[1m[94m51 |[0m [1m[33m/[0m   deb-daily:
+[1m[94m52 |[0m [1m[33m|[0m     needs: check_for_commits
+[1m[94m53 |[0m [1m[33m|[0m     if: ${{ needs.check_for_commits.outputs.new_commit_count > 0 || github.event_name == 'workflow_dispatch' }}
+[1m[94m54 |[0m [1m[33m|[0m     uses: ./.github/workflows/deb-daily-builds.yml
+[1m[94m55 |[0m [1m[33m|[0m     secrets: inherit
+   [1m[94m|[0m [1m[33m|[0m                    [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|____________________|[0m
+   [1m[94m|[0m                      [1m[33mthis job[0m
+   [1m[94m|[0m                      [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#excessive-permissions\excessive-permissions]8;;\][0m: [1moverly broad permissions[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-checkbox-daily-builds.yml:57:3
+   [1m[94m|[0m
+[1m[94m57 |[0m [1m[33m/[0m   snapcraft8-daily:
+[1m[94m58 |[0m [1m[33m|[0m     needs: check_for_commits
+[1m[94m59 |[0m [1m[33m|[0m     if: ${{ needs.check_for_commits.outputs.new_commit_count > 0 || github.event_name == 'workflow_dispatch' }}
+[1m[94m60 |[0m [1m[33m|[0m     uses: ./.github/workflows/snapcraft8_builds.yaml
+[1m[94m61 |[0m [1m[33m|[0m     secrets: inherit
+   [1m[94m|[0m [1m[33m|[0m                     [1m[33m-[0m
+   [1m[94m|[0m [1m[33m|_____________________|[0m
+   [1m[94m|[0m                       [1m[33mthis job[0m
+   [1m[94m|[0m                       [1m[33mdefault permissions used due to no permissions: block[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → Medium
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-checkbox-daily-builds.yml:42:5
+   [1m[94m|[0m
+[1m[94m42 |[0m     uses: ./.github/workflows/checkbox-core-snap-daily-builds.yml
+   [1m[94m|[0m     [1m[33m-------------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m43 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-checkbox-daily-builds.yml:48:5
+   [1m[94m|[0m
+[1m[94m48 |[0m     uses: ./.github/workflows/checkbox-snap-daily-builds.yml
+   [1m[94m|[0m     [1m[33m--------------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m49 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-checkbox-daily-builds.yml:54:5
+   [1m[94m|[0m
+[1m[94m54 |[0m     uses: ./.github/workflows/deb-daily-builds.yml
+   [1m[94m|[0m     [1m[33m----------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m55 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[1m[33mwarning[]8;;https://docs.zizmor.sh/audits/#secrets-inherit\secrets-inherit]8;;\][0m: [1msecrets unconditionally inherited by called workflow[0m
+  [1m[94m-->[0m /home/huawei/BOOSTSECURITY/42/.github/workflows/canonical-checkbox-daily-builds.yml:60:5
+   [1m[94m|[0m
+[1m[94m60 |[0m     uses: ./.github/workflows/snapcraft8_builds.yaml
+   [1m[94m|[0m     [1m[33m------------------------------------------------[0m [1m[33mthis reusable workflow[0m
+[1m[94m61 |[0m     secrets: inherit
+   [1m[94m|[0m     [1m[33m----------------[0m [1m[33minherits all parent secrets[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1m[92mnote[0m: audit confidence → High
+
+[32m12[39m findings ([1m[93m1[39m suppressed[0m): 0 unknown, [35m0[39m informational, [36m0[39m low, [33m11[39m medium, [31m0[39m high
